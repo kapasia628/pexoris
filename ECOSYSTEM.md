@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 6 of 100 Tools Completed & Live with Google Drive Downloads
+> **Status:** 10 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -15,6 +15,10 @@
 | **04** | **Pexoris PrintFixer** | `print-fixer` | 73 KB | 50 KB | `59b56e001c1459c2d203f47af41bda738bdf5a39758d14bf63c11b87f23642d1` | [Download](https://drive.google.com/uc?export=download&id=1us1wofg2_yPOx7FIofKxuX7jM3lsE-6W) | `http://localhost/tools/website/tools/print-fixer/` |
 | **05** | **Pexoris AIShield** | `ai-shield` | 53 KB | 30 KB | `9998d40b2975e0c52933a26c4b9c6c6e783af9b7598b43854630ba0fe9e585bb` | [Download](https://drive.google.com/uc?export=download&id=1Lk_i7XyLGwSYCktaXudg__C_nQF4KYv2) | `http://localhost/tools/website/tools/ai-shield/` |
 | **06** | **Pexoris USBShield** | `usb-shield` | 59 KB | 34 KB | `b4710e51ad864a876f3a040d5a4f6c8a8434a9c99325419e35199bdc88f0c592` | [Download](https://drive.google.com/uc?export=download&id=1jKcv_tS1te0zzu1ExlYeUfT8D97Vm2Xc) | `http://localhost/tools/website/tools/usb-shield/` |
+| **07** | **Pexoris ContextMenuEditor** | `context-menu-editor` | 49 KB | 30 KB | `36cc8cc8034958952fb1d9cb49d5a61dceb56613bfb527cbe2f682abcb48d1e8` | [Download](https://drive.google.com/uc?export=download&id=1EFx4VOzqdNSafDdubZPcyoT8Bn9ZNfff) | `http://localhost/tools/website/tools/context-menu-editor/` |
+| **08** | **Pexoris ServiceOptimizer** | `service-optimizer` | 69 KB | 44 KB | `827f5675cf999177fe82ee5a6f93281d8baea6222a0b017366eea7485f5cb8ca` | [Download](https://drive.google.com/uc?export=download&id=1ZEuYBVBT2AKpZ7XpzbcGkahuSya5UZBP) | `http://localhost/tools/website/tools/service-optimizer/` |
+| **09** | **Pexoris HostsManager** | `hosts-manager` | 57 KB | 36 KB | `cb5b1d28889247c6ff18d852fdf2597f967a27f4834d3821ce9b04cec64eb556` | [Download](https://drive.google.com/uc?export=download&id=1cbsrisYM2H2wRRcPdcwXAwC_aMJFqmHu) | `http://localhost/tools/website/tools/hosts-manager/` |
+| **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | *(Pending User Upload)* | `http://localhost/tools/website/tools/temp-cleaner/` |
 
 ---
 
@@ -79,6 +83,6 @@ Running `build.bat` in the project root:
 - [x] **#07 Pexoris Context Menu Editor** (Clean bloated right-click menus & restore classic Windows 11 menu)
 - [x] **#08 Pexoris Service Optimizer** (Safely disable unnecessary Windows services)
 - [x] **#09 Pexoris Hosts Manager** (Fast graphical hosts file editor with adblock presets)
-- [ ] **#10 Pexoris Temp Cleaner** (Deep Windows update cache & junk cleaner)
+- [x] **#10 Pexoris Temp Cleaner** (Deep Windows update cache & junk cleaner)
 - [ ] **#11 Pexoris Startup Inspector** (Inspect and disable stubborn autorun entries)
 - [ ] **#12 Pexoris Defender Toggle** (Temporarily pause Windows Defender during dev compilation)

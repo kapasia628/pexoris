@@ -1,0 +1,271 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace PexorisTempCleaner
+{
+    public class CleanTarget
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string DirectoryPath { get; set; }
+        public string Description { get; set; }
+        public string Safety { get; set; }
+        public bool IsSelected { get; set; }
+        public long SizeBytes { get; set; }
+        public int FileCount { get; set; }
+        public int DeletedFiles { get; set; }
+        public long FreedBytes { get; set; }
+        public int SkippedFiles { get; set; }
+
+        public CleanTarget()
+        {
+            IsSelected = true;
+            Safety = "Safe";
+        }
+    }
+
+    public static class CleanerHelper
+    {
+        public static List<CleanTarget> GetDefaultTargets()
+        {
+            var targets = new List<CleanTarget>();
+
+            // 1. User Temp
+            string userTemp = Path.GetTempPath();
+            targets.Add(new CleanTarget
+            {
+                Id = "UserTemp",
+                Name = "User Temporary Files",
+                DirectoryPath = userTemp,
+                Description = "Temporary working files created by running user applications and installers.",
+                Safety = "100% Safe",
+                IsSelected = true
+            });
+
+            // 2. Windows Temp
+            string winDir = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
+            string sysTemp = Path.Combine(winDir, "Temp");
+            targets.Add(new CleanTarget
+            {
+                Id = "SysTemp",
+                Name = "Windows System Temp",
+                DirectoryPath = sysTemp,
+                Description = "System-level temporary cache files created by Windows background daemons.",
+                Safety = "100% Safe",
+                IsSelected = true
+            });
+
+            // 3. SoftwareDistribution Download Cache
+            string sdist = Path.Combine(winDir, "SoftwareDistribution", "Download");
+            targets.Add(new CleanTarget
+            {
+                Id = "WinUpdate",
+                Name = "Windows Update Download Cache",
+                DirectoryPath = sdist,
+                Description = "Cached installation packages from previously installed Windows Updates.",
+                Safety = "Recommended",
+                IsSelected = true
+            });
+
+            // 4. Windows Prefetch
+            string prefetch = Path.Combine(winDir, "Prefetch");
+            targets.Add(new CleanTarget
+            {
+                Id = "Prefetch",
+                Name = "Windows Prefetch Cache",
+                DirectoryPath = prefetch,
+                Description = "Stale application startup trace cache. Safe to purge periodically.",
+                Safety = "Safe",
+                IsSelected = true
+            });
+
+            // 5. Crash Dumps
+            string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string crashDumps = Path.Combine(localAppData, "CrashDumps");
+            targets.Add(new CleanTarget
+            {
+                Id = "CrashDumps",
+                Name = "Application Crash Memory Dumps",
+                DirectoryPath = crashDumps,
+                Description = "Large .DMP memory dumps generated when applications crash.",
+                Safety = "100% Safe",
+                IsSelected = true
+            });
+
+            // 6. Windows Error Reporting (WER)
+            string commonAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            string werPath = Path.Combine(commonAppData, "Microsoft", "Windows", "WER");
+            targets.Add(new CleanTarget
+            {
+                Id = "WER",
+                Name = "Windows Error Reporting Logs",
+                DirectoryPath = werPath,
+                Description = "Queued crash telemetry logs and diagnostic dumps awaiting transmission.",
+                Safety = "100% Safe",
+                IsSelected = true
+            });
+
+            // 7. Delivery Optimization Cache
+            string doPath = Path.Combine(winDir, "SoftwareDistribution", "DeliveryOptimization");
+            targets.Add(new CleanTarget
+            {
+                Id = "DeliveryOpt",
+                Name = "Delivery Optimization Cache",
+                DirectoryPath = doPath,
+                Description = "Peer-to-peer Windows update fragments cached on the local drive.",
+                Safety = "Safe",
+                IsSelected = true
+            });
+
+            // 8. CBS & DISM Logs
+            string cbsLogs = Path.Combine(winDir, "Logs", "CBS");
+            targets.Add(new CleanTarget
+            {
+                Id = "CbsLogs",
+                Name = "Component-Based Servicing Logs",
+                DirectoryPath = cbsLogs,
+                Description = "Historical servicing logs generated by Windows Update and DISM.",
+                Safety = "Safe",
+                IsSelected = false // Unchecked by default
+            });
+
+            return targets;
+        }
+
+        public static void ScanTarget(CleanTarget target)
+        {
+            target.SizeBytes = 0;
+            target.FileCount = 0;
+
+            if (string.IsNullOrEmpty(target.DirectoryPath) || !Directory.Exists(target.DirectoryPath))
+                return;
+
+            try
+            {
+                DirectoryInfo di = new DirectoryInfo(target.DirectoryPath);
+                ScanDirectoryRecursive(di, target);
+            }
+            catch { }
+        }
+
+        private static void ScanDirectoryRecursive(DirectoryInfo dir, CleanTarget target)
+        {
+            FileInfo[] files = null;
+            try
+            {
+                files = dir.GetFiles();
+            }
+            catch { return; }
+
+            if (files != null)
+            {
+                foreach (var file in files)
+                {
+                    try
+                    {
+                        target.SizeBytes += file.Length;
+                        target.FileCount++;
+                    }
+                    catch { }
+                }
+            }
+
+            DirectoryInfo[] subDirs = null;
+            try
+            {
+                subDirs = dir.GetDirectories();
+            }
+            catch { return; }
+
+            if (subDirs != null)
+            {
+                foreach (var sub in subDirs)
+                {
+                    ScanDirectoryRecursive(sub, target);
+                }
+            }
+        }
+
+        public static void CleanTargetFiles(CleanTarget target)
+        {
+            target.DeletedFiles = 0;
+            target.FreedBytes = 0;
+            target.SkippedFiles = 0;
+
+            if (string.IsNullOrEmpty(target.DirectoryPath) || !Directory.Exists(target.DirectoryPath))
+                return;
+
+            try
+            {
+                DirectoryInfo di = new DirectoryInfo(target.DirectoryPath);
+                DeleteDirectoryRecursive(di, target, true);
+            }
+            catch { }
+        }
+
+        private static void DeleteDirectoryRecursive(DirectoryInfo dir, CleanTarget target, bool isRoot)
+        {
+            FileInfo[] files = null;
+            try
+            {
+                files = dir.GetFiles();
+            }
+            catch { return; }
+
+            if (files != null)
+            {
+                foreach (var file in files)
+                {
+                    try
+                    {
+                        long len = file.Length;
+                        // Clear read-only if set
+                        if (file.IsReadOnly) file.IsReadOnly = false;
+                        file.Delete();
+                        target.FreedBytes += len;
+                        target.DeletedFiles++;
+                    }
+                    catch
+                    {
+                        // In use or locked by active process - safely skip
+                        target.SkippedFiles++;
+                    }
+                }
+            }
+
+            DirectoryInfo[] subDirs = null;
+            try
+            {
+                subDirs = dir.GetDirectories();
+            }
+            catch { return; }
+
+            if (subDirs != null)
+            {
+                foreach (var sub in subDirs)
+                {
+                    DeleteDirectoryRecursive(sub, target, false);
+                    // Try to delete empty subfolder
+                    try
+                    {
+                        if (sub.GetFiles().Length == 0 && sub.GetDirectories().Length == 0)
+                        {
+                            sub.Delete();
+                        }
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        public static string FormatBytes(long bytes)
+        {
+            if (bytes <= 0) return "0 B";
+            if (bytes < 1024) return bytes + " B";
+            if (bytes < 1024 * 1024) return (bytes / 1024.0).ToString("F1") + " KB";
+            if (bytes < 1024 * 1024 * 1024) return (bytes / (1024.0 * 1024.0)).ToString("F2") + " MB";
+            return (bytes / (1024.0 * 1024.0 * 1024.0)).ToString("F2") + " GB";
+        }
+    }
+}

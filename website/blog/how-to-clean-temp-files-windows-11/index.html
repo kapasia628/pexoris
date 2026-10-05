@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Clean Temp Files in Windows 11 &amp; Fix "Low Disk Space" (Step-by-Step)</title>
+  <meta name="title" content="How to Clean Temp Files in Windows 11 &amp; Fix 'Low Disk Space' (Step-by-Step)">
+  <meta name="description" content="Running out of C: drive disk space? Learn how to safely purge Windows 11 temporary files, Windows Update download caches, and crash dumps via CMD or in 1 click with Pexoris Temp Cleaner.">
+  <meta name="keywords" content="clean temp files windows 11, delete temporary files windows 10, fix low disk space c drive, purge softwaredistribution download, clear crash dumps windows, clean prefetch windows 11, pexoris temp cleaner">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-clean-temp-files-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-clean-temp-files-windows-11/">
+  <meta property="og:title" content="How to Clean Temp Files in Windows 11 &amp; Fix Low Disk Space">
+  <meta property="og:description" content="Comprehensive technical guide to reclaiming gigabytes of disk space safely without breaking active programs.">
+  <meta property="og:image" content="https://pexoris.com/tools/temp-cleaner/temp-cleaner.png">
+  <meta property="og:site_name" content="Pexoris Guides">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Clean Temp Files in Windows 11 & Fix 'Low Disk Space' Error",
+        "description": "Step-by-step tutorial on safely removing user and system temporary files, Windows Update download caches, crash dumps, and prefetch traces.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-clean-temp-files-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Clean Windows Temp Files via Command Prompt",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Command Prompt as Administrator",
+            "text": "Press Win + S, type cmd, right-click and select 'Run as Administrator'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Delete User Temp Files",
+            "text": "Run: del /q /f /s \"%TEMP%\\*\" and for /d %p in (\"%TEMP%\\*\") do rmdir /s /q \"%p\""
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Delete Windows System Temp",
+            "text": "Run: del /q /f /s \"C:\\Windows\\Temp\\*\" and for /d %p in (\"C:\\Windows\\Temp\\*\") do rmdir /s /q \"%p\""
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Clear Windows Update Download Cache",
+            "text": "Stop the update service: net stop wuauserv, delete the cache: del /q /f /s \"C:\\Windows\\SoftwareDistribution\\Download\\*\", and restart the service: net start wuauserv."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand-blue: #2563EB;
+      --brand-blue-hover: #1D4ED8;
+      --brand-blue-light: #EFF6FF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #F8FAFC;
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #2563EB, #1D4ED8);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+    }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right a { color: #94A3B8; text-decoration: none; margin-left: 16px; }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo-img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--text-hero); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--brand-blue); }
+
+    .article-wrap {
+      max-width: 820px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+    .post-header {
+      margin-bottom: 32px;
+      position: static;
+      background: transparent;
+    }
+    .post-badge {
+      display: inline-block;
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-hero);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .post-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .aeo-box {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-left: 4px solid var(--brand-blue);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .aeo-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #1E40AF;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .aeo-text {
+      font-size: 15px;
+      color: #1E3A8A;
+      line-height: 1.6;
+    }
+
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    .article-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 24px 0 12px;
+    }
+    .article-content p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .article-content ul, .article-content ol {
+      margin: 14px 0 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .article-content li { font-size: 15px; color: var(--text-body); }
+
+    .code-block {
+      background: #0F172A;
+      color: #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .code-block code { color: #60A5FA; }
+
+    .tool-cta-card {
+      background: #FFFFFF;
+      border: 2px solid #BFDBFE;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      margin: 48px 0;
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1);
+    }
+    .tool-cta-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+    .tool-cta-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 20px;
+    }
+    .btn-tool-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .btn-tool-cta:hover {
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-specs">
+        <span class="badge-gold">GUIDE</span>
+        <strong>Windows 11 / 10 Storage Troubleshooting</strong>
+        <span>•</span> 100% Native CMD &amp; Portable 1-Click Fix
+      </div>
+      <div class="notice-right">
+        <a href="../../tools/">← All Free Tools</a>
+        <a href="../../tools/temp-cleaner/">Temp Cleaner Tool</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-title">Pexoris</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../tools/">Tools</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+        <li><a href="../../tools/temp-cleaner/">Temp Cleaner</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <article class="article-wrap">
+    <div class="post-header">
+      <span class="post-badge">TECHNICAL GUIDE • STORAGE RECOVERY</span>
+      <h1 class="post-title">How to Clean Temp Files in Windows 11 &amp; Fix "Low Disk Space" Error</h1>
+      <div class="post-meta">
+        <span>By Pexoris Engineering Team</span>
+        <span>•</span>
+        <span>Updated October 2026</span>
+        <span>•</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Box -->
+    <div class="aeo-box">
+      <div class="aeo-title">⚡ Quick Answer: How to Safely Clean Windows Temp Files</div>
+      <div class="aeo-text">
+        To clean user temp files, press <strong>Win + R</strong>, type <code>%temp%</code>, press <strong>Enter</strong>, press <strong>Ctrl + A</strong>, and hit <strong>Shift + Delete</strong>. If Windows displays <em>"The action can't be completed because the file is open in another program"</em>, simply check <strong>"Do this for all current items"</strong> and click <strong>Skip</strong>. To purge system-level temp files, Windows Update caches, and memory crash dumps automatically without permission errors, use the free 56 KB portable <a href="../../tools/temp-cleaner/" style="color:#1E40AF; font-weight:700;">Pexoris Temp Cleaner</a>.
+      </div>
+    </div>
+
+    <div class="article-content">
+      <h2>Why Does Windows Accumulate Tens of Gigabytes in Temp Folders?</h2>
+      <p>
+        Over weeks and months of routine computer use, Windows silently hordes huge quantities of temporary files across several distinct locations. Every time an application runs, unzips an update, or extracts an installer, it stages files in your temporary directories. While software is supposed to delete these staging files upon closing, poorly written installers, system crashes, and hard shutdowns frequently leave orphan files behind forever.
+      </p>
+
+      <h3>The 5 Major Junk Repositories on Windows:</h3>
+      <ul>
+        <li><strong>User Temp (<code>%LOCALAPPDATA%\Temp</code>):</strong> The primary location for browser caches, electron app caches, and unzipped software installation packages. Often exceeds 10–25 GB.</li>
+        <li><strong>Windows System Temp (<code>C:\Windows\Temp</code>):</strong> Background system services and Windows components store driver update fragments and background installation logs here.</li>
+        <li><strong>Windows Update Download Cache (<code>C:\Windows\SoftwareDistribution\Download</code>):</strong> Stored installation payloads from past Windows Updates. Even after updates install successfully, Windows rarely purges this directory.</li>
+        <li><strong>Crash Dumps (<code>%LOCALAPPDATA%\CrashDumps</code> and <code>C:\Windows\Minidump</code>):</strong> When an app or game crashes, Windows takes a full memory snapshot (.DMP) which can take up 500 MB to 2 GB per crash.</li>
+        <li><strong>Prefetch Cache (<code>C:\Windows\Prefetch</code>):</strong> Startup trace logs. Over time, traces from deleted and uninstalled software clutter this folder.</li>
+      </ul>
+
+      <h2>Method 1: Clean Temp Files Manually via Command Prompt (CMD)</h2>
+      <p>If you prefer using native command-line scripts without downloading third-party tools, you can purge both user and system temp folders with elevated administrator permissions.</p>
+
+      <h3>Step 1: Open Elevated Command Prompt</h3>
+      <p>Press <kbd>Win + S</kbd>, type <code>cmd</code>, right-click <strong>Command Prompt</strong>, and select <strong>Run as Administrator</strong>.</p>
+
+      <h3>Step 2: Purge User Temp Files</h3>
+      <p>Run the following command to recursively force-delete files and empty subdirectories:</p>
+      <div class="code-block">
+        <code>del /q /f /s "%TEMP%\*"<br>for /d %p in ("%TEMP%\*") do rmdir /s /q "%p"</code>
+      </div>
+
+      <h3>Step 3: Purge System Temp Files</h3>
+      <p>Next, clean the Windows root temp folder:</p>
+      <div class="code-block">
+        <code>del /q /f /s "C:\Windows\Temp\*"<br>for /d %p in ("C:\Windows\Temp\*") do rmdir /s /q "%p"</code>
+      </div>
+
+      <h3>Step 4: Purge Windows Update Cache</h3>
+      <p>To safely delete the SoftwareDistribution download cache, you must temporarily stop the Windows Update service:</p>
+      <div class="code-block">
+        <code>net stop wuauserv<br>del /q /f /s "C:\Windows\SoftwareDistribution\Download\*"<br>net start wuauserv</code>
+      </div>
+
+      <h2>Why Manual Deletion Causes "File In Use" Errors</h2>
+      <p>
+        When you attempt to select all files and press delete inside <code>%TEMP%</code>, Windows almost always interrupts the process with an annoying modal dialog:
+      </p>
+      <blockquote style="background:#FEF2F2; border-left:4px solid #EF4444; padding:12px 18px; margin:16px 0; color:#991B1B; font-weight:600;">
+        "The action can't be completed because the file is open in another program."
+      </blockquote>
+      <p>
+        This happens because active background services (like Google Chrome, Microsoft Edge, Slack, or antivirus scanners) maintain an active Win32 file lock on their current session temporary database. If you force-close these programs without saving, you risk losing unsaved data.
+      </p>
+
+      <!-- Sticky 1-Click Callout Card -->
+      <div class="tool-cta-card">
+        <div class="tool-cta-title">⚡ The 1-Click Solution: Pexoris Temp Cleaner</div>
+        <div class="tool-cta-desc">
+          Skip command line scripts and locked-file warnings. Pexoris Temp Cleaner is a free, 56 KB portable utility that automatically calculates recoverable space, protects locked in-use files, and purges all 8 junk repositories in seconds.
+        </div>
+        <a href="../../tools/temp-cleaner/" class="btn-tool-cta">
+          <span>Get Pexoris Temp Cleaner (Free Portable) →</span>
+        </a>
+      </div>
+
+      <h2>Method 2: Clean Temp Files Using Windows Storage Sense</h2>
+      <p>Windows 11 includes an automated cleanup feature called Storage Sense:</p>
+      <ol>
+        <li>Open <strong>Settings</strong> (<kbd>Win + I</kbd>).</li>
+        <li>Navigate to <strong>System</strong> &gt; <strong>Storage</strong>.</li>
+        <li>Click on <strong>Temporary files</strong>. Windows will calculate the size of Downloads, Delivery Optimization, and Recycle Bin.</li>
+        <li>Check the categories you want to purge and click <strong>Remove files</strong>.</li>
+      </ol>
+      <p>
+        <em>Note:</em> Storage Sense often misses deep crash dumps, WER telemetry queues, and Windows Update payload remnants. For a deep, byte-precise purge, a dedicated portable tool is recommended.
+      </p>
+
+      <h2>Summary Checklist for Maximum Storage Health</h2>
+      <ul>
+        <li>Purge <code>%TEMP%</code> and <code>C:\Windows\Temp</code> once a month.</li>
+        <li>Clear <code>C:\Windows\SoftwareDistribution\Download</code> after every major Patch Tuesday update.</li>
+        <li>Delete historical crash dumps (.DMP) to prevent memory leak clutter.</li>
+        <li>Never install bloated background cleaners that inject persistent startup telemetry.</li>
+      </ul>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>&copy; 2026 Pexoris. All rights reserved. Zero-bloat portable Windows utilities.</div>
+      <div>
+        <a href="https://pexoris.com" style="color:#64748B; text-decoration:none; margin-right:16px;">Home</a>
+        <a href="../../tools/" style="color:#64748B; text-decoration:none; margin-right:16px;">All Tools</a>
+        <a href="../../sitemap.xml" style="color:#64748B; text-decoration:none;">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

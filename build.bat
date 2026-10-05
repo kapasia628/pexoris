@@ -198,8 +198,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [18/18] Packaging Pexoris HostsManager Portable ZIP...
+echo [18/20] Packaging Pexoris HostsManager Portable ZIP...
 powershell -Command "Compress-Archive -Path 'build\PexorisHostsManager.exe' -DestinationPath 'build\PexorisHostsManager-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisTempCleaner.exe 2>nul
+
+echo [19/20] Compiling Tool 10: Pexoris TempCleaner...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisTempCleaner\App.manifest ^
+    /win32icon:src\PexorisTempCleaner\Assets\app.ico ^
+    /out:build\PexorisTempCleaner.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisTempCleaner\Program.cs ^
+    src\PexorisTempCleaner\Theme.cs ^
+    src\PexorisTempCleaner\CleanerHelper.cs ^
+    src\PexorisTempCleaner\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris TempCleaner!
+    exit /b %ERRORLEVEL%
+)
+
+echo [20/20] Packaging Pexoris TempCleaner Portable ZIP...
+powershell -Command "Compress-Archive -Path 'build\PexorisTempCleaner.exe' -DestinationPath 'build\PexorisTempCleaner-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -211,6 +232,7 @@ copy /y "build\PexorisUSBShield-v1.0-Portable.zip" "final softwere for g drive u
 copy /y "build\PexorisContextMenuEditor-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisContextMenuEditor.zip" >nul
 copy /y "build\PexorisServiceOptimizer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisServiceOptimizer.zip" >nul
 copy /y "build\PexorisHostsManager-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisHostsManager.zip" >nul
+copy /y "build\PexorisTempCleaner-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisTempCleaner.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -220,10 +242,11 @@ copy /y "build\PexorisUSBShield.exe" "final softwere for g drive uplod\PexorisUS
 copy /y "build\PexorisContextMenuEditor.exe" "final softwere for g drive uplod\PexorisContextMenuEditor.exe" >nul
 copy /y "build\PexorisServiceOptimizer.exe" "final softwere for g drive uplod\PexorisServiceOptimizer.exe" >nul
 copy /y "build\PexorisHostsManager.exe" "final softwere for g drive uplod\PexorisHostsManager.exe" >nul
+copy /y "build\PexorisTempCleaner.exe" "final softwere for g drive uplod\PexorisTempCleaner.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 9 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 10 Pexoris Tools Compiled Successfully!
 echo  Tool 1: build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2: build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3: build\PexorisDoHSwitcher.exe        (38 KB)
@@ -233,8 +256,10 @@ echo  Tool 6: build\PexorisUSBShield.exe          (59 KB)
 echo  Tool 7: build\PexorisContextMenuEditor.exe  (49 KB)
 echo  Tool 8: build\PexorisServiceOptimizer.exe    (69 KB)
 echo  Tool 9: build\PexorisHostsManager.exe       (57 KB)
+echo  Tool 10: build\PexorisTempCleaner.exe       (56 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
 
 endlocal
+
