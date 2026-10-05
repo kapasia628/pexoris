@@ -138,6 +138,27 @@ if %ERRORLEVEL% neq 0 (
 echo [12/12] Packaging Pexoris USBShield Portable ZIP...
 powershell -Command "Compress-Archive -Path 'build\PexorisUSBShield.exe' -DestinationPath 'build\PexorisUSBShield-v1.0-Portable.zip' -Force"
 
+taskkill /F /IM PexorisContextMenuEditor.exe 2>nul
+
+echo [13/14] Compiling Tool 7: Pexoris ContextMenuEditor...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisContextMenuEditor\App.manifest ^
+    /win32icon:src\PexorisContextMenuEditor\Assets\app.ico ^
+    /out:build\PexorisContextMenuEditor.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisContextMenuEditor\Program.cs ^
+    src\PexorisContextMenuEditor\Theme.cs ^
+    src\PexorisContextMenuEditor\ContextMenuHelper.cs ^
+    src\PexorisContextMenuEditor\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris ContextMenuEditor!
+    exit /b %ERRORLEVEL%
+)
+
+echo [14/14] Packaging Pexoris ContextMenuEditor Portable ZIP...
+powershell -Command "Compress-Archive -Path 'build\PexorisContextMenuEditor.exe' -DestinationPath 'build\PexorisContextMenuEditor-v1.0-Portable.zip' -Force"
+
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
 copy /y "build\PexorisPortKiller-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisPortKiller.zip" >nul
@@ -145,22 +166,25 @@ copy /y "build\PexorisDoHSwitcher-v1.0-Portable.zip" "final softwere for g drive
 copy /y "build\PexorisPrintFixer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisPrintFixer.zip" >nul
 copy /y "build\PexorisAIShield-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisAIShield-v1.0-Portable.zip" >nul
 copy /y "build\PexorisUSBShield-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisUSBShield-v1.0-Portable.zip" >nul
+copy /y "build\PexorisContextMenuEditor-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisContextMenuEditor.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
 copy /y "build\PexorisPrintFixer.exe" "final softwere for g drive uplod\PexorisPrintFixer.exe" >nul
 copy /y "build\PexorisAIShield.exe" "final softwere for g drive uplod\PexorisAIShield.exe" >nul
 copy /y "build\PexorisUSBShield.exe" "final softwere for g drive uplod\PexorisUSBShield.exe" >nul
+copy /y "build\PexorisContextMenuEditor.exe" "final softwere for g drive uplod\PexorisContextMenuEditor.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 6 Pexoris Tools Compiled Successfully!
-echo  Tool 1: build\PexorisFileUnlocker.exe  (70 KB)
-echo  Tool 2: build\PexorisPortKiller.exe    (78 KB)
-echo  Tool 3: build\PexorisDoHSwitcher.exe  (38 KB)
-echo  Tool 4: build\PexorisPrintFixer.exe   (73 KB)
-echo  Tool 5: build\PexorisAIShield.exe     (53 KB)
-echo  Tool 6: build\PexorisUSBShield.exe    (59 KB)
+echo  [SUCCESS] All 7 Pexoris Tools Compiled Successfully!
+echo  Tool 1: build\PexorisFileUnlocker.exe        (70 KB)
+echo  Tool 2: build\PexorisPortKiller.exe          (78 KB)
+echo  Tool 3: build\PexorisDoHSwitcher.exe        (38 KB)
+echo  Tool 4: build\PexorisPrintFixer.exe         (73 KB)
+echo  Tool 5: build\PexorisAIShield.exe           (53 KB)
+echo  Tool 6: build\PexorisUSBShield.exe          (59 KB)
+echo  Tool 7: build\PexorisContextMenuEditor.exe  (49 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

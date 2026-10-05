@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Restore Windows 10 Classic Context Menu in Windows 11 (Disable "Show More Options")</title>
+  <meta name="title" content="How to Restore Windows 10 Classic Context Menu in Windows 11 (Disable 'Show More Options')">
+  <meta name="description" content="Tired of Windows 11 hiding your right-click menu behind 'Show more options' (Shift+F10)? Learn how to restore the fast, classic Windows 10 context menu via Registry CMD or in 1-click with Pexoris ContextMenuEditor.">
+  <meta name="keywords" content="restore classic context menu windows 11, disable show more options windows 11, windows 11 old right click menu registry, fix slow right click windows 11, clean context menu shell extensions, pexoris context menu editor">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/blog/restore-classic-context-menu-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/restore-classic-context-menu-windows-11/">
+  <meta property="og:title" content="How to Restore Windows 10 Classic Context Menu in Windows 11">
+  <meta property="og:description" content="Step-by-step guide to bring back the full right-click context menu in Windows 11 without third-party bloat.">
+  <meta property="og:image" content="https://pexoris.com/tools/context-menu-editor/context-menu-editor.png">
+  <meta property="og:site_name" content="Pexoris Guides">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Restore Windows 10 Classic Context Menu in Windows 11",
+        "description": "Comprehensive troubleshooting guide to restore the full, classic right-click menu in Windows 11 and eliminate right-click lag.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "mainEntityOfPage": "https://pexoris.com/blog/restore-classic-context-menu-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Restore Classic Context Menu via Windows Command Prompt",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Command Prompt",
+            "text": "Press Win + S, type cmd, and select 'Run as Administrator'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Add InprocServer32 Registry Override",
+            "text": "Run: reg add \"HKCU\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32\" /f /ve"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Restart Windows Explorer",
+            "text": "Run: taskkill /f /im explorer.exe & start explorer.exe"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand-blue: #2563EB;
+      --brand-blue-hover: #1D4ED8;
+      --brand-blue-light: #EFF6FF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #F8FAFC;
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+    }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right a { color: #94A3B8; text-decoration: none; margin-left: 16px; }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo-img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--text-hero); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--brand-blue); }
+
+    .article-wrap {
+      max-width: 820px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+    .post-header {
+      margin-bottom: 32px;
+    }
+    .post-badge {
+      display: inline-block;
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-hero);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .post-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .aeo-box {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-left: 4px solid var(--brand-blue);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .aeo-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #1E40AF;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .aeo-text {
+      font-size: 15px;
+      color: #1E3A8A;
+      line-height: 1.6;
+    }
+
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    .article-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 24px 0 12px;
+    }
+    .article-content p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .article-content ul, .article-content ol {
+      margin: 14px 0 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .article-content li { font-size: 15px; color: var(--text-body); }
+
+    .code-block {
+      background: #0F172A;
+      color: #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .code-block code { color: #38BDF8; }
+
+    .tool-cta-card {
+      background: #FFFFFF;
+      border: 2px solid #BFDBFE;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      margin: 48px 0;
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1);
+    }
+    .tool-cta-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+    .tool-cta-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 20px;
+    }
+    .btn-tool-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .btn-tool-cta:hover {
+      background: #1D4ED8;
+      transform: translateY(-1px);
+    }
+
+    footer.site-footer {
+      background: #FFFFFF !important;
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 0 30px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-links-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-links-row a { color: var(--text-muted); text-decoration: none; }
+    .footer-links-row a:hover { color: var(--brand-blue); }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice Bar -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-left">
+        <span class="badge-gold">100% FREE</span>
+        <span>Single Standalone Executables under 100 KB</span>
+        <span class="notice-specs"><span>&bull;</span>No Install<span>&bull;</span>No Telemetry<span>&bull;</span>No Ads</span>
+      </div>
+      <div class="notice-right">
+        <a href="../../blog/">All Guides</a>
+        <a href="../../tools/">All 100+ Tools</a>
+        <a href="../../request/">Request a Tool</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link" title="Pexoris Home">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img">
+        <span class="brand-title">Pexoris</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../">Home</a></li>
+        <li><a href="../../tools/">All Tools</a></li>
+        <li><a href="../../blog/">Blog &amp; Guides</a></li>
+        <li><a href="../../request/">Request a Tool</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="article-wrap">
+    <div class="post-header">
+      <span class="post-badge">Windows 11 Troubleshooting</span>
+      <h1 class="post-title">How to Restore Windows 10 Classic Context Menu in Windows 11</h1>
+      <div class="post-meta">
+        <span>By Pexoris Technical Team</span>
+        <span>&bull;</span>
+        <span>Updated: October 2026</span>
+        <span>&bull;</span>
+        <span>4 Min Read</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Snippet Box -->
+    <div class="aeo-box">
+      <div class="aeo-title">Quick Answer (Instant Fix)</div>
+      <p class="aeo-text">
+        To restore the Windows 10 classic right-click context menu in Windows 11, open Command Prompt as Administrator and run:
+        <br>
+        <code>reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve</code>
+        <br>
+        Then restart Windows Explorer. To do this automatically in 1-click and clean bloated 3rd-party shell extensions, use the free 49 KB portable utility <strong>Pexoris ContextMenuEditor</strong>.
+      </p>
+    </div>
+
+    <div class="article-content">
+      <h2>Why Does Windows 11 Hide Context Menu Items?</h2>
+      <p>
+        In Windows 11, Microsoft replaced the traditional Win32 shell context menu with a modern XAML-based menu. While designed to look sleeker, this design choice caused two major frustrations for power users and developers:
+      </p>
+      <ul>
+        <li><strong>The "Show More Options" Barrier:</strong> Legacy commands from tools like WinRAR, 7-Zip, Notepad++, Git, and VS Code are hidden behind a second click or the <code>Shift + F10</code> keyboard shortcut.</li>
+        <li><strong>Right-Click Latency:</strong> Because Windows 11 queries both modern shell handlers and legacy COM servers asynchronously, right-clicking on desktop or files often freezes File Explorer for 2 to 4 seconds.</li>
+      </ul>
+
+      <h2>Method 1: 1-Click Solution via Pexoris ContextMenuEditor (Recommended)</h2>
+      <p>
+        Instead of manually editing the Windows Registry or risking registry corruption, you can use <strong>Pexoris ContextMenuEditor</strong>. It is an ultra-compact (49 KB) standalone portable executable that restores the classic menu in 1 click and lets you inspect and disable slow 3rd-party context menu handlers.
+      </p>
+
+      <!-- Sticky Tool Download Card -->
+      <div class="tool-cta-card">
+        <h3 class="tool-cta-title">Pexoris ContextMenuEditor</h3>
+        <p class="tool-cta-desc">
+          Restore instant Windows 10 classic context menu &amp; clean unwanted right-click handlers in 1-click. 100% portable, 49 KB standalone utility.
+        </p>
+        <a href="../../tools/context-menu-editor/" class="btn-tool-cta">
+          View Tool &amp; Download (Free) &rarr;
+        </a>
+      </div>
+
+      <h2>Method 2: Manual Solution via Windows Command Prompt</h2>
+      <p>
+        If you prefer using the command line without downloading software, you can apply the official Windows shell override key directly through Command Prompt:
+      </p>
+      <ol>
+        <li>Press <kbd>Win + S</kbd>, type <strong>cmd</strong>, and click <strong>Run as Administrator</strong>.</li>
+        <li>Paste the following registry command and press <kbd>Enter</kbd>:</li>
+      </ol>
+
+      <div class="code-block">
+        <code>reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve</code>
+      </div>
+
+      <ol start="3">
+        <li>Restart Windows Explorer to reload the shell with the following command:</li>
+      </ol>
+
+      <div class="code-block">
+        <code>taskkill /f /im explorer.exe &amp; start explorer.exe</code>
+      </div>
+
+      <p>
+        Your desktop and File Explorer will immediately display the full, classic right-click menu on the first click!
+      </p>
+
+      <h2>How to Revert Back to Windows 11 Modern Menu</h2>
+      <p>
+        If you ever want to revert back to the default Windows 11 modern context menu, open Command Prompt as Administrator and delete the override key:
+      </p>
+
+      <div class="code-block">
+        <code>reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f</code>
+      </div>
+
+      <p>Then restart Windows Explorer. With Pexoris ContextMenuEditor, this can also be done by simply clicking the <strong>↺ Modern Win11 Menu</strong> preset button.</p>
+
+      <h2>Summary &amp; Best Practices</h2>
+      <p>
+        Restoring the classic menu eliminates the annoying "Show more options" layer completely. For optimal performance, pair this tweak with disabling heavy cloud synchronization shell extensions using Pexoris ContextMenuEditor to enjoy 0.01-second instant right-click response times.
+      </p>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links-row">
+        <div>&copy; 2026 Pexoris.com. All rights reserved. &bull; Free Open-Source Portable Windows Utilities.</div>
+        <div>
+          <a href="../../">Home</a> &bull;
+          <a href="../../tools/">All Tools</a> &bull;
+          <a href="../../privacy/">Privacy Policy</a> &bull;
+          <a href="../../terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

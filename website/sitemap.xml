@@ -64,6 +64,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Shell & Productivity Utility: Pexoris ContextMenuEditor -->
+  <url>
+    <loc>https://pexoris.com/tools/context-menu-editor/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -140,6 +148,14 @@
   <url>
     <loc>https://pexoris.com/blog/disable-usb-autoplay-write-protect-windows-11/</loc>
     <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Restore Classic Context Menu Windows 11 -->
+  <url>
+    <loc>https://pexoris.com/blog/restore-classic-context-menu-windows-11/</loc>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
