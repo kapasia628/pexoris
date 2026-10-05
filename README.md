@@ -74,16 +74,16 @@ Pexoris utilities are engineered to compile cleanly using the Windows built-in C
 
 ---
 
-## 🗺️ Pexoris Suite Roadmap
+## 🚀 Live Released Tools (6/100 Completed)
 
-| Utility | Problem Solved | Target Platform | Status |
-|---|---|---|---|
-| **Pexoris FileUnlocker** | Unlocks locked files, handles, and stubborn folders | Windows 7 - 11 | **v1.0 Released** |
-| **Pexoris PortKiller** | 1-Click kills processes hogging ports `80`, `3000`, `8080` | Windows 10 & 11 | **In Development** |
-| **Pexoris DoH Switcher** | 1-Click encrypted DNS-over-HTTPS (Cloudflare, AdGuard, NextDNS) | Windows 11 | Planned |
-| **Pexoris AI Shield** | Disables Windows 11 Recall snapshots and Copilot telemetry | Windows 11 | Planned |
-| **Pexoris ExifStripper** | Strips GPS location and camera metadata from photos/documents | Windows 10 & 11 | Planned |
-| **Pexoris Context+** | Restores instant Windows 10 classic context menu on Windows 11 | Windows 11 | Planned |
+| # | Utility | Problem Solved | Binary Size | ZIP Size | SHA-256 Hash |
+|---|---|---|---|---|---|
+| **01** | **[Pexoris FileUnlocker](website/tools/file-unlocker/)** | Force unlock and delete files locked by Windows processes | 70 KB | 48 KB | `82df6a096cce9a71be84e0302b1f8cbb2c7bba4511516dd5ea5aa8612760f38b` |
+| **02** | **[Pexoris PortKiller](website/tools/port-killer/)** | 1-Click kills processes hogging ports `80`, `3000`, `8080` | 78 KB | 58 KB | `e03503f56e9c9f7a7bb629910d5ae684532b4f6e6378e946a48f76fa9cce6d25` |
+| **03** | **[Pexoris DoH Switcher](website/tools/doh-switcher/)** | 1-Click encrypted DNS-over-HTTPS (Cloudflare, AdGuard, Google) | 38 KB | 17 KB | `9ad64768039f10ad8b9408cd5c82dbffee426cf4df308a7731d0fed85d5ef395` |
+| **04** | **[Pexoris PrintFixer](website/tools/print-fixer/)** | Purge stuck print queue & restart spooler in seconds | 73 KB | 50 KB | `59b56e001c1459c2d203f47af41bda738bdf5a39758d14bf63c11b87f23642d1` |
+| **05** | **[Pexoris AIShield](website/tools/ai-shield/)** | Block Windows Recall screenshots, Copilot & DiagTrack telemetry | 53 KB | 30 KB | `9998d40b2975e0c52933a26c4b9c6c6e783af9b7598b43854630ba0fe9e585bb` |
+| **06** | **[Pexoris USBShield](website/tools/usb-shield/)** | Lock USB ports to Read-Only & block AutoPlay malware worms | 59 KB | 34 KB | `b4710e51ad864a876f3a040d5a4f6c8a8434a9c99325419e35199bdc88f0c592` |
 
 ---
 
