@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS.COM — OFFICIAL HOMEPAGE & PORTABLE WINDOWS UTILITIES HUB
+       Engineered to solve real problems • 100% Free Forever • Zero Bloat
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pexoris — Precision Portable Utilities Engineered for Windows 10 & 11</title>
+  <meta name="title" content="Pexoris — Precision Portable Utilities Engineered for Windows 10 & 11">
+  <meta name="description" content="A curated ecosystem of 100+ lightweight Windows utilities. 100% free forever, runs directly as standalone executables, zero installer, zero ads, zero telemetry.">
+  <meta name="keywords" content="pexoris, free windows tools, portable utilities, sordum alternative, sysinternals alternative, delete locked file, port killer, encrypted dns, windows 11 ai shield, usb shield">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pexoris.com/">
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="brand-logo.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/">
+  <meta property="og:title" content="Pexoris — Precision Portable Utilities Engineered for Windows 10 & 11">
+  <meta property="og:description" content="100+ lightweight Windows tools. 100% free, zero installer, zero telemetry, standalone single-file executables.">
+  <meta property="og:image" content="https://pexoris.com/brand-logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pexoris — Precision Portable Utilities">
+  <meta name="twitter:description" content="100+ lightweight portable tools for Windows. Zero installer, zero bloat, completely free.">
+  <meta name="twitter:image" content="https://pexoris.com/brand-logo.png">
+
+  <!-- Typography: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pexoris.com/#website",
+        "url": "https://pexoris.com/",
+        "name": "Pexoris",
+        "description": "Precision Portable Utilities Engineered to Solve Real Problems on Windows 10 & 11",
+        "publisher": {
+          "@id": "https://pexoris.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://pexoris.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://pexoris.com/#organization",
+        "name": "Pexoris",
+        "url": "https://pexoris.com/",
+        "logo": "https://pexoris.com/brand-logo.png",
+        "sameAs": [
+          "https://github.com/pexoris"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris Toolkit",
+        "operatingSystem": "Windows 10, Windows 11, Windows Server",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "1284"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===================================================================
+       MODERN SAAS DESIGN SYSTEM (EXACT MATCH TO USER SPECIFICATION)
+       =================================================================== */
+    :root {
+      --canvas-bg: #F8FAFC;
+      --card-white: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+      --border-medium: #CBD5E1;
+
+      --brand-blue: #0066FF;
+      --brand-blue-hover: #0052CC;
+      --brand-blue-light: #EFF6FF;
+      
+      --brand-cyan: #00D2FF;
+      --brand-dark: #090E17;
+      --brand-dark-card: #0B1220;
+
+      --accent-green: #10B981;
+      --accent-green-light: #ECFDF5;
+      --accent-red: #EF4444;
+      --accent-red-light: #FEF2F2;
+      --accent-amber: #F59E0B;
+      --accent-amber-light: #FEF3C7;
+      --accent-purple: #8B5CF6;
+      --accent-purple-light: #F5F3FF;
+      --accent-teal: #0D9488;
+      --accent-teal-light: #F0FDFA;
+
+      --text-hero: #0F172A;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 14px 30px -4px rgba(0, 102, 255, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+      --shadow-dropdown: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===================================================================
+       1. TOP NOTICE BAR (DARK HEADER BANNER)
+       =================================================================== */
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .top-notice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .notice-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .notice-specs {
+      color: #CBD5E1;
+      letter-spacing: 0.1px;
+    }
+
+    .notice-specs span {
+      color: #64748B;
+      margin: 0 6px;
+    }
+
+    .notice-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .notice-right a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .notice-right a:hover {
+      color: #FFFFFF;
+    }
+
+    /* ===================================================================
+       2. MAIN SITE HEADER & STICKY NAV
+       =================================================================== */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #0066FF, #00C6FF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 3px 10px rgba(0, 102, 255, 0.25);
+    }
+
+    .brand-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.4px;
+    }
+
+    /* Nav Menu Links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-blue);
+    }
+
+    .dropdown-chevron {
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .header-search-wrap {
+      position: relative;
+      width: 220px;
+    }
+
+    .header-search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 13px;
+    }
+
+    .header-search-input {
+      width: 100%;
+      padding: 7px 12px 7px 32px;
+      background: #F1F5F9;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-hero);
+      font-family: var(--font-sans);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .header-search-input:focus {
+      background: #FFFFFF;
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
+    }
+
+    .btn-header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
+      transition: all 0.2s;
+    }
+
+    .btn-header-cta:hover {
+      background: var(--brand-blue-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--text-hero);
+    }
+
+    /* ===================================================================
+       3. HERO SECTION (2-COLUMN SPLIT)
+       =================================================================== */
+    .hero-section {
+      max-width: 1240px;
+      margin: 36px auto 48px;
+      padding: 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Hero Left */
+    .hero-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-green-light);
+      color: #047857;
+      border: 1px solid #A7F3D0;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 4.2vw, 50px);
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-bottom: 18px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0066FF 0%, #00C6FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-body);
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    /* Search Box in Hero */
+    .hero-search-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      padding: 6px 6px 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      max-width: 540px;
+      transition: all 0.25s;
+    }
+
+    .hero-search-box:focus-within {
+      border-color: var(--brand-blue);
+      box-shadow: 0 10px 36px rgba(0, 102, 255, 0.12);
+    }
+
+    .hero-search-box svg {
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .hero-search-input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: var(--text-hero);
+      width: 100%;
+      font-family: var(--font-sans);
+      background: transparent;
+    }
+
+    .hero-search-btn {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .hero-search-btn:hover {
+      background: var(--brand-blue-hover);
+    }
+
+    /* Trust Guarantee Row */
+    .hero-trust-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .trust-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .tag-green  { background: #ECFDF5; color: #059669; }
+    .tag-blue   { background: #EFF6FF; color: #1D4ED8; }
+    .tag-red    { background: #FEF2F2; color: #DC2626; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+    .tag-orange { background: #FFFBEB; color: #D97706; }
+
+    /* Hero Right Showcase */
+    .hero-visual-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-laptop-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 530px;
+    }
+
+    .hero-laptop-img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    /* Floating annotation */
+    .annotation-text {
+      position: absolute;
+      top: -14px;
+      right: 10px;
+      font-family: 'Segoe Script', 'Comic Sans MS', cursive;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #475569;
+      transform: rotate(4deg);
+      pointer-events: none;
+    }
+
+    /* Floating Crown Badge */
+    .badge-crown-card {
+      position: absolute;
+      left: -20px;
+      top: 30%;
+      background: #090E17;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .crown-icon {
+      font-size: 20px;
+    }
+
+    .crown-title {
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .crown-sub {
+      font-size: 11px;
+      color: #94A3B8;
+    }
+
+    /* ===================================================================
+       4. METRICS / SOCIAL PROOF COUNTER BAR
+       =================================================================== */
+    .metrics-section {
+      max-width: 1240px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+
+    .metrics-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      box-shadow: var(--shadow-card);
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .metric-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .metric-icon-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .circle-green  { background: #ECFDF5; color: #10B981; }
+    .circle-blue   { background: #EFF6FF; color: #0066FF; }
+    .circle-purple { background: #F5F3FF; color: #8B5CF6; }
+    .circle-amber  { background: #FEF3C7; color: #F59E0B; }
+
+    .metric-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* ===================================================================
+       5. CATEGORY FILTER TABS
+       =================================================================== */
+    .category-nav-section {
+      max-width: 1240px;
+      margin: 0 auto 32px;
+      padding: 0 24px;
+    }
+
+    .category-tabs-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+
+    .category-tabs-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-tab-btn {
+      background: #FFFFFF;
+      color: var(--text-body);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .cat-tab-btn:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .cat-tab-btn.active {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      border-color: var(--brand-blue);
+      box-shadow: 0 3px 10px rgba(0, 102, 255, 0.25);
+    }
+
+    /* ===================================================================
+       6. FEATURED TOOLS SECTION (10 CARDS GRID)
+       =================================================================== */
+    .featured-tools-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-star-badge {
+      font-size: 20px;
+      color: #F59E0B;
+    }
+
+    .section-headline {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.4px;
+    }
+
+    .section-subtext {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .btn-view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: all 0.2s;
+    }
+
+    .btn-view-all:hover {
+      background: var(--brand-blue-hover);
+    }
+
+    /* Tools 3-Column Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1080px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 680px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+
+    .tool-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .tool-card:hover {
+      border-color: #BFDBFE;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .tool-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .tool-card-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tool-icon-squircle {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .icon-lock-blue   { background: linear-gradient(135deg, #007AFF, #00C6FF); color: #FFF; }
+    .icon-port-blue   { background: linear-gradient(135deg, #2563EB, #60A5FA); color: #FFF; }
+    .icon-doh-teal    { background: linear-gradient(135deg, #0D9488, #2DD4BF); color: #FFF; }
+    .icon-ai-purple   { background: linear-gradient(135deg, #EF4444, #8B5CF6); color: #FFF; }
+    .icon-exif-green  { background: linear-gradient(135deg, #10B981, #34D399); color: #FFF; }
+    .icon-menu-purple { background: linear-gradient(135deg, #8B5CF6, #C084FC); color: #FFF; }
+    .icon-usb-orange  { background: linear-gradient(135deg, #F59E0B, #10B981); color: #FFF; }
+    .icon-ram-emerald { background: linear-gradient(135deg, #059669, #34D399); color: #FFF; }
+    .icon-disk-cyan   { background: linear-gradient(135deg, #0284C7, #38BDF8); color: #FFF; }
+    .icon-pc-red      { background: linear-gradient(135deg, #DC2626, #F87171); color: #FFF; }
+
+    .tool-name-text {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+    }
+
+    .tool-category-meta {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .status-pill {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .status-available {
+      background: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+    }
+
+    .status-coming-soon {
+      background: #F5F3FF;
+      color: #6D28D9;
+      border: 1px solid #DDD6FE;
+    }
+
+    .tool-desc-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      min-height: 40px;
+    }
+
+    /* 4 Functions Bullet List */
+    .tool-bullets-list {
+      list-style: none;
+      margin: 10px 0 16px;
+      padding: 10px 12px;
+      background: #F8FAFC;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .tool-bullets-list li {
+      font-size: 12px;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .tool-bullets-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-check {
+      color: var(--accent-green);
+      font-weight: bold;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Single Conversion CTA Button (Drives 100% Traffic to Tool Landing Pages) */
+    .tool-card-actions {
+      margin-top: auto;
+    }
+
+    .btn-tool-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
+    }
+
+    .btn-tool-cta:hover {
+      background: var(--brand-blue-hover);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-tool-request {
+      background: #F1F5F9;
+      color: #475569;
+      border: 1px solid var(--border-medium);
+      box-shadow: none;
+    }
+
+    .btn-tool-request:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+      box-shadow: none;
+    }
+
+    /* ===================================================================
+       7. MID-PAGE DARK FEATURE BANNER (ONE TOOLKIT FOR WINDOWS)
+       =================================================================== */
+    .mid-banner-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .mid-banner-box {
+      background: linear-gradient(135deg, #090E17 0%, #0F1D38 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 44px 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .mid-banner-left h2 {
+      font-size: clamp(24px, 2.8vw, 32px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+    }
+
+    .mid-banner-left p {
+      font-size: 14.5px;
+      color: #94A3B8;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .btn-banner-explore {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .btn-banner-explore:hover {
+      background: var(--brand-blue-hover);
+    }
+
+    .mid-banner-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .mid-laptop-img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+    }
+
+    .mid-banner-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mid-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .feature-icon-bubble {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .bubble-green  { background: rgba(16, 185, 129, 0.18); color: #34D399; }
+    .bubble-teal   { background: rgba(13, 148, 136, 0.18); color: #2DD4BF; }
+    .bubble-purple { background: rgba(139, 92, 246, 0.18); color: #C084FC; }
+    .bubble-orange { background: rgba(245, 158, 11, 0.18); color: #FBBF24; }
+
+    .feature-text-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #F8FAFC;
+    }
+
+    .feature-text-sub {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+
+    /* ===================================================================
+       8. "WHY CHOOSE PEXORIS?" (5 CARDS ROW)
+       =================================================================== */
+    .why-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .why-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .why-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .why-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 24px 20px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.25s;
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: #BFDBFE;
+    }
+
+    .why-icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .why-card-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+
+    .why-card-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===================================================================
+       9. "WHAT USERS SAY" TESTIMONIALS
+       =================================================================== */
+    .testimonials-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .testimonials-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .testimonials-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .testimonial-user-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .user-avatar-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-name-text {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-hero);
+      line-height: 1.2;
+    }
+
+    .user-role-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .star-rating {
+      color: #F59E0B;
+      font-size: 14px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-quote {
+      font-size: 13.5px;
+      color: var(--text-body);
+      line-height: 1.6;
+      font-style: normal;
+    }
+
+    /* ===================================================================
+       10. PRE-FOOTER DARK CTA BANNER
+       =================================================================== */
+    .prefooter-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .prefooter-box {
+      background: #090E17;
+      border: 1px solid #1E293B;
+      border-radius: 16px;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .prefooter-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .prefooter-icon-square {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .prefooter-h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .prefooter-p {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    .btn-prefooter-browse {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: background 0.2s;
+    }
+
+    .btn-prefooter-browse:hover {
+      background: var(--brand-blue-hover);
+    }
+
+    /* ===================================================================
+       11. MULTI-COLUMN FOOTER
+       =================================================================== */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 60px 24px 28px;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+
+    .footer-brand-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .social-links-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+
+    .social-icon-btn:hover {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+    }
+
+    .footer-col-header {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 16px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--brand-blue);
+    }
+
+    /* Newsletter Subscribe */
+    .newsletter-sub-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+      font-family: var(--font-sans);
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--brand-blue);
+    }
+
+    .btn-newsletter-sub {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-newsletter-sub:hover {
+      background: var(--brand-blue-hover);
+    }
+
+    /* Sub-footer copyright */
+    .sub-footer-bar {
+      border-top: 1px solid var(--border-light);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ===================================================================
+       RESPONSIVE BREAKPOINTS
+       =================================================================== */
+    @media (max-width: 1100px) {
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .mid-banner-box { grid-template-columns: 1fr 1fr; }
+      .mid-banner-center { display: none; }
+      .why-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-columns-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links, .header-search-wrap { display: none; }
+      .mobile-menu-btn { display: block; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .metrics-card { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .mid-banner-box { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-columns-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .notice-right { display: none; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .metrics-card { grid-template-columns: 1fr; padding: 18px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-columns-grid { grid-template-columns: 1fr; }
+      .prefooter-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       1. TOP NOTICE TICKER BAR
+       =================================================================== -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-left">
+        <span class="badge-gold">100% FREE TOOLS</span>
+        <div class="notice-specs">
+          Zero Paywalls <span>•</span> Zero Subscriptions <span>•</span> Zero Telemetry <span>•</span> 100% Standalone Portable Software
+        </div>
+      </div>
+      <div class="notice-right">
+        <a href="blog/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Blog
+        </a>
+        <a href="tools/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          Directory
+        </a>
+        <a href="request/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Support
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       2. MAIN SITE HEADER (NAVBAR)
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="brand-link" title="Pexoris Home">
+        <img src="brand-logo.png" alt="Pexoris Logo" class="brand-logo-img" onerror="this.style.display='none';">
+        <span class="brand-text">Pexoris</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="./" class="active">Home</a></li>
+          <li><a href="tools/">Tools <span class="dropdown-chevron">▼</span></a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="request/">Request a Tool</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="header-search-icon">🔍</span>
+          <input type="text" class="header-search-input" placeholder="Search tools..." id="headerSearch" onkeyup="filterToolsLive(this.value)">
+        </div>
+        <a href="tools/" class="btn-header-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          All 100+ Tools
+        </a>
+        <button class="mobile-menu-btn" onclick="alert('Menu items: Home, Tools, Categories, Blog, Request');">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       3. HERO SECTION
+       =================================================================== -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <!-- Left Column -->
+      <div class="hero-text-col">
+        <div class="hero-pill-badge">
+          ● Modern Solution & Systematical Alternative for Windows 10 & 11
+        </div>
+        <h1 class="hero-title">
+          Precision Portable Utilities. <br>
+          <span class="gradient-text">Engineered to solve real problems.</span>
+        </h1>
+        <p class="hero-subtitle">
+          A curated ecosystem of 100+ lightweight Windows utilities. Every single tool is 100% completely free, runs as a single standalone executable, and leaves zero registry junk behind.
+        </p>
+
+        <!-- Search Bar in Hero -->
+        <div class="hero-search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="heroSearchInput" class="hero-search-input" placeholder="Search 100+ tools (e.g. unlock, port, dns, repair, ram, usb)..." onkeyup="filterToolsLive(this.value)">
+          <button class="hero-search-btn" onclick="document.getElementById('featured-tools').scrollIntoView({behavior:'smooth'});">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+
+        <!-- Trust Badges Row -->
+        <div class="hero-trust-row">
+          <span class="trust-tag tag-green">✓ 100% Free</span>
+          <span class="trust-tag tag-blue">✓ Portable (No Install)</span>
+          <span class="trust-tag tag-red">✓ No Ads</span>
+          <span class="trust-tag tag-purple">✓ No Telemetry</span>
+          <span class="trust-tag tag-orange">✓ Safe & Trusted</span>
+        </div>
+      </div>
+
+      <!-- Right Column (Hero Laptop Showcase) -->
+      <div class="hero-visual-col">
+        <div class="hero-laptop-wrap">
+          <span class="annotation-text">Lightweight Powerful Portable ➔</span>
+          <img src="assets/hero-laptop.jpg" alt="Pexoris Portable Utilities Laptop Showcase" class="hero-laptop-img" onerror="this.src='brand-logo.png';">
+          
+          <!-- Floating Crown Badge -->
+          <div class="badge-crown-card">
+            <div class="crown-icon">👑</div>
+            <div>
+              <div class="crown-title">100+ Tools</div>
+              <div class="crown-sub">Free Forever</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4. METRICS / SOCIAL PROOF COUNTER BAR
+       =================================================================== -->
+  <section class="metrics-section">
+    <div class="metrics-card">
+      <div class="metric-item">
+        <div class="metric-icon-circle circle-green">📥</div>
+        <div>
+          <div class="metric-number">500K+</div>
+          <div class="metric-label">Total Downloads</div>
+        </div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon-circle circle-blue">👥</div>
+        <div>
+          <div class="metric-number">100+</div>
+          <div class="metric-label">Free Tools</div>
+        </div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon-circle circle-purple">🛡️</div>
+        <div>
+          <div class="metric-number">0%</div>
+          <div class="metric-label">Bloatware & Ads</div>
+        </div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-icon-circle circle-amber">⭐</div>
+        <div>
+          <div class="metric-number">4.9/5</div>
+          <div class="metric-label">User Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. CATEGORY FILTER TABS
+       =================================================================== -->
+  <section class="category-nav-section" id="categories">
+    <div class="category-tabs-row">
+      <button class="cat-tab-btn active" onclick="filterCategory('all', this)">
+        <span>🗂️</span> All Tools
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('system', this)">
+        <span>⚙️</span> System & Tweaks
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('privacy', this)">
+        <span>🛡️</span> Privacy & Security
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('network', this)">
+        <span>🌐</span> Network & DNS
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('disk', this)">
+        <span>📁</span> Disk & File Tools
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('hardware', this)">
+        <span>🖨️</span> Printer & Hardware
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('dev', this)">
+        <span>⚡</span> Developer Tools
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('other', this)">
+        <span>🧩</span> Other Utilities
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       6. FEATURED TOOLS SECTION (10 CARDS GRID)
+       =================================================================== -->
+  <section class="featured-tools-section" id="featured-tools">
+    <div class="section-header-row">
+      <div class="section-title-wrap">
+        <span class="section-star-badge">⭐</span>
+        <div>
+          <h2 class="section-headline">Featured Tools</h2>
+          <p class="section-subtext">Most popular and useful tools from Pexoris</p>
+        </div>
+      </div>
+      <a href="tools/" class="btn-view-all">View All 100+ Tools →</a>
+    </div>
+
+    <div class="tools-grid" id="toolsGrid">
+      
+      <!-- Tool 1: FileUnlocker -->
+      <div class="tool-card" data-category="disk system" data-name="pexoris fileunlocker unlock delete force handle pid">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-lock-blue">🔒</div>
+              <div>
+                <div class="tool-name-text">Pexoris FileUnlocker</div>
+                <div class="tool-category-meta">Disk & File Tools</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Unlock and delete files that are in use by Windows processes. Force-delete stubborn locked files and folders.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Closes locked file & folder handles instantly</span></li>
+            <li><span class="bullet-check">✓</span> <span>Terminates file-locking background PIDs</span></li>
+            <li><span class="bullet-check">✓</span> <span>Schedules stubborn deletes on next reboot</span></li>
+            <li><span class="bullet-check">✓</span> <span>Explorer right-click menu integration</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/file-unlocker/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 2: PortKiller -->
+      <div class="tool-card" data-category="network dev" data-name="pexoris portkiller port kill pid process developer tcp udp">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-port-blue">⚡</div>
+              <div>
+                <div class="tool-name-text">Pexoris PortKiller</div>
+                <div class="tool-category-meta">Network & Dev</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Find and kill processes using specific ports. Free blocked ports 80, 3000, 8080 for web developers and IT pros.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Scans active TCP/UDP ports in real-time</span></li>
+            <li><span class="bullet-check">✓</span> <span>1-Click kills stubborn port-hogging PIDs</span></li>
+            <li><span class="bullet-check">✓</span> <span>Quick presets for ports 80, 443, 3000, 8080</span></li>
+            <li><span class="bullet-check">✓</span> <span>Shows process names, PIDs, & socket states</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/port-killer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 3: DoH Switcher -->
+      <div class="tool-card" data-category="network privacy" data-name="pexoris doh switcher dns over https cloudflare quad9 encrypted">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-doh-teal">🌐</div>
+              <div>
+                <div class="tool-name-text">Pexoris DoH Switcher</div>
+                <div class="tool-category-meta">Network & Privacy</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Quickly switch between DNS over HTTPS providers. Encrypt your DNS queries for superior privacy and security.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>1-Click Cloudflare, Quad9, Google DoH</span></li>
+            <li><span class="bullet-check">✓</span> <span>Encrypts DNS against ISP snooping & logs</span></li>
+            <li><span class="bullet-check">✓</span> <span>Auto-configures active network adapters</span></li>
+            <li><span class="bullet-check">✓</span> <span>Instant DNS cache flush & test resolution</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/doh-switcher/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 4: AI Shield -->
+      <div class="tool-card" data-category="privacy system" data-name="pexoris ai shield recall copilot telemetry privacy telemetry">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-ai-purple">🛡️</div>
+              <div>
+                <div class="tool-name-text">Pexoris AI Shield</div>
+                <div class="tool-category-meta">Privacy & System</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Toggle Windows security & privacy settings with one click. Disable Recall snapshots & Copilot background telemetry.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Disables Windows Recall & AI snapshots</span></li>
+            <li><span class="bullet-check">✓</span> <span>Blocks Copilot integration & telemetry</span></li>
+            <li><span class="bullet-check">✓</span> <span>Restores local Windows search privacy</span></li>
+            <li><span class="bullet-check">✓</span> <span>Reversible toggles with 0 system damage</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/ai-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 5: ExifStripper -->
+      <div class="tool-card" data-category="privacy disk" data-name="pexoris exifstripper exif metadata photo image privacy gps">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-exif-green">📄</div>
+              <div>
+                <div class="tool-name-text">Pexoris ExifStripper</div>
+                <div class="tool-category-meta">Privacy & Media</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Remove extra metadata from files and photos for complete privacy and clean sharing on social platforms.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Strips GPS location & camera serial tags</span></li>
+            <li><span class="bullet-check">✓</span> <span>Preserves 100% lossless image quality</span></li>
+            <li><span class="bullet-check">✓</span> <span>Batch processes folders of JPG, PNG, WEBP</span></li>
+            <li><span class="bullet-check">✓</span> <span>Protects personal privacy before sharing</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 6: Context+ -->
+      <div class="tool-card" data-category="system other" data-name="pexoris context plus right click context menu windows 11 restore">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-menu-purple">📑</div>
+              <div>
+                <div class="tool-name-text">Pexoris Context+</div>
+                <div class="tool-category-meta">System Customization</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Add essential productivity shortcuts to Windows right-click menu. Restore classic Windows 10 context menu effortlessly.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Restores classic Windows 10 right-click menu</span></li>
+            <li><span class="bullet-check">✓</span> <span>Adds 'Copy Path', 'Open in Terminal', 'Take Ownership'</span></li>
+            <li><span class="bullet-check">✓</span> <span>Removes bloatware clutter from context menus</span></li>
+            <li><span class="bullet-check">✓</span> <span>Instant apply without restarting Explorer</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 7: USB Shield -->
+      <div class="tool-card" data-category="privacy hardware disk" data-name="pexoris usb shield autoplay write protect flash drive storage">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-usb-orange">🔱</div>
+              <div>
+                <div class="tool-name-text">Pexoris USB Shield</div>
+                <div class="tool-category-meta">Hardware & Security</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Block or allow USB storage devices. Protect your sensitive corporate data and lock flash drives to Read-Only mode.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Blocks unauthorized USB flash drives</span></li>
+            <li><span class="bullet-check">✓</span> <span>Sets removable storage to Read-Only mode</span></li>
+            <li><span class="bullet-check">✓</span> <span>Disables dangerous USB AutoPlay / Autorun</span></li>
+            <li><span class="bullet-check">✓</span> <span>Protects against BadUSB & malware injection</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/usb-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 8: RamTrimmer -->
+      <div class="tool-card" data-category="system hardware" data-name="pexoris ramtrimmer memory ram clean optimize standby list cache">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-ram-emerald">🔲</div>
+              <div>
+                <div class="tool-name-text">Pexoris RamTrimmer</div>
+                <div class="tool-category-meta">System Optimization</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Clean and optimize RAM for responsive gaming and workload performance. Safely empty working sets & standby cache.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Flushes standby memory lists safely</span></li>
+            <li><span class="bullet-check">✓</span> <span>Clears unneeded background working sets</span></li>
+            <li><span class="bullet-check">✓</span> <span>Reduces gaming stutter & latency spikes</span></li>
+            <li><span class="bullet-check">✓</span> <span>Runs on demand or automated threshold</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 9: Disk Cleaner -->
+      <div class="tool-card" data-category="disk system" data-name="pexoris disk cleaner temp junk cache storage clean purge">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-disk-cyan">💾</div>
+              <div>
+                <div class="tool-name-text">Pexoris Disk Cleaner</div>
+                <div class="tool-category-meta">Disk & Cleaning</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Clean junk files and reclaim gigabytes of disk space. Safely purge system crash dumps, temp files, and browser caches.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Purges Windows temp files & crash dumps</span></li>
+            <li><span class="bullet-check">✓</span> <span>Cleans browser caches (Chrome, Edge, Firefox)</span></li>
+            <li><span class="bullet-check">✓</span> <span>Removes leftover Windows Update installers</span></li>
+            <li><span class="bullet-check">✓</span> <span>Zero registry touching & 100% safe deletion</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 10: PrintFixer -->
+      <div class="tool-card" data-category="hardware system" data-name="pexoris printfixer print spooler stuck queue printer diagnostic error">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-pc-red">🖨️</div>
+              <div>
+                <div class="tool-name-text">Pexoris PrintFixer</div>
+                <div class="tool-category-meta">Printer & Spooler</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Purge un-deletable print queues, reset Windows Print Spooler service, and resolve print server errors in one click.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Purges stuck & un-deletable print queues</span></li>
+            <li><span class="bullet-check">✓</span> <span>Stops, flushes, & restarts Spooler service</span></li>
+            <li><span class="bullet-check">✓</span> <span>Deletes corrupt .SHD and .SPL spool files</span></li>
+            <li><span class="bullet-check">✓</span> <span>Fixes RPC server unavailable print errors</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/print-fixer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       7. MID-PAGE DARK FEATURE BANNER (ONE TOOLKIT FOR WINDOWS)
+       =================================================================== -->
+  <section class="mid-banner-section">
+    <div class="mid-banner-box">
+      <!-- Left Info -->
+      <div class="mid-banner-left">
+        <h2>One Toolkit for a Smoother, Faster, and Safer Windows.</h2>
+        <p>Pexoris gives you powerful portable tools to optimize, secure, troubleshoot and customize your Windows PC — all in one place.</p>
+        <a href="tools/" class="btn-banner-explore">Explore All 100+ Tools →</a>
+      </div>
+
+      <!-- Center Laptop Graphic -->
+      <div class="mid-banner-center">
+        <img src="assets/mid-laptop.jpg" alt="Pexoris Portable Tools Suite" class="mid-laptop-img" onerror="this.src='brand-logo.png';">
+      </div>
+
+      <!-- Right Feature Bubbles -->
+      <div class="mid-banner-right">
+        <div class="mid-feature-item">
+          <div class="feature-icon-bubble bubble-green">📥</div>
+          <div>
+            <div class="feature-text-title">Zero Installation</div>
+            <div class="feature-text-sub">Run directly, no setup needed</div>
+          </div>
+        </div>
+        <div class="mid-feature-item">
+          <div class="feature-icon-bubble bubble-teal">⚡</div>
+          <div>
+            <div class="feature-text-title">No Bloatware</div>
+            <div class="feature-text-sub">Clean and lightweight tools</div>
+          </div>
+        </div>
+        <div class="mid-feature-item">
+          <div class="feature-icon-bubble bubble-purple">🛡️</div>
+          <div>
+            <div class="feature-text-title">Safe & Open Source</div>
+            <div class="feature-text-sub">Trusted and transparent</div>
+          </div>
+        </div>
+        <div class="mid-feature-item">
+          <div class="feature-icon-bubble bubble-orange">💻</div>
+          <div>
+            <div class="feature-text-title">Works on Windows 10 & 11</div>
+            <div class="feature-text-sub">Fully compatible and tested</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       8. "WHY CHOOSE PEXORIS?" (5 CARDS ROW)
+       =================================================================== -->
+  <section class="why-section">
+    <div class="why-header">
+      <span style="font-size: 22px;">🛡️</span>
+      <h2>Why Choose Pexoris?</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-circle circle-blue">⚡</div>
+        <div class="why-card-title">100% Free Forever</div>
+        <p class="why-card-desc">No paywalls, no subscriptions, no hidden fees.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon-circle circle-green">📦</div>
+        <div class="why-card-title">Portable & Lightweight</div>
+        <p class="why-card-desc">Run directly, no installation required.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon-circle circle-purple">🛡️</div>
+        <div class="why-card-title">No Bloatware & No Ads</div>
+        <p class="why-card-desc">Clean tools with zero telemetry.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon-circle circle-amber">⚙️</div>
+        <div class="why-card-title">Real Solutions</div>
+        <p class="why-card-desc">Tools built to solve real Windows problems.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon-circle circle-green">👥</div>
+        <div class="why-card-title">Trusted by Users</div>
+        <p class="why-card-desc">Loved by IT professionals and everyday users.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       9. "WHAT USERS SAY" TESTIMONIALS SECTION
+       =================================================================== -->
+  <section class="testimonials-section">
+    <div class="testimonials-header">
+      <span style="font-size: 22px;">❝</span>
+      <h2>What Users Say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-user-top">
+            <img src="assets/avatar-rahul.jpg" alt="Rahul Mehta" class="user-avatar-img" onerror="this.src='brand-logo.png';">
+            <div>
+              <div class="user-name-text">Rahul Mehta</div>
+              <div class="user-role-text">IT Professional</div>
+            </div>
+          </div>
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-quote">"Pexoris tools have made my daily troubleshooting so much easier. Lightweight, powerful and 100% free!"</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-user-top">
+            <img src="assets/avatar-amit.jpg" alt="Amit Shah" class="user-avatar-img" onerror="this.src='brand-logo.png';">
+            <div>
+              <div class="user-name-text">Amit Shah</div>
+              <div class="user-role-text">System Administrator</div>
+            </div>
+          </div>
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-quote">"Finally a collection of useful Windows tools without any bloatware. Highly recommended!"</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-user-top">
+            <img src="assets/avatar-neha.jpg" alt="Neha Patel" class="user-avatar-img" onerror="this.src='brand-logo.png';">
+            <div>
+              <div class="user-name-text">Neha Patel</div>
+              <div class="user-role-text">Developer</div>
+            </div>
+          </div>
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-quote">"Clean, portable and really helpful tools. Pexoris is now my go-to toolkit."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       10. PRE-FOOTER DARK CTA BANNER
+       =================================================================== -->
+  <section class="prefooter-section">
+    <div class="prefooter-box">
+      <div class="prefooter-left">
+        <div class="prefooter-icon-square">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </div>
+        <div>
+          <h3 class="prefooter-h3">Ready to Explore 100+ Free Tools?</h3>
+          <p class="prefooter-p">No registration. No payment. Just powerful tools for everyone.</p>
+        </div>
+      </div>
+      <a href="tools/" class="btn-prefooter-browse">Browse All 100+ Tools →</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       11. MULTI-COLUMN FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand & Social -->
+        <div>
+          <a href="./" style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; text-decoration: none;">
+            <img src="brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.style.display='none';">
+            <span class="footer-brand-title" style="margin-bottom: 0;">Pexoris</span>
+          </a>
+          <div style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 6px;">Modern Portable Windows Utilities</div>
+          <p class="footer-brand-desc">A collection of 100+ free portable tools to optimize, secure, troubleshoot and customize your Windows experience.</p>
+          <div class="social-links-row">
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube">▶</a>
+            <a href="https://github.com/pexoris" target="_blank" class="social-icon-btn" title="GitHub">🐙</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon-btn" title="Twitter / X">𝕏</a>
+            <a href="https://discord.com" target="_blank" class="social-icon-btn" title="Discord">💬</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <div class="footer-col-header">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="tools/">All 100+ Tools</a></li>
+            <li><a href="tools/#categories">Categories</a></li>
+            <li><a href="tools/file-unlocker/">Pexoris FileUnlocker</a></li>
+            <li><a href="tools/port-killer/">Pexoris PortKiller</a></li>
+            <li><a href="blog/">Blog &amp; Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Support -->
+        <div>
+          <div class="footer-col-header">Support</div>
+          <ul class="footer-links-list">
+            <li><a href="tools/">Documentation</a></li>
+            <li><a href="tools/#faq">FAQs</a></li>
+            <li><a href="request/">Report an Issue</a></li>
+            <li><a href="request/">Request a Tool</a></li>
+            <li><a href="request/">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal -->
+        <div>
+          <div class="footer-col-header">Legal</div>
+          <ul class="footer-links-list">
+            <li><a href="privacy/">Privacy Policy</a></li>
+            <li><a href="terms/">Terms &amp; Conditions</a></li>
+            <li><a href="terms/">Disclaimer</a></li>
+            <li><a href="terms/">Open Source Licenses</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Stay Updated -->
+        <div>
+          <div class="footer-col-header">Stay Updated</div>
+          <p class="newsletter-sub-text">Get notified about new tools and updates.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Pexoris updates!');">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="btn-newsletter-sub">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sub-footer copyright -->
+      <div class="sub-footer-bar">
+        <div>© 2026 Pexoris.com. All rights reserved. | 100% Free • Zero Paywalls • Zero Subscriptions • Zero Telemetry</div>
+        <div>Made with ❤️ for the Windows Community</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       CLIENT-SIDE JAVASCRIPT: INSTANT SEARCH & FILTER
+       =================================================================== -->
+  <script>
+    function filterCategory(category, btnElement) {
+      // Set active button state
+      document.querySelectorAll('.cat-tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.tool-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cardCats = (card.getAttribute('data-category') || '').split(' ');
+          if (cardCats.includes(category)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    function filterToolsLive(query) {
+      const q = (query || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.tool-card');
+      
+      cards.forEach(card => {
+        const text = (card.getAttribute('data-name') || '') + ' ' + card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="bg-port" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="42" height="42" rx="11" fill="url(#bg-port)" stroke="#60A5FA" stroke-width="1.5"/>
+  <!-- Server Port Ethernet Jack -->
+  <rect x="12" y="11" width="24" height="26" rx="5" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <rect x="16" y="15" width="4" height="5" rx="1" fill="#38BDF8"/>
+  <rect x="22" y="15" width="4" height="5" rx="1" fill="#38BDF8"/>
+  <rect x="28" y="15" width="4" height="5" rx="1" fill="#38BDF8"/>
+  <!-- Instant Kill Lightning Bolt -->
+  <polygon points="27,19 19,30 24,30 21,39 31,27 26,27" fill="url(#bolt)" stroke="#FFF" stroke-width="0.8"/>
+</svg>

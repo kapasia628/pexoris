@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="bg-ram" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="42" height="42" rx="11" fill="url(#bg-ram)" stroke="#5EEAD4" stroke-width="1.5"/>
+  <!-- RAM Stick Module -->
+  <rect x="10" y="16" width="28" height="15" rx="3" fill="#042F2E" stroke="#2DD4BF" stroke-width="1.2"/>
+  <!-- Microchips -->
+  <rect x="13" y="19" width="4" height="6" rx="1" fill="#14B8A6"/>
+  <rect x="19" y="19" width="4" height="6" rx="1" fill="#14B8A6"/>
+  <rect x="25" y="19" width="4" height="6" rx="1" fill="#14B8A6"/>
+  <rect x="31" y="19" width="4" height="6" rx="1" fill="#14B8A6"/>
+  <!-- Gold Pins -->
+  <rect x="13" y="31" width="3" height="3" fill="#FBBF24"/>
+  <rect x="18" y="31" width="3" height="3" fill="#FBBF24"/>
+  <rect x="23" y="31" width="3" height="3" fill="#FBBF24"/>
+  <rect x="28" y="31" width="3" height="3" fill="#FBBF24"/>
+  <rect x="33" y="31" width="2" height="3" fill="#FBBF24"/>
+</svg>

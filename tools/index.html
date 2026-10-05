@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS.COM — COMPLETE 100+ PORTABLE WINDOWS UTILITIES DIRECTORY
+       100% Free Forever • Standalone Executables • Zero Telemetry
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>All 100+ Portable Windows Utilities — Pexoris Tools Hub</title>
+  <meta name="title" content="All 100+ Portable Windows Utilities — Pexoris Tools Hub">
+  <meta name="description" content="Browse the complete catalog of 100+ standalone portable Windows utilities. 100% free, zero installer, zero telemetry, and zero bloatware.">
+  <meta name="keywords" content="pexoris tools directory, free windows utilities, portable software catalog, sordum alternative, sysinternals alternative">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pexoris.com/tools/">
+  
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/">
+  <meta property="og:title" content="All 100+ Portable Windows Utilities — Pexoris Hub">
+  <meta property="og:description" content="Browse 100+ standalone portable Windows utilities. Available now and coming soon with zero installer and zero telemetry.">
+  <meta property="og:image" content="https://pexoris.com/brand-logo.png">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Pexoris Portable Utilities Directory",
+    "url": "https://pexoris.com/tools/",
+    "description": "Complete directory of 100+ standalone Windows utilities.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pexoris",
+      "url": "https://pexoris.com/",
+      "logo": "https://pexoris.com/brand-logo.png"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --canvas-bg: #F8FAFC;
+      --card-white: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+      --border-medium: #CBD5E1;
+
+      --brand-blue: #0066FF;
+      --brand-blue-hover: #0052CC;
+      --brand-blue-light: #EFF6FF;
+
+      --accent-green: #10B981;
+      --accent-green-light: #ECFDF5;
+      --accent-amber: #F59E0B;
+      --accent-amber-light: #FEF3C7;
+      --accent-red: #EF4444;
+      --accent-purple: #8B5CF6;
+      --accent-purple-light: #F5F3FF;
+
+      --text-hero: #0F172A;
+      --text-body: #475569;
+      --text-muted: #64748B;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 14px 30px -4px rgba(0, 102, 255, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* 1. TOP NOTICE BAR */
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .notice-specs { color: #CBD5E1; }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right { display: flex; align-items: center; gap: 18px; }
+    .notice-right a { color: #94A3B8; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    /* 2. MAIN HEADER */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .brand-logo-img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; }
+    .brand-text { font-size: 22px; font-weight: 800; color: var(--text-hero); letter-spacing: -0.4px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brand-blue); }
+    .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .header-search-wrap { position: relative; width: 220px; }
+    .header-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 13px; }
+    .header-search-input { width: 100%; padding: 7px 12px 7px 32px; background: #F1F5F9; border: 1px solid var(--border-light); border-radius: 8px; font-size: 13px; outline: none; }
+    .header-search-input:focus { background: #FFFFFF; border-color: var(--brand-blue); box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12); }
+    .btn-header-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--brand-blue); color: #FFFFFF; text-decoration: none; padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 13.5px; box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25); }
+    .btn-header-cta:hover { background: var(--brand-blue-hover); }
+
+    /* 3. HERO & SEARCH */
+    .catalog-hero {
+      max-width: 1240px;
+      margin: 36px auto 32px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .catalog-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-green-light);
+      color: #047857;
+      border: 1px solid #A7F3D0;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .catalog-title {
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #0066FF 0%, #00C6FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .catalog-subtitle {
+      font-size: 16px;
+      color: var(--text-body);
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    /* Live Search Box */
+    .catalog-search-wrap {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+    .catalog-search-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      padding: 10px 18px 10px 44px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .catalog-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+    .catalog-search-input {
+      border: none;
+      outline: none;
+      font-size: 15px;
+      color: var(--text-hero);
+      width: 100%;
+      font-family: var(--font-sans);
+    }
+
+    /* Category Filter Nav */
+    .category-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .cat-btn {
+      background: #FFFFFF;
+      color: var(--text-body);
+      border: 1px solid var(--border-light);
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .cat-btn:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+    .cat-btn.active {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      border-color: var(--brand-blue);
+      box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
+    }
+    .cat-badge-count {
+      background: rgba(0, 0, 0, 0.08);
+      padding: 1px 6px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+    .cat-btn.active .cat-badge-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+
+    /* 4. TOOLS GRID (100 TOOLS ARCHITECTURE) */
+    .catalog-section {
+      max-width: 1240px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 1100px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+
+    .tool-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .tool-card:hover {
+      border-color: #BFDBFE;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .tool-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .tool-card-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tool-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .status-pill {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .status-available {
+      background: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+    }
+    .status-coming-soon {
+      background: #F5F3FF;
+      color: #6D28D9;
+      border: 1px solid #DDD6FE;
+    }
+
+    .tool-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+    }
+    .tool-category-meta {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .tool-summary {
+      font-size: 13.5px;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      min-height: 42px;
+    }
+
+    /* 4 Functions Bullet List (Strict Requirement) */
+    .tool-bullets-list {
+      list-style: none;
+      margin-bottom: 18px;
+      padding: 10px 12px;
+      background: #F8FAFC;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+    .tool-bullets-list li {
+      font-size: 12.5px;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 5px;
+    }
+    .tool-bullets-list li:last-child {
+      margin-bottom: 0;
+    }
+    .bullet-check {
+      color: var(--accent-green);
+      font-weight: bold;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    /* Single Conversion CTA Button (Drives 100% Traffic to Tool Landing Pages) */
+    .tool-card-actions {
+      margin-top: auto;
+    }
+
+    .btn-tool-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
+    }
+
+    .btn-tool-cta:hover {
+      background: var(--brand-blue-hover);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-tool-request {
+      background: #F1F5F9;
+      color: #475569;
+      border: 1px solid var(--border-medium);
+      box-shadow: none;
+    }
+
+    .btn-tool-request:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+      box-shadow: none;
+    }
+
+    /* Icon color themes */
+    .icon-blue   { background: linear-gradient(135deg, #0066FF, #00C6FF); color: #FFF; }
+    .icon-teal   { background: linear-gradient(135deg, #0D9488, #2DD4BF); color: #FFF; }
+    .icon-purple { background: linear-gradient(135deg, #8B5CF6, #C084FC); color: #FFF; }
+    .icon-red    { background: linear-gradient(135deg, #EF4444, #F87171); color: #FFF; }
+    .icon-orange { background: linear-gradient(135deg, #F59E0B, #10B981); color: #FFF; }
+    .icon-green  { background: linear-gradient(135deg, #10B981, #34D399); color: #FFF; }
+    .icon-cyan   { background: linear-gradient(135deg, #0284C7, #38BDF8); color: #FFF; }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 60px 24px 28px;
+    }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) {
+      .footer-columns-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-columns-grid { grid-template-columns: 1fr; }
+    }
+    .footer-brand-title { font-size: 18px; font-weight: 800; color: var(--text-hero); }
+    .footer-brand-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 8px 0 16px; }
+    .social-links-row { display: flex; align-items: center; gap: 10px; }
+    .social-icon-btn { width: 32px; height: 32px; border-radius: 8px; background: #F1F5F9; color: var(--text-body); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 13px; }
+    .social-icon-btn:hover { background: var(--brand-blue); color: #FFFFFF; }
+    .footer-col-header { font-size: 14px; font-weight: 700; color: var(--text-hero); margin-bottom: 14px; }
+    .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links-list a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+    .footer-links-list a:hover { color: var(--brand-blue); }
+    .newsletter-form { display: flex; gap: 8px; margin-top: 10px; }
+    .newsletter-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-light); border-radius: 6px; font-size: 13px; outline: none; }
+    .btn-newsletter-sub { background: var(--brand-blue); color: #FFFFFF; border: none; border-radius: 6px; padding: 8px 14px; font-weight: 700; font-size: 13px; cursor: pointer; }
+    .sub-footer-bar { border-top: 1px solid var(--border-light); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--text-muted); flex-wrap: wrap; gap: 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP NOTICE TICKER BAR -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-left">
+        <span class="badge-gold">100% FREE TOOLS</span>
+        <div class="notice-specs">
+          Zero Paywalls <span>•</span> Zero Subscriptions <span>•</span> Zero Telemetry <span>•</span> 100% Standalone Portable Software
+        </div>
+      </div>
+      <div class="notice-right">
+        <a href="../blog/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Blog
+        </a>
+        <a href="./">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          Directory
+        </a>
+        <a href="../request/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Support
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="brand-link" title="Pexoris Home">
+        <img src="../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img" onerror="this.src='../../brand-logo.png';">
+        <span class="brand-text">Pexoris</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="./" class="active">Tools ▾</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <li><a href="../request/">Request a Tool</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="header-search-icon">🔍</span>
+          <input type="text" class="header-search-input" placeholder="Search 100+ tools..." onkeyup="filterToolsLive(this.value)">
+        </div>
+        <a href="./" class="btn-header-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          All Tools
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. CATALOG HERO & SEARCH -->
+  <section class="catalog-hero">
+    <div class="catalog-pill">
+      ● 100+ Standalone Portable Utilities • Zero Installer • Zero Bloatware
+    </div>
+    <h1 class="catalog-title">
+      Complete Portable Tools Directory <br>
+      <span class="gradient-text">Engineered to solve real Windows problems.</span>
+    </h1>
+    <p class="catalog-subtitle">
+      Every single tool runs directly as a standalone single-file executable. No setup wizards, no background telemetry, and zero registry junk left behind.
+    </p>
+
+    <!-- Search Box -->
+    <div class="catalog-search-wrap">
+      <div class="catalog-search-box">
+        <span class="catalog-search-icon">🔍</span>
+        <input type="text" id="liveSearchInput" class="catalog-search-input" placeholder="Search all 100+ tools by name, port, error, or keyword..." onkeyup="filterToolsLive(this.value)">
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="category-filter-bar" id="categories">
+      <button class="cat-btn active" onclick="filterCategory('all', this)">
+        <span>🗂️</span> All Tools <span class="cat-badge-count">100+</span>
+      </button>
+      <button class="cat-btn" onclick="filterCategory('available', this)">
+        <span>⚡</span> Available Now <span class="cat-badge-count">6 Live</span>
+      </button>
+      <button class="cat-btn" onclick="filterCategory('disk', this)">
+        <span>📁</span> File & Disk Tools
+      </button>
+      <button class="cat-btn" onclick="filterCategory('network', this)">
+        <span>🌐</span> Network & Ports
+      </button>
+      <button class="cat-btn" onclick="filterCategory('privacy', this)">
+        <span>🛡️</span> Privacy & Security
+      </button>
+      <button class="cat-btn" onclick="filterCategory('system', this)">
+        <span>⚙️</span> System & Tweaks
+      </button>
+      <button class="cat-btn" onclick="filterCategory('hardware', this)">
+        <span>🖨️</span> Hardware & Spooler
+      </button>
+      <button class="cat-btn" onclick="filterCategory('coming', this)">
+        <span>⏳</span> Coming Soon
+      </button>
+    </div>
+  </section>
+
+  <!-- 4. MASTER TOOLS CATALOG GRID -->
+  <section class="catalog-section">
+    <div class="tools-grid" id="toolsGrid">
+
+      <!-- ==========================================
+           LIVE TOOL 1: FileUnlocker (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available disk system" data-name="pexoris fileunlocker file locked handle delete close force">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-blue">🔒</div>
+              <div>
+                <div class="tool-title">Pexoris FileUnlocker</div>
+                <div class="tool-category-meta">File & Storage Lock Engine</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Unlock locked files and force delete stubborn files and folders in use by Explorer or background tasks.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Kills locking process handles instantly</li>
+            <li><span class="bullet-check">✓</span> Force-closes DLL and file lock hooks</li>
+            <li><span class="bullet-check">✓</span> Deletes locked & in-use files/folders</li>
+            <li><span class="bullet-check">✓</span> Windows Explorer right-click integration</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="file-unlocker/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           LIVE TOOL 2: PortKiller (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available network dev" data-name="pexoris portkiller port 80 3000 8080 kill pid socket process">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-blue">⚡</div>
+              <div>
+                <div class="tool-title">Pexoris PortKiller</div>
+                <div class="tool-category-meta">Network & Socket Management</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Instantly identify and terminate rogue processes blocking TCP/UDP ports 80, 443, 3000, and 8080.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Real-time port listening socket explorer</li>
+            <li><span class="bullet-check">✓</span> 1-Click PID termination & port liberation</li>
+            <li><span class="bullet-check">✓</span> Resolves Apache, Node, Docker, Vite conflicts</li>
+            <li><span class="bullet-check">✓</span> Zero netstat or taskkill CMD needed</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="port-killer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           LIVE TOOL 3: DoH Switcher (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available network privacy" data-name="pexoris doh switcher dns over https cloudflare adguard quad9 encryption">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-teal">🌐</div>
+              <div>
+                <div class="tool-title">Pexoris DoH Switcher</div>
+                <div class="tool-category-meta">Encrypted DNS & Privacy</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Switch Windows 11 & 10 to high-speed encrypted DNS over HTTPS with 1-click malware and ad-blocking presets.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> 1-Click DoH template configuration</li>
+            <li><span class="bullet-check">✓</span> Built-in Cloudflare, Quad9, Google, AdGuard</li>
+            <li><span class="bullet-check">✓</span> Blocks ISP eavesdropping & DNS hijacking</li>
+            <li><span class="bullet-check">✓</span> Automatic DNS cache flush on apply</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="doh-switcher/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           LIVE TOOL 4: PrintFixer (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available hardware system" data-name="pexoris printfixer print spooler stuck queue printer reset restart">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-red">🖨️</div>
+              <div>
+                <div class="tool-title">Pexoris PrintFixer</div>
+                <div class="tool-category-meta">Windows Print Subsystem Guard</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Purge stubborn stuck print queues, reset the Windows Print Spooler service, and wipe corrupted SHD/SPL files.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Force deletes corrupted .SHD & .SPL files</li>
+            <li><span class="bullet-check">✓</span> Stops and cleanly restarts Spooler service</li>
+            <li><span class="bullet-check">✓</span> Fixes error 0x000006ba & frozen jobs</li>
+            <li><span class="bullet-check">✓</span> Preserves printer drivers and configurations</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="print-fixer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           LIVE TOOL 5: AIShield (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available privacy system" data-name="pexoris aishield ai recall copilot telemetry tracking screenshots privacy">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-purple">🛡️</div>
+              <div>
+                <div class="tool-title">Pexoris AIShield</div>
+                <div class="tool-category-meta">Windows 11 AI & Telemetry Defense</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Block invasive Windows Recall background screen recordings, Copilot AI sidebar, and Bing search tracking.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Disables Windows Recall background snapshots</li>
+            <li><span class="bullet-check">✓</span> Deactivates Copilot taskbar & shell AI</li>
+            <li><span class="bullet-check">✓</span> Kills Diagnostic telemetry & advertising ID</li>
+            <li><span class="bullet-check">✓</span> 1-Click instant restore to Windows defaults</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="ai-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           LIVE TOOL 6: USBShield (Available Now)
+           ========================================== -->
+      <div class="tool-card" data-category="available privacy hardware disk" data-name="pexoris usbshield usb autoplay write protect immunization flash storage">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-orange">🔱</div>
+              <div>
+                <div class="tool-title">Pexoris USBShield</div>
+                <div class="tool-category-meta">Removable Storage & AutoRun Guard</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-summary">Block USB worm infection vectors, disable AutoPlay popups, write-protect flash drives to Read-Only, and immunize.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Locks USB ports to Read-Only mode</li>
+            <li><span class="bullet-check">✓</span> Disables AutoPlay & Shell execution hooks</li>
+            <li><span class="bullet-check">✓</span> Creates locked autorun.inf immunization folder</li>
+            <li><span class="bullet-check">✓</span> Prevents unauthorized data copying and leaks</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="usb-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 7: ClassicMenu (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming system" data-name="pexoris classicmenu context menu right click windows 11 restore">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-purple">📑</div>
+              <div>
+                <div class="tool-title">Pexoris ClassicMenu</div>
+                <div class="tool-category-meta">Context Menu Architecture</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">1-Click restore the classic full Windows 10 context menu on Windows 11 without touching Shift+F10.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Restores instant full right-click menu</li>
+            <li><span class="bullet-check">✓</span> Bypasses 'Show More Options' sub-menu</li>
+            <li><span class="bullet-check">✓</span> Removes bloat shell context entries</li>
+            <li><span class="bullet-check">✓</span> 0 restart required with instant Explorer refresh</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 8: RamTrimmer (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming system hardware" data-name="pexoris ramtrimmer memory ram cache standby working set optimize">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-green">🔲</div>
+              <div>
+                <div class="tool-title">Pexoris RamTrimmer</div>
+                <div class="tool-category-meta">Memory & Cache Optimizer</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Purge system standby memory cache, empty working sets, and free gigabytes of physical RAM instantly.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Flushes bloated Windows standby list cache</li>
+            <li><span class="bullet-check">✓</span> Empties inactive process working sets</li>
+            <li><span class="bullet-check">✓</span> Reduces game stutter and micro-freezes</li>
+            <li><span class="bullet-check">✓</span> Zero persistent background resident bloat</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 9: ExifStripper (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming privacy disk" data-name="pexoris exifstripper metadata photo image gps camera strip privacy">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-cyan">📄</div>
+              <div>
+                <div class="tool-title">Pexoris ExifStripper</div>
+                <div class="tool-category-meta">Media Privacy & Scrubbing</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Strip sensitive GPS geolocation, camera serial numbers, and device data from JPEG, PNG, and PDF files.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Strips GPS latitude & longitude coordinates</li>
+            <li><span class="bullet-check">✓</span> Removes camera model & exposure metadata</li>
+            <li><span class="bullet-check">✓</span> Batch folder scrubbing in milliseconds</li>
+            <li><span class="bullet-check">✓</span> Lossless image processing with 0 visual degradation</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 10: DiskCleaner (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming disk system" data-name="pexoris diskcleaner temp junk cache crash dump windows update storage">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-blue">💾</div>
+              <div>
+                <div class="tool-title">Pexoris DiskCleaner</div>
+                <div class="tool-category-meta">Deep System Storage Purge</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Deep scan and purge hidden Windows temporary files, old delivery optimization cache, and crash dumps.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Purges %TEMP%, prefetch, and log archives</li>
+            <li><span class="bullet-check">✓</span> Clears SoftwareDistribution update download cache</li>
+            <li><span class="bullet-check">✓</span> Identifies hidden multi-gigabyte dump files</li>
+            <li><span class="bullet-check">✓</span> Safe whitelist safeguards user documents</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 11: HostsManager (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming network privacy" data-name="pexoris hostsmanager hosts file editor dns adblock telemetry domain block">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-teal">🛡️</div>
+              <div>
+                <div class="tool-title">Pexoris HostsManager</div>
+                <div class="tool-category-meta">DNS & Hosts File Controller</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Graphical hosts file editor with permission unblocking, syntax validator, and 1-click adblock presets.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Unlocks and edits read-only etc\hosts safely</li>
+            <li><span class="bullet-check">✓</span> 1-Click ad & telemetry domain blocklists</li>
+            <li><span class="bullet-check">✓</span> Syntax error validator & IP checker</li>
+            <li><span class="bullet-check">✓</span> Automatic backup and restore snapshots</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 12: ServiceOptimizer (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming system" data-name="pexoris serviceoptimizer services disable bloat telemetry startup windows">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-purple">⚙️</div>
+              <div>
+                <div class="tool-title">Pexoris ServiceOptimizer</div>
+                <div class="tool-category-meta">Windows Services Manager</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Safely disable unnecessary background Windows services with curated Safe, Tweaked, and Extreme presets.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Curated Safe, Tweaked, & Gaming presets</li>
+            <li><span class="bullet-check">✓</span> Disables Connected User Experiences & DiagTrack</li>
+            <li><span class="bullet-check">✓</span> Explains every service in plain language</li>
+            <li><span class="bullet-check">✓</span> 1-Click rollback to Windows factory defaults</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 13: DefenderToggle (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming dev system" data-name="pexoris defendertoggle windows defender pause disable real time developer compile speed">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-red">🛡️</div>
+              <div>
+                <div class="tool-title">Pexoris DefenderToggle</div>
+                <div class="tool-category-meta">Real-Time Protection Switch</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Temporarily pause Windows Defender real-time scanning during developer code compilation to speed up build times.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Temporarily pauses scanning during dev builds</li>
+            <li><span class="bullet-check">✓</span> 3x to 5x faster C++, Rust, & Node compilation</li>
+            <li><span class="bullet-check">✓</span> 1-Click timed auto-re-enable safety timer</li>
+            <li><span class="bullet-check">✓</span> Excludes developer workspaces in 1 click</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 14: IconCacheReset (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming system" data-name="pexoris iconcachereset icon cache blank white broken taskbar desktop fix">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-cyan">🖼️</div>
+              <div>
+                <div class="tool-title">Pexoris IconCacheReset</div>
+                <div class="tool-category-meta">Shell Graphics Cache Repair</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Fix blank white icons and corrupted shortcut graphics by resetting the Windows Icon and Thumbnail database.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Fixes blank, white, or wrong application icons</li>
+            <li><span class="bullet-check">✓</span> Deletes IconCache.db & thumbcache.db safely</li>
+            <li><span class="bullet-check">✓</span> Gracefully re-registers Shell icon associations</li>
+            <li><span class="bullet-check">✓</span> Zero reboot required with instant refresh</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 15: WinUpdateBlocker (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming system" data-name="pexoris winupdateblocker windows update pause block restart disable">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-orange">🛑</div>
+              <div>
+                <div class="tool-title">Pexoris WinUpdateBlocker</div>
+                <div class="tool-category-meta">Update Orchestrator Guard</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">Stop surprise Windows 11 forced restarts and pause automatic updates reliably with one portable switch.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Prevents surprise mid-work system restarts</li>
+            <li><span class="bullet-check">✓</span> Locks Windows Update service permissions</li>
+            <li><span class="bullet-check">✓</span> 1-Click enable when you are ready to update</li>
+            <li><span class="bullet-check">✓</span> Never breaks Windows Store or Xbox app updates</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           UPCOMING TOOL 16: DnsCacheFlusher (Coming Soon)
+           ========================================== -->
+      <div class="tool-card" data-category="coming network" data-name="pexoris dnscacheflusher flush dns winsock reset network connection ipconfig">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-box icon-teal">🔄</div>
+              <div>
+                <div class="tool-title">Pexoris DnsCacheFlusher</div>
+                <div class="tool-category-meta">Resolver & Socket Reset</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-summary">1-Click flush stale DNS cache, release and renew DHCP IP addresses, and reset the Winsock TCP/IP stack.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> Flushes client-side DNS resolver cache</li>
+            <li><span class="bullet-check">✓</span> Releases and renews local DHCP IP lease</li>
+            <li><span class="bullet-check">✓</span> Resets corrupted Winsock TCP/IP catalog</li>
+            <li><span class="bullet-check">✓</span> Fixes ERR_NAME_NOT_RESOLVED browser bugs</li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="../request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand & Social -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <img src="../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.src='../../brand-logo.png';">
+            <span class="footer-brand-title">Pexoris</span>
+          </div>
+          <div style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 6px;">Modern Portable Windows Utilities</div>
+          <p class="footer-brand-desc">A curated ecosystem of 100+ free portable utilities to optimize, secure, troubleshoot and customize Windows 10 & 11.</p>
+          <div class="social-links-row">
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube">▶</a>
+            <a href="https://github.com/pexoris" target="_blank" class="social-icon-btn" title="GitHub">🐙</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon-btn" title="Twitter / X">𝕏</a>
+            <a href="https://discord.com" target="_blank" class="social-icon-btn" title="Discord">💬</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <div class="footer-col-header">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="../">Home</a></li>
+            <li><a href="./">All 100+ Tools</a></li>
+            <li><a href="../blog/">Troubleshooting Blog</a></li>
+            <li><a href="../request/">Request a Tool</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Support -->
+        <div>
+          <div class="footer-col-header">Support</div>
+          <ul class="footer-links-list">
+            <li><a href="../request/">Report an Issue</a></li>
+            <li><a href="../request/">Request New Feature</a></li>
+            <li><a href="../blog/">Knowledge Base</a></li>
+            <li><a href="../request/">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal -->
+        <div>
+          <div class="footer-col-header">Legal</div>
+          <ul class="footer-links-list">
+            <li><a href="../privacy/">Privacy Policy</a></li>
+            <li><a href="../terms/">Terms &amp; Conditions</a></li>
+            <li><a href="../terms/">Disclaimer</a></li>
+            <li><a href="../terms/">Open Source Licenses</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Stay Updated -->
+        <div>
+          <div class="footer-col-header">Stay Updated</div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Get notified as new tools go live.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Pexoris updates!');">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="btn-newsletter-sub">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sub-footer copyright -->
+      <div class="sub-footer-bar">
+        <div>© 2026 Pexoris.com. All rights reserved. | 100% Free • Zero Paywalls • Zero Subscriptions • Zero Telemetry</div>
+        <div>Made with ❤️ for the Windows Community</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR REAL-TIME SEARCH & CATEGORY FILTER -->
+  <script>
+    function filterCategory(category, btnElement) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.tool-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cats = (card.getAttribute('data-category') || '').split(' ');
+          if (cats.includes(category)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    function filterToolsLive(query) {
+      const q = (query || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.tool-card');
+
+      cards.forEach(card => {
+        const text = (card.getAttribute('data-name') || '') + ' ' + card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

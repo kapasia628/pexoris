@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pexoris Blog — Windows Troubleshooting Guides &amp; Fast Fixes</title>
+  <meta name="title" content="Pexoris Blog — Windows Troubleshooting Guides &amp; Fast Fixes">
+  <meta name="description" content="Clear, step-by-step troubleshooting guides for stubborn Windows 11 &amp; 10 issues: stuck print queues, port conflicts, locked files, and network privacy.">
+  <meta name="keywords" content="windows 11 troubleshooting, fix stuck print job, port 80 in use, force delete locked file, dns over https windows 11, pexoris blog">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pexoris.com/blog/">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/blog/">
+  <meta property="og:title" content="Pexoris Blog — Windows Troubleshooting Guides &amp; Solutions">
+  <meta property="og:description" content="Fix stubborn Windows errors in minutes. In-depth technical guides with native Windows steps and 1-click portable utility fixes.">
+  <meta property="og:image" content="https://pexoris.com/brand-logo.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-canvas: #F8FAFC;
+      --card-white: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --brand-blue: #0066FF;
+      --apple-blue: #007AFF;
+      --apple-green: #10B981;
+      --apple-red: #EF4444;
+      --apple-amber: #F59E0B;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 18px 36px -8px rgba(0, 102, 255, 0.12), 0 0 1px rgba(15, 23, 42, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Freedom Banner */
+    .top-freedom-bar {
+      background: linear-gradient(90deg, #070D18 0%, #0F1E3D 50%, #070D18 100%);
+      color: #FFFFFF;
+      padding: 10px 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Header */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-hero);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: #EFF6FF;
+      color: var(--brand-blue);
+      border-radius: 999px;
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      white-space: nowrap;
+    }
+
+    .nav-item {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-item:hover, .nav-item.active-nav { color: var(--brand-blue); }
+
+    .btn-nav-tools {
+      padding: 8px 18px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+      transition: all 0.2s;
+    }
+
+    .btn-nav-tools:hover {
+      background: #0052FF;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 860px) {
+      .nav-container {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 12px;
+      }
+      .nav-menu {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-item {
+        font-size: 13px;
+      }
+      .btn-nav-tools {
+        padding: 6px 14px;
+        font-size: 12.5px;
+      }
+    }
+
+    /* Category Filter Tabs Bar */
+    .blog-tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 32px auto 16px;
+      padding: 0 24px;
+      max-width: 960px;
+    }
+
+    .blog-tab-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-medium);
+      color: var(--text-body);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .blog-tab-btn:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .blog-tab-btn.active {
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      border-color: var(--brand-blue);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+    }
+
+    /* Hero Section */
+    .blog-hero {
+      max-width: 900px;
+      margin: 50px auto 20px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .blog-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .blog-h1 {
+      font-size: clamp(32px, 4.5vw, 50px);
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .blog-h1 span.highlight {
+      background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .blog-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Articles Grid */
+    .articles-container {
+      max-width: 1200px;
+      margin: 50px auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 28px;
+    }
+
+    .article-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-medium);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .category-pill {
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pill-printer { background: #ECFDF5; color: #065F46; }
+    .pill-network { background: #EFF6FF; color: #1E40AF; }
+    .pill-files   { background: #FEF3C7; color: #92400E; }
+    .pill-privacy { background: #F3E8FF; color: #6B21A8; }
+
+    .article-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .article-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-title a:hover { color: var(--brand-blue); }
+
+    .article-excerpt {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-read-guide {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-read-guide:hover { text-decoration: underline; }
+
+    .tool-link-tag {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      background: #F1F5F9;
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .tool-link-tag:hover { color: var(--brand-blue); }
+
+    /* Footer */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 24px 30px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-links-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-link-item {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer-link-item:hover { color: var(--brand-blue); }
+
+    .footer-copy-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Freedom Banner -->
+  <div class="top-freedom-bar">
+    <span>💡 100% Free Technical Guides &amp; 1-Click Standalone Windows Utilities</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../" class="brand-link" title="Pexoris Home">
+        <img src="brand-logo.png" onerror="this.onerror=null; this.src='../brand-logo.png';" alt="Pexoris Logo" class="brand-logo-img">
+        <span class="brand-title">Pexoris</span>
+        <span class="brand-badge">Blog &amp; Knowledge Hub</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="../" class="nav-item">Home</a>
+        <a href="../tools/" class="nav-item">Tools ▾</a>
+        <a href="../tools/#categories" class="nav-item">Categories</a>
+        <a href="./" class="nav-item active-nav" style="color:var(--brand-blue); font-weight:700;">Blog</a>
+        <a href="../request/" class="nav-item">Request a Tool</a>
+        <a href="../tools/" class="btn-nav-tools">All 100+ Tools →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="blog-tag">WINDOWS 11 &amp; 10 TROUBLESHOOTING</div>
+      <h1 class="blog-h1">
+        Step-by-Step Fixes for <span class="highlight">Stubborn Windows Problems.</span>
+      </h1>
+      <p class="blog-sub">
+        In-depth technical guides explaining why Windows errors occur, how to fix them manually via CMD, and how to resolve them in 1-click using zero-bloat portable utilities.
+      </p>
+    </section>
+
+    <!-- Category Filter Tabs Menu -->
+    <div class="blog-tabs-bar">
+      <button class="blog-tab-btn active" onclick="filterBlog('all', this)">All Guides (6)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('printer', this)">Printer &amp; Hardware (1)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('network', this)">Networking &amp; Dev (1)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('files', this)">Disk &amp; Files (1)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('privacy', this)">Privacy &amp; Security (3)</button>
+    </div>
+
+    <!-- 6 Launch Troubleshooting Guides -->
+    <section class="articles-container" id="articlesGrid">
+      
+      <!-- Article 1: Stuck Print Queue (PrintFixer) -->
+      <article class="article-card" data-category="printer">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-printer">Printer &amp; Hardware</span>
+            <span style="color:var(--text-muted);">4 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="delete-stuck-print-job-windows-11/">How to Delete a Stuck Print Job in Windows 11 (When "Deleting..." Never Finishes)</a>
+          </h2>
+          <p class="article-excerpt">
+            Fix phantom print jobs that lock up your printer spooler. Learn why Windows locks .SHD/.SPL files in System32\spool\PRINTERS and how to purge the queue without restarting your PC.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="delete-stuck-print-job-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/print-fixer/" class="tool-link-tag">⚡ Pexoris PrintFixer</a>
+        </div>
+      </article>
+
+      <!-- Article 2: Port 80 & 3000 In Use (PortKiller) -->
+      <article class="article-card" data-category="network">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-network">Networking &amp; Dev</span>
+            <span style="color:var(--text-muted);">5 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="fix-port-80-3000-already-in-use-windows/">Fix: Port 80 &amp; 3000 Already in Use by PID 4 in Windows 11 (XAMPP / Docker / Node)</a>
+          </h2>
+          <p class="article-excerpt">
+            Resolve "EADDRINUSE" and Apache port collisions instantly. Discover how IIS, HTTP.sys, and World Wide Web Publishing Service hijack Port 80 and how to kill blocking sockets in 1-click.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="fix-port-80-3000-already-in-use-windows/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/port-killer/" class="tool-link-tag">⚡ Pexoris PortKiller</a>
+        </div>
+      </article>
+
+      <!-- Article 3: File Locked by Another Process (FileUnlocker) -->
+      <article class="article-card" data-category="files">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-files">Disk &amp; Files</span>
+            <span style="color:var(--text-muted);">4 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="force-delete-locked-file-windows-11/">How to Force Delete a File Locked by Another Process in Windows 11</a>
+          </h2>
+          <p class="article-excerpt">
+            Fix "The action can't be completed because the file is open in another program". Discover how to locate rogue handle PIDs via Windows Restart Manager and force delete without rebooting.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="force-delete-locked-file-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/file-unlocker/" class="tool-link-tag">⚡ Pexoris FileUnlocker</a>
+        </div>
+      </article>
+
+      <!-- Article 4: Encrypted DNS & DoH (DoH Switcher) -->
+      <article class="article-card" data-category="privacy">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-privacy">Privacy &amp; Security</span>
+            <span style="color:var(--text-muted);">6 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="enable-dns-over-https-windows-11/">How to Enable Encrypted DNS-over-HTTPS (DoH) &amp; Block Ads in Windows 11</a>
+          </h2>
+          <p class="article-excerpt">
+            Stop ISP DNS tracking and block ads system-wide across all browsers without slowing down your connection with heavy VPNs. Step-by-step setup guide for Cloudflare and AdGuard DNS.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="enable-dns-over-https-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/doh-switcher/" class="tool-link-tag">⚡ Pexoris DoH Switcher</a>
+        </div>
+      </article>
+
+      <!-- Article 5: Disable Windows Recall & Copilot (AIShield) -->
+      <article class="article-card" data-category="privacy">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-privacy">Privacy &amp; Security</span>
+            <span style="color:var(--text-muted);">5 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="disable-windows-recall-copilot-windows-11/">How to Disable Windows 11 Recall &amp; Copilot AI Telemetry Permanently</a>
+          </h2>
+          <p class="article-excerpt">
+            Stop Windows 11 from capturing continuous background desktop snapshots and sending Start menu search queries to cloud servers. Full Group Policy and 1-click guide.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="disable-windows-recall-copilot-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/ai-shield/" class="tool-link-tag">⚡ Pexoris AIShield</a>
+        </div>
+      </article>
+
+      <!-- Article 6: Disable USB AutoPlay & Write-Protect (USBShield) -->
+      <article class="article-card" data-category="privacy">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-privacy">Storage &amp; Security</span>
+            <span style="color:var(--text-muted);">5 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="disable-usb-autoplay-write-protect-windows-11/">How to Disable USB AutoPlay &amp; Write-Protect Flash Drives in Windows 11</a>
+          </h2>
+          <p class="article-excerpt">
+            Block USB shortcut worms, prevent Autorun.inf execution, and lock flash drives to Read-Only mode to prevent data theft and malware spread.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="disable-usb-autoplay-write-protect-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/usb-shield/" class="tool-link-tag">⚡ Pexoris USBShield</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="brand-logo.png" onerror="this.onerror=null; this.src='../brand-logo.png';" alt="Pexoris" style="width:26px; height:26px; border-radius:6px;">
+        <span style="font-weight:800; font-size:19px; color:var(--text-hero);">Pexoris</span>
+        <span style="color:var(--text-muted); font-size:14px;">• 100% Free Portable Windows Utilities</span>
+      </div>
+
+      <div class="footer-links-row">
+        <a href="../tools/" class="footer-link-item">All 100+ Tools</a>
+        <a href="../tools/file-unlocker/" class="footer-link-item">FileUnlocker</a>
+        <a href="../tools/port-killer/" class="footer-link-item">PortKiller</a>
+        <a href="../tools/doh-switcher/" class="footer-link-item">DoH Switcher</a>
+        <a href="../tools/print-fixer/" class="footer-link-item">PrintFixer</a>
+        <a href="../tools/ai-shield/" class="footer-link-item">AIShield</a>
+        <a href="../tools/usb-shield/" class="footer-link-item">USBShield</a>
+        <a href="./" class="footer-link-item" style="color:var(--brand-blue); font-weight:700;">Blog Guides</a>
+        <a href="../request/" class="footer-link-item">Request a Tool</a>
+        <a href="../privacy/" class="footer-link-item">Privacy Policy</a>
+        <a href="../terms/" class="footer-link-item">Terms &amp; Conditions</a>
+        <a href="https://github.com/pexoris" target="_blank" class="footer-link-item">GitHub Repository</a>
+      </div>
+
+      <div class="footer-copy-text">
+        © 2026 Pexoris.com • Released under the MIT Open Source License. Designed for precision Windows administration.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterBlog(category, btnElement) {
+      // Update tab active state
+      const tabs = document.querySelectorAll('.blog-tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      // Filter articles
+      const articles = document.querySelectorAll('.article-card');
+      articles.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
