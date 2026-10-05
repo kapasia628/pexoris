@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="bg-doh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="shield-core" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="42" height="42" rx="11" fill="url(#bg-doh)" stroke="#7DD3FC" stroke-width="1.5"/>
+  <!-- DNS Shield Body -->
+  <path d="M24 10 L34 14 C34 23 29 32 24 37 C19 32 14 23 14 14 Z" fill="#0B132B" stroke="#38BDF8" stroke-width="1.5"/>
+  <path d="M24 13 L31 16.5 C31 23 27.5 29.5 24 33.5 C20.5 29.5 17 23 17 16.5 Z" fill="url(#shield-core)"/>
+  <!-- Lock keyhole / HTTPS lock -->
+  <circle cx="24" cy="22" r="3" fill="#FFFFFF"/>
+  <rect x="22.5" y="22" width="3" height="5" rx="1" fill="#FFFFFF"/>
+</svg>

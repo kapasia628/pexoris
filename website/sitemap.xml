@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://pexoris.com/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Complete 100+ Portable Tools Directory -->
+  <url>
+    <loc>https://pexoris.com/tools/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Flagship Utility: Pexoris FileUnlocker -->
+  <url>
+    <loc>https://pexoris.com/tools/file-unlocker/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Developer Utility: Pexoris PortKiller -->
+  <url>
+    <loc>https://pexoris.com/tools/port-killer/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Network Privacy Utility: Pexoris DoH Switcher -->
+  <url>
+    <loc>https://pexoris.com/tools/doh-switcher/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hardware & Printer Utility: Pexoris PrintFixer -->
+  <url>
+    <loc>https://pexoris.com/tools/print-fixer/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AI & Privacy Utility: Pexoris AIShield -->
+  <url>
+    <loc>https://pexoris.com/tools/ai-shield/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Storage & Security Utility: Pexoris USBShield -->
+  <url>
+    <loc>https://pexoris.com/tools/usb-shield/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Request a Tool Page -->
+  <url>
+    <loc>https://pexoris.com/request/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://pexoris.com/privacy/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://pexoris.com/terms/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog Knowledge Hub -->
+  <url>
+    <loc>https://pexoris.com/blog/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Stuck Print Job -->
+  <url>
+    <loc>https://pexoris.com/blog/delete-stuck-print-job-windows-11/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Encrypted DNS (DoH) -->
+  <url>
+    <loc>https://pexoris.com/blog/enable-dns-over-https-windows-11/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Port 80 & 3000 In Use -->
+  <url>
+    <loc>https://pexoris.com/blog/fix-port-80-3000-already-in-use-windows/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Force Delete Locked File -->
+  <url>
+    <loc>https://pexoris.com/blog/force-delete-locked-file-windows-11/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Disable Recall & Copilot AI Telemetry -->
+  <url>
+    <loc>https://pexoris.com/blog/disable-windows-recall-copilot-windows-11/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Troubleshooting Guide: Disable USB AutoPlay & Write-Protect -->
+  <url>
+    <loc>https://pexoris.com/blog/disable-usb-autoplay-write-protect-windows-11/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

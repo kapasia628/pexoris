@@ -1,0 +1,30 @@
+# ===================================================================
+# PEXORIS — CLEAN SEO URLS & APACHE SERVER REWRITE RULES
+# Google SEO / SXO / AEO Canonicalization & Trailing Slash Redirection
+# ===================================================================
+
+Options +FollowSymLinks -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Redirect /index.html to clean URL (301 Permanent Redirect for Google SEO)
+  # Example: /tools/website/tools/file-unlocker/index.html -> /tools/website/tools/file-unlocker/
+  # Example: /tools/website/index.html -> /tools/website/
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ +(.*)/index\.html[\ \?] [NC]
+  RewriteRule ^(.*)index\.html$ %1/ [R=301,L,NE]
+
+  # 2. Force trailing slash on all directories for SEO consistency
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+</IfModule>
+
+# Caching and Security Headers
+<IfModule mod_headers.c>
+  # Prevent MIME sniffing
+  Header set X-Content-Type-Options "nosniff"
+  # Referrer Policy for SEO Analytics
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

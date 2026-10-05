@@ -1,0 +1,15 @@
+# Binaries and build artifacts
+build/*.tmp
+build/*.dat
+*.pdb
+*.obj
+
+# Keep the release zip and exe in build
+!build/*.exe
+!build/*.zip
+
+# IDE & OS files
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini

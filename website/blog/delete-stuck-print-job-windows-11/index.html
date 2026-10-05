@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Delete a Stuck Print Job in Windows 11 (When "Deleting..." Never Finishes)</title>
+  <meta name="title" content="How to Delete a Stuck Print Job in Windows 11 (When 'Deleting...' Never Finishes)">
+  <meta name="description" content="Step-by-step guide to clearing stubborn print jobs stuck on 'Deleting...' in Windows 11 without rebooting. Explains the manual CMD command fix and the 1-click Pexoris PrintFixer solution.">
+  <meta name="keywords" content="delete stuck print job windows 11, cannot delete print job, print spooler service restart, purge spool printers folder, fix document failed to print">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pexoris.com/blog/delete-stuck-print-job-windows-11/">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/delete-stuck-print-job-windows-11/">
+  <meta property="og:title" content="How to Delete a Stuck Print Job in Windows 11 (When 'Deleting...' Never Finishes)">
+  <meta property="og:description" content="Stop restarting your PC when a document gets stuck in printer queue. Complete guide with manual CMD steps and 1-click portable utility fix.">
+  <meta property="og:image" content="https://pexoris.com/tools/print-fixer/print-fixer.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO & GOOGLE SNIPPETS
+       =================================================================== -->
+  
+  <!-- 1. BlogPosting Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Delete a Stuck Print Job in Windows 11 (When 'Deleting...' Never Finishes)",
+    "description": "Learn how to force delete phantom print jobs stuck on Deleting in Windows 11 without restarting your computer. Covers manual CMD commands and the 1-click Pexoris PrintFixer tool.",
+    "url": "https://pexoris.com/blog/delete-stuck-print-job-windows-11/",
+    "datePublished": "2026-10-04T00:00:00+00:00",
+    "dateModified": "2026-10-04T00:00:00+00:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Pexoris",
+      "url": "https://pexoris.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pexoris",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pexoris.com/brand-logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://pexoris.com/blog/delete-stuck-print-job-windows-11/"
+    }
+  }
+  </script>
+
+  <!-- 2. HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Clear a Stuck Print Queue in Windows 11",
+    "description": "Step-by-step instructions to clear frozen documents and restart the Windows Print Spooler.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Stop the Print Spooler Service",
+        "text": "Open Command Prompt as Administrator and run: net stop spooler"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Delete Corrupted Spool Files",
+        "text": "Navigate to C:\\Windows\\System32\\spool\\PRINTERS and delete all .SPL and .SHD files."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Restart the Print Spooler Service",
+        "text": "Run: net start spooler in Command Prompt to restore printing capabilities."
+      }
+    ]
+  }
+  </script>
+
+  <!-- 3. FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does a print job get stuck on 'Deleting...' in Windows 11?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windows Print Spooler (spoolsv.exe) locks temporary buffer files (.SHD and .SPL) in C:\\Windows\\System32\\spool\\PRINTERS. If the printer disconnects or errors out during printing, the spooler keeps the file handle open, preventing the Windows UI from deleting it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does clearing the print queue delete my printer drivers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Purging the spooler only deletes the temporary document files awaiting print. All printer drivers, ports, and configuration settings remain 100% intact."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-canvas: #F8FAFC;
+      --card-white: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --brand-blue: #0066FF;
+      --apple-blue: #007AFF;
+      --apple-green: #10B981;
+      --apple-red: #EF4444;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      font-family: var(--font-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-hero);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand-title { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+
+    .nav-menu { display: flex; align-items: center; gap: 20px; white-space: nowrap; }
+    .nav-item { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+    .nav-item:hover { color: var(--brand-blue); }
+
+    .btn-nav-cta {
+      padding: 6px 14px;
+      background: #EFF6FF;
+      color: var(--brand-blue) !important;
+      border: 1px solid rgba(0, 102, 255, 0.3);
+      border-radius: 6px;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      transition: all 0.2s;
+    }
+    .btn-nav-cta:hover {
+      background: var(--brand-blue);
+      color: #FFFFFF !important;
+    }
+
+    @media (max-width: 860px) {
+      .nav-container {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 12px;
+      }
+      .nav-menu {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        gap: 14px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-item {
+        font-size: 13px;
+      }
+    }
+
+    .article-wrap {
+      max-width: 820px;
+      margin: 50px auto 80px;
+      padding: 0 24px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .post-header {
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      margin-bottom: 36px;
+      padding: 0;
+    }
+    .post-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #065F46;
+      background: #ECFDF5;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .post-h1 {
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -1px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .post-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 16px;
+    }
+
+    /* AEO Quick Answer Highlight Box */
+    .quick-answer-box {
+      background: #EFF6FF;
+      border-left: 4px solid var(--brand-blue);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 30px 0;
+    }
+
+    .quick-answer-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #1E3A8A;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quick-answer-p { font-size: 15px; color: #1E40AF; line-height: 1.6; }
+
+    .content-body h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.5px;
+      margin: 40px 0 16px;
+    }
+
+    .content-body h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 28px 0 12px;
+    }
+
+    .content-body p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .content-body ul, .content-body ol {
+      margin: 0 0 24px 24px;
+      font-size: 15.5px;
+      color: var(--text-body);
+    }
+
+    .content-body li { margin-bottom: 8px; }
+
+    /* Code Blocks */
+    .code-block {
+      background: #0F172A;
+      color: #F8FAFC;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    /* High Converting Download Callout Card */
+    .download-card-cta {
+      background: #FFFFFF;
+      border: 2px solid #007AFF;
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin: 40px 0;
+      box-shadow: 0 12px 30px rgba(0, 122, 255, 0.12);
+      text-align: center;
+    }
+
+    .download-card-cta h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+
+    .download-card-cta p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .btn-download-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 32px;
+      background: var(--brand-blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35);
+      transition: all 0.2s;
+    }
+
+    .btn-download-pulse:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 102, 255, 0.45);
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 24px 30px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-links-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-link-item { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .footer-link-item:hover { color: var(--brand-blue); }
+      /* Uniform Pexoris Top Notice Bar */
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right a {
+      color: #94A3B8;
+      text-decoration: none;
+      margin-left: 16px;
+      transition: color 0.2s;
+    }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    /* Uniform Pexoris 5-Column Site Footer */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle, #E2E8F0);
+      padding: 60px 24px 28px;
+      margin-top: 80px;
+      text-align: left;
+    }
+    footer.site-footer .footer-inner { max-width: 1200px; margin: 0 auto; }
+    footer.site-footer .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    footer.site-footer .footer-brand-title { font-size: 18px; font-weight: 800; color: var(--text-hero, #0F172A); }
+    footer.site-footer .footer-brand-desc { font-size: 13px; color: var(--text-muted, #64748B); line-height: 1.6; margin: 10px 0 16px; }
+    footer.site-footer .footer-col-header { font-size: 14px; font-weight: 700; color: var(--text-hero, #0F172A); margin-bottom: 16px; }
+    footer.site-footer .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    footer.site-footer .footer-links-list a { color: var(--text-muted, #64748B); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    footer.site-footer .footer-links-list a:hover { color: var(--brand-blue, #0066FF); }
+    footer.site-footer .sub-footer-bar {
+      border-top: 1px solid var(--border-subtle, #E2E8F0);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-muted, #64748B);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 860px) {
+      footer.site-footer .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 1. TOP NOTICE BAR -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-left">
+        <span class="badge-gold">&#9889; 100% FREE</span>
+        <span>Single Standalone Executables under 100 KB</span>
+        <span class="notice-specs"><span>&bull;</span>No Install<span>&bull;</span>No Telemetry<span>&bull;</span>No Ads</span>
+      </div>
+      <div class="notice-right">
+        <a href="../">Blog Guides</a>
+        <a href="../../tools/">All 100+ Tools</a>
+        <a href="../../request/">Request a Tool</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../" class="brand-link" title="Pexoris Home">
+        <img src="../../brand-logo.png" onerror="this.onerror=null; this.src='../brand-logo.png';" alt="Pexoris Logo" class="brand-logo-img">
+        <span class="brand-title">Pexoris</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="../../" class="nav-item">Home</a>
+        <a href="../../tools/" class="nav-item">All Tools</a>
+        <a href="../../#categories" class="nav-item">Categories</a>
+        <a href="../" class="nav-item active-nav" style="color:var(--brand-blue); font-weight:700;">Blog</a>
+        <a href="../../request/" class="nav-item">Request a Tool</a>
+        <a href="../../tools/" class="btn-nav-tools">Explore Tools â†’</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Guides</a> &gt; <span>Delete Stuck Print Job in Windows 11</span>
+    </nav>
+
+    <!-- Post Header -->
+    <div class="post-header">
+      <span class="post-tag">PRINTER &amp; HARDWARE TROUBLESHOOTING</span>
+      <h1 class="post-h1">How to Force Delete a Stuck Print Job in Windows 11 (When "Deleting..." Never Finishes)</h1>
+      <div class="post-meta">
+        <span>By Pexoris Engineering Team</span> • <span>Published: October 2026</span> • <span>4 min read</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Box (Directly targeted for Google AI Overviews & ChatGPT) -->
+    <div class="quick-answer-box">
+      <div class="quick-answer-title">⚡ Quick Solution (10 Seconds):</div>
+      <p class="quick-answer-p">
+        To clear a stuck print job: Open Administrator Command Prompt and run <code>net stop spooler</code>, then delete all files in <code>C:\Windows\System32\spool\PRINTERS</code>, and run <code>net start spooler</code>. Alternatively, use the free 73 KB <strong>Pexoris PrintFixer</strong> utility to perform this purge in 1-click without typing commands.
+      </p>
+    </div>
+
+    <div class="content-body">
+      <p>
+        Every Windows user has experienced this frustration: you send a document to print, but the printer jams or disconnects. You open the Windows Print Queue, click <em>Cancel</em>, and the document sits frozen on <strong>"Deleting..."</strong> for hours. Even restarting your printer does nothing, and all subsequent print jobs are blocked in line.
+      </p>
+
+      <h2>Why Do Print Jobs Get Stuck in Windows 11?</h2>
+      <p>
+        When you submit a print job, Windows translates your document into two temporary files stored in the protected system directory <code>C:\Windows\System32\spool\PRINTERS</code>:
+      </p>
+      <ul>
+        <li><strong>.SHD (Shadow File):</strong> Contains administrative metadata like document name, owner, and job settings.</li>
+        <li><strong>.SPL (Spool File):</strong> Contains the actual raw drawing and graphical data sent to the printer.</li>
+      </ul>
+      <p>
+        The Windows Print Spooler service (<code>spoolsv.exe</code>) maintains an active file handle lock on both files. If data transmission halts midway, the service refuses to release the lock. Standard Windows dialogs will not delete locked files, leaving your queue permanently frozen.
+      </p>
+
+      <h2>Method 1: The Manual Windows CMD Fix</h2>
+      <p>
+        If you are comfortable using the Windows Command Prompt with elevated privileges, follow these exact steps:
+      </p>
+
+      <h3>Step 1: Stop the Spooler Service</h3>
+      <p>Press <kbd>Win + S</kbd>, type <code>cmd</code>, right-click <strong>Command Prompt</strong>, and select <strong>Run as Administrator</strong>. Enter:</p>
+      <div class="code-block">net stop spooler</div>
+
+      <h3>Step 2: Delete Corrupted Spool Files</h3>
+      <p>Once the spooler service stops, delete the locked queue files by running:</p>
+      <div class="code-block">del /Q /F /S "%systemroot%\System32\spool\PRINTERS\*.*"</div>
+
+      <h3>Step 3: Restart the Spooler Service</h3>
+      <p>Now restart the service so Windows can accept new print jobs:</p>
+      <div class="code-block">net start spooler</div>
+
+      <!-- High Converting Download Callout Card -->
+      <div class="download-card-cta">
+        <h3>⚡ Prefer a 1-Click Solution?</h3>
+        <p>
+          Skip typing command prompt commands and worrying about system file paths. <strong>Pexoris PrintFixer</strong> is a 100% portable, 73 KB utility that terminates frozen spooler locks, flushes corrupted files, and restarts your printer in 1-click.
+        </p>
+        <a href="https://drive.google.com/uc?export=download&id=1us1wofg2_yPOx7FIofKxuX7jM3lsE-6W" class="btn-download-pulse" target="_blank" rel="noopener">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download Pexoris PrintFixer Free (50 KB)
+        </a>
+        <div style="margin-top:14px; font-size:12.5px; color:var(--text-muted);">
+          <span>Zero Installer • Clean VirusTotal • Compatible with Windows 11 &amp; 10</span>
+        </div>
+      </div>
+
+      <h2>Method 2: The 1-Click Fix with Pexoris PrintFixer</h2>
+      <ol>
+        <li>Download and run <strong>PexorisPrintFixer.exe</strong> (requires zero installation).</li>
+        <li>Your active printers and stuck print jobs are instantly displayed in red.</li>
+        <li>Click <strong>⚡ Purge Queue &amp; Restart Spooler</strong>.</li>
+        <li>Click <strong>🖨️ Print Test Page</strong> to confirm your printer is printing cleanly!</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Will this delete my printer settings or drivers?</h3>
+      <p>
+        No. Purging the spool queue only clears temporary print jobs waiting in memory. Your installed printer drivers, wireless connections, default settings, and paper sizes remain completely untouched.
+      </p>
+
+      <h3>What if my printer still shows "Offline"?</h3>
+      <p>
+        Corrupted print jobs are the #1 cause of false "Offline" statuses because the spooler stops querying the printer. Purging the queue and restarting the spooler usually forces Windows to re-detect the printer as "Ready".
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <!-- UNIFORM 5-COLUMN SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.src='../brand-logo.png';">
+            <span class="footer-brand-title">Pexoris</span>
+          </div>
+          <div style="font-size: 12px; font-weight: 700; color: #475569; margin: 6px 0;">Modern Portable Windows Utilities</div>
+          <p class="footer-brand-desc">A curated ecosystem of 100+ free portable utilities to optimize, secure, troubleshoot and customize Windows 10 & 11.</p>
+        </div>
+
+        <!-- Col 2: Popular Tools -->
+        <div>
+          <div class="footer-col-header">Popular Tools</div>
+          <ul class="footer-links-list">
+            <li><a href="../../tools/file-unlocker/">Pexoris FileUnlocker</a></li>
+            <li><a href="../../tools/port-killer/">Pexoris PortKiller</a></li>
+            <li><a href="../../tools/doh-switcher/">Pexoris DoH Switcher</a></li>
+            <li><a href="../../tools/print-fixer/">Pexoris PrintFixer</a></li>
+            <li><a href="../../tools/ai-shield/">Pexoris AIShield</a></li>
+            <li><a href="../../tools/usb-shield/">Pexoris USBShield</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <div class="footer-col-header">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../tools/">All 100+ Tools</a></li>
+            <li><a href="../">Blog &amp; Guides</a></li>
+            <li><a href="../../request/">Request a Tool</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal & Policy -->
+        <div>
+          <div class="footer-col-header">Legal</div>
+          <ul class="footer-links-list">
+            <li><a href="../../privacy/">Privacy Policy</a></li>
+            <li><a href="../../terms/">Terms &amp; Conditions</a></li>
+            <li><a href="../../terms/">Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter -->
+        <div>
+          <div class="footer-col-header">Stay Updated</div>
+          <p style="font-size: 13px; color: #64748B; margin-bottom: 12px;">Get notified when new portable tools are released.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Pexoris new releases!');" style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Your email" required style="padding: 8px 12px; border: 1px solid #E2E8F0; border-radius: 6px; font-size: 13px; width: 100%;">
+            <button type="submit" style="background: #0066FF; color: #FFF; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="sub-footer-bar">
+        <div>&copy; 2026 Pexoris.com. All rights reserved. | 100% Free &bull; Zero Paywalls &bull; Zero Subscriptions &bull; Zero Telemetry</div>
+        <div>Made with â¤ï¸ for the Windows Community</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Disable USB AutoPlay &amp; Write-Protect Flash Drives in Windows 11 (CMD &amp; 1-Click)</title>
+  <meta name="title" content="How to Disable USB AutoPlay &amp; Write-Protect Flash Drives in Windows 11 (CMD &amp; 1-Click)">
+  <meta name="description" content="Step-by-step guide to disable USB AutoPlay and lock flash drives to Read-Only mode in Windows 11 &amp; 10. Prevent shortcut viruses, block Autorun.inf execution, and protect files via CMD, Registry, or 1-click portable tool.">
+  <meta name="keywords" content="disable usb autoplay windows 11, write protect usb drive windows 10 registry, autorun inf virus removal, block usb malware, storagedevicepolicies writeprotect cmd, attributes disk set readonly diskpart">
+  <meta name="author" content="Pexoris Research Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/disable-usb-autoplay-write-protect-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../tools/usb-shield/usb-shield.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/disable-usb-autoplay-write-protect-windows-11/">
+  <meta property="og:title" content="How to Disable USB AutoPlay &amp; Write-Protect Flash Drives in Windows 11">
+  <meta property="og:description" content="Block USB-borne shortcut viruses, suppress Autorun.inf execution, and toggle hardware Read-Only mode in Windows 11 &amp; 10.">
+  <meta property="og:image" content="https://pexoris.com/tools/usb-shield/usb-shield.png">
+  <meta property="og:site_name" content="Pexoris Knowledge Hub">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Disable USB AutoPlay & Write-Protect Flash Drives in Windows 11",
+        "description": "Complete technical tutorial on preventing USB worm infections, disabling AutoPlay policies, and enabling USB write-protection via Registry, Diskpart, and Pexoris USBShield.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Research Team",
+          "url": "https://pexoris.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-04",
+        "dateModified": "2026-10-04",
+        "mainEntityOfPage": "https://pexoris.com/blog/disable-usb-autoplay-write-protect-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Disable USB AutoPlay via Windows Registry",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Command Prompt as Administrator",
+            "text": "Press Win + X and select Terminal (Admin) or Command Prompt (Admin)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Set NoDriveTypeAutoRun to 0xFF",
+            "text": "Run: reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v NoDriveTypeAutoRun /t REG_DWORD /d 255 /f"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Suppress Shell Autorun",
+            "text": "Run: reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v NoAutorun /t REG_DWORD /d 1 /f"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand-emerald: #10B981;
+      --brand-emerald-hover: #059669;
+      --brand-teal: #0D9488;
+      --brand-blue: #007AFF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --card-white: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-card: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #F8FAFC;
+      color: var(--text-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Freedom Banner */
+    .top-freedom-bar {
+      background: #064E3B;
+      color: #A7F3D0;
+      text-align: center;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Scoped Site Header (Strict Rule) */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-hero);
+    }
+
+    .brand-logo-img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -0.4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-item {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-item:hover { color: var(--brand-emerald); }
+
+    .btn-nav-cta {
+      padding: 8px 16px;
+      background: var(--brand-emerald);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: all 0.2s;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--brand-emerald-hover);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 860px) {
+      .nav-container { flex-wrap: wrap; padding: 10px 16px; gap: 12px; }
+      .nav-menu { width: 100%; overflow-x: auto; padding-bottom: 6px; gap: 16px; }
+      .nav-item { font-size: 13px; }
+    }
+
+    /* Main Article Container */
+    .article-wrap {
+      max-width: 840px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* Static Unscoped Post Header (Strict Rule) */
+    .post-header {
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0 0 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .post-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .cat-pill {
+      background: #ECFDF5;
+      color: #065F46;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-size: 11.5px;
+      letter-spacing: 0.5px;
+    }
+
+    .post-h1 {
+      font-size: clamp(30px, 4.2vw, 44px);
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      margin-bottom: 16px;
+    }
+
+    .post-lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* AEO Quick-Answer Callout Box */
+    .aeo-box {
+      background: #FFFFFF;
+      border: 2px solid #A7F3D0;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .aeo-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #065F46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .aeo-text {
+      font-size: 15.5px;
+      color: var(--text-hero);
+      line-height: 1.65;
+    }
+
+    /* Content Typography */
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 44px 0 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .article-content h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 28px 0 12px;
+    }
+
+    .article-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--text-body);
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 0 0 24px 28px;
+      font-size: 15.5px;
+    }
+
+    .article-content li { margin-bottom: 8px; }
+
+    /* Code Blocks */
+    .code-box {
+      background: #0F172A;
+      color: #F8FAFC;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      margin: 20px 0 24px;
+      overflow-x: auto;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .code-box code { color: #38BDF8; }
+
+    .code-header {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94A3B8;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Tool Promotion Card */
+    .tool-promo-card {
+      background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 32px;
+      margin: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 10px 25px rgba(6, 78, 59, 0.25);
+    }
+
+    .tool-promo-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .tool-promo-desc {
+      font-size: 14.5px;
+      opacity: 0.9;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .btn-promo-download {
+      background: #FFFFFF;
+      color: #064E3B;
+      padding: 14px 26px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-promo-download:hover {
+      background: #A7F3D0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .tool-promo-card { flex-direction: column; text-align: center; }
+    }
+
+    /* Footer */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 24px 30px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-links-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-link-item {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer-link-item:hover { color: var(--brand-emerald); }
+
+    .footer-copy-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+      /* Uniform Pexoris Top Notice Bar */
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right a {
+      color: #94A3B8;
+      text-decoration: none;
+      margin-left: 16px;
+      transition: color 0.2s;
+    }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    /* Uniform Pexoris 5-Column Site Footer */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle, #E2E8F0);
+      padding: 60px 24px 28px;
+      margin-top: 80px;
+      text-align: left;
+    }
+    footer.site-footer .footer-inner { max-width: 1200px; margin: 0 auto; }
+    footer.site-footer .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.3fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    footer.site-footer .footer-brand-title { font-size: 18px; font-weight: 800; color: var(--text-hero, #0F172A); }
+    footer.site-footer .footer-brand-desc { font-size: 13px; color: var(--text-muted, #64748B); line-height: 1.6; margin: 10px 0 16px; }
+    footer.site-footer .footer-col-header { font-size: 14px; font-weight: 700; color: var(--text-hero, #0F172A); margin-bottom: 16px; }
+    footer.site-footer .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    footer.site-footer .footer-links-list a { color: var(--text-muted, #64748B); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    footer.site-footer .footer-links-list a:hover { color: var(--brand-blue, #0066FF); }
+    footer.site-footer .sub-footer-bar {
+      border-top: 1px solid var(--border-subtle, #E2E8F0);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-muted, #64748B);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 860px) {
+      footer.site-footer .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 1. TOP NOTICE BAR -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-left">
+        <span class="badge-gold">&#9889; 100% FREE</span>
+        <span>Single Standalone Executables under 100 KB</span>
+        <span class="notice-specs"><span>&bull;</span>No Install<span>&bull;</span>No Telemetry<span>&bull;</span>No Ads</span>
+      </div>
+      <div class="notice-right">
+        <a href="../">Blog Guides</a>
+        <a href="../../tools/">All 100+ Tools</a>
+        <a href="../../request/">Request a Tool</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Freedom Banner -->
+  <div class="top-freedom-bar">
+    🔒 Step-by-Step Windows Troubleshooting &amp; 1-Click Portable Utilities
+  </div>
+
+  <!-- Scoped Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../" class="brand-link" title="Pexoris Home">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img">
+        <span class="brand-title">Pexoris</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="../../" class="nav-item">Home</a>
+        <a href="../../tools/" class="nav-item">All Tools</a>
+        <a href="../../#categories" class="nav-item">Categories</a>
+        <a href="../" class="nav-item active-nav" style="color:var(--brand-blue); font-weight:700;">Blog</a>
+        <a href="../../request/" class="nav-item">Request a Tool</a>
+        <a href="../../tools/" class="btn-nav-tools">Explore Tools â†’</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <!-- Static Post Header (Strict Rule) -->
+    <div class="post-header">
+      <div class="post-meta-row">
+        <span class="cat-pill">Storage &amp; Security</span>
+        <span style="color:var(--text-muted);">5 min technical read</span>
+        <span style="color:var(--text-muted);">• Updated October 2026</span>
+      </div>
+      <h1 class="post-h1">
+        How to Disable USB AutoPlay &amp; Write-Protect Flash Drives in Windows 11
+      </h1>
+      <p class="post-lead">
+        Learn why infected USB thumb drives automatically run malware scripts in Windows, how to lock down AutoPlay via the Registry, and how to toggle USB port Write-Protection against data theft.
+      </p>
+    </div>
+
+    <!-- AEO Quick-Answer Box -->
+    <div class="aeo-box">
+      <div class="aeo-title">⚡ Quick Answer: How to Stop USB AutoPlay &amp; Write-Protect in Windows 11</div>
+      <p class="aeo-text">
+        To permanently disable USB AutoPlay, run Command Prompt as Admin and execute:<br>
+        <code>reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoDriveTypeAutoRun /t REG_DWORD /d 255 /f</code><br>
+        To make USB drives Read-Only (Write-Protected), set:<br>
+        <code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies" /v WriteProtect /t REG_DWORD /d 1 /f</code><br>
+        Or use <strong>Pexoris USBShield</strong> to apply both settings and immunize your flash drives in 1-click.
+      </p>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <h2>Why USB Flash Drives are Still the #1 Physical Attack Vector</h2>
+      <p>
+        Despite cloud storage, millions of USB flash drives are plugged into school computers, photo print kiosks, library workstations, and office PCs every single day. A single infected computer can silently copy a malicious <code>.vbs</code> or <code>.exe</code> file disguised as a folder onto your thumb drive.
+      </p>
+      <p>
+        By default, Windows AutoPlay attempts to scan the drive and read the <code>autorun.inf</code> file the instant it is inserted. If the user clicks anywhere on the AutoPlay prompt or double-clicks a fake folder shortcut, the malware executes with the full security token of the logged-in user.
+      </p>
+
+      <h2>Method 1: Disable AutoPlay Completely via Windows Registry (CMD)</h2>
+      <p>
+        The most reliable method to eliminate USB execution risks is modifying the Windows Shell Explorer policies. This applies to both local computer accounts and newly created profiles:
+      </p>
+      <ol>
+        <li>Press <kbd>Win + X</kbd> and select <strong>Terminal (Admin)</strong> or <strong>Command Prompt (Admin)</strong>.</li>
+        <li>Execute the following commands to disable drive autorun on all removable devices:</li>
+      </ol>
+
+      <div class="code-box">
+        <div class="code-header">Command Prompt (Admin)</div>
+        <code>reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoDriveTypeAutoRun /t REG_DWORD /d 255 /f<br>
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoAutorun /t REG_DWORD /d 1 /f<br>
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" /v DisableAutoplay /t REG_DWORD /d 1 /f</code>
+      </div>
+
+      <p>
+        <code>255</code> (or <code>0xFF</code> in hex) instructs Windows to disable AutoPlay on all device types, including removable disks, fixed drives, CD-ROMs, and network shares.
+      </p>
+
+      <h2>Method 2: Kernel-Level Autorun.inf Parser Redirection</h2>
+      <p>
+        A lesser-known defense mechanism utilized by enterprise sysadmins is redirecting the Windows INI file mapping table for <code>autorun.inf</code>. This ensures that even if an infected drive contains an autorun file, the Windows kernel refuses to parse its contents:
+      </p>
+
+      <div class="code-box">
+        <div class="code-header">Command Prompt (Admin)</div>
+        <code>reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\IniFileMapping\Autorun.inf" /ve /t REG_SZ /d "@SYS:DoesNotExist" /f</code>
+      </div>
+
+      <h2>Method 3: How to Lock USB Ports in Read-Only Mode (Write-Protection)</h2>
+      <p>
+        When inserting a critical backup drive into an untrusted computer, or when managing computers in an office where employees should not be allowed to copy confidential documents out to thumb drives, you can enable hardware write-protection:
+      </p>
+
+      <div class="code-box">
+        <div class="code-header">Enable USB Write-Protection (CMD)</div>
+        <code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies" /v WriteProtect /t REG_DWORD /d 1 /f</code>
+      </div>
+
+      <p>
+        To restore full Read and Write permissions later:
+      </p>
+
+      <div class="code-box">
+        <div class="code-header">Disable USB Write-Protection (CMD)</div>
+        <code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies" /v WriteProtect /t REG_DWORD /d 0 /f</code>
+      </div>
+
+      <!-- 1-Click Pexoris USBShield Promotion Card -->
+      <div class="tool-promo-card">
+        <div>
+          <div class="tool-promo-title">Prefer an Instant 1-Click Solution?</div>
+          <p class="tool-promo-desc">
+            Download <strong>Pexoris USBShield</strong> — a 59 KB standalone portable utility. Toggle AutoPlay blocking, enable Read-Only mode, and immunize USB drives without typing registry commands.
+          </p>
+        </div>
+        <a href="../../tools/usb-shield/" class="btn-promo-download">
+          Download Pexoris USBShield →
+        </a>
+      </div>
+
+      <h2>How Flash Drive Vaccine Immunization Works</h2>
+      <p>
+        Older Windows systems or computers where registry access is locked can be protected using an <strong>Autorun Vaccine</strong>. Pexoris USBShield creates an un-deletable folder named <code>autorun.inf</code> on the root of your drive.
+      </p>
+      <p>
+        In Windows, a folder and a file cannot share the exact same name in the same directory. Because a directory named <code>autorun.inf</code> with reserved subfolders and System/Hidden attributes already exists, any virus trying to create a malicious <code>autorun.inf</code> file will fail with an access denied error.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <!-- UNIFORM 5-COLUMN SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.src='../brand-logo.png';">
+            <span class="footer-brand-title">Pexoris</span>
+          </div>
+          <div style="font-size: 12px; font-weight: 700; color: #475569; margin: 6px 0;">Modern Portable Windows Utilities</div>
+          <p class="footer-brand-desc">A curated ecosystem of 100+ free portable utilities to optimize, secure, troubleshoot and customize Windows 10 & 11.</p>
+        </div>
+
+        <!-- Col 2: Popular Tools -->
+        <div>
+          <div class="footer-col-header">Popular Tools</div>
+          <ul class="footer-links-list">
+            <li><a href="../../tools/file-unlocker/">Pexoris FileUnlocker</a></li>
+            <li><a href="../../tools/port-killer/">Pexoris PortKiller</a></li>
+            <li><a href="../../tools/doh-switcher/">Pexoris DoH Switcher</a></li>
+            <li><a href="../../tools/print-fixer/">Pexoris PrintFixer</a></li>
+            <li><a href="../../tools/ai-shield/">Pexoris AIShield</a></li>
+            <li><a href="../../tools/usb-shield/">Pexoris USBShield</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <div class="footer-col-header">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../tools/">All 100+ Tools</a></li>
+            <li><a href="../">Blog &amp; Guides</a></li>
+            <li><a href="../../request/">Request a Tool</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal & Policy -->
+        <div>
+          <div class="footer-col-header">Legal</div>
+          <ul class="footer-links-list">
+            <li><a href="../../privacy/">Privacy Policy</a></li>
+            <li><a href="../../terms/">Terms &amp; Conditions</a></li>
+            <li><a href="../../terms/">Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter -->
+        <div>
+          <div class="footer-col-header">Stay Updated</div>
+          <p style="font-size: 13px; color: #64748B; margin-bottom: 12px;">Get notified when new portable tools are released.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Pexoris new releases!');" style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Your email" required style="padding: 8px 12px; border: 1px solid #E2E8F0; border-radius: 6px; font-size: 13px; width: 100%;">
+            <button type="submit" style="background: #0066FF; color: #FFF; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="sub-footer-bar">
+        <div>&copy; 2026 Pexoris.com. All rights reserved. | 100% Free &bull; Zero Paywalls &bull; Zero Subscriptions &bull; Zero Telemetry</div>
+        <div>Made with â¤ï¸ for the Windows Community</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
