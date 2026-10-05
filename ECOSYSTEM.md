@@ -77,7 +77,7 @@ Running `build.bat` in the project root:
 - [x] **#05 Pexoris AIShield** (Disable Windows 11 Recall screenshots, telemetry & Copilot)
 - [x] **#06 Pexoris USBShield** (Lock USB storage to Read-Only & block AutoPlay malware)
 - [x] **#07 Pexoris Context Menu Editor** (Clean bloated right-click menus & restore classic Windows 11 menu)
-- [ ] **#08 Pexoris Service Optimizer** (Safely disable unnecessary Windows services)
+- [x] **#08 Pexoris Service Optimizer** (Safely disable unnecessary Windows services)
 - [ ] **#09 Pexoris Hosts Manager** (Fast graphical hosts file editor with adblock presets)
 - [ ] **#10 Pexoris Temp Cleaner** (Deep Windows update cache & junk cleaner)
 - [ ] **#11 Pexoris Startup Inspector** (Inspect and disable stubborn autorun entries)

@@ -72,6 +72,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Performance & Privacy Utility: Pexoris Service Optimizer -->
+  <url>
+    <loc>https://pexoris.com/tools/service-optimizer/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -155,6 +163,14 @@
   <!-- Troubleshooting Guide: Restore Classic Context Menu Windows 11 -->
   <url>
     <loc>https://pexoris.com/blog/restore-classic-context-menu-windows-11/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Performance Guide: Disable Unnecessary Windows Services -->
+  <url>
+    <loc>https://pexoris.com/blog/disable-unnecessary-windows-services/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
