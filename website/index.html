@@ -1600,17 +1600,20 @@
       <button class="cat-tab-btn active" onclick="filterCategory('all', this)">
         <span>🗂️</span> All Tools
       </button>
-      <button class="cat-tab-btn" onclick="filterCategory('system', this)">
-        <span>⚙️</span> System & Tweaks
+      <button class="cat-tab-btn" onclick="filterCategory('available', this)">
+        <span>⚡</span> Available Now (10 Live)
       </button>
-      <button class="cat-tab-btn" onclick="filterCategory('privacy', this)">
-        <span>🛡️</span> Privacy & Security
+      <button class="cat-tab-btn" onclick="filterCategory('disk', this)">
+        <span>📁</span> Disk & File Tools
       </button>
       <button class="cat-tab-btn" onclick="filterCategory('network', this)">
         <span>🌐</span> Network & DNS
       </button>
-      <button class="cat-tab-btn" onclick="filterCategory('disk', this)">
-        <span>📁</span> Disk & File Tools
+      <button class="cat-tab-btn" onclick="filterCategory('privacy', this)">
+        <span>🛡️</span> Privacy & Security
+      </button>
+      <button class="cat-tab-btn" onclick="filterCategory('system', this)">
+        <span>⚙️</span> System & Tweaks
       </button>
       <button class="cat-tab-btn" onclick="filterCategory('hardware', this)">
         <span>🖨️</span> Printer & Hardware
@@ -1618,8 +1621,8 @@
       <button class="cat-tab-btn" onclick="filterCategory('dev', this)">
         <span>⚡</span> Developer Tools
       </button>
-      <button class="cat-tab-btn" onclick="filterCategory('other', this)">
-        <span>🧩</span> Other Utilities
+      <button class="cat-tab-btn" onclick="filterCategory('coming', this)">
+        <span>⏳</span> Coming Soon
       </button>
     </div>
   </section>
@@ -1632,31 +1635,32 @@
       <div class="section-title-wrap">
         <span class="section-star-badge">⭐</span>
         <div>
-          <h2 class="section-headline">Featured Tools</h2>
-          <p class="section-subtext">Most popular and useful tools from Pexoris</p>
+          <h2 class="section-headline">Available Tools (10 Live Utilities)</h2>
+          <p class="section-subtext">Instant standalone portable executables — 100% free, zero installer, zero telemetry</p>
         </div>
       </div>
       <a href="tools/" class="btn-view-all">View All 100+ Tools →</a>
     </div>
 
+    <!-- 10 LIVE AVAILABLE TOOLS -->
     <div class="tools-grid" id="toolsGrid">
       
       <!-- Tool 1: FileUnlocker -->
-      <div class="tool-card" data-category="disk system" data-name="pexoris fileunlocker unlock delete force handle pid">
+      <div class="tool-card" data-category="available disk system" data-name="pexoris fileunlocker unlock delete force handle pid locked files">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
               <div class="tool-icon-squircle icon-lock-blue">🔒</div>
               <div>
                 <div class="tool-name-text">Pexoris FileUnlocker</div>
-                <div class="tool-category-meta">Disk & File Tools</div>
+                <div class="tool-category-meta">Disk &amp; File Tools</div>
               </div>
             </div>
             <span class="status-pill status-available">● Available Now</span>
           </div>
           <p class="tool-desc-text">Unlock and delete files that are in use by Windows processes. Force-delete stubborn locked files and folders.</p>
           <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Closes locked file & folder handles instantly</span></li>
+            <li><span class="bullet-check">✓</span> <span>Closes locked file &amp; folder handles instantly</span></li>
             <li><span class="bullet-check">✓</span> <span>Terminates file-locking background PIDs</span></li>
             <li><span class="bullet-check">✓</span> <span>Schedules stubborn deletes on next reboot</span></li>
             <li><span class="bullet-check">✓</span> <span>Explorer right-click menu integration</span></li>
@@ -1668,24 +1672,24 @@
       </div>
 
       <!-- Tool 2: PortKiller -->
-      <div class="tool-card" data-category="network dev" data-name="pexoris portkiller port kill pid process developer tcp udp">
+      <div class="tool-card" data-category="available network dev" data-name="pexoris portkiller port kill pid process developer tcp udp 80 3000 8080">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
               <div class="tool-icon-squircle icon-port-blue">⚡</div>
               <div>
                 <div class="tool-name-text">Pexoris PortKiller</div>
-                <div class="tool-category-meta">Network & Dev</div>
+                <div class="tool-category-meta">Network &amp; Dev</div>
               </div>
             </div>
             <span class="status-pill status-available">● Available Now</span>
           </div>
-          <p class="tool-desc-text">Find and kill processes using specific ports. Free blocked ports 80, 3000, 8080 for web developers and IT pros.</p>
+          <p class="tool-desc-text">Find and kill processes using specific ports. Free blocked ports 80, 443, 3000, 8080 for web developers and IT pros.</p>
           <ul class="tool-bullets-list">
             <li><span class="bullet-check">✓</span> <span>Scans active TCP/UDP ports in real-time</span></li>
             <li><span class="bullet-check">✓</span> <span>1-Click kills stubborn port-hogging PIDs</span></li>
             <li><span class="bullet-check">✓</span> <span>Quick presets for ports 80, 443, 3000, 8080</span></li>
-            <li><span class="bullet-check">✓</span> <span>Shows process names, PIDs, & socket states</span></li>
+            <li><span class="bullet-check">✓</span> <span>Shows process names, PIDs, &amp; socket states</span></li>
           </ul>
         </div>
         <div class="tool-card-actions">
@@ -1694,14 +1698,14 @@
       </div>
 
       <!-- Tool 3: DoH Switcher -->
-      <div class="tool-card" data-category="network privacy" data-name="pexoris doh switcher dns over https cloudflare quad9 encrypted">
+      <div class="tool-card" data-category="available network privacy" data-name="pexoris doh switcher dns over https cloudflare quad9 encrypted adguard">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
               <div class="tool-icon-squircle icon-doh-teal">🌐</div>
               <div>
                 <div class="tool-name-text">Pexoris DoH Switcher</div>
-                <div class="tool-category-meta">Network & Privacy</div>
+                <div class="tool-category-meta">Network &amp; Privacy</div>
               </div>
             </div>
             <span class="status-pill status-available">● Available Now</span>
@@ -1709,9 +1713,9 @@
           <p class="tool-desc-text">Quickly switch between DNS over HTTPS providers. Encrypt your DNS queries for superior privacy and security.</p>
           <ul class="tool-bullets-list">
             <li><span class="bullet-check">✓</span> <span>1-Click Cloudflare, Quad9, Google DoH</span></li>
-            <li><span class="bullet-check">✓</span> <span>Encrypts DNS against ISP snooping & logs</span></li>
+            <li><span class="bullet-check">✓</span> <span>Encrypts DNS against ISP snooping &amp; logs</span></li>
             <li><span class="bullet-check">✓</span> <span>Auto-configures active network adapters</span></li>
-            <li><span class="bullet-check">✓</span> <span>Instant DNS cache flush & test resolution</span></li>
+            <li><span class="bullet-check">✓</span> <span>Instant DNS cache flush &amp; test resolution</span></li>
           </ul>
         </div>
         <div class="tool-card-actions">
@@ -1719,23 +1723,49 @@
         </div>
       </div>
 
-      <!-- Tool 4: AI Shield -->
-      <div class="tool-card" data-category="privacy system" data-name="pexoris ai shield recall copilot telemetry privacy telemetry">
+      <!-- Tool 4: PrintFixer -->
+      <div class="tool-card" data-category="available hardware system" data-name="pexoris printfixer print spooler stuck queue printer diagnostic error restart">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-pc-red">🖨️</div>
+              <div>
+                <div class="tool-name-text">Pexoris PrintFixer</div>
+                <div class="tool-category-meta">Printer &amp; Spooler</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Purge un-deletable print queues, reset Windows Print Spooler service, and resolve print server errors in one click.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Purges stuck &amp; un-deletable print queues</span></li>
+            <li><span class="bullet-check">✓</span> <span>Stops, flushes, &amp; restarts Spooler service</span></li>
+            <li><span class="bullet-check">✓</span> <span>Deletes corrupt .SHD and .SPL spool files</span></li>
+            <li><span class="bullet-check">✓</span> <span>Fixes RPC server unavailable print errors</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/print-fixer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 5: AIShield -->
+      <div class="tool-card" data-category="available privacy system" data-name="pexoris ai shield recall copilot telemetry privacy tracking disable">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
               <div class="tool-icon-squircle icon-ai-purple">🛡️</div>
               <div>
-                <div class="tool-name-text">Pexoris AI Shield</div>
-                <div class="tool-category-meta">Privacy & System</div>
+                <div class="tool-name-text">Pexoris AIShield</div>
+                <div class="tool-category-meta">Privacy &amp; System</div>
               </div>
             </div>
             <span class="status-pill status-available">● Available Now</span>
           </div>
-          <p class="tool-desc-text">Toggle Windows security & privacy settings with one click. Disable Recall snapshots & Copilot background telemetry.</p>
+          <p class="tool-desc-text">Toggle Windows security &amp; privacy settings with one click. Disable Recall snapshots &amp; Copilot background telemetry.</p>
           <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Disables Windows Recall & AI snapshots</span></li>
-            <li><span class="bullet-check">✓</span> <span>Blocks Copilot integration & telemetry</span></li>
+            <li><span class="bullet-check">✓</span> <span>Disables Windows Recall &amp; AI snapshots</span></li>
+            <li><span class="bullet-check">✓</span> <span>Blocks Copilot integration &amp; telemetry</span></li>
             <li><span class="bullet-check">✓</span> <span>Restores local Windows search privacy</span></li>
             <li><span class="bullet-check">✓</span> <span>Reversible toggles with 0 system damage</span></li>
           </ul>
@@ -1745,40 +1775,38 @@
         </div>
       </div>
 
-      <!-- Tool 5: ExifStripper -->
-      <div class="tool-card" data-category="privacy disk" data-name="pexoris exifstripper exif metadata photo image privacy gps">
+      <!-- Tool 6: USBShield -->
+      <div class="tool-card" data-category="available privacy hardware disk" data-name="pexoris usb shield autoplay write protect flash drive storage immunization">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
-              <div class="tool-icon-squircle icon-exif-green">📄</div>
+              <div class="tool-icon-squircle icon-usb-orange">🔱</div>
               <div>
-                <div class="tool-name-text">Pexoris ExifStripper</div>
-                <div class="tool-category-meta">Privacy & Media</div>
+                <div class="tool-name-text">Pexoris USBShield</div>
+                <div class="tool-category-meta">Hardware &amp; Security</div>
               </div>
             </div>
-            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+            <span class="status-pill status-available">● Available Now</span>
           </div>
-          <p class="tool-desc-text">Remove extra metadata from files and photos for complete privacy and clean sharing on social platforms.</p>
+          <p class="tool-desc-text">Block or allow USB storage devices. Protect sensitive corporate data and lock flash drives to Read-Only mode.</p>
           <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Strips GPS location & camera serial tags</span></li>
-            <li><span class="bullet-check">✓</span> <span>Preserves 100% lossless image quality</span></li>
-            <li><span class="bullet-check">✓</span> <span>Batch processes folders of JPG, PNG, WEBP</span></li>
-            <li><span class="bullet-check">✓</span> <span>Protects personal privacy before sharing</span></li>
+            <li><span class="bullet-check">✓</span> <span>Blocks unauthorized USB flash drives</span></li>
+            <li><span class="bullet-check">✓</span> <span>Sets removable storage to Read-Only mode</span></li>
+            <li><span class="bullet-check">✓</span> <span>Disables dangerous USB AutoPlay / Autorun</span></li>
+            <li><span class="bullet-check">✓</span> <span>Protects against BadUSB &amp; malware injection</span></li>
           </ul>
         </div>
         <div class="tool-card-actions">
-          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+          <a href="tools/usb-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
         </div>
       </div>
 
-      <!-- Tool 6: ContextMenuEditor -->
-      <div class="tool-card" data-category="system other" data-name="pexoris contextmenueditor context menu windows 11 classic restore right click shell extensions">
+      <!-- Tool 7: ContextMenuEditor -->
+      <div class="tool-card" data-category="available system other" data-name="pexoris contextmenueditor context menu windows 11 classic restore right click shell extensions">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
-              <div class="tool-icon-squircle icon-menu-purple">
-                <img src="assets/icons/context-menu-editor.png" alt="Pexoris ContextMenuEditor" style="width: 26px; height: 26px;" onerror="this.onerror=null; this.parentElement.innerText='📑';">
-              </div>
+              <div class="tool-icon-squircle icon-menu-purple">📑</div>
               <div>
                 <div class="tool-name-text">Pexoris ContextMenuEditor</div>
                 <div class="tool-category-meta">System Customization</div>
@@ -1799,50 +1827,170 @@
         </div>
       </div>
 
-      <!-- Tool 7: USB Shield -->
-      <div class="tool-card" data-category="privacy hardware disk" data-name="pexoris usb shield autoplay write protect flash drive storage">
+      <!-- Tool 8: ServiceOptimizer -->
+      <div class="tool-card" data-category="available system privacy" data-name="pexoris serviceoptimizer service optimizer telemetry diagtrack background gaming services ram">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
-              <div class="tool-icon-squircle icon-usb-orange">🔱</div>
+              <div class="tool-icon-squircle icon-doh-teal">⚙️</div>
               <div>
-                <div class="tool-name-text">Pexoris USB Shield</div>
-                <div class="tool-category-meta">Hardware & Security</div>
+                <div class="tool-name-text">Pexoris ServiceOptimizer</div>
+                <div class="tool-category-meta">System &amp; Background Optimizer</div>
               </div>
             </div>
             <span class="status-pill status-available">● Available Now</span>
           </div>
-          <p class="tool-desc-text">Block or allow USB storage devices. Protect your sensitive corporate data and lock flash drives to Read-Only mode.</p>
+          <p class="tool-desc-text">Safely disable background telemetry, error reporting, and unused services in 1-click. Free 300+ MB RAM with automated registry backups.</p>
           <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Blocks unauthorized USB flash drives</span></li>
-            <li><span class="bullet-check">✓</span> <span>Sets removable storage to Read-Only mode</span></li>
-            <li><span class="bullet-check">✓</span> <span>Disables dangerous USB AutoPlay / Autorun</span></li>
-            <li><span class="bullet-check">✓</span> <span>Protects against BadUSB & malware injection</span></li>
+            <li><span class="bullet-check">✓</span> <span>1-Click Safe &amp; Gaming optimization profiles</span></li>
+            <li><span class="bullet-check">✓</span> <span>Disables DiagTrack, dmwappushservice &amp; bloat</span></li>
+            <li><span class="bullet-check">✓</span> <span>Automated .REG backup before making changes</span></li>
+            <li><span class="bullet-check">✓</span> <span>1-Click instant factory default restore</span></li>
           </ul>
         </div>
         <div class="tool-card-actions">
-          <a href="tools/usb-shield/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+          <a href="tools/service-optimizer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
         </div>
       </div>
 
-      <!-- Tool 8: RamTrimmer -->
-      <div class="tool-card" data-category="system hardware" data-name="pexoris ramtrimmer memory ram clean optimize standby list cache">
+      <!-- Tool 9: HostsManager -->
+      <div class="tool-card" data-category="available network privacy system" data-name="pexoris hostsmanager hosts file editor dns adblock telemetry domain block redirect localhost">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-port-blue">🌐</div>
+              <div>
+                <div class="tool-name-text">Pexoris HostsManager</div>
+                <div class="tool-category-meta">Network &amp; Hosts Controller</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Directly view, edit, toggle, and secure your Windows hosts file. Bypasses 'Access Denied' errors, blocks ads, and flushes DNS instantly.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Bypasses UAC locks &amp; clears Read-Only flags</span></li>
+            <li><span class="bullet-check">✓</span> <span>1-Click toggle entries on/off with '#' prefix</span></li>
+            <li><span class="bullet-check">✓</span> <span>Curated ad &amp; telemetry blocklist presets (0.0.0.0)</span></li>
+            <li><span class="bullet-check">✓</span> <span>Automatic DNS cache flush on save (DnsFlushResolverCache)</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/hosts-manager/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Tool 10: TempCleaner -->
+      <div class="tool-card" data-category="available disk system" data-name="pexoris tempcleaner temp cleaner temporary files disk space purge c drive softwaredistribution crash dumps prefetch">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-lock-blue">🧹</div>
+              <div>
+                <div class="tool-name-text">Pexoris Temp Cleaner</div>
+                <div class="tool-category-meta">Storage &amp; Disk Optimizer</div>
+              </div>
+            </div>
+            <span class="status-pill status-available">● Available Now</span>
+          </div>
+          <p class="tool-desc-text">Safely scan and purge gigabytes of user temp files, Windows Update download caches, memory dumps, and prefetch traces with zero locked-file errors.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Deep recursive scan across 8 core system junk paths</span></li>
+            <li><span class="bullet-check">✓</span> <span>Auto-skips locked files without throwing error popups</span></li>
+            <li><span class="bullet-check">✓</span> <span>Purges multi-GB SoftwareDistribution update caches</span></li>
+            <li><span class="bullet-check">✓</span> <span>Standalone 56 KB portable EXE with 0 background bloat</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="tools/temp-cleaner/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- UPCOMING TOOLS PIPELINE (COMING SOON) -->
+    <div class="section-header-row" style="margin-top: 60px;">
+      <div class="section-title-wrap">
+        <span class="section-star-badge" style="background: #F5F3FF; color: #7C3AED;">⏳</span>
+        <div>
+          <h2 class="section-headline">Upcoming Tools Pipeline</h2>
+          <p class="section-subtext">Next portable utilities scheduled in the 100-tool roadmap. Vote or request priority.</p>
+        </div>
+      </div>
+      <a href="request/" class="btn-view-all">Request a Feature →</a>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- Upcoming Tool 11: Startup Inspector -->
+      <div class="tool-card" data-category="coming system other" data-name="pexoris startup inspector autorun boot registry scheduled tasks msconfig">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-usb-orange">🚀</div>
+              <div>
+                <div class="tool-name-text">Pexoris Startup Inspector</div>
+                <div class="tool-category-meta">Startup &amp; Task Manager</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Inspect, manage, and disable stubborn startup applications, registry Run keys, and background scheduled tasks to speed up Windows boot times.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>Scans registry Run/RunOnce &amp; Startup folders</span></li>
+            <li><span class="bullet-check">✓</span> <span>Detects stealth third-party scheduled tasks</span></li>
+            <li><span class="bullet-check">✓</span> <span>1-Click disable without deleting entries</span></li>
+            <li><span class="bullet-check">✓</span> <span>Calculates boot time impact per application</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Upcoming Tool 12: Defender Toggle -->
+      <div class="tool-card" data-category="coming system privacy dev" data-name="pexoris defender toggle antivirus pause disable exclusions dev build">
+        <div>
+          <div class="tool-card-header">
+            <div class="tool-card-identity">
+              <div class="tool-icon-squircle icon-pc-red">🛡️</div>
+              <div>
+                <div class="tool-name-text">Pexoris Defender Toggle</div>
+                <div class="tool-category-meta">Antivirus &amp; Dev Guard</div>
+              </div>
+            </div>
+            <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
+          </div>
+          <p class="tool-desc-text">Temporarily pause Windows Defender real-time scanning and add smart dev folder exclusions to stop build slowdowns.</p>
+          <ul class="tool-bullets-list">
+            <li><span class="bullet-check">✓</span> <span>1-Click temporary pause for heavy compiler builds</span></li>
+            <li><span class="bullet-check">✓</span> <span>Smart folder exclusion presets (node_modules, target)</span></li>
+            <li><span class="bullet-check">✓</span> <span>Auto-re-enable safety timer prevents exposure</span></li>
+            <li><span class="bullet-check">✓</span> <span>Zero permanent security policy tampering</span></li>
+          </ul>
+        </div>
+        <div class="tool-card-actions">
+          <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Upcoming Tool 13: RamTrimmer -->
+      <div class="tool-card" data-category="coming system hardware" data-name="pexoris ramtrimmer memory ram clean optimize standby list cache">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
               <div class="tool-icon-squircle icon-ram-emerald">🔲</div>
               <div>
                 <div class="tool-name-text">Pexoris RamTrimmer</div>
-                <div class="tool-category-meta">System Optimization</div>
+                <div class="tool-category-meta">Memory &amp; Cache Optimizer</div>
               </div>
             </div>
             <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
           </div>
-          <p class="tool-desc-text">Clean and optimize RAM for responsive gaming and workload performance. Safely empty working sets & standby cache.</p>
+          <p class="tool-desc-text">Clean and optimize RAM for responsive gaming and workload performance. Safely empty working sets &amp; standby cache.</p>
           <ul class="tool-bullets-list">
             <li><span class="bullet-check">✓</span> <span>Flushes standby memory lists safely</span></li>
             <li><span class="bullet-check">✓</span> <span>Clears unneeded background working sets</span></li>
-            <li><span class="bullet-check">✓</span> <span>Reduces gaming stutter & latency spikes</span></li>
+            <li><span class="bullet-check">✓</span> <span>Reduces gaming stutter &amp; latency spikes</span></li>
             <li><span class="bullet-check">✓</span> <span>Runs on demand or automated threshold</span></li>
           </ul>
         </div>
@@ -1851,55 +1999,29 @@
         </div>
       </div>
 
-      <!-- Tool 9: Disk Cleaner -->
-      <div class="tool-card" data-category="disk system" data-name="pexoris disk cleaner temp junk cache storage clean purge">
+      <!-- Upcoming Tool 14: ExifStripper -->
+      <div class="tool-card" data-category="coming privacy disk" data-name="pexoris exifstripper exif metadata photo image privacy gps camera">
         <div>
           <div class="tool-card-header">
             <div class="tool-card-identity">
-              <div class="tool-icon-squircle icon-disk-cyan">💾</div>
+              <div class="tool-icon-squircle icon-exif-green">📄</div>
               <div>
-                <div class="tool-name-text">Pexoris Disk Cleaner</div>
-                <div class="tool-category-meta">Disk & Cleaning</div>
+                <div class="tool-name-text">Pexoris ExifStripper</div>
+                <div class="tool-category-meta">Privacy &amp; Media</div>
               </div>
             </div>
             <span class="status-pill status-coming-soon">⏳ Coming Soon</span>
           </div>
-          <p class="tool-desc-text">Clean junk files and reclaim gigabytes of disk space. Safely purge system crash dumps, temp files, and browser caches.</p>
+          <p class="tool-desc-text">Remove extra metadata from files and photos for complete privacy and clean sharing on social platforms.</p>
           <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Purges Windows temp files & crash dumps</span></li>
-            <li><span class="bullet-check">✓</span> <span>Cleans browser caches (Chrome, Edge, Firefox)</span></li>
-            <li><span class="bullet-check">✓</span> <span>Removes leftover Windows Update installers</span></li>
-            <li><span class="bullet-check">✓</span> <span>Zero registry touching & 100% safe deletion</span></li>
+            <li><span class="bullet-check">✓</span> <span>Strips GPS location &amp; camera serial tags</span></li>
+            <li><span class="bullet-check">✓</span> <span>Preserves 100% lossless image quality</span></li>
+            <li><span class="bullet-check">✓</span> <span>Batch processes folders of JPG, PNG, WEBP</span></li>
+            <li><span class="bullet-check">✓</span> <span>Protects personal privacy before sharing</span></li>
           </ul>
         </div>
         <div class="tool-card-actions">
           <a href="request/" class="btn-tool-cta btn-tool-request">Request Priority &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Tool 10: PrintFixer -->
-      <div class="tool-card" data-category="hardware system" data-name="pexoris printfixer print spooler stuck queue printer diagnostic error">
-        <div>
-          <div class="tool-card-header">
-            <div class="tool-card-identity">
-              <div class="tool-icon-squircle icon-pc-red">🖨️</div>
-              <div>
-                <div class="tool-name-text">Pexoris PrintFixer</div>
-                <div class="tool-category-meta">Printer & Spooler</div>
-              </div>
-            </div>
-            <span class="status-pill status-available">● Available Now</span>
-          </div>
-          <p class="tool-desc-text">Purge un-deletable print queues, reset Windows Print Spooler service, and resolve print server errors in one click.</p>
-          <ul class="tool-bullets-list">
-            <li><span class="bullet-check">✓</span> <span>Purges stuck & un-deletable print queues</span></li>
-            <li><span class="bullet-check">✓</span> <span>Stops, flushes, & restarts Spooler service</span></li>
-            <li><span class="bullet-check">✓</span> <span>Deletes corrupt .SHD and .SPL spool files</span></li>
-            <li><span class="bullet-check">✓</span> <span>Fixes RPC server unavailable print errors</span></li>
-          </ul>
-        </div>
-        <div class="tool-card-actions">
-          <a href="tools/print-fixer/" class="btn-tool-cta">View Tool &amp; Download &rarr;</a>
         </div>
       </div>
 
