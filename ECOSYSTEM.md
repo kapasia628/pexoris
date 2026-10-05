@@ -18,7 +18,7 @@
 | **07** | **Pexoris ContextMenuEditor** | `context-menu-editor` | 49 KB | 30 KB | `36cc8cc8034958952fb1d9cb49d5a61dceb56613bfb527cbe2f682abcb48d1e8` | [Download](https://drive.google.com/uc?export=download&id=1EFx4VOzqdNSafDdubZPcyoT8Bn9ZNfff) | `http://localhost/tools/website/tools/context-menu-editor/` |
 | **08** | **Pexoris ServiceOptimizer** | `service-optimizer` | 69 KB | 44 KB | `827f5675cf999177fe82ee5a6f93281d8baea6222a0b017366eea7485f5cb8ca` | [Download](https://drive.google.com/uc?export=download&id=1ZEuYBVBT2AKpZ7XpzbcGkahuSya5UZBP) | `http://localhost/tools/website/tools/service-optimizer/` |
 | **09** | **Pexoris HostsManager** | `hosts-manager` | 57 KB | 36 KB | `cb5b1d28889247c6ff18d852fdf2597f967a27f4834d3821ce9b04cec64eb556` | [Download](https://drive.google.com/uc?export=download&id=1cbsrisYM2H2wRRcPdcwXAwC_aMJFqmHu) | `http://localhost/tools/website/tools/hosts-manager/` |
-| **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | *(Pending User Upload)* | `http://localhost/tools/website/tools/temp-cleaner/` |
+| **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | [Download](https://drive.google.com/uc?export=download&id=14GAkL1D6kB9Pjyn_qXWTo9uc4KEUoOr6) | `http://localhost/tools/website/tools/temp-cleaner/` |
 
 ---
 
