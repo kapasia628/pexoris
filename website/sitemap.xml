@@ -80,6 +80,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Network & Host File Utility: Pexoris Hosts Manager -->
+  <url>
+    <loc>https://pexoris.com/tools/hosts-manager/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -171,6 +179,14 @@
   <!-- Performance Guide: Disable Unnecessary Windows Services -->
   <url>
     <loc>https://pexoris.com/blog/disable-unnecessary-windows-services/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Networking Guide: How to Edit Hosts File in Windows 11 -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-edit-hosts-file-windows-11/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

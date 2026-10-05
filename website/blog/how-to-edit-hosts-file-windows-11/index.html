@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Edit Hosts File in Windows 11 &amp; Fix "Access Denied" Error (Step-by-Step)</title>
+  <meta name="title" content="How to Edit Hosts File in Windows 11 &amp; Fix 'Access Denied' Error (Step-by-Step)">
+  <meta name="description" content="Getting 'Access Denied' or 'You do not have permission to save files' when editing C:\Windows\System32\drivers\etc\hosts? Learn how to fix it via Notepad (Admin), CMD attrib, or in 1-click with Pexoris Hosts Manager.">
+  <meta name="keywords" content="edit hosts file windows 11, fix access denied hosts file, hosts file location windows 11, save hosts file administrator, remove read only hosts file, flush dns hosts file, pexoris hosts manager">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-edit-hosts-file-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-edit-hosts-file-windows-11/">
+  <meta property="og:title" content="How to Edit Hosts File in Windows 11 &amp; Fix Access Denied Error">
+  <meta property="og:description" content="Complete guide to unlocking and saving the Windows hosts file with administrator rights and clearing DNS cache.">
+  <meta property="og:image" content="https://pexoris.com/tools/hosts-manager/hosts-manager.png">
+  <meta property="og:site_name" content="Pexoris Guides">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Edit Hosts File in Windows 11 & Fix 'Access Denied' Error",
+        "description": "Step-by-step tutorial on resolving permission errors when saving the Windows hosts file, unlocking Read-Only flags, and flushing DNS cache.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-edit-hosts-file-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Edit Hosts File via Elevated Notepad",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Notepad as Administrator",
+            "text": "Press Win + S, type notepad, right-click and choose 'Run as Administrator'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Open the Hosts File",
+            "text": "Click File > Open, browse to C:\\Windows\\System32\\drivers\\etc\\, select 'All Files (*.*)', and open 'hosts'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Add Domain Mapping",
+            "text": "Add your rule at the bottom, such as 127.0.0.1 test.local or 0.0.0.0 ad-tracker.com."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Save and Flush DNS",
+            "text": "Press Ctrl + S to save, then run 'ipconfig /flushdns' in Command Prompt."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand-indigo: #4F46E5;
+      --brand-indigo-hover: #4338CA;
+      --brand-indigo-light: #EEF2FF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #F8FAFC;
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #4F46E5, #7C3AED);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+    }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+    .notice-right a { color: #94A3B8; text-decoration: none; margin-left: 16px; }
+    .notice-right a:hover { color: #FFFFFF; }
+
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo-img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--text-hero); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text-body); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--brand-indigo); }
+
+    .article-wrap {
+      max-width: 820px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+    .post-header {
+      margin-bottom: 32px;
+      position: static;
+      background: transparent;
+    }
+    .post-badge {
+      display: inline-block;
+      background: var(--brand-indigo-light);
+      color: var(--brand-indigo);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-hero);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .post-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .aeo-box {
+      background: #EEF2FF;
+      border: 1px solid #C7D2FE;
+      border-left: 4px solid var(--brand-indigo);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .aeo-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #3730A3;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .aeo-text {
+      font-size: 15px;
+      color: #312E81;
+      line-height: 1.6;
+    }
+
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    .article-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 24px 0 12px;
+    }
+    .article-content p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .article-content ul, .article-content ol {
+      margin: 14px 0 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .article-content li { font-size: 15px; color: var(--text-body); }
+
+    .code-block {
+      background: #0F172A;
+      color: #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .code-block code { color: #818CF8; }
+
+    .tool-cta-card {
+      background: #FFFFFF;
+      border: 2px solid #C7D2FE;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      margin: 48px 0;
+      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1);
+    }
+    .tool-cta-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+    .tool-cta-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 20px;
+    }
+    .btn-tool-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(180deg, #4F46E5 0%, #4338CA 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .btn-tool-cta:hover {
+      background: #4338CA;
+      transform: translateY(-1px);
+    }
+
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice Bar -->
+  <div class="top-notice-bar">
+    <div class="top-notice-inner">
+      <div class="notice-specs">
+        <span class="badge-gold">NETWORK FIX</span>
+        <span>Target: Windows 11 &amp; 10</span>
+        <span>&bull;</span>
+        <span>Location: drivers\etc\hosts</span>
+      </div>
+      <div class="notice-right">
+        <a href="../../tools/hosts-manager/">Download Portable Hosts Manager &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img">
+        <span class="brand-title">Pexoris</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../tools/">&larr; All Tools</a></li>
+        <li><a href="../../tools/hosts-manager/">Hosts Manager</a></li>
+        <li><a href="../../blog/">All Guides</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Article -->
+  <article class="article-wrap">
+    <div class="post-header">
+      <span class="post-badge">Windows Networking &amp; Troubleshooting Guide</span>
+      <h1 class="post-title">How to Edit Hosts File in Windows 11 &amp; Fix "Access Denied"</h1>
+      <div class="post-meta">
+        <span>By Pexoris Technical Team</span>
+        <span>&bull;</span>
+        <span>Tested on Windows 11 (23H2 / 24H2)</span>
+        <span>&bull;</span>
+        <span>6 Min Read</span>
+      </div>
+    </div>
+
+    <!-- Quick Answer Box (AEO) -->
+    <div class="aeo-box">
+      <div class="aeo-title">Quick Answer (30-Second Solution)</div>
+      <div class="aeo-text">
+        To fix "Access Denied" when saving the hosts file, launch Notepad as Administrator (Win + S &gt; Notepad &gt; Run as Administrator), open <code>C:\Windows\System32\drivers\etc\hosts</code>, edit your rules, and save. To eliminate permission errors forever, toggle entries, and auto-flush DNS in 1-click, use the free 57 KB <a href="../../tools/hosts-manager/" style="color:#4338CA; font-weight:700;">Pexoris Hosts Manager</a>.
+      </div>
+    </div>
+
+    <div class="article-content">
+      <h2>Why Does Windows Say "Access Is Denied"?</h2>
+      <p>
+        The Windows hosts file maps domain names directly to IP addresses before checking external DNS servers. Because it controls network routing for the entire operating system, it is stored in a heavily guarded system directory:
+      </p>
+      <div class="code-block">
+        <code>C:\Windows\System32\drivers\etc\hosts</code>
+      </div>
+      <p>
+        When you double-click the file and edit it in standard Notepad, Windows prevents you from saving because:
+      </p>
+      <ul>
+        <li><strong>Standard User Integrity Token</strong>: Even if your Windows account is an Administrator, modern Windows User Account Control (UAC) runs daily applications with standard non-elevated permissions.</li>
+        <li><strong>Read-Only File Attribute</strong>: Many VPN clients, antivirus tools, or malware cleaners automatically lock the hosts file with the <code>+R</code> (Read-Only) flag to prevent tampering.</li>
+        <li><strong>Third-Party Antivirus Locks</strong>: Security suites like Bitdefender, Avast, or Norton monitor the hosts file in real time and block write operations.</li>
+      </ul>
+
+      <h2>Method 1: Manual Fix Using Notepad as Administrator</h2>
+      <p>To save changes without third-party software, follow these steps:</p>
+
+      <h3>Step 1: Open Elevated Notepad</h3>
+      <p>Click your Start menu or press <code>Win + S</code>, type <strong>Notepad</strong>, right-click the Notepad icon, and select <strong>Run as Administrator</strong>.</p>
+
+      <h3>Step 2: Navigate to Protected Folder</h3>
+      <p>In Notepad, click <strong>File &gt; Open</strong> (or press <code>Ctrl + O</code>). In the file path bar, paste:</p>
+      <div class="code-block">
+        <code>C:\Windows\System32\drivers\etc\</code>
+      </div>
+      <p>In the bottom-right dropdown, change <strong>Text Documents (*.txt)</strong> to <strong>All Files (*.*)</strong> so the <code>hosts</code> file becomes visible, and click Open.</p>
+
+      <h3>Step 3: Add Routing Rules</h3>
+      <p>Add your custom mapping at the bottom of the file. For example, to map a local web dev project or block an ad server:</p>
+      <div class="code-block">
+        <code>127.0.0.1   test.local<br>0.0.0.0     telemetry.microsoft.com</code>
+      </div>
+
+      <h3>Step 4: Save &amp; Flush DNS</h3>
+      <p>
+        Press <code>Ctrl + S</code> to save. Finally, open Command Prompt and run <code>ipconfig /flushdns</code> so Windows drops cached DNS resolutions.
+      </p>
+
+      <!-- Sticky 1-Click Tool Download Card -->
+      <div class="tool-cta-card">
+        <h3 class="tool-cta-title">Tired of Permission Denied Errors?</h3>
+        <p class="tool-cta-desc">
+          Pexoris Hosts Manager runs with automatic elevation, unlocks Read-Only flags, provides 1-click adblock presets, and flushes DNS instantly on save.
+        </p>
+        <a href="../../tools/hosts-manager/" class="btn-tool-cta">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download Pexoris Hosts Manager (Free &bull; 57 KB)
+        </a>
+      </div>
+
+      <h2>Method 2: Remove Read-Only Attribute via Command Prompt</h2>
+      <p>
+        If Notepad still gives an error even when running as Administrator, the file is likely marked with the Read-Only attribute. You can remove it via Command Prompt:
+      </p>
+      <div class="code-block">
+        <code>attrib -r C:\Windows\System32\drivers\etc\hosts</code>
+      </div>
+      <p>
+        Once cleared, reopen the file in Administrator Notepad and save your changes.
+      </p>
+
+      <h2>How to Block Ads and Telemetry via Hosts File</h2>
+      <p>
+        Mapping known tracking and advertising domains to <code>0.0.0.0</code> (null route) completely blocks the request at the network stack before any connection is initiated:
+      </p>
+      <ul>
+        <li><code>0.0.0.0 telemetry.microsoft.com</code>: Stops background diagnostic and event uploads.</li>
+        <li><code>0.0.0.0 doubleclick.net</code>: Blocks ad serving scripts system-wide across all browsers.</li>
+      </ul>
+      <p>
+        In Pexoris Hosts Manager, you can apply this entire curated blocklist with a single click on <strong>"🛡️ Block Ads &amp; Telemetry"</strong>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>What is the difference between 127.0.0.1 and 0.0.0.0 in hosts?</h3>
+      <p>
+        <code>127.0.0.1</code> points to your local machine (localhost). If you run a local web server (like Apache or Node.js), pointing a domain to <code>127.0.0.1</code> routes traffic to your local server. <code>0.0.0.0</code> is a non-routable meta-address; pointing an ad domain to <code>0.0.0.0</code> instantly drops the connection with zero timeout latency.
+      </p>
+
+      <h3>Why aren't my hosts file changes working in Chrome or Edge?</h3>
+      <p>
+        Modern Chromium browsers cache DNS resolutions internally and may use Secure DNS (DoH). Clear your browser's internal DNS cache at <code>chrome://net-internals/#dns</code> and run <code>ipconfig /flushdns</code>.
+      </p>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Precision Windows Utilities.</p>
+  </footer>
+
+</body>
+</html>
