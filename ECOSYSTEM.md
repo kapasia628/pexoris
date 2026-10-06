@@ -85,4 +85,6 @@ Running `build.bat` in the project root:
 - [x] **#09 Pexoris Hosts Manager** (Fast graphical hosts file editor with adblock presets)
 - [x] **#10 Pexoris Temp Cleaner** (Deep Windows update cache & junk cleaner)
 - [x] **#11 Pexoris Startup Inspector** (Inspect and disable stubborn autorun entries)
-- [ ] **#12 Pexoris Defender Toggle** (Temporarily pause Windows Defender during dev compilation)
+- [x] **#12 Pexoris Defender Toggle** (Temporarily pause Windows Defender during dev compilation)
+- [ ] **#13 Pexoris DNSFlusher** (Flush DNS cache, reset Winsock catalog & purge ARP)
+- [ ] **#14 Pexoris RamTrimmer** (Flush standby memory cache & empty working sets)

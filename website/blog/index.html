@@ -443,11 +443,11 @@
 
     <!-- Category Filter Tabs Menu -->
     <div class="blog-tabs-bar">
-      <button class="blog-tab-btn active" onclick="filterBlog('all', this)">All Guides (11)</button>
+      <button class="blog-tab-btn active" onclick="filterBlog('all', this)">All Guides (12)</button>
       <button class="blog-tab-btn" onclick="filterBlog('files', this)">Disk &amp; Files (2)</button>
       <button class="blog-tab-btn" onclick="filterBlog('network', this)">Networking &amp; Dev (2)</button>
       <button class="blog-tab-btn" onclick="filterBlog('printer', this)">Printer &amp; Hardware (1)</button>
-      <button class="blog-tab-btn" onclick="filterBlog('privacy', this)">Privacy &amp; Security (3)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('privacy', this)">Privacy &amp; Security (4)</button>
       <button class="blog-tab-btn" onclick="filterBlog('system', this)">System &amp; Tweaks (3)</button>
     </div>
 
@@ -674,6 +674,26 @@
         </div>
       </article>
 
+      <!-- Article 12: Pause Windows Defender for Fast Dev Builds (DefenderToggle) -->
+      <article class="article-card" data-category="privacy">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-privacy">Privacy &amp; Security</span>
+            <span style="color:var(--text-muted);">6 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="how-to-pause-windows-defender-dev-builds/">How to Pause Windows Defender for Fast Dev Builds &amp; Fix MsMpEng.exe CPU Thrashing</a>
+          </h2>
+          <p class="article-excerpt">
+            Stop Antimalware Service Executable from locking build files. Learn how to whitelist Rust, C++, and Node.js workspaces and safely toggle Defender without breaking system security.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="how-to-pause-windows-defender-dev-builds/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/defender-toggle/" class="tool-link-tag">⚡ Pexoris DefenderToggle</a>
+        </div>
+      </article>
+
     </section>
   </main>
 
@@ -699,6 +719,7 @@
         <a href="../tools/hosts-manager/" class="footer-link-item">HostsManager</a>
         <a href="../tools/temp-cleaner/" class="footer-link-item">TempCleaner</a>
         <a href="../tools/startup-inspector/" class="footer-link-item">StartupInspector</a>
+        <a href="../tools/defender-toggle/" class="footer-link-item">DefenderToggle</a>
         <a href="./" class="footer-link-item" style="color:var(--brand-blue); font-weight:700;">Blog Guides</a>
         <a href="../request/" class="footer-link-item">Request a Tool</a>
         <a href="../privacy/" class="footer-link-item">Privacy Policy</a>
