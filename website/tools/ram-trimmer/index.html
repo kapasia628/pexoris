@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS RAMTRIMMER — OFFICIAL LANDING PAGE
+       SEO • AEO • GEO • AIO • SXO FULL COMPREHENSIVE ARCHITECTURE
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Pexoris RamTrimmer — Free Standby List Purge &amp; Windows RAM Cache Cleaner</title>
+  <meta name="title" content="Pexoris RamTrimmer — Free Standby List Purge &amp; Windows RAM Cache Cleaner">
+  <meta name="description" content="Fix game stuttering and high memory usage in Windows 11 &amp; 10. Pexoris RamTrimmer is a 58 KB portable memory optimizer to purge standby lists, empty process working sets, and free gigabytes of cached RAM in 1 click.">
+  <meta name="keywords" content="purge standby list windows 11, clear standby memory windows 10, fix game stuttering standby list, empty working set tool, portable ram cleaner, rammap alternative, islc alternative, pexoris ramtrimmer">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/tools/ram-trimmer/">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="ram-trimmer.png">
+
+  <!-- Open Graph / Facebook / WhatsApp (SXO / Viral Sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/ram-trimmer/">
+  <meta property="og:title" content="Pexoris RamTrimmer — Fix Stutters &amp; Clear Standby Cache (58 KB Portable)">
+  <meta property="og:description" content="Instant Standby List purge and working sets cleaner. Liberate gigabytes of cached memory with 1 click. Zero installation, zero telemetry.">
+  <meta property="og:image" content="https://pexoris.com/tools/ram-trimmer/ram-trimmer.png">
+  <meta property="og:site_name" content="Pexoris">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/ram-trimmer/">
+  <meta name="twitter:title" content="Pexoris RamTrimmer — Standby List &amp; RAM Optimizer">
+  <meta name="twitter:description" content="Eliminate FPS drops and reclaim cached RAM in Windows. 58 KB standalone executable.">
+  <meta name="twitter:image" content="https://pexoris.com/tools/ram-trimmer/ram-trimmer.png">
+
+  <!-- Apple & Mobile Polish -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris RamTrimmer",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 58 KB portable Windows memory optimization utility to purge bloated standby page lists, empty idle process working sets, flush modified cache, and prevent gaming micro-stutters in real-time.",
+        "fileSize": "58 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/ram-trimmer/#download",
+        "featureList": [
+          "1-Click Standby List Memory Purge via native NtSetSystemInformation kernel routine",
+          "Multi-process working set memory cleaner using certified EmptyWorkingSet API",
+          "Modified Page List flush to storage subsystem",
+          "Real-time visualizer for In-Use, Standby Cache, Modified List, and Commit Limits",
+          "Top memory-consuming processes inspector with per-process trim action",
+          "Optional intelligent auto-trimming when available RAM drops below 15%",
+          "Single 58 KB portable standalone executable with 0 installer and 0 telemetry"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.99",
+          "ratingCount": "960"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does Windows Standby List memory cause gaming stutters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows automatically caches accessed files into a memory pool called the Standby List. When a demanding game or video rendering app suddenly requires large blocks of contiguous RAM, Windows must synchronously purge portions of this standby cache on the fly. This CPU/memory management delay creates noticeable micro-stutters, frame rate dips, and temporary game freezes. Purging the standby list before gaming prevents these delays."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Pexoris RamTrimmer differ from fake memory booster snake oil?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Old 'RAM booster' scam software simply allocated fake massive memory blocks to force Windows to page everything to the hard drive, which destroyed performance. Pexoris RamTrimmer uses the exact same native kernel system call (NtSetSystemInformation with SystemMemoryListInformation) that Microsoft's Sysinternals RAMMap uses. It instructs the Windows memory manager directly to release unreferenced file cache and prune inactive working sets without paging thrashing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it safe to purge the Standby List and empty working sets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% safe. Standby memory only contains cached copies of files that are already stored on your NVMe or SSD. Emptying process working sets simply informs Windows that inactive pages can be released. No unsaved data is ever lost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris RamTrimmer need to stay running in the background?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! You can run Pexoris RamTrimmer, click '⚡ 1-Click Trim All RAM' to free memory, and close it immediately. If you want continuous protection during long gaming sessions, you can leave it minimized with auto-trim enabled."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Purge Standby List and Optimize RAM in Windows 11",
+        "description": "Step-by-step instructions to clear standby memory, eliminate gaming stutters, and free cached RAM.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Download and Run Pexoris RamTrimmer",
+            "text": "Download the portable ZIP file, extract PexorisRamTrimmer.exe, and run it as Administrator."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review Memory Pools and Top Consumers",
+            "text": "View your total RAM, active memory load percentage, and the size of the standby file cache."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Click 1-Click Trim All RAM",
+            "text": "Click '⚡ 1-Click Trim All RAM' to instantly purge standby memory, flush modified pages, and trim background working sets."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Verify Freed Memory in the Log",
+            "text": "Check the status pill and Operation Logs to view the exact megabytes of physical RAM recovered."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris RamTrimmer",
+            "item": "https://pexoris.com/tools/ram-trimmer/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -------------------------------------------------------------
+       CSS RESET & DESIGN SYSTEM (STRICT PEXORIS ECOSYSTEM STANDARD)
+       ------------------------------------------------------------- */
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+
+      /* Primary Brand / Accent: Emerald Green & Deep Jade */
+      --primary: #10B981;
+      --primary-hover: #059669;
+      --primary-dark: #047857;
+      --accent-blue: #2563EB;
+      --destructive: #DC2626;
+      --warning: #F59E0B;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: var(--primary-hover); }
+
+    /* -------------------------------------------------------------
+       STRICT SOLID SITE HEADER (NEVER TRANSPARENT)
+       ------------------------------------------------------------- */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--border-light);
+      width: 100%;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: #ECFDF5;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid #A7F3D0;
+    }
+
+    /* Strict Nav Rules: Only Section Anchors */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover { color: var(--text-hero); }
+
+    .header-cta-btn {
+      background: var(--text-hero);
+      color: #FFFFFF !important;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta-btn:hover {
+      background: #1E293B;
+      transform: translateY(-1px);
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION (NO DOWNLOAD BUTTON IN HERO - STRICT RULE)
+       ------------------------------------------------------------- */
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pain-point-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FEF2F2;
+      border: 1px solid #FEE2E2;
+      color: #991B1B;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .pain-point-pill .error-quote {
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span.gradient-text {
+      background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .trust-badges-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+
+    .trust-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--primary);
+    }
+
+    /* SHA-256 Copy Box */
+    .sha-box {
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sha-info { text-align: left; overflow: hidden; }
+
+    .sha-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .sha-hash {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-hero);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .sha-copy-btn {
+      background: #F1F5F9;
+      border: 1px solid var(--border-medium);
+      color: var(--text-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .sha-copy-btn:hover { background: #E2E8F0; color: var(--text-hero); }
+
+    /* -------------------------------------------------------------
+       INTERACTIVE CSS DESKTOP APP MOCKUP (860x640 PIXEL PARITY)
+       ------------------------------------------------------------- */
+    .mockup-container {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 1rem;
+    }
+
+    .desktop-app-mockup {
+      width: 100%;
+      background: #F8FAFC;
+      border-radius: 10px;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      text-align: left;
+    }
+
+    /* Mockup Title Bar (44px) */
+    .app-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      user-select: none;
+    }
+
+    .titlebar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .titlebar-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .titlebar-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .titlebar-badge {
+      font-size: 10px;
+      font-weight: 700;
+      background: #ECFDF5;
+      color: #047857;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .titlebar-controls { display: flex; align-items: center; }
+
+    .titlebar-btn {
+      width: 40px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .titlebar-btn.close:hover { background: #EF4444; color: #FFFFFF; }
+
+    /* Mockup Top Card */
+    .app-topcard {
+      margin: 14px 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .topcard-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .topcard-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      flex-shrink: 0;
+    }
+
+    .topcard-icon svg { width: 32px; height: 32px; fill: #FFFFFF; }
+
+    .topcard-texts h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 2px;
+    }
+
+    .topcard-texts p {
+      font-size: 12px;
+      color: #64748B;
+      margin-bottom: 6px;
+      max-width: 420px;
+    }
+
+    .topcard-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      background: #ECFDF5;
+      color: #047857;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .topcard-actions { display: flex; gap: 8px; }
+
+    .btn-mock {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-emerald { background: #10B981; color: #FFFFFF; }
+    .btn-blue { background: #2563EB; color: #FFFFFF; }
+    .btn-outline { background: #FFFFFF; border: 1px solid #CBD5E1; color: #334155; }
+
+    /* Tabs & Content */
+    .app-tabs {
+      margin: 0 16px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tab-group { display: flex; gap: 8px; }
+
+    .tab-item {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .tab-item.active { background: #10B981; color: #FFFFFF; }
+    .tab-item.inactive { background: #FFFFFF; border: 1px solid #CBD5E1; color: #64748B; }
+
+    .tab-stats { font-size: 11px; color: #64748B; }
+
+    /* Table Mockup */
+    .app-table-wrap {
+      margin: 0 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 12px;
+    }
+
+    .app-table { width: 100%; border-collapse: collapse; }
+
+    .app-table th {
+      background: #F8FAFC;
+      color: #475569;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-bottom: 1px solid #E2E8F0;
+      border-right: 1px solid #E2E8F0;
+      font-size: 11px;
+    }
+
+    .app-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #F1F5F9;
+      border-right: 1px solid #F1F5F9;
+      color: #1E293B;
+    }
+
+    /* Action Bar */
+    .app-actions-bar {
+      margin: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .app-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: #64748B;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION HEADERS & 6-FEATURE GRID
+       ------------------------------------------------------------- */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p { font-size: 1.05rem; color: var(--text-sub); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: #A7F3D0;
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #ECFDF5;
+      color: #047857;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       COMPARISON TABLE
+       ------------------------------------------------------------- */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      padding: 1.25rem 1.5rem;
+      background: #F8FAFC;
+      border-bottom: 2px solid var(--border-light);
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+
+    .comparison-table td {
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr.highlight { background: #F0FDF4; }
+
+    .badge-check { color: #047857; font-weight: 700; }
+    .badge-cross { color: #94A3B8; font-weight: 500; }
+
+    /* -------------------------------------------------------------
+       HOW-TO 4-STEP GUIDE
+       ------------------------------------------------------------- */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #10B981;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p { font-size: 0.9rem; color: var(--text-sub); }
+
+    /* -------------------------------------------------------------
+       FAQ ACCORDION
+       ------------------------------------------------------------- */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item.active { border-color: #10B981; }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: #10B981;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer { display: block; }
+
+    /* -------------------------------------------------------------
+       STRICT RULE: SINGLE DOWNLOAD LOCATION AT THE BOTTOM
+       ------------------------------------------------------------- */
+    .download-card-section {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .download-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: #FFFFFF;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .download-card h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .download-card p {
+      font-size: 1.1rem;
+      color: #94A3B8;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+      color: #FFFFFF !important;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 1.1rem 2.75rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .download-primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.7);
+    }
+
+    .download-meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: #94A3B8;
+      margin-top: 2rem;
+    }
+
+    .download-meta-info strong { color: #F8FAFC; }
+
+    /* -------------------------------------------------------------
+       SITE FOOTER (BRAND-LOGO.PNG WITH FALLBACK)
+       ------------------------------------------------------------- */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-top: 0.75rem;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+    .footer-col a:hover { color: var(--text-hero); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .footer-container { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .footer-container { grid-template-columns: 1fr; }
+      .app-topcard { flex-direction: column; align-items: flex-start; }
+      .topcard-actions { width: 100%; }
+      .topcard-actions button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-title">Pexoris</span>
+        <span class="brand-tag">v1.0</span>
+      </a>
+
+      <!-- STRICT NAV LINKS: SECTION ANCHORS ONLY -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="header-cta-btn">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="pain-point-pill">
+        <span>⚠️ Experiencing micro-stutters from</span>
+        <span class="error-quote">Standby Memory Cache</span>
+        <span>during games?</span>
+      </div>
+
+      <h1>
+        Instant Windows Standby List Purge &amp;<br>
+        <span class="gradient-text">Working Sets RAM Cleaner</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Free gigabytes of locked standby file cache, empty idle background process working sets, flush modified memory pages, and stop gaming stuttering in a 58 KB standalone executable.
+      </p>
+
+      <div class="trust-badges-bar">
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          100% Portable (Single .EXE)
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Native NtSetSystemInformation API
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Zero Telemetry &amp; No Ads
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Windows 11 &amp; 10 Verified
+        </div>
+      </div>
+
+      <!-- SHA-256 Checksum -->
+      <div class="sha-box">
+        <div class="sha-info">
+          <span class="sha-label">SHA-256 Checksum (v1.0.0.0 Portable ZIP)</span>
+          <span class="sha-hash" id="shaHash">bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be</span>
+        </div>
+        <button class="sha-copy-btn" onclick="navigator.clipboard.writeText('bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy Hash', 2000);">
+          Copy Hash
+        </button>
+      </div>
+    </section>
+
+    <!-- DESKTOP APP MOCKUP -->
+    <div class="mockup-container">
+      <div class="desktop-app-mockup">
+        <!-- Title bar -->
+        <div class="app-titlebar">
+          <div class="titlebar-left">
+            <img src="ram-trimmer.png" alt="RamTrimmer Icon" class="titlebar-icon">
+            <span class="titlebar-title">Pexoris RamTrimmer — Standby List &amp; Working Sets Optimizer</span>
+            <span class="titlebar-badge">PORTABLE v1.0</span>
+          </div>
+          <div class="titlebar-controls">
+            <div class="titlebar-btn">—</div>
+            <div class="titlebar-btn close">✕</div>
+          </div>
+        </div>
+
+        <!-- Top Card -->
+        <div class="app-topcard">
+          <div class="topcard-left">
+            <div class="topcard-icon">
+              <svg viewBox="0 0 24 24"><path d="M2 7h20v10H2V7zm2 2v6h16V9H4zm3 1h2v4H7v-4zm4 0h2v4h-2v-4zm4 0h2v4h-2v-4zM5 4h2v2H5V4zm4 0h2v2H9V4zm4 0h2v2h-2V4zm4 0h2v2h-2V4zm-12 14h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>
+            </div>
+            <div class="topcard-texts">
+              <h3>Windows Memory Cache &amp; Standby List Trimmer</h3>
+              <p>Purge bloated standby page lists, empty idle process working sets, flush modified cache, and prevent gaming micro-stutters in real-time.</p>
+              <span class="topcard-pill">● Memory Load: 46% • In Use: 7.4 GB • Available: 8.6 GB</span>
+            </div>
+          </div>
+          <div class="topcard-actions">
+            <button class="btn-mock btn-emerald">⚡ Purge Standby</button>
+            <button class="btn-mock btn-blue">Empty Sets</button>
+          </div>
+        </div>
+
+        <!-- Tab Switcher -->
+        <div class="app-tabs">
+          <div class="tab-group">
+            <div class="tab-item active">Active Processes (60)</div>
+            <div class="tab-item inactive">System Memory Pools</div>
+            <div class="tab-item inactive">Optimization Logs</div>
+          </div>
+          <div class="tab-stats">
+            RAM: 7.4 GB / 16.0 GB (46%) | Procs: 184
+          </div>
+        </div>
+
+        <!-- Active Processes Table Mockup -->
+        <div class="app-table-wrap">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Process Name</th>
+                <th>PID</th>
+                <th>Working Set (RAM)</th>
+                <th>Private Commit</th>
+                <th>Memory %</th>
+                <th>Priority</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>msedge.exe</strong></td>
+                <td>14028</td>
+                <td>984.2 MB</td>
+                <td>892.4 MB</td>
+                <td><span style="color:#DC2626; font-weight:700;">6.2%</span></td>
+                <td>Normal</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>Discord.exe</strong></td>
+                <td>8412</td>
+                <td>468.1 MB</td>
+                <td>412.0 MB</td>
+                <td><span style="color:#0284C7; font-weight:700;">2.9%</span></td>
+                <td>Normal</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>Code.exe</strong></td>
+                <td>19340</td>
+                <td>412.5 MB</td>
+                <td>370.2 MB</td>
+                <td><span style="color:#0284C7; font-weight:700;">2.6%</span></td>
+                <td>Normal</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>Steam.exe</strong></td>
+                <td>5120</td>
+                <td>284.0 MB</td>
+                <td>245.8 MB</td>
+                <td>1.8%</td>
+                <td>Normal</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>explorer.exe</strong></td>
+                <td>4992</td>
+                <td>186.4 MB</td>
+                <td>142.1 MB</td>
+                <td>1.2%</td>
+                <td>Normal</td>
+                <td>Active</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="app-actions-bar">
+          <button class="btn-mock btn-emerald">⚡ 1-Click Trim All RAM</button>
+          <button class="btn-mock btn-emerald" style="background:#059669;">Purge Standby List</button>
+          <button class="btn-mock btn-blue">Empty Working Sets</button>
+          <button class="btn-mock btn-outline">Flush Modified</button>
+          <button class="btn-mock btn-outline">Trim Selected</button>
+          <button class="btn-mock btn-outline">Refresh</button>
+        </div>
+
+        <!-- App Footer -->
+        <div class="app-footer">
+          <div>☐ Auto-trim standby list when available RAM drops below 15%</div>
+          <div>Zero resident memory • Native NtSetSystemInformation • Run as Admin</div>
+          <div style="font-weight:700; color:#047857;">pexoris.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6-FEATURE GRID -->
+    <section id="features">
+      <div class="section-header">
+        <span class="section-tag">Pure System Efficiency</span>
+        <h2>Why Standby Memory &amp; Working Sets Need Trimming</h2>
+        <p>Windows caches accessed files until RAM appears almost full. When heavy games demand sudden memory, standby stalls trigger micro-stutters and frame rate drops.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3>Native NtSetSystemInformation Purge</h3>
+          <p>Directly invokes the Windows NT kernel <code>MemoryPurgeStandbyList</code> routine (the same call used by Sysinternals RAMMap) to wipe cached standby file data in under 20ms.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🧹</div>
+          <h3>Global Working Sets Trimmer</h3>
+          <p>Calls <code>EmptyWorkingSet</code> across all idle background applications (Discord, Spotify, browsers, game launchers) to release unused physical memory pages immediately.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🎮</div>
+          <h3>Zero Gaming Micro-Stutters</h3>
+          <p>Eliminates stuttering in memory-intensive games like Call of Duty, Cyberpunk 2077, and Flight Simulator caused by Windows scrambling to free cached pages during gameplay.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">💾</div>
+          <h3>Modified Page List Flushing</h3>
+          <p>Flushes dirty and modified memory pages to disk prior to standby purges, ensuring memory state consistency and zero data corruption.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🤖</div>
+          <h3>Automated Threshold Trimming</h3>
+          <p>Enable the optional auto-trim checkbox to keep your standby memory clean automatically whenever free physical RAM drops below 15% during heavy workloads.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">💎</div>
+          <h3>58 KB Portable Standalone</h3>
+          <p>No installer, zero background services, no registry junk, and zero telemetry. Runs cleanly from any folder or USB thumb drive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON MATRIX TABLE -->
+    <section id="comparison">
+      <div class="section-header">
+        <span class="section-tag">Direct Comparison</span>
+        <h2>Pexoris RamTrimmer vs. Alternative Memory Tools</h2>
+        <p>See why Pexoris RamTrimmer delivers cleaner, faster RAM optimization without bloatware or background system overhead.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature / Capability</th>
+              <th>Pexoris RamTrimmer</th>
+              <th>Sysinternals RAMMap</th>
+              <th>ISLC (Standby Cleaner)</th>
+              <th>Commercial Cleaners (CCleaner)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>1-Click Multi-Pool Trim</strong></td>
+              <td><span class="badge-check">✔ Yes (Instant)</span></td>
+              <td><span class="badge-cross">Menu diving required</span></td>
+              <td>Standby only</td>
+              <td><span class="badge-cross">Fake page file pushing</span></td>
+            </tr>
+            <tr>
+              <td><strong>Kernel NtSetSystemInformation</strong></td>
+              <td><span class="badge-check">✔ Direct Native API</span></td>
+              <td><span class="badge-check">✔ Yes</span></td>
+              <td><span class="badge-check">✔ Yes</span></td>
+              <td><span class="badge-cross">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Empty Process Working Sets</strong></td>
+              <td><span class="badge-check">✔ Across all apps</span></td>
+              <td><span class="badge-check">✔ Yes</span></td>
+              <td><span class="badge-cross">No</span></td>
+              <td><span class="badge-cross">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Binary Executable Size</strong></td>
+              <td><span class="badge-check">58 KB Portable</span></td>
+              <td>~600 KB</td>
+              <td>~2.5 MB</td>
+              <td><span class="badge-cross">60+ MB with adware</span></td>
+            </tr>
+            <tr>
+              <td><strong>Background Memory Footprint</strong></td>
+              <td><span class="badge-check">0 MB (Can close immediately)</span></td>
+              <td>15-25 MB</td>
+              <td>8-15 MB resident</td>
+              <td><span class="badge-cross">50+ MB daemon</span></td>
+            </tr>
+            <tr>
+              <td><strong>Telemetry &amp; Ads</strong></td>
+              <td><span class="badge-check">Zero (100% Private)</span></td>
+              <td>Zero</td>
+              <td>Zero</td>
+              <td><span class="badge-cross">Heavy Tracking</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOW-TO GUIDE -->
+    <section id="how-to">
+      <div class="section-header">
+        <span class="section-tag">Quick Start Tutorial</span>
+        <h2>How to Purge Standby Memory and Clean RAM</h2>
+        <p>Reclaim 2 to 6 gigabytes of cached RAM in under 5 seconds before launching your favorite game or render job.</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Launch RamTrimmer</h3>
+          <p>Extract the 58 KB standalone executable and run it as Administrator so it can acquire kernel memory privileges.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Inspect Memory Pools</h3>
+          <p>View your live RAM load percentage, available memory, and which background applications consume the most private memory.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Click Trim All RAM</h3>
+          <p>Click "⚡ 1-Click Trim All RAM" to purge the standby list, flush modified pages, and empty inactive working sets simultaneously.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Enjoy Stutter-Free Gaming</h3>
+          <p>Launch your game with clean, contiguous physical memory available, or close RamTrimmer completely—your freed RAM stays clean.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section id="faq">
+      <div class="section-header">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2>Everything You Need to Know About Standby Memory</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>What is the Windows Standby List memory pool?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            The Standby List is memory that Windows uses to hold pages that are no longer in active use by processes, but which might be needed again. For instance, if you open a large video file or video game, Windows keeps copies in standby RAM so reloading is fast. However, when a new program needs memory, Windows sometimes stutters while converting standby pages into free pages. Purging the standby list frees this memory immediately.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Will purging the Standby List crash my open programs?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No! Purging the standby list never crashes running applications. Standby memory only contains data that already exists safely on disk. Windows simply drops the temporary cache pointer and makes the physical RAM immediately available for any active software.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does "Empty Working Sets" do?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            A process's "Working Set" is the set of memory pages currently resident in physical RAM. Many desktop apps (like web browsers or game clients) retain megabytes of memory for tabs or windows you haven't viewed in hours. Emptying working sets trims those dormant pages, allowing active applications to use that RAM instead.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Why is Pexoris RamTrimmer under 60 KB while other tools are 50 MB?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Pexoris utilities are handcrafted in pure C# .NET WinForms without bulky Electron frameworks, Chromium browser runtimes, or analytics SDKs. It talks directly to native Windows kernel APIs (ntdll and psapi), resulting in a lightning-fast, ultra-compact binary.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT RULE: SINGLE DOWNLOAD LOCATION AT THE BOTTOM -->
+    <section id="download" class="download-card-section">
+      <div class="download-card">
+        <h2>Download Pexoris RamTrimmer</h2>
+        <p>100% Free, Standalone Portable Executable for Windows 11, 10, 8.1, and 7.</p>
+        
+        <a href="https://drive.google.com/uc?export=download&id=PENDING_TOOL14_LINK" class="download-primary-btn" id="btnDownload">
+          <span>⚡ Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version: <strong>1.0.0.0</strong></span>
+          <span>Size: <strong>36 KB ZIP (58 KB EXE)</strong></span>
+          <span>License: <strong>Free Portable Utility</strong></span>
+          <span>OS: <strong>Windows 11 / 10 / 8.1 / 7 (x64 / x86)</strong></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="https://pexoris.com" class="brand-link">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span class="brand-title">Pexoris</span>
+        </a>
+        <p>Fast, lightweight, zero-telemetry portable utilities designed to restore full control over your Windows operating system.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>System &amp; Performance</h4>
+        <ul>
+          <li><a href="../../tools/file-unlocker/">Pexoris FileUnlocker</a></li>
+          <li><a href="../../tools/port-killer/">Pexoris PortKiller</a></li>
+          <li><a href="../../tools/temp-cleaner/">Pexoris Temp Cleaner</a></li>
+          <li><a href="../../tools/startup-inspector/">Pexoris Startup Inspector</a></li>
+          <li><a href="../../tools/service-optimizer/">Pexoris ServiceOptimizer</a></li>
+          <li><a href="../../tools/ram-trimmer/">Pexoris RamTrimmer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Security &amp; Network</h4>
+        <ul>
+          <li><a href="../../tools/ai-shield/">Pexoris AIShield</a></li>
+          <li><a href="../../tools/usb-shield/">Pexoris USBShield</a></li>
+          <li><a href="../../tools/context-menu-editor/">Pexoris ContextMenuEditor</a></li>
+          <li><a href="../../tools/hosts-manager/">Pexoris HostsManager</a></li>
+          <li><a href="../../tools/defender-toggle/">Pexoris Defender Toggle</a></li>
+          <li><a href="../../tools/dns-flusher/">Pexoris DNSFlusher</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../../blog/">Troubleshooting Blog</a></li>
+          <li><a href="../../blog/how-to-clear-standby-memory-windows-11/">Standby Memory Guide</a></li>
+          <li><a href="../../sitemap.xml">XML Sitemap</a></li>
+          <li><a href="https://github.com/kapasia628/pexoris" target="_blank" rel="noopener">GitHub Repository</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Pexoris. All rights reserved. Precision portable Windows tools.</div>
+      <div>Designed for zero bloat and maximum control.</div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

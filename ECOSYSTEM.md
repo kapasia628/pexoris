@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 13 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 14 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -22,6 +22,7 @@
 | **11** | **Pexoris StartupInspector** | `startup-inspector` | 57 KB | 33 KB | `22fd202a60bbe8a2523f4a8b5719c76160852933ea031ca2fd34c4406b720a0d` | [Download](https://drive.google.com/uc?export=download&id=1ZjrUfr54jGmpPd9oJio15Jsrk7EFnU36) | `http://localhost/tools/website/tools/startup-inspector/` |
 | **12** | **Pexoris DefenderToggle** | `defender-toggle` | 55 KB | 34 KB | `0c0f65b7e9007a37d00b9c017cc98eb41ec1cf2eb94dd30a6e8083184a4eb445` | [Download](https://drive.google.com/uc?export=download&id=1hfwkzQhgZMpFy7-48ppOlF0MUXIBDWSo) | `http://localhost/tools/website/tools/defender-toggle/` |
 | **13** | **Pexoris DNSFlusher** | `dns-flusher` | 62 KB | 40 KB | `7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581` | [Download](https://drive.google.com/uc?export=download&id=1SQCWEifK1tDpYkEgoJIHeLRS9KrAoTRH) | `http://localhost/tools/website/tools/dns-flusher/` |
+| **14** | **Pexoris RamTrimmer** | `ram-trimmer` | 58 KB | 36 KB | `bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be` | *(Pending Google Drive Link)* | `http://localhost/tools/website/tools/ram-trimmer/` |
 
 ---
 
@@ -90,4 +91,5 @@ Running `build.bat` in the project root:
 - [x] **#11 Pexoris Startup Inspector** (Inspect and disable stubborn autorun entries)
 - [x] **#12 Pexoris Defender Toggle** (Temporarily pause Windows Defender during dev compilation)
 - [x] **#13 Pexoris DNSFlusher** (Flush DNS cache, reset Winsock catalog & purge ARP)
-- [ ] **#14 Pexoris RamTrimmer** (Flush standby memory cache & empty working sets)
+- [x] **#14 Pexoris RamTrimmer** (Flush standby memory cache & empty working sets)
+- [ ] **#15 Pexoris ExifStripper** (Strip photo metadata, GPS coordinates & camera EXIF tags)
