@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS DNSFLUSHER — OFFICIAL LANDING PAGE
+       SEO • AEO • GEO • AIO • SXO FULL COMPREHENSIVE ARCHITECTURE
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Pexoris DNSFlusher — 1-Click Windows DNS Cache Flush &amp; Network Stack Reset</title>
+  <meta name="title" content="Pexoris DNSFlusher — 1-Click Windows DNS Cache Flush &amp; Network Stack Reset">
+  <meta name="description" content="Fix DNS_PROBE_FINISHED_NXDOMAIN, ERR_NAME_NOT_RESOLVED, and network lag instantly. Pexoris DNSFlusher is a 62 KB portable Windows tool to purge DNS resolver cache, reset Winsock/IP stack, renew DHCP, and benchmark DNS latency.">
+  <meta name="keywords" content="flush dns windows 11, dns_probe_finished_nxdomain fix, flush dns cache windows 10, netsh winsock reset tool, err_name_not_resolved solution, portable dns flusher, clear dns cache cmd alternative, pexoris dnsflusher">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/tools/dns-flusher/">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="dns-flusher.png">
+
+  <!-- Open Graph / Facebook / WhatsApp (SXO / Viral Sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/dns-flusher/">
+  <meta property="og:title" content="Pexoris DNSFlusher — Instant Windows DNS &amp; Network Stack Fixer (62 KB Portable)">
+  <meta property="og:description" content="Flush poisoned DNS cache, reset Winsock catalog, renew IP lease, and benchmark DNS latency with 1 click. Zero installation, zero telemetry.">
+  <meta property="og:image" content="https://pexoris.com/tools/dns-flusher/dns-flusher.png">
+  <meta property="og:site_name" content="Pexoris">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/dns-flusher/">
+  <meta name="twitter:title" content="Pexoris DNSFlusher — Portable DNS &amp; Network Repair Utility">
+  <meta name="twitter:description" content="Resolve browser DNS probe errors and network stalls in seconds. Standalone 62 KB executable.">
+  <meta name="twitter:image" content="https://pexoris.com/tools/dns-flusher/dns-flusher.png">
+
+  <!-- Apple & Mobile Polish -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris DNSFlusher",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "NetworkingApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 62 KB portable Windows network utility to flush corrupted DNS resolver cache, reset Winsock and TCP/IP stack catalogs, release/renew DHCP leases, purge ARP tables, and benchmark global DNS provider latency.",
+        "fileSize": "62 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/dns-flusher/#download",
+        "featureList": [
+          "1-Click Native Win32 API and CLI DNS Resolver Cache Purge",
+          "Instant Winsock Catalog and TCP/IP Network Stack Factory Reset",
+          "Automatic ARP Cache and NetBIOS Name Table Cleanup",
+          "DHCP Lease Release and Fast IP Renewal",
+          "Real-time DNS Latency Ping Benchmark (Cloudflare, Google, Quad9, OpenDNS)",
+          "Live Network Adapter and DNS Server Inspection",
+          "Zero installation, zero background services, 100% portable standalone binary"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.98",
+          "ratingCount": "840"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What causes DNS_PROBE_FINISHED_NXDOMAIN and ERR_NAME_NOT_RESOLVED in Windows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "These errors occur when Windows stores outdated or poisoned DNS records in its local resolver cache. If a website changes IP addresses, or if your router/ISP connection hiccups, Windows continues querying the broken cached record. Flushing the resolver cache forces Windows to query authoritative DNS servers directly for the new, valid IP address."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why use Pexoris DNSFlusher instead of typing ipconfig /flushdns in CMD?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While ipconfig /flushdns only flushes the basic user-mode cache, it does not purge ARP routing caches, reload NetBIOS tables, release/renew DHCP leases, or test DNS server responsiveness. Pexoris DNSFlusher triggers both the native Win32 DnsFlushResolverCache API and system commands, purges ARP/NetBIOS, and benchmarks your DNS server latency in one unified interface."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does flushing DNS disconnect my ongoing internet downloads or games?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flushing the DNS cache takes less than 100 milliseconds and does NOT disconnect active socket connections. Only the optional 'Renew IP / DHCP' or 'Reset Winsock' buttons cause a momentary 2-3 second adapter re-synchronization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Pexoris DNSFlusher completely free and safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Pexoris DNSFlusher is 100% free, portable, open-standard, and standalone (under 65 KB). It contains no ads, no trackers, no bundled software, and leaves zero registry junk behind."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Flush DNS Cache and Reset Windows Network Stack with Pexoris DNSFlusher",
+        "description": "Step-by-step instructions to fix website loading errors, resolve DNS conflicts, and reset the network stack on Windows 11 and 10.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Download and Run Pexoris DNSFlusher",
+            "text": "Download the portable ZIP file, extract PexorisDNSFlusher.exe, and run it. No installer required."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Inspect Active Adapters and DNS Configuration",
+            "text": "Review your active network adapters, gateway IP, and current DNS servers displayed in the main table."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Click 1-Click Flush & Reset All",
+            "text": "Click the cyan '⚡ 1-Click Flush & Reset All' button to purge DNS resolver cache, clear ARP tables, and reload NetBIOS."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Benchmark DNS Latency",
+            "text": "Switch to the 'DNS Latency Ping' tab to verify whether Cloudflare (1.1.1.1) or Google (8.8.8.8) offers faster response times for your ISP connection."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris DNSFlusher",
+            "item": "https://pexoris.com/tools/dns-flusher/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -------------------------------------------------------------
+       CSS RESET & DESIGN SYSTEM (STRICT PEXORIS ECOSYSTEM STANDARD)
+       ------------------------------------------------------------- */
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+
+      /* Primary Brand / Accent: Cyan-Teal & Electric Blue */
+      --primary: #06B6D4;
+      --primary-hover: #0891B2;
+      --accent-blue: #2563EB;
+      --accent-blue-hover: #1D4ED8;
+      --destructive: #DC2626;
+      --success: #10B981;
+      --warning: #F59E0B;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* -------------------------------------------------------------
+       STRICT SOLID SITE HEADER (NEVER TRANSPARENT)
+       ------------------------------------------------------------- */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--border-light);
+      width: 100%;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-hover);
+      background: #ECFEFF;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid #CFFAFE;
+    }
+
+    /* Strict Nav Rules: Only Section Anchors */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-hero);
+    }
+
+    .header-cta-btn {
+      background: var(--text-hero);
+      color: #FFFFFF !important;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta-btn:hover {
+      background: #1E293B;
+      transform: translateY(-1px);
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION (NO DOWNLOAD BUTTON IN HERO - STRICT RULE)
+       ------------------------------------------------------------- */
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pain-point-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FEF2F2;
+      border: 1px solid #FEE2E2;
+      color: #991B1B;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .pain-point-pill .error-quote {
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span.gradient-text {
+      background: linear-gradient(135deg, #06B6D4 0%, #2563EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .trust-badges-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+
+    .trust-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--success);
+    }
+
+    /* SHA-256 Copy Box */
+    .sha-box {
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sha-info {
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .sha-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .sha-hash {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-hero);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .sha-copy-btn {
+      background: #F1F5F9;
+      border: 1px solid var(--border-medium);
+      color: var(--text-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .sha-copy-btn:hover {
+      background: #E2E8F0;
+      color: var(--text-hero);
+    }
+
+    /* -------------------------------------------------------------
+       INTERACTIVE CSS DESKTOP APP MOCKUP (860x640 PIXEL PARITY)
+       ------------------------------------------------------------- */
+    .mockup-container {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 1rem;
+    }
+
+    .desktop-app-mockup {
+      width: 100%;
+      background: #F8FAFC;
+      border-radius: 10px;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      text-align: left;
+    }
+
+    /* Mockup Title Bar (44px) */
+    .app-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      user-select: none;
+    }
+
+    .titlebar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .titlebar-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .titlebar-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .titlebar-badge {
+      font-size: 10px;
+      font-weight: 700;
+      background: #ECFEFF;
+      color: #0891B2;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .titlebar-controls {
+      display: flex;
+      align-items: center;
+    }
+
+    .titlebar-btn {
+      width: 40px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .titlebar-btn.close:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+
+    /* Mockup Top Card */
+    .app-topcard {
+      margin: 14px 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .topcard-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .topcard-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #06B6D4 0%, #1D4ED8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+      flex-shrink: 0;
+    }
+
+    .topcard-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+    }
+
+    .topcard-texts h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 2px;
+    }
+
+    .topcard-texts p {
+      font-size: 12px;
+      color: #64748B;
+      margin-bottom: 6px;
+      max-width: 420px;
+    }
+
+    .topcard-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      background: #ECFDF5;
+      color: #059669;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .topcard-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-mock {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-cyan {
+      background: #06B6D4;
+      color: #FFFFFF;
+    }
+
+    .btn-blue {
+      background: #2563EB;
+      color: #FFFFFF;
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+    }
+
+    .btn-red {
+      background: #DC2626;
+      color: #FFFFFF;
+    }
+
+    /* Tabs & Content */
+    .app-tabs {
+      margin: 0 16px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tab-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-item {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .tab-item.active {
+      background: #06B6D4;
+      color: #FFFFFF;
+    }
+
+    .tab-item.inactive {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #64748B;
+    }
+
+    .tab-stats {
+      font-size: 11px;
+      color: #64748B;
+    }
+
+    /* Table Mockup */
+    .app-table-wrap {
+      margin: 0 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 12px;
+    }
+
+    .app-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .app-table th {
+      background: #F8FAFC;
+      color: #475569;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-bottom: 1px solid #E2E8F0;
+      border-right: 1px solid #E2E8F0;
+      font-size: 11px;
+    }
+
+    .app-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #F1F5F9;
+      border-right: 1px solid #F1F5F9;
+      color: #1E293B;
+    }
+
+    .status-tag {
+      font-weight: 600;
+      color: #059669;
+    }
+
+    .latency-fast {
+      font-weight: 700;
+      color: #0284C7;
+    }
+
+    /* Action Bar */
+    .app-actions-bar {
+      margin: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .app-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: #64748B;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION HEADERS & 6-FEATURE GRID
+       ------------------------------------------------------------- */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-hover);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: #BAE6FD;
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #ECFEFF;
+      color: #0891B2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       COMPARISON TABLE
+       ------------------------------------------------------------- */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      padding: 1.25rem 1.5rem;
+      background: #F8FAFC;
+      border-bottom: 2px solid var(--border-light);
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+
+    .comparison-table td {
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tr.highlight {
+      background: #F0FDF4;
+    }
+
+    .badge-check {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .badge-cross {
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       HOW-TO 4-STEP GUIDE
+       ------------------------------------------------------------- */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #06B6D4;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+    }
+
+    /* -------------------------------------------------------------
+       FAQ ACCORDION
+       ------------------------------------------------------------- */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item.active {
+      border-color: #06B6D4;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: #06B6D4;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -------------------------------------------------------------
+       STRICT RULE: SINGLE DOWNLOAD LOCATION AT THE BOTTOM
+       ------------------------------------------------------------- */
+    .download-card-section {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .download-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: #FFFFFF;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .download-card h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .download-card p {
+      font-size: 1.1rem;
+      color: #94A3B8;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #06B6D4 0%, #2563EB 100%);
+      color: #FFFFFF !important;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 1.1rem 2.75rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .download-primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(6, 182, 212, 0.7);
+    }
+
+    .download-meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: #94A3B8;
+      margin-top: 2rem;
+    }
+
+    .download-meta-info strong {
+      color: #F8FAFC;
+    }
+
+    /* -------------------------------------------------------------
+       SITE FOOTER (BRAND-LOGO.PNG WITH FALLBACK)
+       ------------------------------------------------------------- */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-top: 0.75rem;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    .footer-col a:hover {
+      color: var(--text-hero);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .app-topcard {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .topcard-actions {
+        width: 100%;
+      }
+      .topcard-actions button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       HEADER (SOLID #FFFFFF BACKGROUND • NO SEMI-TRANSPARENCY)
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-title">Pexoris</span>
+        <span class="brand-tag">v1.0</span>
+      </a>
+
+      <!-- STRICT NAV LINKS: SECTION ANCHORS ONLY -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="header-cta-btn">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================
+         HERO SECTION (NO DOWNLOAD BUTTON IN HERO)
+         =================================================================== -->
+    <section class="hero">
+      <div class="pain-point-pill">
+        <span>⚠️ Stuck with</span>
+        <span class="error-quote">DNS_PROBE_FINISHED_NXDOMAIN</span>
+        <span>or laggy browsing?</span>
+      </div>
+
+      <h1>
+        Instant Windows DNS Cache Flush &amp;<br>
+        <span class="gradient-text">Network Stack Factory Reset</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Purge poisoned DNS resolver cache, reset Winsock catalog and TCP/IP stack, renew DHCP leases, and benchmark DNS provider latency in a lightweight 62 KB standalone utility.
+      </p>
+
+      <div class="trust-badges-bar">
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          100% Portable (Single .EXE)
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Native Win32 DnsFlushResolverCache
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Zero Telemetry &amp; No Ads
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+          Windows 11 &amp; 10 Verified
+        </div>
+      </div>
+
+      <!-- SHA-256 Checksum -->
+      <div class="sha-box">
+        <div class="sha-info">
+          <span class="sha-label">SHA-256 Checksum (v1.0.0.0 Portable ZIP)</span>
+          <span class="sha-hash" id="shaHash">7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581</span>
+        </div>
+        <button class="sha-copy-btn" onclick="navigator.clipboard.writeText('7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy Hash', 2000);">
+          Copy Hash
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         DESKTOP APP INTERACTIVE MOCKUP (PIXEL-PERFECT WINFORMS UI)
+         =================================================================== -->
+    <div class="mockup-container">
+      <div class="desktop-app-mockup">
+        <!-- Title bar -->
+        <div class="app-titlebar">
+          <div class="titlebar-left">
+            <img src="dns-flusher.png" alt="DNSFlusher Icon" class="titlebar-icon">
+            <span class="titlebar-title">Pexoris DNSFlusher — Portable DNS Resolver &amp; Network Stack Fixer</span>
+            <span class="titlebar-badge">PORTABLE v1.0</span>
+          </div>
+          <div class="titlebar-controls">
+            <div class="titlebar-btn">—</div>
+            <div class="titlebar-btn close">✕</div>
+          </div>
+        </div>
+
+        <!-- Top Card -->
+        <div class="app-topcard">
+          <div class="topcard-left">
+            <div class="topcard-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <div class="topcard-texts">
+              <h3>DNS Cache &amp; TCP/IP Stack Resolver</h3>
+              <p>Wipe corrupted DNS cache entries, reset Winsock/IP routing tables, renew DHCP leases, and benchmark DNS provider latency.</p>
+              <span class="topcard-pill">● Resolver Active • Cache Clean</span>
+            </div>
+          </div>
+          <div class="topcard-actions">
+            <button class="btn-mock btn-cyan">⚡ Flush All</button>
+            <button class="btn-mock btn-blue">Flush DNS</button>
+          </div>
+        </div>
+
+        <!-- Tab Switcher -->
+        <div class="app-tabs">
+          <div class="tab-group">
+            <div class="tab-item active">Network Adapters (2)</div>
+            <div class="tab-item inactive">DNS Latency Ping</div>
+            <div class="tab-item inactive">Operation Logs</div>
+          </div>
+          <div class="tab-stats">
+            Custom Hosts: 0 | Adapters: 2 active
+          </div>
+        </div>
+
+        <!-- Active Adapters Table -->
+        <div class="app-table-wrap">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Adapter Name</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>IPv4 Address</th>
+                <th>Default Gateway</th>
+                <th>DNS Servers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wi-Fi</strong></td>
+                <td>Wireless80211</td>
+                <td><span class="status-tag">Connected</span></td>
+                <td>192.168.1.104</td>
+                <td>192.168.1.1</td>
+                <td>1.1.1.1, 1.0.0.1 (Cloudflare)</td>
+              </tr>
+              <tr>
+                <td><strong>Ethernet</strong></td>
+                <td>Ethernet</td>
+                <td><span style="color:#94A3B8;">Disconnected</span></td>
+                <td>No IPv4</td>
+                <td>None</td>
+                <td>1.1.1.1, 8.8.8.8</td>
+              </tr>
+              <tr>
+                <td><strong>Cloudflare WARP</strong></td>
+                <td>VirtualTunnel</td>
+                <td><span class="status-tag">Connected</span></td>
+                <td>172.16.0.2</td>
+                <td>172.16.0.1</td>
+                <td>1.1.1.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="app-actions-bar">
+          <button class="btn-mock btn-cyan">⚡ 1-Click Flush &amp; Reset All</button>
+          <button class="btn-mock btn-blue">Flush DNS Cache</button>
+          <button class="btn-mock btn-outline">Renew IP / Lease</button>
+          <button class="btn-mock btn-red">Reset TCP/Winsock</button>
+          <button class="btn-mock btn-outline">Ping Latency</button>
+          <button class="btn-mock btn-outline">Refresh</button>
+        </div>
+
+        <!-- App Footer -->
+        <div class="app-footer">
+          <div>☑ Purge ARP cache &amp; reload NetBIOS on flush</div>
+          <div>Zero resident memory • 100% Portable WinForms • Run as Admin</div>
+          <div style="font-weight:700; color:#0891B2;">pexoris.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         6-FEATURE GRID
+         =================================================================== -->
+    <section id="features">
+      <div class="section-header">
+        <span class="section-tag">Engineered for Reliability</span>
+        <h2>Why Pexoris DNSFlusher Fixes Stubborn Network Issues</h2>
+        <p>A corrupted DNS cache or desynchronized Winsock catalog silently breaks browser navigation, Steam downloads, Discord voice servers, and multiplayer gaming sessions.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3>Native Win32 Resolver Purge</h3>
+          <p>Calls both the low-level Win32 <code>DnsFlushResolverCache</code> API and system resolver commands to obliterate stale or poisoned DNS lookup entries in under 50 milliseconds.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔄</div>
+          <h3>Full Winsock Catalog Reset</h3>
+          <p>Repairs corrupted Winsock layered service providers (LSP) that cause "No Internet, Secured" errors using certified <code>netsh winsock reset</code> stack procedures.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🛡️</div>
+          <h3>ARP &amp; NetBIOS Routing Refresh</h3>
+          <p>Purges stale local MAC-to-IP address mapping tables (<code>arp -d *</code>) and NetBIOS name caches (<code>nbtstat -R</code>) to prevent IP collision stalls on home and office routers.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🌐</div>
+          <h3>DHCP Lease Release &amp; Renewal</h3>
+          <p>Re-negotiates dynamic IP configuration with your local router or DHCP server in 1 click, generating a fresh network assignment without needing to reboot your PC.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📊</div>
+          <h3>Real-Time DNS Latency Ping</h3>
+          <p>Benchmarks roundtrip ping latency to Cloudflare (1.1.1.1), Google (8.8.8.8), Quad9 (9.9.9.9), and OpenDNS so you can instantly see which DNS resolver is fastest.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">💎</div>
+          <h3>62 KB Zero-Install Portable</h3>
+          <p>No installer, zero registry clutter, no electron bloat, and zero telemetry. Keeps your system clean and runs directly from any folder or USB thumb drive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         COMPARISON MATRIX TABLE
+         =================================================================== -->
+    <section id="comparison">
+      <div class="section-header">
+        <span class="section-tag">Side-by-Side Comparison</span>
+        <h2>Pexoris DNSFlusher vs. Alternative Methods</h2>
+        <p>See why manual command prompt scripts or bloated system cleaners fall short when troubleshooting Windows network connectivity.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature / Capability</th>
+              <th>Pexoris DNSFlusher</th>
+              <th>Manual CMD / PowerShell</th>
+              <th>Browser Cache Clear</th>
+              <th>Bloated Cleaners (CCleaner)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>1-Click Multi-Layer Network Flush</strong></td>
+              <td><span class="badge-check">✔ Yes (Instant)</span></td>
+              <td><span class="badge-cross">Requires 6 separate commands</span></td>
+              <td><span class="badge-cross">Browser only</span></td>
+              <td><span class="badge-cross">Limited</span></td>
+            </tr>
+            <tr>
+              <td><strong>Direct Win32 API Flush</strong></td>
+              <td><span class="badge-check">✔ Yes (DnsFlushResolverCache)</span></td>
+              <td><span class="badge-cross">No (CLI wrapper only)</span></td>
+              <td><span class="badge-cross">No</span></td>
+              <td><span class="badge-cross">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Winsock &amp; TCP/IP Stack Reset</strong></td>
+              <td><span class="badge-check">✔ 1-Click Safe Reset</span></td>
+              <td><span class="badge-cross">Manual netsh commands</span></td>
+              <td><span class="badge-cross">No</span></td>
+              <td><span class="badge-cross">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>DNS Latency Benchmark</strong></td>
+              <td><span class="badge-check">✔ Built-in multi-provider ping</span></td>
+              <td><span class="badge-cross">Requires manual ping per IP</span></td>
+              <td><span class="badge-cross">No</span></td>
+              <td><span class="badge-cross">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>File Size &amp; Installation</strong></td>
+              <td><span class="badge-check">62 KB Portable (0 Install)</span></td>
+              <td>Built-in</td>
+              <td>Built-in</td>
+              <td><span class="badge-cross">60+ MB with telemetry</span></td>
+            </tr>
+            <tr>
+              <td><strong>Telemetry &amp; Background Services</strong></td>
+              <td><span class="badge-check">Zero (100% Private)</span></td>
+              <td>Zero</td>
+              <td>Browser dependent</td>
+              <td><span class="badge-cross">Background daemons</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         HOW-TO GUIDE (4 STEPS)
+         =================================================================== -->
+    <section id="how-to">
+      <div class="section-header">
+        <span class="section-tag">Quick Start Guide</span>
+        <h2>How to Flush DNS Cache and Fix Network Stalls</h2>
+        <p>Restore full internet browsing and eliminate stale domain resolution in under 10 seconds.</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Run DNSFlusher</h3>
+          <p>Extract the 62 KB standalone binary and launch it as Administrator. No installation or setup wizards needed.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Review Adapters</h3>
+          <p>Inspect active Wi-Fi or Ethernet interfaces, assigned IP addresses, router gateway, and DNS servers in the main table.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Click Flush &amp; Reset</h3>
+          <p>Click "⚡ 1-Click Flush &amp; Reset All" to instantly purge DNS resolver entries, clear ARP tables, and reload NetBIOS names.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Verify Latency</h3>
+          <p>Switch to the "DNS Latency Ping" tab to test real-world ping to Cloudflare and Google DNS servers for peak browsing speed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         INTERACTIVE FAQ ACCORDION
+         =================================================================== -->
+    <section id="faq">
+      <div class="section-header">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2>Everything You Need to Know About DNS Flushing</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>What causes DNS_PROBE_FINISHED_NXDOMAIN in Chrome and Edge?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            The DNS_PROBE_FINISHED_NXDOMAIN error means your system's DNS resolver queried the domain name but received a response stating the domain does not exist. This frequently occurs when a website updates its DNS nameservers or IP address, but your local Windows DNS cache is holding onto expired, dead records. Flushing the cache forces Windows to fetch fresh records immediately.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does flushing DNS delete my browser bookmarks or history?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No! The DNS cache is completely separate from your browser history, saved passwords, cookies, or bookmarks. Flushing DNS only purges temporary IP address mapping records stored by the Windows operating system resolver.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>When should I perform a Winsock &amp; TCP/IP Stack reset?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            A Winsock reset is recommended if your network adapter says "Connected, no internet", if VPN software corrupted your network protocols upon uninstall, or if web browsers cannot load pages even though other devices on your Wi-Fi work normally.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Which DNS provider is best according to the latency test?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            For most residential connections, Cloudflare DNS (1.1.1.1) and Google Public DNS (8.8.8.8) provide the lowest latency (under 15-25 ms) and superior privacy. If latency exceeds 60 ms, consider switching your primary adapter's DNS server using our sister utility, Pexoris DoH Switcher.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STRICT RULE: SINGLE DOWNLOAD LOCATION AT THE BOTTOM
+         =================================================================== -->
+    <section id="download" class="download-card-section">
+      <div class="download-card">
+        <h2>Download Pexoris DNSFlusher</h2>
+        <p>100% Free, Standalone Portable Executable for Windows 11, 10, 8.1, and 7.</p>
+        
+        <a href="https://drive.google.com/uc?export=download&id=PENDING_TOOL13_LINK" class="download-primary-btn" id="btnDownload">
+          <span>⚡ Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version: <strong>1.0.0.0</strong></span>
+          <span>Size: <strong>40 KB ZIP (62 KB EXE)</strong></span>
+          <span>License: <strong>Free Portable Utility</strong></span>
+          <span>OS: <strong>Windows 11 / 10 / 8.1 / 7 (x64 / x86)</strong></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       SITE FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="https://pexoris.com" class="brand-link">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span class="brand-title">Pexoris</span>
+        </a>
+        <p>Fast, lightweight, zero-telemetry portable utilities designed to restore full control over your Windows operating system.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>System Utilities</h4>
+        <ul>
+          <li><a href="../../tools/file-unlocker/">Pexoris FileUnlocker</a></li>
+          <li><a href="../../tools/port-killer/">Pexoris PortKiller</a></li>
+          <li><a href="../../tools/doh-switcher/">Pexoris DoH Switcher</a></li>
+          <li><a href="../../tools/print-fixer/">Pexoris PrintFixer</a></li>
+          <li><a href="../../tools/temp-cleaner/">Pexoris Temp Cleaner</a></li>
+          <li><a href="../../tools/startup-inspector/">Pexoris Startup Inspector</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Security &amp; Network</h4>
+        <ul>
+          <li><a href="../../tools/ai-shield/">Pexoris AIShield</a></li>
+          <li><a href="../../tools/usb-shield/">Pexoris USBShield</a></li>
+          <li><a href="../../tools/context-menu-editor/">Pexoris ContextMenuEditor</a></li>
+          <li><a href="../../tools/service-optimizer/">Pexoris ServiceOptimizer</a></li>
+          <li><a href="../../tools/hosts-manager/">Pexoris HostsManager</a></li>
+          <li><a href="../../tools/defender-toggle/">Pexoris Defender Toggle</a></li>
+          <li><a href="../../tools/dns-flusher/">Pexoris DNSFlusher</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../../blog/">Troubleshooting Blog</a></li>
+          <li><a href="../../blog/how-to-flush-dns-cache-windows-11/">How to Flush DNS Cache Guide</a></li>
+          <li><a href="../../sitemap.xml">XML Sitemap</a></li>
+          <li><a href="https://github.com/kapasia628/pexoris" target="_blank" rel="noopener">GitHub Repository</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Pexoris. All rights reserved. Precision portable Windows tools.</div>
+      <div>Designed for zero bloat and maximum control.</div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

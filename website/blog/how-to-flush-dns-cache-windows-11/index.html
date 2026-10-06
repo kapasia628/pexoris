@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Flush DNS Cache in Windows 11 &amp; Fix DNS_PROBE_FINISHED_NXDOMAIN</title>
+  <meta name="title" content="How to Flush DNS Cache in Windows 11 &amp; Fix DNS_PROBE_FINISHED_NXDOMAIN">
+  <meta name="description" content="Fix website loading errors, ERR_NAME_NOT_RESOLVED, and DNS_PROBE_FINISHED_NXDOMAIN in Windows 11 and 10. Complete guide explaining manual CMD commands and 1-click Pexoris DNSFlusher reset.">
+  <meta name="keywords" content="how to flush dns cache windows 11, fix dns_probe_finished_nxdomain, flush dns command prompt, ipconfig flushdns windows 10, clear dns cache chrome edge, netsh winsock reset, pexoris dnsflusher">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-flush-dns-cache-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-flush-dns-cache-windows-11/">
+  <meta property="og:title" content="How to Flush DNS Cache in Windows 11 &amp; Fix DNS_PROBE_FINISHED_NXDOMAIN">
+  <meta property="og:description" content="Step-by-step technical guide to purging stale DNS records, clearing ARP tables, and resetting the Windows network stack.">
+  <meta property="og:image" content="https://pexoris.com/tools/dns-flusher/dns-flusher.png">
+  <meta property="og:site_name" content="Pexoris Guides">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Flush DNS Cache in Windows 11 & Fix DNS_PROBE_FINISHED_NXDOMAIN",
+        "description": "Technical tutorial on diagnosing and fixing corrupted Windows DNS resolver caches, clearing ARP tables, and resetting Winsock catalogs.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-flush-dns-cache-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Flush DNS Cache on Windows 11",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Command Prompt as Administrator",
+            "text": "Press Win + S, type cmd, right-click Command Prompt and select 'Run as administrator'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Execute the Flush DNS Command",
+            "text": "Type ipconfig /flushdns and press Enter. You should see 'Successfully flushed the DNS Resolver Cache'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Release and Renew IP Lease (Optional)",
+            "text": "Type ipconfig /release followed by ipconfig /renew to refresh your dynamic router lease."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Clear ARP and Reset Winsock (If Errors Persist)",
+            "text": "Run netsh winsock reset and netsh interface ip delete arpcache to reset corrupted networking layers."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the fastest way to flush DNS in Windows 11?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The fastest method is using the free 62 KB Pexoris DNSFlusher utility, which invokes the native Win32 DnsFlushResolverCache API in under 50ms without opening terminal windows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does a website still not open after flushing DNS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Modern browsers (like Google Chrome and Microsoft Edge) also maintain their own internal DNS socket cache separate from Windows. Navigate to chrome://net-internals/#dns and click 'Clear host cache' to wipe browser-level DNS records."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand-cyan: #06B6D4;
+      --brand-cyan-hover: #0891B2;
+      --brand-cyan-light: #ECFEFF;
+      --brand-blue: #2563EB;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #F8FAFC; color: var(--text-body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--brand-cyan-hover); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      width: 100%;
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .brand-logo { width: 32px; height: 32px; object-fit: contain; }
+    .brand-name { font-size: 1.25rem; font-weight: 800; color: var(--text-hero); }
+
+    .article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--text-muted); }
+    .breadcrumb a:hover { color: var(--text-hero); }
+
+    .post-header {
+      position: static; background: transparent; margin-bottom: 2.5rem;
+    }
+    .post-category {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--brand-cyan-hover); background: var(--brand-cyan-light);
+      padding: 3px 10px; border-radius: 9999px; margin-bottom: 1rem;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800;
+      color: var(--text-hero); line-height: 1.2; letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    .aeo-box {
+      background: #FFFFFF; border-left: 4px solid var(--brand-cyan);
+      border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 700; color: var(--text-hero); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .aeo-box p { font-size: 0.95rem; color: var(--text-body); }
+
+    .content-section { margin-bottom: 2.5rem; }
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2rem 0 1rem; letter-spacing: -0.02em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .content-section p { margin-bottom: 1.25rem; font-size: 1.02rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; }
+    .content-section li { margin-bottom: 0.5rem; font-size: 1rem; }
+
+    .code-block {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1rem 1.25rem; font-family: var(--font-mono);
+      font-size: 0.9rem; margin-bottom: 1.5rem; overflow-x: auto;
+    }
+    .code-comment { color: #64748B; }
+
+    .tool-spotlight-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF; border-radius: 12px; padding: 2rem;
+      margin: 3rem 0; box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.3);
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .tool-spotlight-left h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .tool-spotlight-left p { font-size: 0.95rem; color: #94A3B8; max-width: 480px; }
+    .btn-spotlight {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #06B6D4 0%, #2563EB 100%);
+      color: #FFFFFF !important; font-weight: 700; font-size: 1rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-subtle);
+      padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .tool-spotlight-card { flex-direction: column; text-align: center; }
+      .btn-spotlight { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <a href="../../tools/dns-flusher/" style="font-weight:700; font-size:0.9rem;">View DNSFlusher Tool →</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Blog</a> &gt; <span>How to Flush DNS Cache</span>
+    </nav>
+
+    <div class="post-header">
+      <span class="post-category">Windows Networking &amp; Troubleshooting</span>
+      <h1 class="post-title">How to Flush DNS Cache in Windows 11 &amp; Fix DNS_PROBE_FINISHED_NXDOMAIN</h1>
+      <div class="post-meta">
+        <span>Published: October 2026</span>
+        <span>•</span>
+        <span>Read time: 4 min</span>
+        <span>•</span>
+        <span>By Pexoris Technical Team</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Snippet -->
+    <div class="aeo-box">
+      <h4>⚡ Quick Answer</h4>
+      <p>To flush your DNS cache on Windows 11, press <strong>Win + S</strong>, type <strong>cmd</strong>, run as Administrator, and enter <code>ipconfig /flushdns</code>. To wipe routing table conflicts and reload NetBIOS at the same time, also run <code>netsh interface ip delete arpcache</code> and <code>nbtstat -R</code>. Alternatively, use the free 62 KB <a href="../../tools/dns-flusher/">Pexoris DNSFlusher</a> to execute all cache and Winsock stack resets in 1 click.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Do DNS Resolution Errors Occur?</h2>
+      <p>When you visit a website like <code>github.com</code> or connect to a gaming server, Windows queries a Domain Name System (DNS) server to convert the domain name into an IP address (e.g., <code>140.82.121.4</code>). To speed up subsequent visits, Windows stores this answer in a local temporary repository known as the <strong>DNS Resolver Cache</strong>.</p>
+      <p>However, problems emerge when:</p>
+      <ul>
+        <li><strong>Server IP Migrations:</strong> A website or API moves to a new web host or Cloudflare proxy, but your Windows resolver retains the outdated IP address, triggering <code>DNS_PROBE_FINISHED_NXDOMAIN</code>.</li>
+        <li><strong>DNS Poisoning / Corrupted Lookups:</strong> Bad DNS entries or router reconnect drops cause Windows to cache invalid negative responses.</li>
+        <li><strong>Winsock Catalog Desync:</strong> VPN clients, third-party firewalls, or proxy uninstallers leave fragmented network layers that prevent TCP sockets from opening.</li>
+      </ul>
+
+      <h2>Method 1: Manual Native Windows Fix (CMD)</h2>
+      <p>You can execute standard command-line tools built into Windows to purge the resolver cache:</p>
+      
+      <div class="code-block">
+        <span class="code-comment"># 1. Flush the Windows DNS resolver cache</span><br>
+        ipconfig /flushdns<br><br>
+        <span class="code-comment"># 2. Release current IP configuration lease</span><br>
+        ipconfig /release<br><br>
+        <span class="code-comment"># 3. Request a fresh IP assignment from your router</span><br>
+        ipconfig /renew<br><br>
+        <span class="code-comment"># 4. Clear local ARP routing cache</span><br>
+        netsh interface ip delete arpcache
+      </div>
+
+      <p>If web browsers still display network socket errors, you may need to reset the entire Winsock catalog to factory defaults:</p>
+
+      <div class="code-block">
+        <span class="code-comment"># Reset Winsock catalog (requires reboot)</span><br>
+        netsh winsock reset<br>
+        netsh int ip reset
+      </div>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris DNSFlusher</h3>
+          <p>The instant 1-click portable alternative. Calls native Win32 <code>DnsFlushResolverCache</code> API, purges ARP &amp; NetBIOS tables, and tests latency to Cloudflare &amp; Google in under 65 KB.</p>
+        </div>
+        <a href="../../tools/dns-flusher/" class="btn-spotlight">
+          <span>⚡ Launch DNSFlusher Free</span>
+        </a>
+      </div>
+
+      <h2>Method 2: Flush Browser-Internal DNS (Chrome &amp; Edge)</h2>
+      <p>Even after wiping the Windows OS resolver, Chromium-based browsers maintain their own independent DNS socket cache. To wipe it:</p>
+      <ol>
+        <li>Open Chrome and navigate to: <code>chrome://net-internals/#dns</code></li>
+        <li>Click the <strong>Clear host cache</strong> button.</li>
+        <li>Navigate to <code>chrome://net-internals/#sockets</code> and click <strong>Flush socket pools</strong>.</li>
+      </ol>
+
+      <h2>Method 3: 1-Click Repair with Pexoris DNSFlusher</h2>
+      <p>Rather than opening multiple terminal windows and remembering disparate netsh commands, software engineers and gamers rely on <strong>Pexoris DNSFlusher</strong>:</p>
+      <ul>
+        <li><strong>Direct API Flush:</strong> Calls the low-level Win32 <code>DnsFlushResolverCache</code> API directly in memory.</li>
+        <li><strong>Multi-Layer Cleanup:</strong> Purges DNS, clears ARP tables, and reloads NetBIOS in one single click.</li>
+        <li><strong>Latency Benchmarking:</strong> Features a built-in ping tester that benchmarks response times across Cloudflare (1.1.1.1), Google (8.8.8.8), and Quad9 (9.9.9.9) so you can pick the fastest resolver.</li>
+        <li><strong>100% Portable:</strong> Single 62 KB executable with zero background daemons.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.</p>
+    <p style="margin-top:0.5rem;"><a href="../../">Home</a> • <a href="../../tools/">All Tools</a> • <a href="../../tools/dns-flusher/">Pexoris DNSFlusher</a> • <a href="../../sitemap.xml">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>

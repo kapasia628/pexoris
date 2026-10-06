@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 10 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 13 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -19,6 +19,9 @@
 | **08** | **Pexoris ServiceOptimizer** | `service-optimizer` | 69 KB | 44 KB | `827f5675cf999177fe82ee5a6f93281d8baea6222a0b017366eea7485f5cb8ca` | [Download](https://drive.google.com/uc?export=download&id=1ZEuYBVBT2AKpZ7XpzbcGkahuSya5UZBP) | `http://localhost/tools/website/tools/service-optimizer/` |
 | **09** | **Pexoris HostsManager** | `hosts-manager` | 57 KB | 36 KB | `cb5b1d28889247c6ff18d852fdf2597f967a27f4834d3821ce9b04cec64eb556` | [Download](https://drive.google.com/uc?export=download&id=1cbsrisYM2H2wRRcPdcwXAwC_aMJFqmHu) | `http://localhost/tools/website/tools/hosts-manager/` |
 | **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | [Download](https://drive.google.com/uc?export=download&id=14GAkL1D6kB9Pjyn_qXWTo9uc4KEUoOr6) | `http://localhost/tools/website/tools/temp-cleaner/` |
+| **11** | **Pexoris StartupInspector** | `startup-inspector` | 57 KB | 33 KB | `22fd202a60bbe8a2523f4a8b5719c76160852933ea031ca2fd34c4406b720a0d` | [Download](https://drive.google.com/uc?export=download&id=1ZjrUfr54jGmpPd9oJio15Jsrk7EFnU36) | `http://localhost/tools/website/tools/startup-inspector/` |
+| **12** | **Pexoris DefenderToggle** | `defender-toggle` | 55 KB | 34 KB | `0c0f65b7e9007a37d00b9c017cc98eb41ec1cf2eb94dd30a6e8083184a4eb445` | [Download](https://drive.google.com/uc?export=download&id=1hfwkzQhgZMpFy7-48ppOlF0MUXIBDWSo) | `http://localhost/tools/website/tools/defender-toggle/` |
+| **13** | **Pexoris DNSFlusher** | `dns-flusher` | 62 KB | 40 KB | `7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581` | *(Pending Google Drive Link)* | `http://localhost/tools/website/tools/dns-flusher/` |
 
 ---
 
@@ -86,5 +89,5 @@ Running `build.bat` in the project root:
 - [x] **#10 Pexoris Temp Cleaner** (Deep Windows update cache & junk cleaner)
 - [x] **#11 Pexoris Startup Inspector** (Inspect and disable stubborn autorun entries)
 - [x] **#12 Pexoris Defender Toggle** (Temporarily pause Windows Defender during dev compilation)
-- [ ] **#13 Pexoris DNSFlusher** (Flush DNS cache, reset Winsock catalog & purge ARP)
+- [x] **#13 Pexoris DNSFlusher** (Flush DNS cache, reset Winsock catalog & purge ARP)
 - [ ] **#14 Pexoris RamTrimmer** (Flush standby memory cache & empty working sets)

@@ -261,8 +261,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [24/24] Packaging Pexoris Defender Toggle Portable ZIP...
+echo [24/26] Packaging Pexoris Defender Toggle Portable ZIP...
 powershell -Command "Compress-Archive -Path 'build\PexorisDefenderToggle.exe' -DestinationPath 'build\PexorisDefenderToggle-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisDNSFlusher.exe 2>nul
+
+echo [25/26] Compiling Tool 13: Pexoris DNSFlusher...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisDNSFlusher\App.manifest ^
+    /win32icon:src\PexorisDNSFlusher\Assets\app.ico ^
+    /out:build\PexorisDNSFlusher.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisDNSFlusher\Program.cs ^
+    src\PexorisDNSFlusher\Theme.cs ^
+    src\PexorisDNSFlusher\DnsHelper.cs ^
+    src\PexorisDNSFlusher\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris DNSFlusher!
+    exit /b %ERRORLEVEL%
+)
+
+echo [26/26] Packaging Pexoris DNSFlusher Portable ZIP...
+powershell -Command "Compress-Archive -Path 'build\PexorisDNSFlusher.exe' -DestinationPath 'build\PexorisDNSFlusher-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -277,6 +298,7 @@ copy /y "build\PexorisHostsManager-v1.0-Portable.zip" "final softwere for g driv
 copy /y "build\PexorisTempCleaner-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisTempCleaner.zip" >nul
 copy /y "build\PexorisStartupInspector-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisStartupInspector.zip" >nul
 copy /y "build\PexorisDefenderToggle-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDefenderToggle.zip" >nul
+copy /y "build\PexorisDNSFlusher-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDNSFlusher.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -289,10 +311,11 @@ copy /y "build\PexorisHostsManager.exe" "final softwere for g drive uplod\Pexori
 copy /y "build\PexorisTempCleaner.exe" "final softwere for g drive uplod\PexorisTempCleaner.exe" >nul
 copy /y "build\PexorisStartupInspector.exe" "final softwere for g drive uplod\PexorisStartupInspector.exe" >nul
 copy /y "build\PexorisDefenderToggle.exe" "final softwere for g drive uplod\PexorisDefenderToggle.exe" >nul
+copy /y "build\PexorisDNSFlusher.exe" "final softwere for g drive uplod\PexorisDNSFlusher.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 12 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 13 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -305,6 +328,7 @@ echo  Tool 9:  build\PexorisHostsManager.exe       (57 KB)
 echo  Tool 10: build\PexorisTempCleaner.exe       (56 KB)
 echo  Tool 11: build\PexorisStartupInspector.exe   (57 KB)
 echo  Tool 12: build\PexorisDefenderToggle.exe     (55 KB)
+echo  Tool 13: build\PexorisDNSFlusher.exe        (62 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
