@@ -47,7 +47,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **08** | **Pexoris ServiceOptimizer** | `service-optimizer` | 69 KB | 44 KB | `827f5675cf999177fe82ee5a6f93281d8baea6222a0b017366eea7485f5cb8ca` | `https://drive.google.com/uc?export=download&id=1ZEuYBVBT2AKpZ7XpzbcGkahuSya5UZBP` |
 | **09** | **Pexoris HostsManager** | `hosts-manager` | 57 KB | 36 KB | `cb5b1d28889247c6ff18d852fdf2597f967a27f4834d3821ce9b04cec64eb556` | `https://drive.google.com/uc?export=download&id=1cbsrisYM2H2wRRcPdcwXAwC_aMJFqmHu` |
 | **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | `https://drive.google.com/uc?export=download&id=14GAkL1D6kB9Pjyn_qXWTo9uc4KEUoOr6` |
-| **11** | **Pexoris StartupInspector** | `startup-inspector` | 57 KB | 33 KB | `22fd202a60bbe8a2523f4a8b5719c76160852933ea031ca2fd34c4406b720a0d` | `[PENDING GOOGLE DRIVE LINK]` |
+| **11** | **Pexoris StartupInspector** | `startup-inspector` | 57 KB | 33 KB | `22fd202a60bbe8a2523f4a8b5719c76160852933ea031ca2fd34c4406b720a0d` | `https://drive.google.com/uc?export=download&id=1ZjrUfr54jGmpPd9oJio15Jsrk7EFnU36` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
