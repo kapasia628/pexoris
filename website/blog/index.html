@@ -308,6 +308,7 @@
     .pill-network { background: #EFF6FF; color: #1E40AF; }
     .pill-files   { background: #FEF3C7; color: #92400E; }
     .pill-privacy { background: #F3E8FF; color: #6B21A8; }
+    .pill-system  { background: #F1F5F9; color: #0F172A; }
 
     .article-title {
       font-size: 20px;
@@ -442,11 +443,12 @@
 
     <!-- Category Filter Tabs Menu -->
     <div class="blog-tabs-bar">
-      <button class="blog-tab-btn active" onclick="filterBlog('all', this)">All Guides (6)</button>
+      <button class="blog-tab-btn active" onclick="filterBlog('all', this)">All Guides (10)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('files', this)">Disk &amp; Files (2)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('network', this)">Networking &amp; Dev (2)</button>
       <button class="blog-tab-btn" onclick="filterBlog('printer', this)">Printer &amp; Hardware (1)</button>
-      <button class="blog-tab-btn" onclick="filterBlog('network', this)">Networking &amp; Dev (1)</button>
-      <button class="blog-tab-btn" onclick="filterBlog('files', this)">Disk &amp; Files (1)</button>
       <button class="blog-tab-btn" onclick="filterBlog('privacy', this)">Privacy &amp; Security (3)</button>
+      <button class="blog-tab-btn" onclick="filterBlog('system', this)">System &amp; Tweaks (2)</button>
     </div>
 
     <!-- 6 Launch Troubleshooting Guides -->
@@ -572,6 +574,86 @@
         </div>
       </article>
 
+      <!-- Article 7: Restore Classic Context Menu (ContextMenuEditor) -->
+      <article class="article-card" data-category="system">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-system">System &amp; Tweaks</span>
+            <span style="color:var(--text-muted);">4 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="restore-classic-context-menu-windows-11/">How to Restore the Classic Context Menu in Windows 11 (Bypass "Show More Options")</a>
+          </h2>
+          <p class="article-excerpt">
+            Hate the truncated right-click menu and annoying extra click? Discover how to restore the fast, full Windows 10 context menu via Registry or in 1 click without third-party bloat.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="restore-classic-context-menu-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/context-menu-editor/" class="tool-link-tag">⚡ Pexoris ContextMenuEditor</a>
+        </div>
+      </article>
+
+      <!-- Article 8: Disable Unnecessary Services (ServiceOptimizer) -->
+      <article class="article-card" data-category="system">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-system">System &amp; Tweaks</span>
+            <span style="color:var(--text-muted);">6 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="disable-unnecessary-windows-services/">How to Disable Unnecessary Windows 11 Services Safely to Boost RAM &amp; Gaming</a>
+          </h2>
+          <p class="article-excerpt">
+            Free 300+ MB of RAM and lower idle CPU overhead without breaking Windows Update, audio, or printing. Complete safety list of telemetry daemons safe to disable.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="disable-unnecessary-windows-services/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/service-optimizer/" class="tool-link-tag">⚡ Pexoris ServiceOptimizer</a>
+        </div>
+      </article>
+
+      <!-- Article 9: Edit Hosts File Without Errors (HostsManager) -->
+      <article class="article-card" data-category="network">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-network">Networking &amp; Dev</span>
+            <span style="color:var(--text-muted);">5 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="how-to-edit-hosts-file-windows-11/">How to Edit Hosts File in Windows 11 &amp; Fix "Access Denied" Error (Step-by-Step)</a>
+          </h2>
+          <p class="article-excerpt">
+            Fix permission errors when saving System32\drivers\etc\hosts. Learn how to clear Read-Only flags, bypass UAC locks, add domain redirects, and flush DNS resolver cache instantly.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="how-to-edit-hosts-file-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/hosts-manager/" class="tool-link-tag">⚡ Pexoris HostsManager</a>
+        </div>
+      </article>
+
+      <!-- Article 10: Clean Temp Files & Free Disk Space (TempCleaner) -->
+      <article class="article-card" data-category="files">
+        <div>
+          <div class="card-meta">
+            <span class="category-pill pill-files">Disk &amp; Files</span>
+            <span style="color:var(--text-muted);">5 min read</span>
+          </div>
+          <h2 class="article-title">
+            <a href="how-to-clean-temp-files-windows-11/">How to Clean Temp Files in Windows 11 &amp; Fix "Low Disk Space" Error</a>
+          </h2>
+          <p class="article-excerpt">
+            Reclaim gigabytes of SSD space safely. Learn why Windows locks temp files in %TEMP%, how to purge multi-gigabyte SoftwareDistribution update caches, and how to auto-skip in-use files.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="how-to-clean-temp-files-windows-11/" class="btn-read-guide">Read Full Guide →</a>
+          <a href="../tools/temp-cleaner/" class="tool-link-tag">⚡ Pexoris TempCleaner</a>
+        </div>
+      </article>
+
     </section>
   </main>
 
@@ -592,6 +674,10 @@
         <a href="../tools/print-fixer/" class="footer-link-item">PrintFixer</a>
         <a href="../tools/ai-shield/" class="footer-link-item">AIShield</a>
         <a href="../tools/usb-shield/" class="footer-link-item">USBShield</a>
+        <a href="../tools/context-menu-editor/" class="footer-link-item">ContextMenuEditor</a>
+        <a href="../tools/service-optimizer/" class="footer-link-item">ServiceOptimizer</a>
+        <a href="../tools/hosts-manager/" class="footer-link-item">HostsManager</a>
+        <a href="../tools/temp-cleaner/" class="footer-link-item">TempCleaner</a>
         <a href="./" class="footer-link-item" style="color:var(--brand-blue); font-weight:700;">Blog Guides</a>
         <a href="../request/" class="footer-link-item">Request a Tool</a>
         <a href="../privacy/" class="footer-link-item">Privacy Policy</a>
