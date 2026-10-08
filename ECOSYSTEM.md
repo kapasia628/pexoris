@@ -23,7 +23,7 @@
 | **12** | **Pexoris DefenderToggle** | `defender-toggle` | 55 KB | 34 KB | `0c0f65b7e9007a37d00b9c017cc98eb41ec1cf2eb94dd30a6e8083184a4eb445` | [Download](https://drive.google.com/uc?export=download&id=1hfwkzQhgZMpFy7-48ppOlF0MUXIBDWSo) | `http://localhost/tools/website/tools/defender-toggle/` |
 | **13** | **Pexoris DNSFlusher** | `dns-flusher` | 62 KB | 40 KB | `7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581` | [Download](https://drive.google.com/uc?export=download&id=1SQCWEifK1tDpYkEgoJIHeLRS9KrAoTRH) | `http://localhost/tools/website/tools/dns-flusher/` |
 | **14** | **Pexoris RamTrimmer** | `ram-trimmer` | 58 KB | 36 KB | `bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be` | [Download](https://drive.google.com/uc?export=download&id=1_pd3rtHSuh5oDF1sW0t2n5Mjx7XDHWsJ) | `http://localhost/tools/website/tools/ram-trimmer/` |
-| **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | *(Pending Google Drive Link)* | `http://localhost/tools/website/tools/exif-stripper/` |
+| **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | [Download](https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS) | `http://localhost/tools/website/tools/exif-stripper/` |
 
 ---
 
