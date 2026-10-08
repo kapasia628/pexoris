@@ -303,8 +303,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [28/28] Packaging Pexoris RamTrimmer Portable ZIP...
+echo [28/30] Packaging Pexoris RamTrimmer Portable ZIP...
 powershell -Command "Compress-Archive -Path 'build\PexorisRamTrimmer.exe' -DestinationPath 'build\PexorisRamTrimmer-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisExifStripper.exe 2>nul
+
+echo [29/30] Compiling Tool 15: Pexoris ExifStripper...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisExifStripper\App.manifest ^
+    /win32icon:src\PexorisExifStripper\Assets\app.ico ^
+    /out:build\PexorisExifStripper.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll ^
+    src\PexorisExifStripper\Program.cs ^
+    src\PexorisExifStripper\Theme.cs ^
+    src\PexorisExifStripper\ExifHelper.cs ^
+    src\PexorisExifStripper\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris ExifStripper!
+    exit /b %ERRORLEVEL%
+)
+
+echo [30/30] Packaging Pexoris ExifStripper Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisExifStripper.exe' -DestinationPath 'build\PexorisExifStripper-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -321,6 +342,7 @@ copy /y "build\PexorisStartupInspector-v1.0-Portable.zip" "final softwere for g 
 copy /y "build\PexorisDefenderToggle-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDefenderToggle.zip" >nul
 copy /y "build\PexorisDNSFlusher-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDNSFlusher.zip" >nul
 copy /y "build\PexorisRamTrimmer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisRamTrimmer.zip" >nul
+copy /y "build\PexorisExifStripper-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisExifStripper.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -335,10 +357,11 @@ copy /y "build\PexorisStartupInspector.exe" "final softwere for g drive uplod\Pe
 copy /y "build\PexorisDefenderToggle.exe" "final softwere for g drive uplod\PexorisDefenderToggle.exe" >nul
 copy /y "build\PexorisDNSFlusher.exe" "final softwere for g drive uplod\PexorisDNSFlusher.exe" >nul
 copy /y "build\PexorisRamTrimmer.exe" "final softwere for g drive uplod\PexorisRamTrimmer.exe" >nul
+copy /y "build\PexorisExifStripper.exe" "final softwere for g drive uplod\PexorisExifStripper.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 14 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 15 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -353,6 +376,7 @@ echo  Tool 11: build\PexorisStartupInspector.exe   (57 KB)
 echo  Tool 12: build\PexorisDefenderToggle.exe     (55 KB)
 echo  Tool 13: build\PexorisDNSFlusher.exe        (62 KB)
 echo  Tool 14: build\PexorisRamTrimmer.exe         (58 KB)
+echo  Tool 15: build\PexorisExifStripper.exe       (53 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

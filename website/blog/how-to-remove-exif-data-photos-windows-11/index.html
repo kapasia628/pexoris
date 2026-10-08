@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Remove EXIF &amp; GPS Location Data from Photos in Windows 11</title>
+  <meta name="title" content="How to Remove EXIF &amp; GPS Location Data from Photos in Windows 11">
+  <meta name="description" content="Learn how to strip hidden GPS geolocations, camera serial numbers, and personal metadata from JPEG and PNG photos in Windows 11 &amp; 10 using native tools and 1-click Pexoris ExifStripper.">
+  <meta name="keywords" content="how to remove exif data windows 11, strip photo gps coordinates windows 10, remove personal information from pictures, clear photo metadata windows, batch exif remover, pexoris exifstripper">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-remove-exif-data-photos-windows-11/">
+  
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../brand-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-remove-exif-data-photos-windows-11/">
+  <meta property="og:title" content="How to Remove EXIF &amp; GPS Location Data from Photos in Windows 11">
+  <meta property="og:description" content="Step-by-step technical guide to removing GPS coordinates and camera serial numbers from pictures in Windows.">
+  <meta property="og:image" content="https://pexoris.com/tools/exif-stripper/exif-stripper.png">
+  <meta property="og:site_name" content="Pexoris Guides">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Remove EXIF & GPS Location Data from Photos in Windows 11",
+        "description": "Technical tutorial on how camera metadata leaks personal location data and how to remove it natively in Windows or via 1-click portable tools.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-08",
+        "dateModified": "2026-10-08",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-remove-exif-data-photos-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Strip EXIF Metadata from Photos in Windows 11",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Right-Click Photo and Open Properties",
+            "text": "Right-click the image in Windows File Explorer and select Properties > Details tab."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Click Remove Properties and Personal Information",
+            "text": "Click the blue link at the bottom of the Details dialog to open the property removal wizard."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Select Properties to Remove",
+            "text": "Choose 'Remove the following properties from this file' or create a copy with all possible properties removed."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Use 1-Click Pexoris ExifStripper for Complete Sanitization",
+            "text": "For batch photo collections and guaranteed GPS purging, use Pexoris ExifStripper to sanitize entire albums with orientation preservation."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Windows Explorer Remove Properties completely remove all metadata?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Windows Explorer only removes standardized basic EXIF tags. It often fails on proprietary vendor tags (such as Apple MakerNotes, lens serial numbers, and camera firmware revisions) and can corrupt the orientation of portrait photos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the safest way to sanitize photos before sharing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The safest method is using an offline portable utility like Pexoris ExifStripper. It strips GPS coordinates, camera serials, and timestamps locally without uploading pictures to cloud servers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --primary: #8B5CF6;
+      --primary-hover: #7C3AED;
+      --primary-dark: #6D28D9;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans); background: var(--bg-page); color: var(--text-body);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light); width: 100%;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 6px; }
+    .brand-name { font-weight: 800; font-size: 1.15rem; color: var(--text-hero); }
+
+    main.article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary-dark); }
+
+    .post-header {
+      position: static !important; background: transparent !important;
+      margin-bottom: 2rem;
+    }
+    .post-category {
+      font-size: 0.8rem; font-weight: 800; color: var(--primary-dark);
+      text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: 2.4rem; font-weight: 800; color: var(--text-hero);
+      letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.75rem;
+    }
+    .post-meta {
+      font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center;
+    }
+
+    .aeo-box {
+      background: #F5F3FF; border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem;
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 800; color: var(--primary-dark);
+      margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .aeo-box p { font-size: 0.92rem; color: var(--text-body); line-height: 1.55; }
+
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2.25rem 0 0.85rem; letter-spacing: -0.01em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero);
+      margin: 1.75rem 0 0.65rem;
+    }
+    .content-section p { margin-bottom: 1.25rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; }
+    .content-section li { margin-bottom: 0.5rem; }
+
+    .code-box {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.85rem;
+      margin: 1rem 0 1.5rem; overflow-x: auto;
+    }
+
+    .tool-spotlight-card {
+      background: #FFFFFF; border: 1px solid var(--border-medium);
+      border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text-hero); margin-bottom: 0.35rem;
+    }
+    .tool-spotlight-left p { font-size: 0.9rem; color: var(--text-sub); margin: 0; }
+    .btn-spotlight {
+      background: var(--primary); color: #FFFFFF !important; font-weight: 800; font-size: 0.92rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-light);
+      padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .tool-spotlight-card { flex-direction: column; text-align: center; }
+      .btn-spotlight { width: 100%; justify-content: center; }
+      .post-title { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <a href="../../tools/exif-stripper/" style="font-weight:700; font-size:0.9rem; color:var(--primary-dark);">View ExifStripper Tool →</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Blog</a> &gt; <span>How to Remove EXIF &amp; GPS Data</span>
+    </nav>
+
+    <div class="post-header">
+      <span class="post-category">Photo Privacy &amp; Metadata Security</span>
+      <h1 class="post-title">How to Remove EXIF &amp; GPS Location Data from Photos in Windows 11</h1>
+      <div class="post-meta">
+        <span>Published: October 2026</span>
+        <span>•</span>
+        <span>Read time: 5 min</span>
+        <span>•</span>
+        <span>By Pexoris Technical Team</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Snippet -->
+    <div class="aeo-box">
+      <h4>⚡ Quick Answer</h4>
+      <p>Every photo taken on an iPhone or Android phone contains hidden EXIF metadata with your <strong>exact GPS coordinates</strong>, camera serial number, and timestamp. To remove it in Windows 11 natively, right-click the file &gt; <em>Properties</em> &gt; <em>Details</em> tab &gt; click <em>"Remove Properties and Personal Information"</em>. For batch photo albums and guaranteed orientation preservation, use the free 53 KB <a href="../../tools/exif-stripper/">Pexoris ExifStripper</a> tool to wipe all GPS and device identifiers in 1 click.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>The Hidden Privacy Risk in Your Digital Photos</h2>
+      <p>When you capture a photo using your smartphone or modern DSLR camera, the device records far more than just pixels. Embedded directly into the file is an <strong>EXIF (Exchangeable Image File Format)</strong> metadata block that records:</p>
+      <ul>
+        <li><strong>Precise GPS Coordinates:</strong> Exact latitude, longitude, and altitude where the shutter was pressed.</li>
+        <li><strong>Hardware Fingerprints:</strong> Camera model, unique body serial number, and lens serial number.</li>
+        <li><strong>Exact Timestamps:</strong> Date, hour, minute, and second the photo was taken.</li>
+        <li><strong>Software &amp; OS Versions:</strong> iOS/Android version and image editing software used.</li>
+      </ul>
+      <p>If you upload raw photos to public forums, Discord, Craigslist, eBay, or send them over email, anyone can inspect these tags using free tools and pinpoint your home address, child's school, or daily routine.</p>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris ExifStripper</h3>
+          <p>Instant 1-click photo metadata sanitizer. Purges GPS coordinates, camera serials &amp; timestamps. 53 KB standalone executable, 100% offline, zero install.</p>
+        </div>
+        <a href="../../tools/exif-stripper/" class="btn-spotlight">
+          <span>⚡ Download ExifStripper Free</span>
+        </a>
+      </div>
+
+      <h2>Method 1: Using Native Windows 11 File Properties</h2>
+      <p>Windows 11 includes a built-in feature to remove personal metadata from individual files:</p>
+      <ol>
+        <li>Open <strong>File Explorer</strong> and navigate to your photo.</li>
+        <li>Right-click the image and select <strong>Properties</strong>.</li>
+        <li>Click the <strong>Details</strong> tab.</li>
+        <li>At the bottom of the window, click the blue link: <strong>"Remove Properties and Personal Information"</strong>.</li>
+        <li>Select <em>"Create a copy with all possible properties removed"</em> or select specific GPS tags to delete, then click <strong>OK</strong>.</li>
+      </ol>
+
+      <h3>Limitations of the Native Windows Method:</h3>
+      <ul>
+        <li><strong>Fails on Batch Selections:</strong> Often throws errors when selecting more than 10-20 images at once.</li>
+        <li><strong>Rotates Portrait Photos:</strong> Stripping the EXIF orientation tag without physically rotating the pixel bitmap causes portrait photos to flip horizontally or upside down.</li>
+        <li><strong>Misses Manufacturer Tags:</strong> Leaves proprietary vendor MakerNotes (Apple, Canon, Sony) intact.</li>
+      </ul>
+
+      <h2>Method 2: 1-Click Batch Sanitization with Pexoris ExifStripper</h2>
+      <p>To safely sanitize entire albums or folders without quality loss:</p>
+      <ol>
+        <li>Download the free 53 KB <a href="../../tools/exif-stripper/">Pexoris ExifStripper</a> executable.</li>
+        <li>Drag and drop your photos or folder into the window.</li>
+        <li>Observe the interactive table highlighting images containing live GPS coordinates in red.</li>
+        <li>Click <strong>⚡ Strip All Metadata &amp; GPS</strong>.</li>
+      </ol>
+      <p>The utility physically applies orientation transformations, clones the raw pixel buffer into a pristine surface, and saves with 98% visually lossless encoding, leaving zero trace of location or camera data.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.</p>
+    <p style="margin-top:0.5rem;"><a href="../../">Home</a> • <a href="../../tools/">All Tools</a> • <a href="../../tools/exif-stripper/">Pexoris ExifStripper</a> • <a href="../../sitemap.xml">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>
