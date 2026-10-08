@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 16 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 17 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -25,6 +25,7 @@
 | **14** | **Pexoris RamTrimmer** | `ram-trimmer` | 58 KB | 36 KB | `bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be` | [Download](https://drive.google.com/uc?export=download&id=1_pd3rtHSuh5oDF1sW0t2n5Mjx7XDHWsJ) | `http://localhost/tools/website/tools/ram-trimmer/` |
 | **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | [Download](https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS) | `http://localhost/tools/website/tools/exif-stripper/` |
 | **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | [Download](https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq) | `http://localhost/tools/website/tools/icon-cache-rebuilder/` |
+| **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | *(Pending Google Drive Link)* | `http://localhost/tools/website/tools/winupdate-reset/` |
 
 ---
 
@@ -96,4 +97,5 @@ Running `build.bat` in the project root:
 - [x] **#14 Pexoris RamTrimmer** (Flush standby memory cache & empty working sets)
 - [x] **#15 Pexoris ExifStripper** (Strip photo metadata, GPS coordinates & camera EXIF tags)
 - [x] **#16 Pexoris IconCacheRebuilder** (Purge broken shell icon caches, thumbnail DBs & refresh Windows Explorer)
-- [ ] **#17 Pexoris WinUpdateReset** (Reset Windows Update components & SoftwareDistribution)
+- [x] **#17 Pexoris WinUpdateReset** (Reset Windows Update components, BITS queues & SoftwareDistribution)
+- [ ] **#18 Pexoris WifiKeyRevealer** (View saved Wi-Fi profiles & retrieve lost network passwords)

@@ -345,8 +345,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [32/32] Packaging Pexoris IconCacheRebuilder Portable ZIP...
+echo [32/34] Packaging Pexoris IconCacheRebuilder Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisIconCacheRebuilder.exe' -DestinationPath 'build\PexorisIconCacheRebuilder-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisWinUpdateReset.exe 2>nul
+
+echo [33/34] Compiling Tool 17: Pexoris WinUpdateReset...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisWinUpdateReset\App.manifest ^
+    /win32icon:src\PexorisWinUpdateReset\Assets\app.ico ^
+    /out:build\PexorisWinUpdateReset.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.ServiceProcess.dll ^
+    src\PexorisWinUpdateReset\Program.cs ^
+    src\PexorisWinUpdateReset\Theme.cs ^
+    src\PexorisWinUpdateReset\UpdateEngine.cs ^
+    src\PexorisWinUpdateReset\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris WinUpdateReset!
+    exit /b %ERRORLEVEL%
+)
+
+echo [34/34] Packaging Pexoris WinUpdateReset Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisWinUpdateReset.exe' -DestinationPath 'build\PexorisWinUpdateReset-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -365,6 +386,7 @@ copy /y "build\PexorisDNSFlusher-v1.0-Portable.zip" "final softwere for g drive 
 copy /y "build\PexorisRamTrimmer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisRamTrimmer.zip" >nul
 copy /y "build\PexorisExifStripper-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisExifStripper.zip" >nul
 copy /y "build\PexorisIconCacheRebuilder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisIconCacheRebuilder.zip" >nul
+copy /y "build\PexorisWinUpdateReset-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisWinUpdateReset.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -381,10 +403,11 @@ copy /y "build\PexorisDNSFlusher.exe" "final softwere for g drive uplod\PexorisD
 copy /y "build\PexorisRamTrimmer.exe" "final softwere for g drive uplod\PexorisRamTrimmer.exe" >nul
 copy /y "build\PexorisExifStripper.exe" "final softwere for g drive uplod\PexorisExifStripper.exe" >nul
 copy /y "build\PexorisIconCacheRebuilder.exe" "final softwere for g drive uplod\PexorisIconCacheRebuilder.exe" >nul
+copy /y "build\PexorisWinUpdateReset.exe" "final softwere for g drive uplod\PexorisWinUpdateReset.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 16 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 17 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -401,6 +424,7 @@ echo  Tool 13: build\PexorisDNSFlusher.exe        (62 KB)
 echo  Tool 14: build\PexorisRamTrimmer.exe         (58 KB)
 echo  Tool 15: build\PexorisExifStripper.exe       (53 KB)
 echo  Tool 16: build\PexorisIconCacheRebuilder.exe (44 KB)
+echo  Tool 17: build\PexorisWinUpdateReset.exe     (51 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

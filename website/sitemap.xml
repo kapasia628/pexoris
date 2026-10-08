@@ -144,6 +144,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Update Maintenance Utility: Pexoris WinUpdateReset -->
+  <url>
+    <loc>https://pexoris.com/tools/winupdate-reset/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -299,6 +307,14 @@
   <!-- Shell UI Repair Guide: How to Rebuild Icon Cache in Windows 11 -->
   <url>
     <loc>https://pexoris.com/blog/how-to-rebuild-icon-cache-windows-11/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows Update Repair Guide: How to Fix Stuck Windows Update in Windows 11 -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-fix-stuck-windows-update-11/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
