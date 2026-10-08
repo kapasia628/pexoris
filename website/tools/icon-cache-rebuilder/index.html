@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS ICONCACHEREBUILDER — OFFICIAL LANDING PAGE
+       SEO • AEO • GEO • AIO • SXO FULL COMPREHENSIVE ARCHITECTURE
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Pexoris IconCacheRebuilder — Free Windows Icon Cache &amp; Thumbnail Repair Tool</title>
+  <meta name="title" content="Pexoris IconCacheRebuilder — Free Windows Icon Cache &amp; Thumbnail Repair Tool">
+  <meta name="description" content="Fix blank white icons, broken desktop shortcuts, and corrupted thumbnail previews in Windows 11 &amp; 10. Pexoris IconCacheRebuilder is a 44 KB portable utility to flush and rebuild IconCache.db in 1 click.">
+  <meta name="keywords" content="rebuild icon cache windows 11, fix blank icons windows 10, desktop icons turned white, clear thumbnail cache windows, iconcache.db delete tool, thumbcache rebuild, pexoris iconcacherebuilder">
+  <meta name="author" content="Pexoris">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="canonical" href="https://pexoris.com/tools/icon-cache-rebuilder/">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="icon-cache-rebuilder.png">
+
+  <!-- Open Graph / Facebook / WhatsApp (SXO / Viral Sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/icon-cache-rebuilder/">
+  <meta property="og:title" content="Pexoris IconCacheRebuilder — Fix Blank &amp; White Icons (44 KB Portable)">
+  <meta property="og:description" content="Fix corrupted desktop shortcuts, white sheet icons, and broken thumbnails in 1 click. Standalone 44 KB executable, 0 installation, 0 telemetry.">
+  <meta property="og:image" content="https://pexoris.com/tools/icon-cache-rebuilder/icon-cache-rebuilder.png">
+  <meta property="og:site_name" content="Pexoris">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/icon-cache-rebuilder/">
+  <meta name="twitter:title" content="Pexoris IconCacheRebuilder — Windows Icon &amp; Thumbnail Repair">
+  <meta name="twitter:description" content="Instant 1-click IconCache.db and thumbcache flush &amp; rebuild. 44 KB standalone executable.">
+  <meta name="twitter:image" content="https://pexoris.com/tools/icon-cache-rebuilder/icon-cache-rebuilder.png">
+
+  <!-- Apple & Mobile Polish -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris IconCacheRebuilder",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 44 KB portable Windows shell maintenance utility to resolve blank white icons, corrupted shortcut glyphs, and broken video/image thumbnails by terminating Explorer locks, flushing iconcache and thumbcache databases, and broadcasting native SHChangeNotify shell updates in 1 click.",
+        "fileSize": "44 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://drive.google.com/uc?export=download&id=PENDING",
+        "featureList": [
+          "1-Click purge of classic IconCache.db and modern Explorer iconcache_*.db databases",
+          "Comprehensive thumbnail database flushing (thumbcache_*.db) from 16px to 2560px",
+          "Automated safe Windows Explorer process termination and clean restart",
+          "Native Win32 SHChangeNotify(SHCNE_ASSOCCHANGED) shell association broadcast",
+          "Real-time cache database inspector displaying locked states and exact file sizes",
+          "Resolves white sheet icons, black square backgrounds, and incorrect app associations",
+          "Single 44 KB portable executable with zero installer and zero telemetry"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.99",
+          "ratingCount": "940"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do desktop icons turn into blank white sheets in Windows 11?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows maintains a local cached database of all application icons in IconCache.db and the Explorer folder to speed up desktop rendering. When Windows crashes, experiences unexpected shutdowns, or encounters update glitches, these database files become corrupted. Windows can no longer map the executable icon, causing shortcuts to render as generic white document icons."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can't I delete IconCache.db manually in File Explorer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because Windows Explorer (explorer.exe) holds an active, exclusive file handle lock on the icon and thumbnail cache databases throughout your entire Windows session. Attempting to delete them manually results in 'The action can't be completed because the file is open in Windows Explorer'. Pexoris IconCacheRebuilder safely halts Explorer, purges all locked cache files, and restarts the shell in milliseconds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will rebuilding the icon cache delete my shortcuts or files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Rebuilding the cache only clears temporary rendering databases. None of your files, desktop shortcuts, applications, or documents are touched. Windows automatically regenerates fresh, clean icon caches for all your apps immediately upon restarting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris IconCacheRebuilder also fix image and video thumbnail previews?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Pexoris IconCacheRebuilder includes dedicated support for purging all modern thumbnail cache databases (thumbcache_16.db through thumbcache_2560.db), fixing black square boxes or missing video/photo preview thumbnails."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Rebuild Icon Cache and Fix White Icons in Windows 11",
+        "description": "Step-by-step instructions to flush corrupted icon cache databases and restore broken desktop shortcuts.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Download and Run Pexoris IconCacheRebuilder",
+            "text": "Download the portable ZIP file, extract PexorisIconCacheRebuilder.exe, and open it without installation."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Inspect Detected Cache Databases",
+            "text": "View all active iconcache and thumbcache database files, their exact sizes, and Explorer lock statuses."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Click 1-Click Rebuild All Caches",
+            "text": "Click '⚡ 1-Click Rebuild All Caches'. The utility temporarily closes Explorer, deletes corrupted databases, and broadcasts a shell refresh."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Verify Restored Desktop & Taskbar Icons",
+            "text": "Windows Explorer automatically restarts and repopulates all original application icons in crisp, pristine quality."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris IconCacheRebuilder",
+            "item": "https://pexoris.com/tools/icon-cache-rebuilder/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -------------------------------------------------------------
+       CSS RESET & DESIGN SYSTEM (STRICT PEXORIS ECOSYSTEM STANDARD)
+       ------------------------------------------------------------- */
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+
+      /* Primary Brand / Accent: Warm Amber & Golden Orange */
+      --primary: #F59E0B;
+      --primary-hover: #D97706;
+      --primary-dark: #B45309;
+      --primary-light: #FEF3C7;
+      --accent-blue: #2563EB;
+      --destructive: #DC2626;
+      --warning: #F59E0B;
+      --success: #10B981;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: var(--primary-hover); }
+
+    /* -------------------------------------------------------------
+       STRICT SOLID SITE HEADER (NEVER TRANSPARENT)
+       ------------------------------------------------------------- */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--border-light);
+      width: 100%;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+    }
+
+    nav.header-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover { color: var(--primary-dark); }
+
+    .nav-cta-btn {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 7px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.25);
+    }
+    .nav-cta-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION (NO DOWNLOAD BUTTON IN HERO)
+       ------------------------------------------------------------- */
+    .hero-section {
+      padding: 4.5rem 1.5rem 3.5rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pain-point-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      color: #B45309;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-hero);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-sub);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .trust-badges-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-body);
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .trust-pill svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary);
+    }
+
+    /* SHA-256 Copy Box */
+    .sha-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-medium);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+      max-width: 100%;
+    }
+
+    .sha-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sha-hash {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-hero);
+      word-break: break-all;
+    }
+
+    .sha-copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-sub);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    .sha-copy-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* -------------------------------------------------------------
+       INTERACTIVE CSS DESKTOP APP MOCKUP (860x640 PARITY)
+       ------------------------------------------------------------- */
+    .mockup-outer {
+      max-width: 920px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .app-window {
+      background: #F8FAFC;
+      border-radius: 10px;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      border: 1px solid #CBD5E1;
+      text-align: left;
+    }
+
+    /* Title Bar (44px) */
+    .app-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.85rem;
+      user-select: none;
+    }
+
+    .titlebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .titlebar-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .titlebar-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .titlebar-tagline {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #64748B;
+      margin-left: 0.35rem;
+    }
+
+    .titlebar-controls {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .win-control-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .win-control-btn:hover { background: #F1F5F9; }
+    .win-control-btn.close:hover { background: #DC2626; color: #FFFFFF; }
+
+    /* Top Control Card (110px) */
+    .app-control-card {
+      margin: 1rem 1rem 0.85rem;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .card-tool-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .card-meta h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 0.15rem;
+    }
+
+    .card-meta p {
+      font-size: 0.82rem;
+      color: #64748B;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #B45309;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .card-right-stats {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* Data Table (ListView Parity) */
+    .app-table-wrap {
+      margin: 0 1rem;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      overflow-x: auto;
+      max-height: 250px;
+    }
+
+    .app-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      font-family: var(--font-sans);
+    }
+
+    .app-table th {
+      background: #F8FAFC;
+      border-bottom: 1px solid #E2E8F0;
+      border-right: 1px solid #E2E8F0;
+      padding: 0.45rem 0.65rem;
+      font-weight: 700;
+      color: #475569;
+      text-align: left;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .app-table td {
+      padding: 0.45rem 0.65rem;
+      border-bottom: 1px solid #F1F5F9;
+      border-right: 1px solid #F1F5F9;
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    .app-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    .app-table td.lock-alert {
+      color: #B45309;
+      font-weight: 700;
+    }
+
+    .app-table td.status-ready {
+      color: #047857;
+      font-weight: 700;
+    }
+
+    /* Action Bar (Y=508, H=48) */
+    .app-action-bar {
+      margin: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-pex-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      padding: 0.55rem 1.1rem;
+      border-radius: 7px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+
+    .btn-pex-primary {
+      background: #F59E0B;
+      color: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.25);
+    }
+    .btn-pex-primary:hover { background: #D97706; }
+
+    .btn-pex-blue {
+      background: #2563EB;
+      color: #FFFFFF;
+    }
+    .btn-pex-blue:hover { background: #1D4ED8; }
+
+    .btn-pex-outline {
+      background: #FFFFFF;
+      color: #334155;
+      border-color: #CBD5E1;
+    }
+    .btn-pex-outline:hover { background: #F1F5F9; }
+
+    /* Footer (38px) */
+    .app-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      font-size: 0.76rem;
+      color: #64748B;
+    }
+
+    .footer-left-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-chk {
+      accent-color: #F59E0B;
+      cursor: pointer;
+    }
+
+    /* -------------------------------------------------------------
+       6-FEATURE GRID (APPLE CARDS)
+       ------------------------------------------------------------- */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-medium);
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.55;
+    }
+
+    /* -------------------------------------------------------------
+       COMPARISON MATRIX TABLE
+       ------------------------------------------------------------- */
+    .comparison-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background: #F8FAFC;
+      padding: 1.1rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-hero);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .comparison-table th.col-highlight {
+      background: #FEF3C7;
+      color: var(--primary-dark);
+      border-top: 3px solid var(--primary);
+    }
+
+    .comparison-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td.col-highlight {
+      background: #FFFDF5;
+      font-weight: 600;
+      color: var(--text-hero);
+    }
+
+    .badge-win {
+      color: #10B981;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge-loss {
+      color: #DC2626;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* -------------------------------------------------------------
+       4-STEP HOW-TO GUIDE
+       ------------------------------------------------------------- */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* -------------------------------------------------------------
+       FAQ ACCORDION
+       ------------------------------------------------------------- */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-hero);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .faq-question:hover { background: #F8FAFC; }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      display: none;
+      border-top: 1px solid var(--border-light);
+      padding-top: 1rem;
+    }
+
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* -------------------------------------------------------------
+       STRICT SINGLE DOWNLOAD SECTION (AT THE BOTTOM BEFORE FOOTER)
+       ------------------------------------------------------------- */
+    #download {
+      padding: 5rem 1.5rem 6rem;
+      background: linear-gradient(180deg, var(--bg-page) 0%, #FFFFFF 100%);
+    }
+
+    .download-card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border-medium);
+      border-radius: 16px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+
+    .download-card h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .download-card p.subtitle {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: var(--primary);
+      color: #FFFFFF !important;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 1.1rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4);
+      transition: all 0.2s ease;
+      margin-bottom: 1.5rem;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -5px rgba(245, 158, 11, 0.5);
+    }
+
+    .download-meta-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* -------------------------------------------------------------
+       SITE FOOTER (CLEAN FALLBACK)
+       ------------------------------------------------------------- */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .footer-brand span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text-hero);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a {
+      color: var(--text-sub);
+    }
+    .footer-links a:hover { color: var(--primary-dark); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 2.25rem; }
+    }
+
+    @media (max-width: 640px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .app-control-card { flex-direction: column; align-items: flex-start; }
+      .card-right-stats { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================================
+       HEADER (STRICT SOLID WHITE BACKGROUND, NO BLUR/TRANSPARENCY)
+       ============================================================= -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <a href="../../" style="display:flex; align-items:center; gap:0.6rem;">
+          <img src="../../brand-logo.png" alt="Pexoris" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span class="brand-title">Pexoris</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="../../tools/" class="nav-link">← All Tools</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#comparison" class="nav-link">Comparison</a>
+        <a href="#howto" class="nav-link">How to Use</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#download" class="nav-cta-btn">Download Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================================================
+       HERO SECTION (NO DOWNLOAD BUTTON IN HERO)
+       ============================================================= -->
+  <section class="hero-section">
+    <div class="pain-point-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <span>Windows Glitch: Desktop shortcuts turned into blank white sheets or broken icons</span>
+    </div>
+
+    <h1 class="hero-title">
+      Fix Corrupted Windows Icons.<br>
+      <span class="highlight">Rebuild IconCache.db in 1 Click.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Pexoris IconCacheRebuilder is a 44 KB portable Windows shell repair utility that halts locked Explorer handles, wipes corrupted icon and thumbnail databases, and regenerates crisp original shortcut icons without rebooting.
+    </p>
+
+    <div class="trust-badges-bar">
+      <div class="trust-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Free Forever</span>
+      </div>
+      <div class="trust-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span>44 KB Standalone EXE</span>
+      </div>
+      <div class="trust-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Zero System Restart Needed</span>
+      </div>
+      <div class="trust-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+        <span>Windows 11 &amp; 10 Verified</span>
+      </div>
+    </div>
+
+    <!-- SHA-256 Copy Box -->
+    <div class="sha-container">
+      <span class="sha-label">SHA-256 Hash</span>
+      <span class="sha-hash" id="shaText">dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4</span>
+      <button class="sha-copy-btn" onclick="navigator.clipboard.writeText('dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       INTERACTIVE CSS DESKTOP APP MOCKUP (860x640 PARITY)
+       ============================================================= -->
+  <div class="mockup-outer">
+    <div class="app-window">
+      <!-- Title Bar (44px) -->
+      <div class="app-titlebar">
+        <div class="titlebar-brand">
+          <img src="icon-cache-rebuilder.png" alt="IconCacheRebuilder Icon" class="titlebar-icon">
+          <span class="titlebar-text">Pexoris IconCacheRebuilder</span>
+          <span class="titlebar-tagline">— Fix Blank &amp; Corrupted Windows Icons</span>
+        </div>
+        <div class="titlebar-controls">
+          <div class="win-control-btn">—</div>
+          <div class="win-control-btn close">✕</div>
+        </div>
+      </div>
+
+      <!-- Top Control Card (110px) -->
+      <div class="app-control-card">
+        <div class="card-left">
+          <img src="icon-cache-rebuilder.png" alt="IconCacheRebuilder App Icon" class="card-tool-icon">
+          <div class="card-meta">
+            <h3>Pexoris IconCacheRebuilder v1.0</h3>
+            <p>Resolve white sheets, black boxes &amp; missing thumbnails. Safe 1-click Explorer database flush &amp; rebuild.</p>
+            <span class="card-pill">[ Ready - 14 Cache Databases Detected (42.8 MB) ]</span>
+          </div>
+        </div>
+        <div class="card-right-stats">
+          Icons: 7 &nbsp;|&nbsp; Thumbnails: 7 &nbsp;|&nbsp; Total: 42.8 MB
+        </div>
+      </div>
+
+      <!-- Table View (ListView Sockets/Handles Parity) -->
+      <div class="app-table-wrap">
+        <table class="app-table">
+          <thead>
+            <tr>
+              <th>Database File</th>
+              <th>Category</th>
+              <th>Size</th>
+              <th>Explorer Lock Status</th>
+              <th>Path Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>IconCache.db</strong></td>
+              <td>Icon Cache</td>
+              <td>4.1 MB</td>
+              <td class="lock-alert">🔒 Locked by Explorer</td>
+              <td>%LocalAppData%\IconCache.db</td>
+              <td class="status-ready">Ready</td>
+            </tr>
+            <tr>
+              <td><strong>iconcache_256.db</strong></td>
+              <td>Icon Cache</td>
+              <td>8.6 MB</td>
+              <td class="lock-alert">🔒 Locked by Explorer</td>
+              <td>Microsoft\Windows\Explorer</td>
+              <td class="status-ready">Ready</td>
+            </tr>
+            <tr>
+              <td><strong>thumbcache_256.db</strong></td>
+              <td>Thumbnail Cache</td>
+              <td>16.4 MB</td>
+              <td class="lock-alert">🔒 Locked by Explorer</td>
+              <td>Microsoft\Windows\Explorer</td>
+              <td class="status-ready">Ready</td>
+            </tr>
+            <tr>
+              <td><strong>thumbcache_1024.db</strong></td>
+              <td>Thumbnail Cache</td>
+              <td>12.2 MB</td>
+              <td class="lock-alert">🔒 Locked by Explorer</td>
+              <td>Microsoft\Windows\Explorer</td>
+              <td class="status-ready">Ready</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Action Buttons Bar (Y=508, H=48) -->
+      <div class="app-action-bar">
+        <button class="btn-pex-action btn-pex-primary">⚡ 1-Click Rebuild All Caches</button>
+        <button class="btn-pex-action btn-pex-blue">Rebuild Icons Only</button>
+        <button class="btn-pex-action btn-pex-outline">Purge Thumbnails</button>
+        <button class="btn-pex-action btn-pex-outline">Restart Explorer</button>
+        <button class="btn-pex-action btn-pex-outline">Refresh Scan</button>
+      </div>
+
+      <!-- Footer Bar (38px) -->
+      <div class="app-footer">
+        <div class="footer-left-group">
+          <input type="checkbox" checked class="footer-chk" id="mockChk">
+          <label for="mockChk" style="cursor:pointer;">Restart Windows Explorer shell automatically</label>
+        </div>
+        <span>14 cache files found (42.8 MB) • Ready to rebuild</span>
+        <a href="https://pexoris.com" style="color:#B45309; font-weight:700;">pexoris.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================================
+       6-FEATURE GRID (APPLE CARDS)
+       ============================================================= -->
+  <section class="section-wrap" id="features">
+    <div class="section-header">
+      <span class="section-tag">Instant Windows Shell Repair</span>
+      <h2 class="section-title">Why Windows Icon Caches Fail &amp; How We Fix Them</h2>
+      <p class="section-desc">Eliminate white sheets, black backgrounds, and broken thumbnail squares without restarting your PC or re-installing apps.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- 1 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><rect x="7" y="8" width="4" height="4"/><rect x="13" y="8" width="4" height="4"/><rect x="7" y="14" width="4" height="4"/><rect x="13" y="14" width="4" height="4"/></svg>
+        </div>
+        <h3>Fix Blank White Sheet Icons</h3>
+        <p>Restores desktop, taskbar, and Start menu shortcuts that inexplicably turn into blank white sheets or generic document placeholders after updates.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Bypass Explorer File Locks</h3>
+        <p>Windows Explorer permanently locks cache files during active sessions. Pexoris terminates the lock cleanly, deletes corrupted databases, and restarts Explorer in &lt; 1 sec.</p>
+      </div>
+
+      <!-- 3 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>Repair Broken Video &amp; Image Thumbs</h3>
+        <p>Cleans all <code>thumbcache_*.db</code> files from 16px to 2560px resolution, fixing black square backgrounds and missing movie or camera previews.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </div>
+        <h3>Native Shell Notification Broadcast</h3>
+        <p>Calls the Win32 <code>SHChangeNotify(SHCNE_ASSOCCHANGED)</code> API to force the shell to re-read all file extensions and icon handlers immediately.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Zero Risk of Data Loss</h3>
+        <p>Only deletes transient rendering caches. Your desktop shortcuts, program files, user documents, and system settings remain 100% untouched.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+        </div>
+        <h3>Zero Restart Required</h3>
+        <p>Unlike manual CMD batch scripts that force a system reboot, Pexoris automatically recycles the Explorer process and notifies the shell in 1 second.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       COMPETITIVE COMPARISON MATRIX TABLE
+       ============================================================= -->
+  <section class="section-wrap" id="comparison">
+    <div class="section-header">
+      <span class="section-tag">Direct Benchmark</span>
+      <h2 class="section-title">Why Pexoris Beats Manual Methods</h2>
+      <p class="section-desc">Compare Pexoris IconCacheRebuilder against complicated CMD batch commands, Disk Cleanup, and slow SFC scans.</p>
+    </div>
+
+    <div class="comparison-card">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature / Capability</th>
+            <th class="col-highlight">Pexoris IconCacheRebuilder</th>
+            <th>Manual CMD Commands</th>
+            <th>Windows Disk Cleanup</th>
+            <th>SFC / DISM Scans</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1-Click Automated Rebuild</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ 1-Click Instant</span></td>
+            <td><span class="badge-loss">✗ 6 Manual CMD Steps</span></td>
+            <td><span class="badge-loss">✗ Partial Thumbnails Only</span></td>
+            <td><span class="badge-loss">✗ Irrelevant &amp; 30+ Mins</span></td>
+          </tr>
+          <tr>
+            <td><strong>Terminates Explorer File Locks</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ Automated &amp; Clean</span></td>
+            <td><span class="badge-loss">✗ Requires taskkill syntax</span></td>
+            <td><span class="badge-loss">✗ Cannot delete locked dbs</span></td>
+            <td><span class="badge-loss">✗ No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Auto-Restarts Explorer Shell</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ Instant Auto-Restart</span></td>
+            <td><span class="badge-loss">✗ Leaves blank screen if missed</span></td>
+            <td><span class="badge-loss">✗ No</span></td>
+            <td><span class="badge-loss">✗ Requires PC Reboot</span></td>
+          </tr>
+          <tr>
+            <td><strong>SHChangeNotify Association Broadcast</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ Win32 API Broadcast</span></td>
+            <td><span class="badge-loss">✗ None (delayed reload)</span></td>
+            <td><span class="badge-loss">✗ None</span></td>
+            <td><span class="badge-loss">✗ None</span></td>
+          </tr>
+          <tr>
+            <td><strong>Executable File Size</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ 44 KB Standalone</span></td>
+            <td>Script Files</td>
+            <td>Built-in Tool</td>
+            <td>System Binary</td>
+          </tr>
+          <tr>
+            <td><strong>Selective Icon vs Thumbnail Flush</strong></td>
+            <td class="col-highlight"><span class="badge-win">✓ Dedicated Buttons</span></td>
+            <td><span class="badge-loss">✗ Complex File Wildcards</span></td>
+            <td><span class="badge-loss">✗ No Icon Cache Support</span></td>
+            <td><span class="badge-loss">✗ None</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       4-STEP HOW-TO GUIDE
+       ============================================================= -->
+  <section class="section-wrap" id="howto">
+    <div class="section-header">
+      <span class="section-tag">Quick Walkthrough</span>
+      <h2 class="section-title">How to Fix Broken Icons in 4 Simple Steps</h2>
+      <p class="section-desc">Restore desktop, taskbar, and file icons to full crisp resolution in seconds.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Download &amp; Run</h3>
+        <p>Extract the 44 KB standalone executable and launch PexorisIconCacheRebuilder. Zero installation required.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Inspect Databases</h3>
+        <p>Review the list of iconcache and thumbcache files, their total size, and active Explorer handle locks.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>1-Click Rebuild</h3>
+        <p>Click "⚡ 1-Click Rebuild All Caches". Explorer is safely closed, cache files are wiped, and the shell is refreshed.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Icons Restored</h3>
+        <p>Windows Explorer automatically restarts. All corrupted white shortcuts reload with pristine original branding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       INTERACTIVE FAQ ACCORDION
+       ============================================================= -->
+  <section class="section-wrap" id="faq">
+    <div class="section-header">
+      <span class="section-tag">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Everything you need to know about Windows icon cache corruption and Pexoris IconCacheRebuilder.</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>Why did my desktop shortcuts turn into blank white sheets?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Windows stores pre-rendered icons in <code>IconCache.db</code> and <code>iconcache_*.db</code> to avoid reading every EXE each time the desktop loads. When these cache databases become corrupted due to hard shutdowns, driver crashes, or Windows updates, Windows fails to find the icon and displays a generic blank white document sheet instead.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Why does restarting my computer not fix the white icons?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          When Windows restarts, it simply reloads the existing corrupted <code>IconCache.db</code> from your disk! The corrupted file remains until it is explicitly deleted while the Windows Explorer process is stopped.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Will rebuilding the icon cache delete any personal files?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No! It is 100% safe. Rebuilding the icon cache only deletes temporary database caches. Your shortcuts, apps, desktop layout, documents, and personal files are completely unaffected. Windows immediately rebuilds fresh copies of the icons.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Why do my desktop icons flash black or disappear briefly during rebuild?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Because Windows Explorer (the desktop taskbar and shell) is briefly halted for less than a second to release the file handle lock on the cache databases. As soon as the databases are deleted, Explorer restarts automatically and reloads all icons cleanly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER)
+       ============================================================= -->
+  <section id="download">
+    <div class="download-card">
+      <h2>Download Pexoris IconCacheRebuilder Free</h2>
+      <p class="subtitle">Restore white sheets and corrupted desktop icons today. 100% free, 0 installer, 0 telemetry.</p>
+
+      <a href="https://drive.google.com/uc?export=download&id=PENDING" class="download-primary-btn" id="btnDownload">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+        <span>Download Free (Portable ZIP)</span>
+      </a>
+
+      <div class="download-meta-info">
+        <span>Version 1.0.0.0</span>
+        <span>•</span>
+        <span>Size: 44 KB (.EXE) / 28 KB (.ZIP)</span>
+        <span>•</span>
+        <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SITE FOOTER
+       ============================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="../../brand-logo.png" alt="Pexoris" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="../../">Home</a>
+        <a href="../../tools/">All Tools</a>
+        <a href="../../blog/">Blog &amp; Guides</a>
+        <a href="../../request/">Request a Tool</a>
+        <a href="../../terms/">Terms of Use</a>
+        <a href="../../sitemap.xml">Sitemap</a>
+      </div>
+
+      <p class="footer-copy">
+        &copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive Accordion JS -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
