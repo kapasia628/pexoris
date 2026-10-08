@@ -52,7 +52,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **13** | **Pexoris DNSFlusher** | `dns-flusher` | 62 KB | 40 KB | `7487381d2b792f4b5f3d7ccf0a7e844019f028f414769ec7514281b51018e581` | `https://drive.google.com/uc?export=download&id=1SQCWEifK1tDpYkEgoJIHeLRS9KrAoTRH` |
 | **14** | **Pexoris RamTrimmer** | `ram-trimmer` | 58 KB | 36 KB | `bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be` | `https://drive.google.com/uc?export=download&id=1_pd3rtHSuh5oDF1sW0t2n5Mjx7XDHWsJ` |
 | **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | `https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS` |
-| **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | *(Pending Google Drive Link)* |
+| **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | `https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
