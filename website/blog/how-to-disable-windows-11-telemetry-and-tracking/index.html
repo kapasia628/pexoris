@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS BLOG — HIGH-RANKING WINDOWS TROUBLESHOOTING GUIDE
+       TARGET QUERY: How to Disable Windows 11 Telemetry and Tracking
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Disable Windows 11 Telemetry and Tracking (Free &amp; Permanent)</title>
+  <meta name="title" content="How to Disable Windows 11 Telemetry and Tracking (Free &amp; Permanent)">
+  <meta name="description" content="Complete step-by-step technical guide to permanently block Windows 11 telemetry, diagnostic data collection, advertising ID tracking, and background DiagTrack services.">
+  <meta name="keywords" content="disable windows 11 telemetry, turn off windows 11 tracking, shut down diagtrack service, disable advertising id windows 11, windows 11 privacy tweaks, pexoris privacyshield">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-disable-windows-11-telemetry-and-tracking/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../assets/icons/privacy-shield.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-disable-windows-11-telemetry-and-tracking/">
+  <meta property="og:title" content="How to Disable Windows 11 Telemetry and Tracking">
+  <meta property="og:description" content="Technical guide: Silence diagnostic logging, DiagTrack, Bing Start Menu queries, and advertising profiling using native commands or a 65 KB portable tool.">
+  <meta property="og:image" content="https://pexoris.com/assets/icons/privacy-shield.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Disable Windows 11 Telemetry and Tracking">
+  <meta name="twitter:description" content="Permanently stop Windows 11 from harvesting diagnostic data and keystrokes.">
+  <meta name="twitter:image" content="https://pexoris.com/assets/icons/privacy-shield.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- STRUCTURED DATA (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Disable Windows 11 Telemetry and Tracking (Free & Permanent)",
+        "description": "Comprehensive technical guide on silencing Windows 11 diagnostic logging, stopping the Connected User Experiences (DiagTrack) service, and blocking advertising tracking.",
+        "image": "https://pexoris.com/assets/icons/privacy-shield.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Technical Team",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-09",
+        "dateModified": "2026-10-09",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-disable-windows-11-telemetry-and-tracking/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Disable Windows 11 Telemetry via Registry and Services",
+        "description": "Step-by-step instructions to configure Windows Group Policies and disable background diagnostic services.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Disable Diagnostic Data Collection via Registry",
+            "text": "Navigate to HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection and create a DWORD named AllowTelemetry with value 0."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Stop and Disable DiagTrack Service",
+            "text": "Execute sc config DiagTrack start= disabled and net stop DiagTrack in an elevated Command Prompt."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Disable Bing Start Menu Search Integration",
+            "text": "Set DisableWebSearch to 1 under HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search to prevent Start menu keystroke harvesting."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Disable Telemetry Scheduled Tasks",
+            "text": "Run schtasks /Change /TN 'Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser' /Disable."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does disabling telemetry stop Windows Update from functioning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Telemetry data collection is strictly diagnostic feedback and behavioral metrics. Disabling it does not touch the Windows Update Client (wuauserv) or Background Intelligent Transfer Service (BITS)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Microsoft re-enable telemetry after major Windows updates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Major feature updates (like 23H2 or 24H2) perform an in-place OS upgrade that overwrites certain system policies and resets default services back to their factory state. Running a quick portable privacy audit after major updates re-secures your system in seconds."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-dark: #3730A3;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans); background: var(--bg-page); color: var(--text-body);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light); width: 100%;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 6px; }
+    .brand-name { font-weight: 800; font-size: 1.15rem; color: var(--text-hero); }
+
+    main.article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary); }
+
+    .post-header { margin-bottom: 2rem; position: static; background: none; }
+    .post-category {
+      display: inline-block; font-size: 0.8rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--text-hero);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center; }
+
+    /* AEO Quick Answer Box */
+    .aeo-box {
+      background: #FFFFFF; border: 1px solid var(--border-light);
+      border-left: 4px solid var(--primary); border-radius: 8px;
+      padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 800; color: var(--text-hero);
+      margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .aeo-box p { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0; }
+
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2.5rem 0 1rem; letter-spacing: -0.01em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero); margin: 1.75rem 0 0.75rem;
+    }
+    .content-section p { font-size: 1rem; color: var(--text-body); margin-bottom: 1.25rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-body); }
+    .content-section li { margin-bottom: 0.5rem; }
+
+    .code-box {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1.1rem 1.25rem; font-family: var(--font-mono); font-size: 0.88rem;
+      margin: 1rem 0 1.5rem; overflow-x: auto; line-height: 1.6;
+    }
+
+    /* 1-Click Tool Spotlight Card */
+    .tool-spotlight-card {
+      background: #FFFFFF; border: 1px solid var(--border-medium);
+      border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text-hero); margin-bottom: 0.35rem;
+    }
+    .tool-spotlight-left p { font-size: 0.9rem; color: var(--text-sub); margin: 0; }
+    .btn-spotlight {
+      background: var(--primary); color: #FFFFFF !important; font-weight: 800; font-size: 0.92rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); background: var(--primary-hover); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-light);
+      padding: 2.5rem 1.5rem; margin-top: 5rem;
+    }
+    .footer-inner {
+      max-width: 860px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-links a { color: var(--text-sub); text-decoration: none; font-size: 0.85rem; margin-left: 1.25rem; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <a href="../../tools/" style="text-decoration: none; color: var(--text-sub); font-size: 0.88rem; font-weight: 600;">All Tools</a>
+        <a href="../../tools/privacy-shield/" style="text-decoration: none; color: var(--primary); font-size: 0.88rem; font-weight: 700;">PrivacyShield Utility</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN ARTICLE -->
+  <main class="article-wrap">
+    <div class="breadcrumb">
+      <a href="../../">Home</a> &rsaquo; <a href="../">Blog</a> &rsaquo; <span>Disable Windows 11 Telemetry</span>
+    </div>
+
+    <div class="post-header">
+      <span class="post-category">Windows Privacy &amp; Optimization</span>
+      <h1 class="post-title">How to Disable Windows 11 Telemetry &amp; Tracking Permanently</h1>
+      <div class="post-meta">
+        <span>By Pexoris Engineering</span>
+        <span>•</span>
+        <span>Updated October 2026</span>
+        <span>•</span>
+        <span>6 Min Read</span>
+      </div>
+    </div>
+
+    <!-- AEO QUICK ANSWER -->
+    <div class="aeo-box">
+      <h4>Quick Answer: How to Stop Windows 11 Telemetry</h4>
+      <p>
+        To permanently stop Windows 11 telemetry, you must: <strong>(1)</strong> Set <code>AllowTelemetry = 0</code> in <code>HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection</code>, <strong>(2)</strong> Disable the <code>DiagTrack</code> service via <code>sc config DiagTrack start= disabled</code>, <strong>(3)</strong> Turn off Bing Web Search in the Start menu via <code>DisableWebSearch = 1</code>, and <strong>(4)</strong> Disable scheduled telemetry tasks like <code>Microsoft Compatibility Appraiser</code>. For an automated, 1-click solution, use the free 65 KB portable tool <strong>Pexoris PrivacyShield</strong>.
+      </p>
+    </div>
+
+    <article class="content-section">
+      <h2>Why Does Windows 11 Collect So Much Data?</h2>
+      <p>
+        Out of the box, Windows 11 operates in a high-telemetry state. Microsoft routes system activity through several interconnected pipelines:
+      </p>
+      <ul>
+        <li><strong>Diagnostic Data Collection:</strong> Transmits memory dumps, crash stack traces, browser history from Edge, and list of installed software.</li>
+        <li><strong>Connected User Experiences (DiagTrack):</strong> A persistent background Windows service that monitors user interactions and uploads batch payloads.</li>
+        <li><strong>Advertising ID &amp; Profiling:</strong> Generates a unique advertising token linked to your hardware profile so Windows Store apps can serve targeted ads.</li>
+        <li><strong>Start Menu Bing Queries:</strong> Every keystroke typed into the Start menu search bar is transmitted to Bing web servers before you even press Enter.</li>
+        <li><strong>Inking and Typing Personalization:</strong> Captures handwriting strokes and custom typed dictionaries to train cloud speech and language models.</li>
+      </ul>
+
+      <!-- 1-CLICK SPOTLIGHT CARD -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris PrivacyShield</h3>
+          <p>Disable all 16 Windows telemetry vectors in 1 click. Zero installation, 65 KB portable standalone.</p>
+        </div>
+        <a href="../../tools/privacy-shield/" class="btn-spotlight">Get Free PrivacyShield &rarr;</a>
+      </div>
+
+      <h2>Method 1: Manual Windows Registry Configuration</h2>
+      <p>
+        If you prefer editing the Windows Registry manually, follow these steps using an elevated Registry Editor (<code>regedit.exe</code>):
+      </p>
+
+      <h3>1. Disable Diagnostic Data Payload</h3>
+      <p>
+        Navigate to the following key in Registry Editor:
+      </p>
+      <div class="code-box">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection</div>
+      <p>
+        Create a new <strong>DWORD (32-bit) Value</strong> named <code>AllowTelemetry</code> and set its value to <code>0</code>.
+      </p>
+
+      <h3>2. Disable Start Menu Bing Keystroke Logging</h3>
+      <p>
+        Prevent the Start Menu search bar from beaming your queries across the internet:
+      </p>
+      <div class="code-box">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search</div>
+      <p>
+        Create a DWORD named <code>DisableWebSearch</code> with value <code>1</code>, and another named <code>ConnectedSearchUseWeb</code> with value <code>0</code>.
+      </p>
+
+      <h3>3. Turn Off Advertising ID</h3>
+      <p>
+        Disable advertising tracking for the current user profile:
+      </p>
+      <div class="code-box">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo</div>
+      <p>
+        Set the <code>Enabled</code> DWORD to <code>0</code>.
+      </p>
+
+      <h2>Method 2: Disable Telemetry Services via Command Line</h2>
+      <p>
+        Open an elevated <strong>Command Prompt (Run as Administrator)</strong> and run the following commands to shut down and permanently disable the DiagTrack telemetry daemon:
+      </p>
+      <div class="code-box">net stop DiagTrack
+sc config DiagTrack start= disabled
+net stop dmwappushservice
+sc config dmwappushservice start= disabled</div>
+
+      <h2>Method 3: Suppress Scheduled Telemetry Tasks</h2>
+      <p>
+        Windows runs several silent maintenance tasks that wake up your CPU to compile hardware inventories. Disable them using <code>schtasks</code>:
+      </p>
+      <div class="code-box">schtasks /Change /TN "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
+schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /Disable
+schtasks /Change /TN "Microsoft\Windows\Application Experience\ProgramDataUpdater" /Disable</div>
+
+      <h2>The Easy 1-Click Solution: Pexoris PrivacyShield</h2>
+      <p>
+        While manual tweaks work, major Windows updates often revert them without notice. Hunting through 16 different registry paths and Task Scheduler nodes takes time and carries the risk of typos.
+      </p>
+      <p>
+        <strong><a href="../../tools/privacy-shield/">Pexoris PrivacyShield</a></strong> packages all these hardening policies into a clean, 65 KB portable application:
+      </p>
+      <ul>
+        <li><strong>Instant System Audit:</strong> Color-codes which tracking vectors are active and which are hardened.</li>
+        <li><strong>Safe Recommended Preset:</strong> Disables telemetry, DiagTrack, ad IDs, and Start search without breaking Windows Update.</li>
+        <li><strong>1-Click Safety Undo:</strong> Completely restores factory default settings whenever you choose.</li>
+        <li><strong>Single Standalone File:</strong> 0 MB memory footprint when closed, no background services, and zero installation.</li>
+      </ul>
+
+      <div style="text-align: center; margin: 2.5rem 0;">
+        <a href="../../tools/privacy-shield/" class="btn-spotlight" style="display: inline-block; padding: 1rem 2.5rem; font-size: 1rem;">
+          Download Pexoris PrivacyShield Free (65 KB)
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 24px; height: 24px; border-radius: 4px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span style="font-weight: 800; font-size: 1rem; color: var(--text-hero);">Pexoris</span>
+      </div>
+      <div class="footer-links">
+        <a href="../../">Home</a>
+        <a href="../../tools/">All Tools</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../request/">Request a Tool</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Pexoris. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
