@@ -57,8 +57,8 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | `https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E` |
 | **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | `https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk` |
 | **20** | **Pexoris AppUninstaller** | `app-uninstaller` | 51 KB | 32 KB | `d53e0a731cf94a5ebec2481b8d340fe8c3d95db41a9799090505b76466cf5b3f` | `https://drive.google.com/uc?export=download&id=1lXUG0xfZfZS4CaLdmlDLNCwfwQO7KY_v` |
-| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | *(Pending Google Drive Link)* |
-| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | *(Pending Google Drive Link)* |
+| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | `https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF` |
+| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | `https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
