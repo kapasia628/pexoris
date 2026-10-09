@@ -387,8 +387,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [36/36] Packaging Pexoris WifiKeyRevealer Portable ZIP...
+echo [36/38] Packaging Pexoris WifiKeyRevealer Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisWifiKeyRevealer.exe' -DestinationPath 'build\PexorisWifiKeyRevealer-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisDiskCleaner.exe 2>nul
+
+echo [37/38] Compiling Tool 19: Pexoris DiskCleaner...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisDiskCleaner\App.manifest ^
+    /win32icon:src\PexorisDiskCleaner\Assets\app.ico ^
+    /out:build\PexorisDiskCleaner.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisDiskCleaner\Program.cs ^
+    src\PexorisDiskCleaner\Theme.cs ^
+    src\PexorisDiskCleaner\DiskEngine.cs ^
+    src\PexorisDiskCleaner\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris DiskCleaner!
+    exit /b %ERRORLEVEL%
+)
+
+echo [38/38] Packaging Pexoris DiskCleaner Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisDiskCleaner.exe' -DestinationPath 'build\PexorisDiskCleaner-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -409,6 +430,7 @@ copy /y "build\PexorisExifStripper-v1.0-Portable.zip" "final softwere for g driv
 copy /y "build\PexorisIconCacheRebuilder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisIconCacheRebuilder.zip" >nul
 copy /y "build\PexorisWinUpdateReset-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisWinUpdateReset.zip" >nul
 copy /y "build\PexorisWifiKeyRevealer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisWifiKeyRevealer.zip" >nul
+copy /y "build\PexorisDiskCleaner-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDiskCleaner.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -427,10 +449,11 @@ copy /y "build\PexorisExifStripper.exe" "final softwere for g drive uplod\Pexori
 copy /y "build\PexorisIconCacheRebuilder.exe" "final softwere for g drive uplod\PexorisIconCacheRebuilder.exe" >nul
 copy /y "build\PexorisWinUpdateReset.exe" "final softwere for g drive uplod\PexorisWinUpdateReset.exe" >nul
 copy /y "build\PexorisWifiKeyRevealer.exe" "final softwere for g drive uplod\PexorisWifiKeyRevealer.exe" >nul
+copy /y "build\PexorisDiskCleaner.exe" "final softwere for g drive uplod\PexorisDiskCleaner.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 18 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 19 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -449,6 +472,7 @@ echo  Tool 15: build\PexorisExifStripper.exe       (53 KB)
 echo  Tool 16: build\PexorisIconCacheRebuilder.exe (44 KB)
 echo  Tool 17: build\PexorisWinUpdateReset.exe     (51 KB)
 echo  Tool 18: build\PexorisWifiKeyRevealer.exe   (48 KB)
+echo  Tool 19: build\PexorisDiskCleaner.exe       (50 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

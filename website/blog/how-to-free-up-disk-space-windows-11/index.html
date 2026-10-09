@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS BLOG — HIGH-RANKING WINDOWS TROUBLESHOOTING GUIDE
+       TARGET QUERY: How to Free Up Disk Space in Windows 11
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Free Up Disk Space in Windows 11 (Clean C: Drive &amp; Delete System Junk)</title>
+  <meta name="title" content="How to Free Up Disk Space in Windows 11 (Clean C: Drive &amp; Delete System Junk)">
+  <meta name="description" content="Step-by-step technical guide to clean drive C:, purge hidden Windows Update caches, wipe delivery optimization files, and safely reclaim 10+ GB in Windows 11.">
+  <meta name="keywords" content="how to free up disk space windows 11, clean c drive windows 11, delete windows update cache cmd, clear temp files windows 11, c drive full windows 11 fix, delete softwaredistribution download, pexoris diskcleaner">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-free-up-disk-space-windows-11/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../assets/icons/disk-cleaner.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-free-up-disk-space-windows-11/">
+  <meta property="og:title" content="How to Free Up Disk Space in Windows 11 (Clean C: Drive &amp; Delete System Junk)">
+  <meta property="og:description" content="Technical guide: Clear hidden Windows Update caches, delivery optimization, crash dumps, and temp junk natively or with 1-click portable tool.">
+  <meta property="og:image" content="https://pexoris.com/assets/icons/disk-cleaner.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Free Up Disk Space in Windows 11">
+  <meta name="twitter:description" content="Purge gigabytes of hidden system caches, crash dumps, and Windows Update leftovers safely.">
+  <meta name="twitter:image" content="https://pexoris.com/assets/icons/disk-cleaner.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Free Up Disk Space in Windows 11 (Clean C: Drive & Delete System Junk)",
+        "description": "Comprehensive guide to identifying hidden storage hogs in Windows 11, purging staging caches, clearing crash dumps, and reclaiming gigabytes of disk space safely.",
+        "image": "https://pexoris.com/assets/icons/disk-cleaner.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Technical Team",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-09",
+        "dateModified": "2026-10-09",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-free-up-disk-space-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Clean Drive C: Manually via Command Prompt & DISM",
+        "description": "Step-by-step instructions to safely purge user temporary files, Windows Update staging packages, and the component store using native commands.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Purge User and System Temp Directories",
+            "text": "Run del /s /f /q %temp%\\*.* and del /s /f /q C:\\Windows\\Temp\\*.* in an Administrator Command Prompt."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Wipe Outdated Windows Update Download Packages",
+            "text": "Stop the update daemon with net stop wuauserv, delete cached installers in C:\\Windows\\SoftwareDistribution\\Download, and restart the service with net start wuauserv."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Clean the Windows Component Store (WinSxS)",
+            "text": "Execute dism.exe /online /cleanup-image /startcomponentcleanup /resetbase to reclaim superseded system component updates."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is my C: drive full even though I don't have large personal files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows 11 continuously downloads background system updates, staged driver packages, Delivery Optimization peer files, and GPU shader caches. Over several months, SoftwareDistribution, %LOCALAPPDATA%\\CrashDumps, and temporary directories silently consume between 15 GB and 40 GB of storage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it safe to clean the SoftwareDistribution\\Download folder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it is completely safe. The Download folder only contains temporary installation packages for updates that have already been installed. Deleting them frees gigabytes immediately and will never break future Windows updates."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --primary: #059669;
+      --primary-hover: #047857;
+      --primary-dark: #065F46;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans); background: var(--bg-page); color: var(--text-body);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light); width: 100%;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 6px; }
+    .brand-name { font-weight: 800; font-size: 1.15rem; color: var(--text-hero); }
+
+    main.article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary); }
+
+    .post-header { margin-bottom: 2rem; position: static; background: none; }
+    .post-category {
+      display: inline-block; font-size: 0.8rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--text-hero);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center; }
+
+    /* AEO Quick Answer Box */
+    .aeo-box {
+      background: #FFFFFF; border: 1px solid var(--border-light);
+      border-left: 4px solid var(--primary); border-radius: 8px;
+      padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 800; color: var(--text-hero);
+      margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .aeo-box p { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0; }
+
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2.5rem 0 1rem; letter-spacing: -0.01em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero); margin: 1.75rem 0 0.75rem;
+    }
+    .content-section p { font-size: 1rem; color: var(--text-body); margin-bottom: 1.25rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-body); }
+    .content-section li { margin-bottom: 0.5rem; }
+
+    .code-box {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1.1rem 1.25rem; font-family: var(--font-mono); font-size: 0.88rem;
+      margin: 1rem 0 1.5rem; overflow-x: auto; line-height: 1.6;
+    }
+
+    /* 1-Click Tool Spotlight Card */
+    .tool-spotlight-card {
+      background: #FFFFFF; border: 1px solid var(--border-medium);
+      border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text-hero); margin-bottom: 0.35rem;
+    }
+    .tool-spotlight-left p { font-size: 0.9rem; color: var(--text-sub); margin: 0; }
+    .btn-spotlight {
+      background: var(--primary); color: #FFFFFF !important; font-weight: 800; font-size: 0.92rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-light);
+      padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .tool-spotlight-card { flex-direction: column; text-align: center; }
+      .btn-spotlight { width: 100%; justify-content: center; }
+      .post-title { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <a href="../../tools/disk-cleaner/" style="font-weight:700; font-size:0.9rem; color:var(--primary-dark);">View DiskCleaner Tool →</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Blog</a> &gt; <span>How to Free Up Disk Space in Windows 11</span>
+    </nav>
+
+    <div class="post-header">
+      <span class="post-category">Windows Storage &amp; Performance</span>
+      <h1 class="post-title">How to Free Up Disk Space in Windows 11 (Clean C: Drive &amp; Delete System Junk)</h1>
+      <div class="post-meta">
+        <span>Published: October 2026</span>
+        <span>•</span>
+        <span>Read time: 5 min</span>
+        <span>•</span>
+        <span>By Pexoris Technical Team</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Snippet -->
+    <div class="aeo-box">
+      <h4>⚡ Quick Answer</h4>
+      <p>To safely free up 10+ GB on your Windows 11 C: drive without deleting personal files, purge the hidden <strong>Windows Update staging cache</strong> in <code>C:\Windows\SoftwareDistribution\Download</code>, wipe <strong>Delivery Optimization</strong> queues, and delete <code>%LOCALAPPDATA%\CrashDumps</code>. You can do this with native Command Prompt commands or use the lightweight, zero-telemetry 50 KB portable <a href="../../tools/disk-cleaner/">Pexoris DiskCleaner</a> to scan and wipe all 10 junk categories in 1 click.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Does Drive C: Silently Run Out of Space in Windows 11?</h2>
+      <p>Even if you avoid downloading large video files or games, Windows 11 constantly accumulates background system work files that are never automatically purged:</p>
+      <ul>
+        <li><strong>Windows Update Download Staging:</strong> Every monthly cumulative update unpacks massive CAB and MSU packages into <code>%windir%\SoftwareDistribution\Download</code>. After the update finishes, these files remain abandoned on disk.</li>
+        <li><strong>Delivery Optimization Cache:</strong> Windows shares downloaded updates with other PCs on your LAN, keeping copies in local cache folders.</li>
+        <li><strong>Application Crash Dumps:</strong> When an app or browser process crashes silently in the background, Windows writes a memory dump to <code>%LOCALAPPDATA%\CrashDumps</code> that often exceeds 500 MB per crash.</li>
+        <li><strong>DirectX Shader Caches:</strong> Modern graphics drivers compile GPU shaders for gaming and video editing into <code>D3DSCache</code> and <code>DXCache</code>, which grow continuously without automatic rotation.</li>
+      </ul>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris DiskCleaner</h3>
+          <p>Instant deep disk cleanup. Scans 10 Windows system categories including Update Caches, Delivery Optimization, Crash Dumps, Shader Caches, and Temp files in under 1 second. 50 KB standalone utility, zero install.</p>
+        </div>
+        <a href="../../tools/disk-cleaner/" class="btn-spotlight">
+          <span>⚡ Download DiskCleaner Free</span>
+        </a>
+      </div>
+
+      <h2>Method 1: Manual Command Line Cleanup (CMD &amp; DISM)</h2>
+      <p>For advanced administrators who prefer native tools, follow these command prompt steps:</p>
+
+      <h3>Step 1: Clean User &amp; System Temp Files</h3>
+      <p>Open Command Prompt as Administrator and run:</p>
+      <div class="code-box">del /s /f /q %temp%\*.*<br>del /s /f /q C:\Windows\Temp\*.*</div>
+
+      <h3>Step 2: Safely Wipe Windows Update Download Cache</h3>
+      <p>Stop the update service temporarily to unlock files, purge the download directory, and restart the service:</p>
+      <div class="code-box">net stop wuauserv<br>rmdir /s /q C:\Windows\SoftwareDistribution\Download<br>mkdir C:\Windows\SoftwareDistribution\Download<br>net start wuauserv</div>
+
+      <h3>Step 3: Component Store Cleanup (DISM)</h3>
+      <p>Reclaim obsolete superseded update components inside the <code>WinSxS</code> directory:</p>
+      <div class="code-box">dism.exe /online /cleanup-image /startcomponentcleanup /resetbase</div>
+
+      <h3>Pitfalls with the Manual Command-Line Approach:</h3>
+      <ul>
+        <li><strong>Locked File Errors:</strong> Background applications will block <code>del</code> commands, throwing repeated "Access Denied" errors.</li>
+        <li><strong>DISM Takes 10+ Minutes:</strong> <code>/startcomponentcleanup</code> performs heavy CPU-intensive operations and cannot be interrupted.</li>
+        <li><strong>Scattered Paths:</strong> You must remember half a dozen deep system paths across LocalAppData, ProgramData, and Windows directories.</li>
+      </ul>
+
+      <h2>Method 2: 1-Click Safe Cleanup with Pexoris DiskCleaner</h2>
+      <p>For instant and non-destructive disk cleaning without commercial bloatware like CCleaner:</p>
+      <ol>
+        <li>Download the free 50 KB <a href="../../tools/disk-cleaner/">Pexoris DiskCleaner</a> tool.</li>
+        <li>Run the executable — it starts instantly with zero installation, zero drivers, and zero background processes.</li>
+        <li>Review your storage categories in the clean visual table. Reclaimable space and file counts are shown live.</li>
+        <li>Click <strong>⚡ Safe Defaults</strong> (or select custom categories).</li>
+        <li>Click <strong>⚡ Clean Selected Junk</strong>.</li>
+      </ol>
+      <p>All in-use files are automatically detected and safely skipped, preventing operating system instability while freeing maximum drive space in under 3 seconds.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.</p>
+    <p style="margin-top:0.5rem;"><a href="../../">Home</a> • <a href="../../tools/">All Tools</a> • <a href="../../tools/disk-cleaner/">Pexoris DiskCleaner</a> • <a href="../../sitemap.xml">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>

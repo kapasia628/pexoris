@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 18 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 19 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -27,6 +27,7 @@
 | **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | [Download](https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq) | `http://localhost/tools/website/tools/icon-cache-rebuilder/` |
 | **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | [Download](https://drive.google.com/uc?export=download&id=1_Nm5yAN3dTY2hBmDdOi1SQZWYV2_1UnR) | `http://localhost/tools/website/tools/winupdate-reset/` |
 | **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E) | `http://localhost/tools/website/tools/wifi-key-revealer/` |
+| **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | *(Pending GD Link)* | `http://localhost/tools/website/tools/disk-cleaner/` |
 
 ---
 
@@ -100,4 +101,5 @@ Running `build.bat` in the project root:
 - [x] **#16 Pexoris IconCacheRebuilder** (Purge broken shell icon caches, thumbnail DBs & refresh Windows Explorer)
 - [x] **#17 Pexoris WinUpdateReset** (Reset Windows Update components, BITS queues & SoftwareDistribution)
 - [x] **#18 Pexoris WifiKeyRevealer** (View saved Wi-Fi profiles & retrieve lost network passwords)
-- [ ] **#19 Pexoris DiskCleaner** (Deep disk cleanup, Windows upgrade leftovers & staging storage purge)
+- [x] **#19 Pexoris DiskCleaner** (Deep disk cleanup, Windows upgrade leftovers & staging storage purge)
+- [ ] **#20 Pexoris AppUninstaller** (Force uninstall stubborn software, leftover files & registry traces)
