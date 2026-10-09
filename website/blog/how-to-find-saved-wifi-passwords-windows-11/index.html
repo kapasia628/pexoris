@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS BLOG — HIGH-RANKING WINDOWS TROUBLESHOOTING GUIDE
+       TARGET QUERY: How to Find Saved Wi-Fi Passwords in Windows 11
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Find Saved Wi-Fi Passwords in Windows 11 (CMD &amp; 1-Click Reveal)</title>
+  <meta name="title" content="How to Find Saved Wi-Fi Passwords in Windows 11 (CMD &amp; 1-Click Reveal)">
+  <meta name="description" content="Complete step-by-step technical guide to view, reveal, and export saved Wi-Fi network passwords in Windows 11 using native Command Prompt netsh or 1-click portable tool.">
+  <meta name="keywords" content="how to find saved wifi passwords windows 11, see wifi password windows 11 cmd, view saved wifi passwords, netsh wlan show profile key clear, reveal wifi password windows 10 11, export wifi passwords windows">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-find-saved-wifi-passwords-windows-11/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../assets/icons/wifi-key-revealer.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-find-saved-wifi-passwords-windows-11/">
+  <meta property="og:title" content="How to Find Saved Wi-Fi Passwords in Windows 11 (CMD &amp; 1-Click Reveal)">
+  <meta property="og:description" content="View, recover, and export all saved wireless network keys and security passwords in Windows 11 without deep menus.">
+  <meta property="og:image" content="https://pexoris.com/assets/icons/wifi-key-revealer.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find Saved Wi-Fi Passwords in Windows 11">
+  <meta name="twitter:description" content="Recover and view all saved wireless security keys in Windows 11 natively or with 1-click portable tool.">
+  <meta name="twitter:image" content="https://pexoris.com/assets/icons/wifi-key-revealer.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Find Saved Wi-Fi Passwords in Windows 11 (CMD & 1-Click Reveal)",
+        "description": "Comprehensive guide to viewing and exporting all stored Wi-Fi security keys and passwords in Windows 11 using native netsh commands and portable software.",
+        "image": "https://pexoris.com/assets/icons/wifi-key-revealer.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Technical Team",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-09",
+        "dateModified": "2026-10-09",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-find-saved-wifi-passwords-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to View Saved Wi-Fi Passwords via Windows Command Prompt",
+        "description": "Step-by-step instructions to list all registered wireless profiles and display their unencrypted security passwords using CMD.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Command Prompt",
+            "text": "Press Win + S, type cmd, right-click and select 'Run as administrator'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "List Saved Wireless Profiles",
+            "text": "Type netsh wlan show profiles and press Enter to see all saved Wi-Fi network names (SSIDs)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Reveal the Plaintext Security Key",
+            "text": "Run netsh wlan show profile name=\"NETWORK_NAME\" key=clear. Under Security settings, look for the 'Key Content' line."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where does Windows 11 store saved Wi-Fi passwords?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows stores Wi-Fi network profile configurations as XML documents in %ProgramData%\\Microsoft\\Wlansvc\\Profiles\\Interfaces. The security keys inside these XML files are encrypted using DPAPI (Data Protection API) and can be decrypted on-the-fly by the WLAN AutoConfig service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can't I see offline Wi-Fi passwords in Windows 11 Settings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Windows 11 Settings application only displays the security key for the currently connected network under Network & Internet > Wi-Fi > Hardware properties. To view passwords for previously connected or out-of-range networks, you must use Command Prompt or a dedicated tool like Pexoris WifiKeyRevealer."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --primary: #0284C7;
+      --primary-hover: #0369A1;
+      --primary-dark: #075985;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans); background: var(--bg-page); color: var(--text-body);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light); width: 100%;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 6px; }
+    .brand-name { font-weight: 800; font-size: 1.15rem; color: var(--text-hero); }
+
+    main.article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary); }
+
+    .post-header { margin-bottom: 2rem; position: static; background: none; }
+    .post-category {
+      display: inline-block; font-size: 0.8rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--text-hero);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center; }
+
+    /* AEO Quick Answer Box */
+    .aeo-box {
+      background: #FFFFFF; border: 1px solid var(--border-light);
+      border-left: 4px solid var(--primary); border-radius: 8px;
+      padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 800; color: var(--text-hero);
+      margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .aeo-box p { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0; }
+
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2.5rem 0 1rem; letter-spacing: -0.01em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero); margin: 1.75rem 0 0.75rem;
+    }
+    .content-section p { font-size: 1rem; color: var(--text-body); margin-bottom: 1.25rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-body); }
+    .content-section li { margin-bottom: 0.5rem; }
+
+    .code-box {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1.1rem 1.25rem; font-family: var(--font-mono); font-size: 0.88rem;
+      margin: 1rem 0 1.5rem; overflow-x: auto; line-height: 1.6;
+    }
+
+    /* 1-Click Tool Spotlight Card */
+    .tool-spotlight-card {
+      background: #FFFFFF; border: 1px solid var(--border-medium);
+      border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text-hero); margin-bottom: 0.35rem;
+    }
+    .tool-spotlight-left p { font-size: 0.9rem; color: var(--text-sub); margin: 0; }
+    .btn-spotlight {
+      background: var(--primary); color: #FFFFFF !important; font-weight: 800; font-size: 0.92rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-light);
+      padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .tool-spotlight-card { flex-direction: column; text-align: center; }
+      .btn-spotlight { width: 100%; justify-content: center; }
+      .post-title { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <a href="../../tools/wifi-key-revealer/" style="font-weight:700; font-size:0.9rem; color:var(--primary-dark);">View WifiKeyRevealer Tool →</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Blog</a> &gt; <span>How to Find Saved Wi-Fi Passwords</span>
+    </nav>
+
+    <div class="post-header">
+      <span class="post-category">Windows Networking &amp; Wireless Security</span>
+      <h1 class="post-title">How to Find Saved Wi-Fi Passwords in Windows 11 (CMD &amp; 1-Click Reveal)</h1>
+      <div class="post-meta">
+        <span>Published: October 2026</span>
+        <span>•</span>
+        <span>Read time: 4 min</span>
+        <span>•</span>
+        <span>By Pexoris Technical Team</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Snippet -->
+    <div class="aeo-box">
+      <h4>⚡ Quick Answer</h4>
+      <p>To view any saved Wi-Fi password in Windows 11 without digging through control panel settings, open Command Prompt and run <code>netsh wlan show profile name="YourSSID" key=clear</code>. The password will be revealed under <strong>Security settings &gt; Key Content</strong>. Alternatively, you can view all saved profiles simultaneously, unmask passwords, and export backups in 1 click using the lightweight 48 KB portable <a href="../../tools/wifi-key-revealer/">Pexoris WifiKeyRevealer</a> tool.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Does Windows 11 Hide Previously Saved Wi-Fi Passwords?</h2>
+      <p>When you connect your laptop or desktop to a wireless network, Windows 11 automatically creates an encrypted profile containing the SSID, authentication algorithm (WPA2-Personal, WPA3, WEP), cipher suite, and the pre-shared key (PSK). These profiles are stored under:</p>
+      <div class="code-box">%ProgramData%\Microsoft\Wlansvc\Profiles\Interfaces</div>
+      <p>While Windows 11 allows you to inspect the password of the <em>currently active</em> network inside Settings &gt; Network &amp; Internet &gt; Wi-Fi &gt; Manage known networks &gt; View Wi-Fi security key, Microsoft provides <strong>no graphical way</strong> to see passwords for networks you aren't currently connected to or that are out of range.</p>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris WifiKeyRevealer</h3>
+          <p>Instant table view of all saved Wi-Fi networks in Windows 11. Decrypts security keys, shows cipher &amp; authentication, lets you copy passwords in 1 double-click, and exports CSV/TXT backups. 48 KB standalone portable tool.</p>
+        </div>
+        <a href="../../tools/wifi-key-revealer/" class="btn-spotlight">
+          <span>⚡ Download WifiKeyRevealer Free</span>
+        </a>
+      </div>
+
+      <h2>Method 1: Reveal Passwords via Command Prompt (Netsh)</h2>
+      <p>Windows includes a powerful native command-line utility called <code>netsh</code> that communicates directly with the WLAN AutoConfig service.</p>
+
+      <h3>Step 1: Discover All Saved Network Profiles</h3>
+      <p>Open Command Prompt (or Windows Terminal) and execute:</p>
+      <div class="code-box">netsh wlan show profiles</div>
+      <p>This prints every Wi-Fi network profile registered on your computer under <strong>User profiles</strong>.</p>
+
+      <h3>Step 2: Decrypt the Specific Security Key</h3>
+      <p>Choose the network name you wish to inspect and run the following command, making sure to include <code>key=clear</code>:</p>
+      <div class="code-box">netsh wlan show profile name="Home_5G_Network" key=clear</div>
+      <p>Scroll down to the <strong>Security settings</strong> section. The plain-text password is displayed on the <strong>Key Content</strong> row:</p>
+      <div class="code-box">Security settings
+-----------------
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Security key           : Present
+    Key Content            : MySecureWifiPassword2026</div>
+
+      <h3>Limitations of the CMD Approach:</h3>
+      <ul>
+        <li><strong>One Network at a Time:</strong> You must retype the command for every single profile you want to verify.</li>
+        <li><strong>Syntax Errors:</strong> SSIDs containing spaces, emojis, or punctuation require strict quotation marks.</li>
+        <li><strong>No Export:</strong> If you are migrating to a new laptop, you have to manually copy-paste passwords one by one.</li>
+      </ul>
+
+      <h2>Method 2: 1-Click Instant Password Recovery with Pexoris WifiKeyRevealer</h2>
+      <p>If you need to recover passwords for multiple networks, share Wi-Fi credentials with friends, or generate a complete backup before formatting Windows:</p>
+      <ol>
+        <li>Download the free 48 KB <a href="../../tools/wifi-key-revealer/">Pexoris WifiKeyRevealer</a> tool.</li>
+        <li>Launch the program — it requires no installation, has zero dependencies, and leaves no registry clutter.</li>
+        <li>All saved Wi-Fi profiles appear instantly in a clean table with network name, security type, cipher, connection state, and plaintext password.</li>
+        <li><strong>Double-click</strong> any network row to immediately copy its security password to your clipboard.</li>
+        <li>Click <strong>Export CSV</strong> or <strong>Export Text</strong> to save a complete, structured backup of all your Wi-Fi keys in seconds.</li>
+      </ol>
+      <p>The utility also features an instant real-time search filter and a <strong>Mask / Reveal</strong> button to keep passwords protected from shoulder-surfing when you're working in public.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.</p>
+    <p style="margin-top:0.5rem;"><a href="../../">Home</a> • <a href="../../tools/">All Tools</a> • <a href="../../tools/wifi-key-revealer/">Pexoris WifiKeyRevealer</a> • <a href="../../sitemap.xml">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>
