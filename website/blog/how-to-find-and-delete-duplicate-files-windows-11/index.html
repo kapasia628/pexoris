@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS BLOG — HIGH-RANKING WINDOWS TROUBLESHOOTING GUIDE
+       TARGET QUERY: How to Find and Delete Duplicate Files in Windows 11
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Find and Delete Duplicate Files in Windows 11 (Free, Safe &amp; Fast)</title>
+  <meta name="title" content="How to Find and Delete Duplicate Files in Windows 11 (Free, Safe &amp; Fast)">
+  <meta name="description" content="Step-by-step technical guide to find and safely remove duplicate files, cloned photos, and redundant videos in Windows 11 using native PowerShell and 1-click portable tools.">
+  <meta name="keywords" content="how to find duplicate files windows 11, delete duplicate photos windows 11, powershell find duplicate files get-filehash, free duplicate file finder windows 10, pexoris duplicatefinder">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-find-and-delete-duplicate-files-windows-11/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../assets/icons/duplicate-finder.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-find-and-delete-duplicate-files-windows-11/">
+  <meta property="og:title" content="How to Find and Delete Duplicate Files in Windows 11">
+  <meta property="og:description" content="Technical guide: Find and eradicate duplicate files and cloned media using native PowerShell commands or 1-click portable utility.">
+  <meta property="og:image" content="https://pexoris.com/assets/icons/duplicate-finder.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find and Delete Duplicate Files in Windows 11">
+  <meta name="twitter:description" content="Reclaim gigabytes of storage safely with byte-level SHA-256 duplicate detection.">
+  <meta name="twitter:image" content="https://pexoris.com/assets/icons/duplicate-finder.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================================================================
+       STRUCTURED DATA (JSON-LD) FOR AEO, GEO & AIO
+       =================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Find and Delete Duplicate Files in Windows 11 (Free, Safe & Fast)",
+        "description": "Comprehensive guide explaining how duplicate files accumulate in Windows 11, how to find duplicate files with native PowerShell Get-FileHash scripts, and how to execute 1-click safe duplicate purges.",
+        "image": "https://pexoris.com/assets/icons/duplicate-finder.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Technical Team",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-09",
+        "dateModified": "2026-10-09",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-find-and-delete-duplicate-files-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Find Duplicate Files via Windows PowerShell",
+        "description": "Step-by-step instructions to scan folders and identify identical files using native PowerShell Get-FileHash commands.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Windows PowerShell",
+            "text": "Press Win + X and select Terminal or Windows PowerShell."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Run the File Hash Comparison Command",
+            "text": "Execute Get-ChildItem -Path 'C:\\YourFolder' -Recurse -File | Get-FileHash | Group-Object -Property Hash | Where-Object { $_.Count -gt 1 } to list all duplicate hashes."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Inspect and Delete Secondary Copies",
+            "text": "Review the duplicate items in each hash group and remove the redundant file paths."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why doesn't Windows 11 have a built-in duplicate file finder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows File Explorer allows sorting by name, date, and size, but does not calculate cryptographic binary hashes across file contents. Without byte-level hashing, native Explorer cannot distinguish between two genuinely identical files with different names and two different files that merely share the same byte size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it safe to delete duplicate files in Windows 11?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, provided you scan user directories such as Downloads, Documents, Pictures, and Videos. You should never run duplicate file cleaners on C:\\Windows or C:\\Program Files, as certain system DLLs and driver components intentionally maintain identical copies across multiple runtime directories."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-dark: #3730A3;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans); background: var(--bg-page); color: var(--text-body);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #FFFFFF !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light); width: 100%;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 6px; }
+    .brand-name { font-weight: 800; font-size: 1.15rem; color: var(--text-hero); }
+
+    main.article-wrap {
+      max-width: 860px; margin: 2.5rem auto 5rem; padding: 0 1.5rem;
+    }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary); }
+
+    .post-header { margin-bottom: 2rem; position: static; background: none; }
+    .post-category {
+      display: inline-block; font-size: 0.8rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--text-hero);
+      line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: center; }
+
+    /* AEO Quick Answer Box */
+    .aeo-box {
+      background: #FFFFFF; border: 1px solid var(--border-light);
+      border-left: 4px solid var(--primary); border-radius: 8px;
+      padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem; font-weight: 800; color: var(--text-hero);
+      margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .aeo-box p { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0; }
+
+    .content-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text-hero);
+      margin: 2.5rem 0 1rem; letter-spacing: -0.01em;
+    }
+    .content-section h3 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-hero); margin: 1.75rem 0 0.75rem;
+    }
+    .content-section p { font-size: 1rem; color: var(--text-body); margin-bottom: 1.25rem; }
+    .content-section ul, .content-section ol { margin: 0 0 1.5rem 1.5rem; color: var(--text-body); }
+    .content-section li { margin-bottom: 0.5rem; }
+
+    .code-box {
+      background: #0F172A; color: #F8FAFC; border-radius: 8px;
+      padding: 1.1rem 1.25rem; font-family: var(--font-mono); font-size: 0.88rem;
+      margin: 1rem 0 1.5rem; overflow-x: auto; line-height: 1.6;
+    }
+
+    /* 1-Click Tool Spotlight Card */
+    .tool-spotlight-card {
+      background: #FFFFFF; border: 1px solid var(--border-medium);
+      border-radius: 12px; padding: 1.75rem; margin: 2.5rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text-hero); margin-bottom: 0.35rem;
+    }
+    .tool-spotlight-left p { font-size: 0.9rem; color: var(--text-sub); margin: 0; }
+    .btn-spotlight {
+      background: var(--primary); color: #FFFFFF !important; font-weight: 800; font-size: 0.92rem;
+      padding: 0.85rem 1.5rem; border-radius: 8px; white-space: nowrap;
+      text-decoration: none !important; transition: transform 0.15s ease;
+    }
+    .btn-spotlight:hover { transform: translateY(-2px); background: var(--primary-hover); }
+
+    footer.site-footer {
+      background: #FFFFFF; border-top: 1px solid var(--border-light);
+      padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .tool-spotlight-card { flex-direction: column; text-align: center; }
+      .btn-spotlight { width: 100%; justify-content: center; }
+      .post-title { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://pexoris.com" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+      <a href="../../tools/duplicate-finder/" style="font-weight:700; font-size:0.9rem; color:var(--primary);">View DuplicateFinder Tool →</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="../../">Home</a> &gt; <a href="../">Blog</a> &gt; <span>How to Find and Delete Duplicate Files in Windows 11</span>
+    </nav>
+
+    <div class="post-header">
+      <span class="post-category">Windows Storage &amp; Optimization</span>
+      <h1 class="post-title">How to Find and Delete Duplicate Files in Windows 11 (Free, Safe &amp; Fast)</h1>
+      <div class="post-meta">
+        <span>Published: October 2026</span>
+        <span>•</span>
+        <span>Read time: 5 min</span>
+        <span>•</span>
+        <span>By Pexoris Technical Team</span>
+      </div>
+    </div>
+
+    <!-- AEO Quick Answer Snippet -->
+    <div class="aeo-box">
+      <h4>⚡ Quick Answer</h4>
+      <p>To safely find and delete duplicate files in Windows 11 without spending money on commercial bloatware, you can run a native <strong>PowerShell</strong> pipeline using <code>Get-FileHash</code> to group identical SHA-256 hashes, or use the 100% free 56 KB portable <a href="../../tools/duplicate-finder/">Pexoris DuplicateFinder</a>. Its 3-tier algorithm (Size &rarr; 4KB Header &rarr; SHA-256) scans 50,000+ files in seconds and auto-selects redundant copies while keeping the original file untouched.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Why Do Duplicate Files Accumulate So Quickly on Windows?</h2>
+      <p>Over months of daily computer use, storage drives secretly accumulate tens of gigabytes of cloned files:</p>
+      <ul>
+        <li><strong>Repeated Web Downloads:</strong> Downloading the same driver, PDF invoice, or application installer multiple times creates copies like <code>Document (1).pdf</code> and <code>Setup_v2.exe</code> scattered across downloads.</li>
+        <li><strong>Photo &amp; Camera Imports:</strong> Transferring smartphone or SD card photos to your PC often imports identical pictures into different dated folders.</li>
+        <li><strong>Cloud Sync Collisions:</strong> OneDrive, Google Drive, and Dropbox create conflicted copy duplicates (e.g., <code>filename-ComputerName.ext</code>) during network sync interruptions.</li>
+        <li><strong>Video &amp; Audio Render Exports:</strong> Video editing software frequently renders intermediate preview files and duplicate B-roll assets across project directories.</li>
+      </ul>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris DuplicateFinder</h3>
+          <p>High-speed duplicate file cleaner. 3-tier binary hash matching (Size &rarr; 4KB Header &rarr; SHA-256) guarantees zero false positives. Smart Auto-Select safeguards originals. 56 KB portable tool, zero install.</p>
+        </div>
+        <a href="../../tools/duplicate-finder/" class="btn-spotlight">
+          <span>⚡ Download DuplicateFinder Free</span>
+        </a>
+      </div>
+
+      <h2>Method 1: Finding Duplicate Files Using Native PowerShell</h2>
+      <p>Windows 11 includes built-in cryptographic hashing cmdlets that allow you to locate duplicate files from the command line:</p>
+
+      <h3>Step 1: Open Windows PowerShell</h3>
+      <p>Right-click the Start Menu icon and choose <strong>Terminal</strong> or <strong>PowerShell</strong>.</p>
+
+      <h3>Step 2: Scan Folder by SHA-256 Hash</h3>
+      <p>Replace <code>C:\YourFolder</code> with the path you want to scan and execute the following one-liner:</p>
+      <div class="code-box">
+Get-ChildItem -Path "C:\YourFolder" -Recurse -File | <br>
+Get-FileHash -Algorithm SHA256 | <br>
+Group-Object -Property Hash | <br>
+Where-Object { $_.Count -gt 1 } | <br>
+ForEach-Object { $_.Group | Select-Object Path, Hash } | <br>
+Format-Table -AutoSize
+      </div>
+
+      <h3>Drawbacks of the Native PowerShell Method:</h3>
+      <ul>
+        <li><strong>Extremely Slow on Large Drives:</strong> <code>Get-FileHash</code> calculates a full SHA-256 hash for <em>every single file</em>, even files that have completely unique sizes. On a 500 GB drive, this can take hours and thrash your SSD.</li>
+        <li><strong>No Automated Selection:</strong> PowerShell lists the duplicates, but leaves you to manually choose and delete secondary files one by one.</li>
+        <li><strong>Permanent Deletion Risk:</strong> Scripting <code>Remove-Item</code> without safeguards will permanently bypass the Recycle Bin, risking accidental loss of important data.</li>
+      </ul>
+
+      <h2>Method 2: 1-Click High-Speed Cleanup with Pexoris DuplicateFinder</h2>
+      <p>For instant and safe duplicate file removal without command-line complexity or bloated commercial software:</p>
+      <ol>
+        <li>Download the free 56 KB <a href="../../tools/duplicate-finder/">Pexoris DuplicateFinder</a> executable.</li>
+        <li>Launch the program — it starts instantly with zero installation and zero telemetry.</li>
+        <li>Select your target folder using quick presets (<strong>Downloads</strong>, <strong>Pictures</strong>, <strong>Documents</strong>) or browse to any hard drive.</li>
+        <li>Click <strong>🔍 Start Scan</strong>. The 3-tier engine filters files by exact byte size and 4KB headers first, completing the entire scan in seconds.</li>
+        <li>Click <strong>⚡ Smart Auto-Select</strong>. The original file in every duplicate group is protected, and duplicate copies are checked.</li>
+        <li>Click <strong>🗑️ Delete Selected Files</strong>. All unwanted clones are safely moved to the Windows Recycle Bin.</li>
+      </ol>
+      <p>You can also export a complete CSV audit report of all found duplicate groups with full SHA-256 hashes and file paths.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable utilities.</p>
+    <p style="margin-top:0.5rem;"><a href="../../">Home</a> • <a href="../../tools/">All Tools</a> • <a href="../../tools/duplicate-finder/">Pexoris DuplicateFinder</a> • <a href="../../sitemap.xml">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>

@@ -429,8 +429,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [40/40] Packaging Pexoris AppUninstaller Portable ZIP...
+echo [40/42] Packaging Pexoris AppUninstaller Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisAppUninstaller.exe' -DestinationPath 'build\PexorisAppUninstaller-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisDuplicateFinder.exe 2>nul
+
+echo [41/42] Compiling Tool 21: Pexoris DuplicateFinder...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisDuplicateFinder\App.manifest ^
+    /win32icon:src\PexorisDuplicateFinder\Assets\app.ico ^
+    /out:build\PexorisDuplicateFinder.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisDuplicateFinder\Program.cs ^
+    src\PexorisDuplicateFinder\Theme.cs ^
+    src\PexorisDuplicateFinder\DuplicateEngine.cs ^
+    src\PexorisDuplicateFinder\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris DuplicateFinder!
+    exit /b %ERRORLEVEL%
+)
+
+echo [42/42] Packaging Pexoris DuplicateFinder Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisDuplicateFinder.exe' -DestinationPath 'build\PexorisDuplicateFinder-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -453,6 +474,7 @@ copy /y "build\PexorisWinUpdateReset-v1.0-Portable.zip" "final softwere for g dr
 copy /y "build\PexorisWifiKeyRevealer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisWifiKeyRevealer.zip" >nul
 copy /y "build\PexorisDiskCleaner-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDiskCleaner.zip" >nul
 copy /y "build\PexorisAppUninstaller-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisAppUninstaller.zip" >nul
+copy /y "build\PexorisDuplicateFinder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDuplicateFinder.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -473,10 +495,11 @@ copy /y "build\PexorisWinUpdateReset.exe" "final softwere for g drive uplod\Pexo
 copy /y "build\PexorisWifiKeyRevealer.exe" "final softwere for g drive uplod\PexorisWifiKeyRevealer.exe" >nul
 copy /y "build\PexorisDiskCleaner.exe" "final softwere for g drive uplod\PexorisDiskCleaner.exe" >nul
 copy /y "build\PexorisAppUninstaller.exe" "final softwere for g drive uplod\PexorisAppUninstaller.exe" >nul
+copy /y "build\PexorisDuplicateFinder.exe" "final softwere for g drive uplod\PexorisDuplicateFinder.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 20 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 21 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -497,6 +520,7 @@ echo  Tool 17: build\PexorisWinUpdateReset.exe     (51 KB)
 echo  Tool 18: build\PexorisWifiKeyRevealer.exe   (48 KB)
 echo  Tool 19: build\PexorisDiskCleaner.exe       (50 KB)
 echo  Tool 20: build\PexorisAppUninstaller.exe     (51 KB)
+echo  Tool 21: build\PexorisDuplicateFinder.exe    (56 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

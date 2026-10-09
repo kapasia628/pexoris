@@ -176,6 +176,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Storage & Duplicate Cleaner Utility: Pexoris DuplicateFinder -->
+  <url>
+    <loc>https://pexoris.com/tools/duplicate-finder/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -363,6 +371,14 @@
   <!-- Software Force Uninstaller Guide: How to Force Uninstall Stubborn Programs in Windows 11 -->
   <url>
     <loc>https://pexoris.com/blog/how-to-force-uninstall-stubborn-programs-windows-11/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Duplicate Files Removal Guide: How to Find and Delete Duplicate Files in Windows 11 -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-find-and-delete-duplicate-files-windows-11/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
