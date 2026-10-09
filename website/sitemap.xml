@@ -168,6 +168,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Software Uninstallation Utility: Pexoris AppUninstaller -->
+  <url>
+    <loc>https://pexoris.com/tools/app-uninstaller/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -347,6 +355,14 @@
   <!-- Disk Space & Storage Guide: How to Free Up Disk Space in Windows 11 -->
   <url>
     <loc>https://pexoris.com/blog/how-to-free-up-disk-space-windows-11/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Software Force Uninstaller Guide: How to Force Uninstall Stubborn Programs in Windows 11 -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-force-uninstall-stubborn-programs-windows-11/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

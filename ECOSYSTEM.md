@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 19 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 20 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -15,7 +15,7 @@
 | **04** | **Pexoris PrintFixer** | `print-fixer` | 73 KB | 50 KB | `59b56e001c1459c2d203f47af41bda738bdf5a39758d14bf63c11b87f23642d1` | [Download](https://drive.google.com/uc?export=download&id=1us1wofg2_yPOx7FIofKxuX7jM3lsE-6W) | `http://localhost/tools/website/tools/print-fixer/` |
 | **05** | **Pexoris AIShield** | `ai-shield` | 53 KB | 30 KB | `9998d40b2975e0c52933a26c4b9c6c6e783af9b7598b43854630ba0fe9e585bb` | [Download](https://drive.google.com/uc?export=download&id=1Lk_i7XyLGwSYCktaXudg__C_nQF4KYv2) | `http://localhost/tools/website/tools/ai-shield/` |
 | **06** | **Pexoris USBShield** | `usb-shield` | 59 KB | 34 KB | `b4710e51ad864a876f3a040d5a4f6c8a8434a9c99325419e35199bdc88f0c592` | [Download](https://drive.google.com/uc?export=download&id=1jKcv_tS1te0zzu1ExlYeUfT8D97Vm2Xc) | `http://localhost/tools/website/tools/usb-shield/` |
-| **07** | **Pexoris ContextMenuEditor** | `context-menu-editor` | 49 KB | 30 KB | `36cc8cc8034958952fb1d9cb49d5a61dceb56613bfb527cbe2f682abcb48d1e8` | [Download](https://drive.google.com/uc?export=download&id=1EFx4VOzqdNSafDdubZPcyoT8Bn9ZNfff) | `http://localhost/tools/website/tools/context-menu-editor/` |
+| **07** | **Pexoris ContextMenuEditor** | `context-menu-editor` | 49 KB | 30 KB | `36cc8cc8034958952fb1d9cb49d5a61dceb56613bfb527cbe2f682abcb48d1e8` | [Download](https://drive.google.com/uc?export=download&id=1EFx4VOzqdNSafDdubZPcyoT8Bn9ZNfff` | `http://localhost/tools/website/tools/context-menu-editor/` |
 | **08** | **Pexoris ServiceOptimizer** | `service-optimizer` | 69 KB | 44 KB | `827f5675cf999177fe82ee5a6f93281d8baea6222a0b017366eea7485f5cb8ca` | [Download](https://drive.google.com/uc?export=download&id=1ZEuYBVBT2AKpZ7XpzbcGkahuSya5UZBP) | `http://localhost/tools/website/tools/service-optimizer/` |
 | **09** | **Pexoris HostsManager** | `hosts-manager` | 57 KB | 36 KB | `cb5b1d28889247c6ff18d852fdf2597f967a27f4834d3821ce9b04cec64eb556` | [Download](https://drive.google.com/uc?export=download&id=1cbsrisYM2H2wRRcPdcwXAwC_aMJFqmHu) | `http://localhost/tools/website/tools/hosts-manager/` |
 | **10** | **Pexoris TempCleaner** | `temp-cleaner` | 56 KB | 37 KB | `86d70f11a3188d10b0a66956529ea5e97f4f7735a1c9dbeddc34a684dd54bf83` | [Download](https://drive.google.com/uc?export=download&id=14GAkL1D6kB9Pjyn_qXWTo9uc4KEUoOr6) | `http://localhost/tools/website/tools/temp-cleaner/` |
@@ -26,8 +26,9 @@
 | **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | [Download](https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS) | `http://localhost/tools/website/tools/exif-stripper/` |
 | **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | [Download](https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq) | `http://localhost/tools/website/tools/icon-cache-rebuilder/` |
 | **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | [Download](https://drive.google.com/uc?export=download&id=1_Nm5yAN3dTY2hBmDdOi1SQZWYV2_1UnR) | `http://localhost/tools/website/tools/winupdate-reset/` |
-| **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E) | `http://localhost/tools/website/tools/wifi-key-revealer/` |
+| **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E` | `http://localhost/tools/website/tools/wifi-key-revealer/` |
 | **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | [Download](https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk) | `http://localhost/tools/website/tools/disk-cleaner/` |
+| **20** | **Pexoris AppUninstaller** | `app-uninstaller` | 51 KB | 32 KB | `d53e0a731cf94a5ebec2481b8d340fe8c3d95db41a9799090505b76466cf5b3f` | *(Pending Google Drive Link)* | `http://localhost/tools/website/tools/app-uninstaller/` |
 
 ---
 
@@ -102,4 +103,5 @@ Running `build.bat` in the project root:
 - [x] **#17 Pexoris WinUpdateReset** (Reset Windows Update components, BITS queues & SoftwareDistribution)
 - [x] **#18 Pexoris WifiKeyRevealer** (View saved Wi-Fi profiles & retrieve lost network passwords)
 - [x] **#19 Pexoris DiskCleaner** (Deep disk cleanup, Windows upgrade leftovers & staging storage purge)
-- [ ] **#20 Pexoris AppUninstaller** (Force uninstall stubborn software, leftover files & registry traces)
+- [x] **#20 Pexoris AppUninstaller** (Force uninstall stubborn software, leftover files & registry traces)
+- [ ] **#21 Pexoris DuplicateFinder** (High-speed binary hash duplicate file finder & disk reclaim)
