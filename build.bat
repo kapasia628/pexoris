@@ -471,8 +471,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [44/44] Packaging Pexoris PrivacyShield Portable ZIP...
+echo [44/46] Packaging Pexoris PrivacyShield Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisPrivacyShield.exe' -DestinationPath 'build\PexorisPrivacyShield-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisProcessTamer.exe 2>nul
+
+echo [45/46] Compiling Tool 23: Pexoris ProcessTamer...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisProcessTamer\App.manifest ^
+    /win32icon:src\PexorisProcessTamer\Assets\app.ico ^
+    /out:build\PexorisProcessTamer.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisProcessTamer\Program.cs ^
+    src\PexorisProcessTamer\Theme.cs ^
+    src\PexorisProcessTamer\ProcessEngine.cs ^
+    src\PexorisProcessTamer\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris ProcessTamer!
+    exit /b %ERRORLEVEL%
+)
+
+echo [46/46] Packaging Pexoris ProcessTamer Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisProcessTamer.exe' -DestinationPath 'build\PexorisProcessTamer-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -497,6 +518,7 @@ copy /y "build\PexorisDiskCleaner-v1.0-Portable.zip" "final softwere for g drive
 copy /y "build\PexorisAppUninstaller-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisAppUninstaller.zip" >nul
 copy /y "build\PexorisDuplicateFinder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDuplicateFinder.zip" >nul
 copy /y "build\PexorisPrivacyShield-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisPrivacyShield.zip" >nul
+copy /y "build\PexorisProcessTamer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisProcessTamer.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -519,10 +541,11 @@ copy /y "build\PexorisDiskCleaner.exe" "final softwere for g drive uplod\Pexoris
 copy /y "build\PexorisAppUninstaller.exe" "final softwere for g drive uplod\PexorisAppUninstaller.exe" >nul
 copy /y "build\PexorisDuplicateFinder.exe" "final softwere for g drive uplod\PexorisDuplicateFinder.exe" >nul
 copy /y "build\PexorisPrivacyShield.exe" "final softwere for g drive uplod\PexorisPrivacyShield.exe" >nul
+copy /y "build\PexorisProcessTamer.exe" "final softwere for g drive uplod\PexorisProcessTamer.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 22 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 23 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -545,6 +568,7 @@ echo  Tool 19: build\PexorisDiskCleaner.exe       (50 KB)
 echo  Tool 20: build\PexorisAppUninstaller.exe     (51 KB)
 echo  Tool 21: build\PexorisDuplicateFinder.exe    (56 KB)
 echo  Tool 22: build\PexorisPrivacyShield.exe      (65 KB)
+echo  Tool 23: build\PexorisProcessTamer.exe        (50 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
