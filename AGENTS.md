@@ -34,7 +34,7 @@ All desktop tools and landing pages must adhere to the **Pexoris Ecosystem Stand
 
 Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:///c:/xampp/htdocs/tools/.agents/rules/pexoris-standard.md).
 
-## Official Live Tools Registry (23/100 Tools Completed)
+## Official Live Tools Registry (24/100 Tools Completed)
 | # | Tool Name | Slug | Binary Size | ZIP Size | SHA-256 Hash | Google Drive Download Link |
 |---|---|---|---|---|---|---|
 | **01** | **Pexoris FileUnlocker** | `file-unlocker` | 70 KB | 48 KB | `82df6a096cce9a71be84e0302b1f8cbb2c7bba4511516dd5ea5aa8612760f38b` | `https://drive.google.com/uc?export=download&id=1NHqChEV65pzdy_ZCo60NaK7uxU_wmkF-` |
@@ -60,6 +60,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | `https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF` |
 | **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | `https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8` |
 | **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | `https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0` |
+| **24** | **Pexoris FontCacheRebuilder** | `font-cache-rebuilder` | 52 KB | 36 KB | `afe722889f5bd05c055bc1ad5f3d94bf40cd6cada2e7b677a861bab7e9e9f991` | Pending Upload |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.

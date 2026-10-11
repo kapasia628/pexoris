@@ -492,8 +492,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [46/46] Packaging Pexoris ProcessTamer Portable ZIP...
+echo [46/48] Packaging Pexoris ProcessTamer Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisProcessTamer.exe' -DestinationPath 'build\PexorisProcessTamer-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisFontCacheRebuilder.exe 2>nul
+
+echo [47/48] Compiling Tool 24: Pexoris FontCacheRebuilder...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisFontCacheRebuilder\App.manifest ^
+    /win32icon:src\PexorisFontCacheRebuilder\Assets\app.ico ^
+    /out:build\PexorisFontCacheRebuilder.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.ServiceProcess.dll ^
+    src\PexorisFontCacheRebuilder\Program.cs ^
+    src\PexorisFontCacheRebuilder\Theme.cs ^
+    src\PexorisFontCacheRebuilder\FontCacheEngine.cs ^
+    src\PexorisFontCacheRebuilder\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris FontCacheRebuilder!
+    exit /b %ERRORLEVEL%
+)
+
+echo [48/48] Packaging Pexoris FontCacheRebuilder Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisFontCacheRebuilder.exe' -DestinationPath 'build\PexorisFontCacheRebuilder-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -519,6 +540,7 @@ copy /y "build\PexorisAppUninstaller-v1.0-Portable.zip" "final softwere for g dr
 copy /y "build\PexorisDuplicateFinder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDuplicateFinder.zip" >nul
 copy /y "build\PexorisPrivacyShield-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisPrivacyShield.zip" >nul
 copy /y "build\PexorisProcessTamer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisProcessTamer.zip" >nul
+copy /y "build\PexorisFontCacheRebuilder-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFontCacheRebuilder.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -542,10 +564,11 @@ copy /y "build\PexorisAppUninstaller.exe" "final softwere for g drive uplod\Pexo
 copy /y "build\PexorisDuplicateFinder.exe" "final softwere for g drive uplod\PexorisDuplicateFinder.exe" >nul
 copy /y "build\PexorisPrivacyShield.exe" "final softwere for g drive uplod\PexorisPrivacyShield.exe" >nul
 copy /y "build\PexorisProcessTamer.exe" "final softwere for g drive uplod\PexorisProcessTamer.exe" >nul
+copy /y "build\PexorisFontCacheRebuilder.exe" "final softwere for g drive uplod\PexorisFontCacheRebuilder.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 23 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 24 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -569,6 +592,7 @@ echo  Tool 20: build\PexorisAppUninstaller.exe     (51 KB)
 echo  Tool 21: build\PexorisDuplicateFinder.exe    (56 KB)
 echo  Tool 22: build\PexorisPrivacyShield.exe      (65 KB)
 echo  Tool 23: build\PexorisProcessTamer.exe        (50 KB)
+echo  Tool 24: build\PexorisFontCacheRebuilder.exe  (52 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

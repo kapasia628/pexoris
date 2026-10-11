@@ -200,6 +200,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Shell Typography & Font Cache Rebuilder Utility: Pexoris FontCacheRebuilder -->
+  <url>
+    <loc>https://pexoris.com/tools/font-cache-rebuilder/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -411,6 +419,14 @@
   <!-- High CPU Usage Runaway Process Guide: How to Fix High CPU Usage from Runaway Background Processes -->
   <url>
     <loc>https://pexoris.com/blog/how-to-fix-high-cpu-usage-runaway-process-windows-11/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Font Cache & Missing Glyphs Troubleshooting Guide: How to Fix Corrupted Font Cache & Missing Glyphs -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-fix-corrupted-font-cache-missing-glyphs-windows-11/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
