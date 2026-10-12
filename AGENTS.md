@@ -61,7 +61,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | `https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8` |
 | **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | `https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0` |
 | **24** | **Pexoris FontCacheRebuilder** | `font-cache-rebuilder` | 52 KB | 36 KB | `afe722889f5bd05c055bc1ad5f3d94bf40cd6cada2e7b677a861bab7e9e9f991` | `https://drive.google.com/uc?export=download&id=1PQp5eXXgiouH-fHGkAIoFnU7MaY9852K` |
-| **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | Pending Upload |
+| **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | `https://drive.google.com/uc?export=download&id=1HvVJzxtS3afaVRqJeUxJTkmOmBX5BiR_` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
