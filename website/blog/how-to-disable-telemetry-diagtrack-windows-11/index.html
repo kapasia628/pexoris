@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ===================================================================
+       PEXORIS BLOG — HIGH-RANKING WINDOWS TROUBLESHOOTING GUIDE
+       TARGET QUERY: How to Disable Telemetry & Stop DiagTrack in Windows 11
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Disable Telemetry &amp; Stop DiagTrack in Windows 11 (High CPU &amp; Disk Usage Fix)</title>
+  <meta name="title" content="How to Disable Telemetry &amp; Stop DiagTrack in Windows 11 (High CPU &amp; Disk Usage Fix)">
+  <meta name="description" content="Fix high disk and CPU usage caused by DiagTrack (Connected User Experiences and Telemetry). Learn how to disable Windows 11 telemetry via CMD, Registry, and 1-click portable tool.">
+  <meta name="keywords" content="disable telemetry windows 11, stop diagtrack service windows 11, diagtrack high disk usage, connected user experiences and telemetry disable, allowtelemetry registry key 0, pexoris telemetryblocker">
+  <meta name="author" content="Pexoris Technical Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-disable-telemetry-diagtrack-windows-11/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../assets/icons/telemetry-blocker.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-disable-telemetry-diagtrack-windows-11/">
+  <meta property="og:title" content="How to Disable Telemetry &amp; Stop DiagTrack in Windows 11">
+  <meta property="og:description" content="Step-by-step technical guide: Halt DiagTrack background disk thrashing, turn off CEIP scheduled tasks, and disable diagnostic data collection safely.">
+  <meta property="og:image" content="https://pexoris.com/assets/icons/telemetry-blocker.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Disable Windows 11 Telemetry &amp; Fix DiagTrack High CPU">
+  <meta name="twitter:description" content="Stop background diagnostic tracking and fix DiagTrack disk usage in Windows 11.">
+  <meta name="twitter:image" content="https://pexoris.com/assets/icons/telemetry-blocker.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- STRUCTURED DATA (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Disable Telemetry & Stop DiagTrack in Windows 11 (High CPU & Disk Usage Fix)",
+        "description": "Technical guide explaining what Connected User Experiences and Telemetry (DiagTrack) does, how to disable it via Command Prompt and Windows Registry, and how to stop CEIP background telemetry tasks.",
+        "image": "https://pexoris.com/assets/icons/telemetry-blocker.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Technical Team",
+          "url": "https://pexoris.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-12",
+        "dateModified": "2026-10-12",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-disable-telemetry-diagtrack-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Disable Windows 11 DiagTrack Telemetry via Command Prompt",
+        "description": "Step-by-step instructions to disable the DiagTrack service and configure registry group policies.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Elevated Command Prompt",
+            "text": "Press Win + X and open Terminal (Admin) or Command Prompt (Admin)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Halt and Disable DiagTrack Service",
+            "text": "Execute 'sc stop DiagTrack' followed by 'sc config DiagTrack start= disabled'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Set Group Policy AllowTelemetry to 0",
+            "text": "Run 'reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection /v AllowTelemetry /t REG_DWORD /d 0 /f'."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Silence CEIP Scheduled Tasks",
+            "text": "Run 'schtasks /Change /TN \"\\Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser\" /Disable'."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Will disabling DiagTrack prevent Windows updates from installing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Windows Update relies on wuauserv, TrustedInstaller, and BITS services. DiagTrack is strictly responsible for telemetry gathering, diagnostic event packaging, and usage profiling. Windows security and cumulative updates continue to work normally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Microsoft Compatibility Appraiser pin my CPU to 100%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Microsoft Compatibility Appraiser is a scheduled task that parses every executable binary on your system to evaluate Windows upgrade compatibility. It performs intensive disk indexing and hash calculations. Disabling the task prevents these unexpected performance freezes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-light: #EEF2FF;
+      --primary-border: #C7D2FE;
+      --accent: #6366F1;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --text-muted: #94A3B8;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --bg-canvas: #F8FAFC;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID SITE HEADER */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-hero);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+    .brand-logo-img { width: 28px; height: 28px; border-radius: 6px; }
+    .nav-links { display: flex; gap: 1.25rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* POST CONTAINER */
+    .post-container {
+      max-width: 820px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    /* SCOPED POST HEADER */
+    .post-header {
+      position: static;
+      background: transparent;
+      margin-bottom: 2rem;
+    }
+    .breadcrumb {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--text-sub); text-decoration: none; font-weight: 500; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .post-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* AEO BOX */
+    .aeo-box {
+      background: #FFFFFF;
+      border: 1px solid var(--primary-border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .aeo-box h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .aeo-box p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* ARTICLE CONTENT */
+    .content-section h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 2.2rem 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .content-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 1.5rem 0 0.6rem;
+    }
+    .content-section p {
+      font-size: 1rem;
+      color: var(--text-body);
+      margin-bottom: 1.2rem;
+    }
+    .content-section ul, .content-section ol {
+      margin: 0 0 1.4rem 1.5rem;
+      color: var(--text-body);
+    }
+    .content-section li { margin-bottom: 0.5rem; font-size: 0.98rem; }
+    .content-section strong { color: var(--text-hero); }
+    .content-section code {
+      font-family: var(--font-mono);
+      background: #F1F5F9;
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    .code-block {
+      background: #090E17;
+      color: #E2E8F0;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      line-height: 1.6;
+    }
+    .code-comment { color: #64748B; }
+
+    /* TOOL SPOTLIGHT CARD */
+    .tool-spotlight-card {
+      background: linear-gradient(135deg, #EEF2FF 0%, #FFFFFF 100%);
+      border: 1px solid var(--primary-border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.06);
+    }
+    .tool-spotlight-left h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 0.3rem;
+    }
+    .tool-spotlight-left p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 0;
+    }
+    .btn-spotlight {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: background 0.15s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-spotlight:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .post-title { font-size: 1.8rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="../../tools/">All Tools</a>
+        <a href="../../blog/">Guides</a>
+        <a href="../../tools/telemetry-blocker/" style="color: var(--primary); font-weight:700;">TelemetryBlocker</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- POST CONTAINER -->
+  <main class="post-container">
+    <div class="post-header">
+      <div class="breadcrumb">
+        <a href="../../">Home</a>
+        <span>&rsaquo;</span>
+        <a href="../../blog/">Blog</a>
+        <span>&rsaquo;</span>
+        <span>Disable Windows 11 Telemetry</span>
+      </div>
+
+      <h1 class="post-title">How to Disable Telemetry &amp; Stop DiagTrack in Windows 11 (High CPU &amp; Disk Usage Fix)</h1>
+
+      <div class="post-meta">
+        <span>By Pexoris Technical Team</span>
+        <span>•</span>
+        <span>Updated October 2026</span>
+        <span>•</span>
+        <span>6 Min Read</span>
+      </div>
+    </div>
+
+    <!-- AEO QUICK ANSWER -->
+    <div class="aeo-box">
+      <h4>Quick Answer: How to Stop Windows 11 Telemetry &amp; DiagTrack</h4>
+      <p>
+        To permanently disable Windows 11 diagnostic data collection and eliminate <code>DiagTrack</code> disk spikes: <strong>(1)</strong> Open elevated Command Prompt and run <code>sc stop DiagTrack</code> and <code>sc config DiagTrack start= disabled</code>. <strong>(2)</strong> Set the telemetry policy to 0 (Security / Off) via Registry: <code>reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection /v AllowTelemetry /t REG_DWORD /d 0 /f</code>. <strong>(3)</strong> For instant 1-click protection across services, CEIP tasks, and Bing Start Menu search queries, use the free 56 KB portable tool <strong><a href="../../tools/telemetry-blocker/">Pexoris TelemetryBlocker</a></strong>.
+      </p>
+    </div>
+
+    <article class="content-section">
+      <h2>Why Does Windows 11 DiagTrack Consume So Much Disk and CPU?</h2>
+      <p>
+        Windows 11 and 10 come pre-configured with continuous diagnostic feedback pipelines. The primary service responsible for this is <strong>Connected User Experiences and Telemetry</strong>, known in Windows services as <code>DiagTrack</code>.
+      </p>
+      <p>
+        Behind the scenes, DiagTrack continuously collects data on:
+      </p>
+      <ul>
+        <li><strong>Application Usage Metrics:</strong> Launch times, duration of use, crashes, and background memory allocations.</li>
+        <li><strong>Keyboard and Pen Inking Diagnostics:</strong> Typing dictionary samples and handwriting vector fragments.</li>
+        <li><strong>Hardware Telemetry:</strong> Connected USB devices, storage drive health, and driver compatibility profiles.</li>
+      </ul>
+      <p>
+        On many systems, particularly laptops and desktop workstations with standard NVMe or SATA drives, DiagTrack triggers intensive background indexing cycles. Users often open Task Manager during unexpected system stutters to find <code>DiagTrack</code> or <code>Service Host: Connected User Experiences and Telemetry</code> consuming 80% to 100% disk bandwidth.
+      </p>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris TelemetryBlocker</h3>
+          <p>Permanently halt DiagTrack services, enforce Level 0 group policy, and silence CEIP tasks in 1 click.</p>
+        </div>
+        <a href="../../tools/telemetry-blocker/" class="btn-spotlight">Get Free TelemetryBlocker &rarr;</a>
+      </div>
+
+      <h2>Method 1: Manual Fix via Windows Command Prompt &amp; Registry</h2>
+      <p>
+        If you prefer managing your system manually via command-line utilities, you can stop the background telemetry daemons and configure local policy restrictions.
+      </p>
+
+      <h3>Step 1: Open Elevated Command Prompt</h3>
+      <p>
+        Press <kbd>Win + X</kbd> and choose <strong>Terminal (Admin)</strong> or search for <code>cmd.exe</code>, right-click, and select <strong>Run as administrator</strong>.
+      </p>
+
+      <h3>Step 2: Stop and Disable Telemetry Services</h3>
+      <p>Execute these commands to halt DiagTrack and WAP push routing:</p>
+      <div class="code-block">
+<span class="code-comment">:: Halt and disable DiagTrack</span>
+sc stop DiagTrack
+sc config DiagTrack start= disabled
+
+<span class="code-comment">:: Halt and disable WAP Push routing service</span>
+sc stop dmwappushservice
+sc config dmwappushservice start= disabled
+      </div>
+
+      <h3>Step 3: Enforce Level 0 Diagnostic Policy via Registry</h3>
+      <p>
+        Even after disabling the service, Windows group policy defaults allow diagnostic collection. You can force the diagnostic level to 0 (Security / Off):
+      </p>
+      <div class="code-block">
+<span class="code-comment">:: Set AllowTelemetry to 0</span>
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+
+<span class="code-comment">:: Suppress Windows feedback prompts and satisfaction surveys</span>
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v DoNotShowFeedbackNotifications /t REG_DWORD /d 1 /f
+
+<span class="code-comment">:: Disable Advertising ID user profiling</span>
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledByGroupPolicy /t REG_DWORD /d 1 /f
+      </div>
+
+      <h3>Step 4: Disable CEIP and Compatibility Appraiser Scheduled Tasks</h3>
+      <p>
+        The Customer Experience Improvement Program (CEIP) runs scheduled tasks that wake your CPU to parse installed software:
+      </p>
+      <div class="code-block">
+<span class="code-comment">:: Disable Microsoft Compatibility Appraiser</span>
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
+
+<span class="code-comment">:: Disable ProgramDataUpdater</span>
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /Disable
+
+<span class="code-comment">:: Disable CEIP Consolidator</span>
+schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /Disable
+      </div>
+
+      <h2>Method 2: 1-Click Automated Fix with Pexoris TelemetryBlocker</h2>
+      <p>
+        Manual registry edits and task scheduler commands can be tedious, and major Windows updates frequently reset service configurations. 
+        <strong><a href="../../tools/telemetry-blocker/">Pexoris TelemetryBlocker</a></strong> encapsulates the entire diagnostic shutdown process into a lightweight 56 KB portable utility:
+      </p>
+      <ul>
+        <li><strong>Live Vulnerability Audit:</strong> Instantly inspects all 13 primary Windows telemetry vectors across services, group policies, and tasks.</li>
+        <li><strong>1-Click Master Neutralizer:</strong> Disables DiagTrack, suppresses feedback surveys, and locks diagnostic policies in a fraction of a second.</li>
+        <li><strong>Offline Start Menu Protection:</strong> Disconnects Bing web search queries from the local desktop shell, keeping your file searches private.</li>
+        <li><strong>Instant 1-Click Rollback:</strong> Click "Restore Windows Defaults" at any time to return your system to factory settings.</li>
+        <li><strong>Zero Installation:</strong> Standalone executable under 60 KB with no background services and zero telemetry of its own.</li>
+      </ul>
+
+      <div style="text-align: center; margin: 2.5rem 0;">
+        <a href="../../tools/telemetry-blocker/" class="btn-spotlight" style="display: inline-block; padding: 1rem 2.5rem; font-size: 1rem;">
+          Download Pexoris TelemetryBlocker Free (56 KB) &rarr;
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 24px; height: 24px; border-radius: 5px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span style="font-weight: 800; color: var(--text-hero);">Pexoris</span>
+      </div>
+
+      <div style="display: flex; gap: 1.25rem;">
+        <a href="../../" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Home</a>
+        <a href="../../tools/" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Tools</a>
+        <a href="../../blog/" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Blog</a>
+        <a href="../../sitemap.xml" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.
+    </div>
+  </footer>
+
+</body>
+</html>
