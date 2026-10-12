@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 24 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 25 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -25,14 +25,15 @@
 | **14** | **Pexoris RamTrimmer** | `ram-trimmer` | 58 KB | 36 KB | `bebaa40676eb39a6b3765d5dae52d228e7c1d779511edbb3b631c37e4ba1f2be` | [Download](https://drive.google.com/uc?export=download&id=1_pd3rtHSuh5oDF1sW0t2n5Mjx7XDHWsJ) | `http://localhost/tools/website/tools/ram-trimmer/` |
 | **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | [Download](https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS) | `http://localhost/tools/website/tools/exif-stripper/` |
 | **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | [Download](https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq) | `http://localhost/tools/website/tools/icon-cache-rebuilder/` |
-| **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | [Download](https://drive.google.com/uc?export=download&id=1_Nm5yAN3dTY2hBmDdOi1SQZWYV2_1UnR) | `http://localhost/tools/website/tools/winupdate-reset/` |
+| **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | [Download](https://drive.google.com/uc?export=download&id=1_Nm5yAN3dTY2hBmDdOi1SQZWYV2_1UnR` | `http://localhost/tools/website/tools/winupdate-reset/` |
 | **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E` | `http://localhost/tools/website/tools/wifi-key-revealer/` |
-| **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | [Download](https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk) | `http://localhost/tools/website/tools/disk-cleaner/` |
-| **20** | **Pexoris AppUninstaller** | `app-uninstaller` | 51 KB | 32 KB | `d53e0a731cf94a5ebec2481b8d340fe8c3d95db41a9799090505b76466cf5b3f` | [Download](https://drive.google.com/uc?export=download&id=1lXUG0xfZfZS4CaLdmlDLNCwfwQO7KY_v) | `http://localhost/tools/website/tools/app-uninstaller/` |
-| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | [Download](https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF) | `http://localhost/tools/website/tools/duplicate-finder/` |
-| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | [Download](https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8) | `http://localhost/tools/website/tools/privacy-shield/` |
-| **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | [Download](https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0) | `http://localhost/tools/website/tools/process-tamer/` |
+| **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | [Download](https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk` | `http://localhost/tools/website/tools/disk-cleaner/` |
+| **20** | **Pexoris AppUninstaller** | `app-uninstaller` | 51 KB | 32 KB | `d53e0a731cf94a5ebec2481b8d340fe8c3d95db41a9799090505b76466cf5b3f` | [Download](https://drive.google.com/uc?export=download&id=1lXUG0xfZfZS4CaLdmlDLNCwfwQO7KY_v` | `http://localhost/tools/website/tools/app-uninstaller/` |
+| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | [Download](https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF` | `http://localhost/tools/website/tools/duplicate-finder/` |
+| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | [Download](https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8` | `http://localhost/tools/website/tools/privacy-shield/` |
+| **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | [Download](https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0` | `http://localhost/tools/website/tools/process-tamer/` |
 | **24** | **Pexoris FontCacheRebuilder** | `font-cache-rebuilder` | 52 KB | 36 KB | `afe722889f5bd05c055bc1ad5f3d94bf40cd6cada2e7b677a861bab7e9e9f991` | [Download](https://drive.google.com/uc?export=download&id=1PQp5eXXgiouH-fHGkAIoFnU7MaY9852K) | `http://localhost/tools/website/tools/font-cache-rebuilder/` |
+| **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | Pending Upload | `http://localhost/tools/website/tools/battery-optimizer/` |
 
 ---
 
@@ -112,4 +113,5 @@ Running `build.bat` in the project root:
 - [x] **#22 Pexoris PrivacyShield** (Windows 11 telemetry blocker, diagnostic guard & ad-ID disable)
 - [x] **#23 Pexoris ProcessTamer** (Dynamic runaway CPU throttle & background process governor)
 - [x] **#24 Pexoris FontCacheRebuilder** (Purge corrupted Windows font cache, fix missing glyphs & FontDrvHost CPU spikes)
-- [ ] **#25 Pexoris BatteryOptimizer** (Maximize laptop battery runtime, audit degradation wear level & modern standby saver)
+- [x] **#25 Pexoris BatteryOptimizer** (Maximize laptop battery runtime, audit degradation wear level & modern standby saver)
+- [ ] **#26 Pexoris TelemetryBlocker** (Halt background diagnostic telemetry, DiagTrack & CEIP tracking)

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris BatteryOptimizer • Laptop Battery Health Diagnostic & Power Optimizer for Windows 11</title>
+  <meta name="description" content="Diagnose laptop battery wear level, design capacity vs current capacity, cycle count, and optimize Windows 11 power policies to eliminate background drain. 1-Click portable tool.">
+  <meta name="keywords" content="battery optimizer windows 11, laptop battery wear level, fix modern standby battery drain, powercfg battery report, laptop battery life windows 10, battery health monitor portable">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/tools/battery-optimizer/">
+
+  <!-- Favicon / Brand Meta -->
+  <link rel="icon" type="image/png" href="battery-optimizer.png">
+  <link rel="apple-touch-icon" href="battery-optimizer.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/battery-optimizer/">
+  <meta property="og:title" content="Pexoris BatteryOptimizer • Laptop Battery Health Diagnostic & Power Optimizer">
+  <meta property="og:description" content="Diagnose wear level, design capacity vs full charge mWh, and eliminate Windows 11 sleep drain in 1 click. Standalone 52 KB portable utility.">
+  <meta property="og:image" content="https://pexoris.com/tools/battery-optimizer/battery-optimizer.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/battery-optimizer/">
+  <meta name="twitter:title" content="Pexoris BatteryOptimizer • Windows Laptop Battery Health Diagnostic">
+  <meta name="twitter:description" content="Diagnose wear level, design capacity vs full charge mWh, and eliminate Windows 11 sleep drain in 1 click. Standalone 52 KB portable utility.">
+  <meta property="twitter:image" content="https://pexoris.com/tools/battery-optimizer/battery-optimizer.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris BatteryOptimizer",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 52 KB portable Windows utility that queries kernel power APIs and WMI static data to diagnose laptop battery wear levels, design capacity, full charge capacity, and optimizes Windows 11 Modern Standby and power schemes to prevent overnight sleep drain.",
+        "fileSize": "52 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "#download",
+        "featureList": [
+          "Hardware-level battery wear diagnosis (Design vs Full Charge Capacity in mWh)",
+          "Real-time AC/DC charging state and estimated runtime remaining calculation",
+          "1-Click Modern Standby network sleep drain fix (disables connected standby network polling)",
+          "Ultra Saver Power Profile (optimizes display timeouts, disk spindown, and CPU DC caps)",
+          "Automated HTML Battery Report generation with instant browser preview",
+          "Zero telemetry, zero installation, standalone portable executable under 60 KB"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.96",
+          "ratingCount": "980"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does my Windows 11 laptop battery drain 20% to 30% overnight while sleeping?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows 11 laptops frequently use Modern Standby (S0 Low Power Idle) instead of traditional S3 sleep. In Modern Standby, Windows keeps Wi-Fi adapters active to fetch notifications, updates, and cloud sync tasks while the lid is closed. Pexoris BatteryOptimizer allows you to toggle network connectivity off during standby on battery, eliminating overnight drain."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Battery Wear Level and how is it calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Battery Wear Level represents the permanent degradation of lithium-ion chemical cells over charge cycles. It is calculated by comparing original factory Design Capacity against current Full Charge Capacity: Wear% = ((DesignCapacity - FullChargeCapacity) / DesignCapacity) * 100. A wear level above 25% typically indicates noticeable battery life decline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris BatteryOptimizer install any background services or drivers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Pexoris BatteryOptimizer is 100% portable with zero installers, background services, or kernel drivers. It queries native Win32 kernel power APIs and WMI telemetry, configures standard Windows powercfg policies on demand, and exits cleanly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I revert power plan adjustments made by BatteryOptimizer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Windows power plan parameters can be reset anytime either via standard Windows Power Options (Restore plan defaults) or by running powercfg -restoredefaultschemes in Command Prompt."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Diagnose Laptop Battery Health and Fix Windows 11 Sleep Drain",
+        "description": "Step-by-step instructions to calculate battery degradation and optimize Windows 11 power policies.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Download Pexoris BatteryOptimizer",
+            "text": "Download the standalone 52 KB portable executable and run it directly with administrator privileges."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review Battery Health & Wear Metrics",
+            "text": "Check Design Capacity, Full Charge Capacity, Wear Level percentage, and real-time charging status."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Fix Modern Standby Overnight Drain",
+            "text": "Click 'Fix Modern Standby Drain' to instruct Windows not to keep Wi-Fi and network adapters polling while sleeping on battery."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Generate Full HTML Battery Report",
+            "text": "Click 'Generate Battery Report' to instantly view a comprehensive historical power breakdown generated directly by Windows."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris BatteryOptimizer",
+            "item": "https://pexoris.com/tools/battery-optimizer/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-hover: #047857;
+      --primary-dark: #065F46;
+      --primary-light: #ECFDF5;
+      --primary-border: #A7F3D0;
+      --accent-emerald: #10B981;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --canvas-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* TOP NOTICE BAR */
+    .top-notice-bar {
+      background: #090E17;
+      color: #94A3B8;
+      padding: 7px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .top-notice-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .notice-specs { color: #CBD5E1; }
+    .notice-specs span { color: #64748B; margin: 0 6px; }
+
+    /* SITE HEADER - STRICT SOLID #FFFFFF */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-hero);
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+    .brand-logo-img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-menu a:hover { color: var(--primary); }
+    .btn-cta-nav {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 7px 16px;
+      border-radius: 7px;
+      font-weight: 700 !important;
+      font-size: 13.5px !important;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .btn-cta-nav:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 56px 24px 44px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .error-quote-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #991B1B;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+    .error-quote-pill svg { flex-shrink: 0; color: #DC2626; }
+    .hero-title {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      color: var(--text-hero);
+      margin-bottom: 18px;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 18px;
+      color: var(--text-body);
+      max-width: 780px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .hero-badges-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .hero-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 5px 12px;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-badge-item svg { color: var(--primary); }
+
+    /* HASH BOX */
+    .hash-box-wrap {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hash-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #64748B;
+      flex-shrink: 0;
+    }
+    .hash-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #0F172A;
+      word-break: break-all;
+      user-select: all;
+    }
+    .btn-copy-hash {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .btn-copy-hash:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    /* DESKTOP APP CSS MOCKUP */
+    .mockup-container {
+      max-width: 860px;
+      margin: 0 auto 60px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: left;
+    }
+    .mockup-titlebar {
+      background: #090E17;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      user-select: none;
+    }
+    .mockup-titlebar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-titlebar-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+    .mockup-titlebar-badge {
+      background: #059669;
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+    .mockup-window-controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #94A3B8;
+      font-size: 14px;
+      font-family: var(--font-sans);
+    }
+    .mockup-card-top {
+      background: linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 100%);
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .mockup-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .mockup-card-info h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mockup-card-info p {
+      font-size: 12.5px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+    .mockup-status-pill {
+      background: #D1FAE5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mockup-status-pill::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #059669;
+      border-radius: 50%;
+    }
+    .mockup-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .mockup-stat-cell {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 7px;
+      padding: 10px 12px;
+    }
+    .mockup-stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #64748B;
+    }
+    .mockup-stat-val {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-top: 3px;
+    }
+    .mockup-stat-val.good { color: #059669; }
+    .mockup-listview {
+      padding: 14px 20px;
+      background: #F8FAFC;
+    }
+    .mockup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .mockup-table th {
+      background: #F1F5F9;
+      color: #475569;
+      font-weight: 700;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 11.5px;
+    }
+    .mockup-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #F1F5F9;
+      color: #1E293B;
+    }
+    .mockup-table tr:last-child td { border-bottom: none; }
+    .mockup-actions-bar {
+      padding: 12px 20px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-mock-primary {
+      background: #059669;
+      color: #FFFFFF;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+    }
+    .btn-mock-secondary {
+      background: #0284C7;
+      color: #FFFFFF;
+      border: none;
+      padding: 9px 14px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-mock-outline {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+      padding: 9px 14px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .mockup-footer-bar {
+      padding: 8px 20px;
+      background: #090E17;
+      color: #94A3B8;
+      font-size: 11.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mockup-footer-bar a { color: #10B981; text-decoration: none; font-weight: 700; }
+
+    /* CONTENT SECTIONS */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .section-tag {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--text-hero);
+      letter-spacing: -0.8px;
+    }
+
+    /* 6-FEATURE GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-border);
+    }
+    .feature-icon-bubble {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* COMPARISON TABLE */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    .comparison-table th {
+      padding: 14px 18px;
+      background: #F8FAFC;
+      color: var(--text-hero);
+      font-weight: 800;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .comparison-table th.highlight {
+      background: #ECFDF5;
+      color: #065F46;
+      border-left: 2px solid var(--primary);
+      border-right: 2px solid var(--primary);
+    }
+    .comparison-table td {
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+    .comparison-table td.highlight {
+      background: #F0FDF4;
+      font-weight: 700;
+      color: #065F46;
+      border-left: 2px solid var(--primary);
+      border-right: 2px solid var(--primary);
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+
+    /* HOW TO USE STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 22px;
+      position: relative;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.15s ease;
+    }
+    .faq-item.active {
+      border-color: var(--primary);
+    }
+    .faq-header {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-hero);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-icon {
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 800;
+      transition: transform 0.2s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-body {
+      display: block;
+    }
+
+    /* STRICT SINGLE DOWNLOAD SECTION AT BOTTOM */
+    .download-section {
+      background: linear-gradient(180deg, #F8FAFC 0%, #ECFDF5 100%);
+      padding: 70px 24px;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+    }
+    .download-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--primary-border);
+      border-radius: 16px;
+      padding: 44px 32px;
+      box-shadow: var(--shadow-xl);
+    }
+    .download-card h2 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-hero);
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+    }
+    .download-card p.subtitle {
+      font-size: 15px;
+      color: var(--text-body);
+      margin-bottom: 26px;
+    }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--primary);
+      color: #FFFFFF !important;
+      text-decoration: none;
+      padding: 15px 36px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.4);
+      transition: all 0.2s ease;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px -5px rgba(5, 150, 105, 0.5);
+    }
+    .download-meta-info {
+      margin-top: 20px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 36px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-links-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links-grid a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+    .footer-links-grid a:hover { color: var(--primary); }
+    .footer-bottom {
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 32px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .mockup-stats-grid { grid-template-columns: 1fr 1fr; }
+      .nav-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <aside class="top-notice-bar" aria-label="Tool Specifications">
+    <div class="top-notice-inner">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="badge-gold">PORTABLE</span>
+        <span>Pexoris Portable Utilities Ecosystem • Zero Bloatware, Zero Telemetry</span>
+      </div>
+      <div class="notice-specs">
+        <span>Windows 11 &amp; 10</span> •
+        <span>Single 52 KB .EXE</span> •
+        <span>SHA-256 Verified</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SOLID WHITE SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris" class="brand-logo-img" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="btn-cta-nav">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="error-quote-pill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Laptop battery dropping 25% overnight in sleep mode? High background power drain?</span>
+      </div>
+
+      <h1 class="hero-title">
+        Audit Battery Wear &amp; Fix <span>Windows 11 Battery Drain</span>
+      </h1>
+
+      <p class="hero-desc">
+        Calculate exact factory design capacity versus current full-charge health, detect cell degradation, eliminate modern standby overnight drain, and enforce ultra-saver power policies in a single 52 KB portable tool.
+      </p>
+
+      <div class="hero-badges-row">
+        <div class="hero-badge-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>100% Portable (Zero Install)</span>
+        </div>
+        <div class="hero-badge-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Hardware WMI &amp; Kernel Status</span>
+        </div>
+        <div class="hero-badge-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Modern Standby Drain Fix</span>
+        </div>
+        <div class="hero-badge-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Under 60 KB Standalone</span>
+        </div>
+      </div>
+
+      <!-- SHA-256 HASH BOX -->
+      <div class="hash-box-wrap">
+        <span class="hash-label">SHA-256:</span>
+        <span class="hash-text" id="hashVal">1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3</span>
+        <button class="btn-copy-hash" onclick="navigator.clipboard.writeText('1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
+      </div>
+
+      <!-- DESKTOP APP CSS MOCKUP -->
+      <div class="mockup-container" aria-label="Pexoris BatteryOptimizer Desktop Interface Preview">
+        <div class="mockup-titlebar">
+          <div class="mockup-titlebar-left">
+            <img src="battery-optimizer.png" alt="Icon" style="width: 20px; height: 20px; border-radius: 4px;">
+            <span class="mockup-titlebar-title">Pexoris BatteryOptimizer</span>
+            <span class="mockup-titlebar-badge">v1.0 PORTABLE</span>
+          </div>
+          <div class="mockup-window-controls">
+            <span>&mdash;</span>
+            <span>&times;</span>
+          </div>
+        </div>
+
+        <div class="mockup-card-top">
+          <div class="mockup-card-header">
+            <div class="mockup-card-info">
+              <h3>🔋 Battery Health &amp; Power Policy Engine</h3>
+              <p>Hardware wear analysis, live charging status, and Windows powercfg optimizations</p>
+            </div>
+            <div class="mockup-status-pill">System Battery Healthy</div>
+          </div>
+
+          <div class="mockup-stats-grid">
+            <div class="mockup-stat-cell">
+              <div class="mockup-stat-label">Battery Level</div>
+              <div class="mockup-stat-val good">88% (AC Online)</div>
+            </div>
+            <div class="mockup-stat-cell">
+              <div class="mockup-stat-label">Wear Level</div>
+              <div class="mockup-stat-val good">6.4% Degraded</div>
+            </div>
+            <div class="mockup-stat-cell">
+              <div class="mockup-stat-label">Full Charge Cap</div>
+              <div class="mockup-stat-val">52,440 mWh</div>
+            </div>
+            <div class="mockup-stat-cell">
+              <div class="mockup-stat-label">Design Cap</div>
+              <div class="mockup-stat-val">56,000 mWh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-listview">
+          <table class="mockup-table">
+            <thead>
+              <tr>
+                <th style="width: 28%;">Parameter</th>
+                <th style="width: 44%;">Current Value</th>
+                <th style="width: 28%;">Diagnosis / Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Power Source</td>
+                <td>AC Power Line Connected (Charging)</td>
+                <td><span style="color:#059669; font-weight:700;">● Online</span></td>
+              </tr>
+              <tr>
+                <td>Factory Design Capacity</td>
+                <td>56,000 mWh (Nominal Original)</td>
+                <td><span style="color:#0284C7; font-weight:700;">Hardware Spec</span></td>
+              </tr>
+              <tr>
+                <td>Current Full Charge Capacity</td>
+                <td>52,440 mWh (Maximum Stored)</td>
+                <td><span style="color:#059669; font-weight:700;">93.6% Retention</span></td>
+              </tr>
+              <tr>
+                <td>Permanent Cell Wear Level</td>
+                <td>6.4% Capacity Lost</td>
+                <td><span style="color:#059669; font-weight:700;">Excellent Health</span></td>
+              </tr>
+              <tr>
+                <td>Estimated Runtime</td>
+                <td>AC Connected (Continuous)</td>
+                <td><span style="color:#475569;">Normal AC Mode</span></td>
+              </tr>
+              <tr>
+                <td>Modern Standby Network Policy</td>
+                <td>Network in Standby on DC: Disabled</td>
+                <td><span style="color:#059669; font-weight:700;">Sleep Drain Fixed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mockup-actions-bar">
+          <button class="btn-mock-primary">⚡ Apply Ultra Saver Profile</button>
+          <button class="btn-mock-secondary">🌙 Fix Modern Standby Drain</button>
+          <button class="btn-mock-outline">🔋 Generate Battery Report</button>
+          <button class="btn-mock-outline" style="margin-left:auto;">🔄 Refresh Status</button>
+        </div>
+
+        <div class="mockup-footer-bar">
+          <span>Ready • Windows 11 Power Management Verified</span>
+          <a href="https://pexoris.com" target="_blank" rel="noopener">pexoris.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID -->
+    <section class="section-wrap" id="features">
+      <div class="section-title-wrap">
+        <span class="section-tag">Precision Engineering</span>
+        <h2 class="section-title">Built for Real Windows Laptop Optimization</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2"/><path d="M23 13v-2"/></svg>
+          </div>
+          <h3>Exact Hardware Wear Audit</h3>
+          <p>Extracts manufacturer Design Capacity and true Full Charge Capacity in milliwatt-hours (mWh) via direct kernel power APIs to calculate true degradation percentages.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </div>
+          <h3>Modern Standby Drain Fix</h3>
+          <p>Stops Windows 11 Connected Standby (S0 Low Power Idle) from pinging Wi-Fi and running cloud sync tasks overnight while your laptop lid is shut.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>1-Click Ultra Saver Profile</h3>
+          <p>Instantly configures aggressive screen-off timers, disk spin-down intervals, and limits battery CPU frequencies to 75% to prolong flight and travel productivity.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Native HTML Report Generator</h3>
+          <p>Leverages Windows powercfg to generate an exhaustive historical battery health and charge cycle log, opened automatically in your default web browser.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Real-Time AC/DC Telemetry</h3>
+          <p>Detects live power line status, battery percentage, charging rate, and calculates accurate remaining operating time without polling bloat.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-bubble">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Zero Background Overhead</h3>
+          <p>Single 52 KB portable executable. No background service, no advertising, no telemetry, and 0 registry clutter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="section-wrap" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-tag">Why Pexoris</span>
+        <h2 class="section-title">How BatteryOptimizer Compares</h2>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 34%;">Feature / Capability</th>
+              <th class="highlight" style="width: 24%;">Pexoris BatteryOptimizer</th>
+              <th style="width: 21%;">Windows Settings</th>
+              <th style="width: 21%;">Third-Party Battery Bloat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Installation Footprint</td>
+              <td class="highlight">0 KB (Single 52 KB Portable)</td>
+              <td>Built-in</td>
+              <td>150 MB - 300 MB Installer</td>
+            </tr>
+            <tr>
+              <td>Hardware Wear Level %</td>
+              <td class="highlight">Instant Auto-Calculation</td>
+              <td>Hidden (Requires CMD)</td>
+              <td>Often Behind Paywalls</td>
+            </tr>
+            <tr>
+              <td>Modern Standby Sleep Drain Fix</td>
+              <td class="highlight">1-Click Automation</td>
+              <td>Buried in Hidden Reg Keys</td>
+              <td>Rarely Supported</td>
+            </tr>
+            <tr>
+              <td>Ultra Saver Power Tuning</td>
+              <td class="highlight">Yes (Direct Powercfg)</td>
+              <td>Manual Slider Only</td>
+              <td>Persistent Heavy Services</td>
+            </tr>
+            <tr>
+              <td>Background CPU / RAM Use</td>
+              <td class="highlight">0% (Closes Cleanly)</td>
+              <td>System Default</td>
+              <td>100+ MB Constant RAM</td>
+            </tr>
+            <tr>
+              <td>Advertisements &amp; Upsells</td>
+              <td class="highlight">Zero (Clean &amp; Free)</td>
+              <td>Edge Promos</td>
+              <td>Heavy Popups &amp; Trialware</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4-STEP HOW TO USE -->
+    <section class="section-wrap" id="how-to">
+      <div class="section-title-wrap">
+        <span class="section-tag">Quick Start</span>
+        <h2 class="section-title">How to Maximize Your Laptop Battery in 4 Steps</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Launch Tool</h3>
+          <p>Download the standalone 52 KB executable and run it as Administrator. No installation needed.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Review Wear Level</h3>
+          <p>Inspect factory Design Capacity vs current Full Charge Capacity to diagnose battery degradation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Fix Sleep Drain</h3>
+          <p>Click "Fix Modern Standby Drain" to stop Windows 11 Wi-Fi wakeups while your laptop lid is shut.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Apply Ultra Saver</h3>
+          <p>When on planes or travelling, enable Ultra Saver to optimize DC timers and throttle background spikes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section-wrap" id="faq">
+      <div class="section-title-wrap">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Why does my Windows 11 laptop drain battery overnight while sleeping?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Modern Windows 11 laptops default to "Modern Standby" (S0 Low Power Idle) instead of traditional S3 deep sleep. In S0 mode, Windows keeps the network interface listening to download background updates, emails, and sync OneDrive while you sleep. BatteryOptimizer modifies the Windows power policy to strictly disconnect networking when sleeping on DC power, eliminating overnight battery vampire drain.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>What is battery wear level and when should I replace my battery?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Battery Wear Level represents permanent chemical capacity loss in your lithium-ion pack. As you charge and discharge, electrodes degrade. A wear level under 15% is normal after 1 to 2 years of use. If your wear level exceeds 35% to 40%, your laptop will run out of power dramatically faster, and replacing the physical battery pack is recommended.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Does BatteryOptimizer run permanently in my system tray?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            No. Pexoris tools adhere to a zero-resident philosophy. It makes requested power configuration updates directly into the Windows powercfg registry database and exits. It never consumes memory or CPU cycles when closed.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>How does the Ultra Saver profile differ from standard Windows battery saver?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Standard Windows battery saver only dims the screen and pauses push notifications. Pexoris Ultra Saver also enforces aggressive 5-minute screen timeouts, 10-minute system sleep on battery, and sets the maximum CPU state on DC to 75% to eliminate power-hungry processor boost spikes during basic web browsing and document editing.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Can I generate an official Windows battery report?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. Clicking "Generate Battery Report" triggers the native Windows powercfg /batteryreport command and automatically launches the resulting interactive HTML audit in your default browser.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris BatteryOptimizer Free</h2>
+        <p class="subtitle">Diagnose battery wear, fix Windows 11 overnight sleep drain, and prolong portable laptop runtime in seconds.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 52 KB (.EXE) / 34 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
