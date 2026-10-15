@@ -38,7 +38,7 @@
 | **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | [Download](https://drive.google.com/uc?export=download&id=1C9u1j6moBnOe3nvzH92yRh7N4q2B3Fez) | `http://localhost/tools/website/tools/network-reset/` |
 | **28** | **Pexoris BluetoothFixer** | `bluetooth-fixer` | 60 KB | 39 KB | `c1e352dff704d4e3ee34b67d34699266d65412e45384bcb6f72f19028bd33cb3` | [Download](https://drive.google.com/uc?export=download&id=1swgiAfhupOc09OLQK3VU9JtvLmXJL7h5) | `http://localhost/tools/website/tools/bluetooth-fixer/` |
 | **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | [Download](https://drive.google.com/uc?export=download&id=1SzmgNT9AsTG-sFO2Pe0d_TRZXqlYmpUt) | `http://localhost/tools/website/tools/audio-fixer/` |
-| **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | Pending Upload | `http://localhost/tools/website/tools/safemode-launcher/` |
+| **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | [Download](https://drive.google.com/uc?export=download&id=1WyIkZkgbuZ5X9vPpL9Qr8uFIQohxdZaG) | `http://localhost/tools/website/tools/safemode-launcher/` |
 
 ---
 
