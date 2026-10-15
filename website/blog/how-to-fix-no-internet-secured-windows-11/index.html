@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Fix "No Internet, Secured" Error in Windows 11 (TCP/IP &amp; Winsock Reset)</title>
+  <meta name="description" content="Step-by-step technical guide to fix the 'No Internet, Secured' Wi-Fi error in Windows 11 and 10. Learn the root causes, manual CMD reset commands, and 1-click portable fix.">
+  <meta name="keywords" content="fix no internet secured windows 11, wifi connected but no internet, netsh winsock reset, netsh int ip reset, reset tcp ip stack windows 11, flush dns arp, windows 11 internet drops">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/blog/how-to-fix-no-internet-secured-windows-11/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pexoris.com/blog/how-to-fix-no-internet-secured-windows-11/">
+  <meta property="og:title" content="How to Fix 'No Internet, Secured' Error in Windows 11">
+  <meta property="og:description" content="Resolve stubborn Windows 11 Wi-Fi drops, 'No Internet, Secured' status, and corrupted Winsock/TCP/IP stacks with manual commands or 1-click portable tool.">
+  <meta property="og:image" content="https://pexoris.com/website/assets/icons/network-reset.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../brand-logo.png">
+
+  <!-- JSON-LD Structured Data (BlogPosting, HowTo, FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Fix 'No Internet, Secured' Error in Windows 11 (TCP/IP & Winsock Reset)",
+        "description": "Technical root cause analysis and step-by-step troubleshooting guide to restore Windows 11 network stack when connected to Wi-Fi with no internet.",
+        "author": {
+          "@type": "Organization",
+          "name": "Pexoris Research Team",
+          "url": "https://pexoris.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pexoris",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pexoris.com/brand-logo.png"
+          }
+        },
+        "datePublished": "2026-10-15",
+        "dateModified": "2026-10-15",
+        "mainEntityOfPage": "https://pexoris.com/blog/how-to-fix-no-internet-secured-windows-11/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Fix No Internet Secured via Elevated Command Prompt",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open Elevated Command Prompt",
+            "text": "Press Win + X and select Terminal (Admin) or search for cmd.exe and select Run as administrator."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Reset Winsock Catalog",
+            "text": "Run 'netsh winsock reset' to clear corrupted Layered Service Providers (LSP)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Reset TCP/IP Protocol Stack",
+            "text": "Run 'netsh int ip reset' to restore IPv4 and IPv6 TCPIP.SYS kernel parameters."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Flush DNS & Renew DHCP Lease",
+            "text": "Run 'ipconfig /release', 'ipconfig /renew', and 'ipconfig /flushdns' to establish a clean gateway handshake."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does Windows 11 say 'No Internet, Secured'?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 'No Internet, Secured' status means your Wi-Fi adapter successfully established encrypted WPA2/WPA3 authentication with your wireless router, but Windows Network Connectivity Status Indicator (NCSI) failed to reach the internet gateway or resolve DNS probes due to corrupted socket catalogs or outdated DHCP leases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will netsh winsock reset affect other network adapters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "netsh winsock reset resets the global Windows Sockets catalog to factory defaults. It affects all active network adapters by clearing third-party LSP socket hooks installed by legacy VPNs or antivirus tools."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-sub: #64748B;
+      --bg-page: #F8FAFC;
+      --border-light: #E2E8F0;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: var(--font-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID WHITE HEADER SCOPED STRICTLY */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-hero);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .brand-logo-img { width: 28px; height: 28px; border-radius: 6px; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    main {
+      max-width: 820px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* POST HEADER - POSITION STATIC NO BG */
+    .post-header {
+      position: static;
+      background: transparent;
+      margin-bottom: 28px;
+    }
+    .post-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: #EFF6FF;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--text-hero);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      margin-bottom: 14px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* AEO QUICK ANSWER */
+    .aeo-box {
+      background: #EFF6FF;
+      border: 1.5px solid #BFDBFE;
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 34px;
+    }
+    .aeo-box h4 {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #1E40AF;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .aeo-box p {
+      font-size: 15px;
+      color: #1E3A8A;
+      line-height: 1.6;
+    }
+
+    /* ARTICLE CONTENT */
+    .content-section h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin: 36px 0 14px;
+      letter-spacing: -0.4px;
+    }
+    .content-section h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin: 24px 0 10px;
+    }
+    .content-section p {
+      font-size: 15.5px;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+    .content-section ul, .content-section ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+    .content-section li {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .code-block {
+      background: #090E17;
+      color: #E2E8F0;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border: 1px solid #1E293B;
+    }
+    .code-comment { color: #64748B; }
+
+    /* TOOL SPOTLIGHT CARD */
+    .tool-spotlight-card {
+      background: #FFFFFF;
+      border: 1.5px solid #BFDBFE;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 36px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.08);
+      flex-wrap: wrap;
+    }
+    .tool-spotlight-left h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 4px;
+    }
+    .tool-spotlight-left p {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin: 0;
+    }
+    .btn-spotlight {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+    .btn-spotlight:hover { background: var(--primary-hover); }
+
+    /* FOOTER */
+    .site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 30px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+    .footer-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris" class="brand-logo-img" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris Knowledge Base</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="../../tools/">All Tools</a></li>
+        <li><a href="../../tools/network-reset/">NetworkReset Tool</a></li>
+        <li><a href="../">All Guides</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="post-header">
+      <span class="post-tag">Windows 11 Network Troubleshooting</span>
+      <h1 class="post-title">How to Fix "No Internet, Secured" Error in Windows 11 (TCP/IP &amp; Winsock Reset)</h1>
+      <div class="post-meta">
+        <span>By Pexoris Engineering</span>
+        <span>•</span>
+        <span>Updated October 2026</span>
+        <span>•</span>
+        <span>5 Min Read</span>
+      </div>
+    </div>
+
+    <!-- AEO QUICK ANSWER -->
+    <div class="aeo-box">
+      <h4>Quick Answer: How to Fix "No Internet, Secured"</h4>
+      <p>
+        The "No Internet, Secured" error occurs when Windows connects to Wi-Fi but the TCP/IP stack or Winsock catalog fails to route packets to the gateway. <strong>(1)</strong> Open Terminal (Admin) and run <code>netsh winsock reset</code> and <code>netsh int ip reset</code>. <strong>(2)</strong> Flush your DNS cache and renew DHCP leases with <code>ipconfig /release</code>, <code>ipconfig /renew</code>, and <code>ipconfig /flushdns</code>. <strong>(3)</strong> For a 1-click automated fix that repairs sockets and cycles network adapters without erasing saved Wi-Fi passwords, download the free 57 KB portable tool <strong><a href="../../tools/network-reset/">Pexoris NetworkReset</a></strong>.
+      </p>
+    </div>
+
+    <article class="content-section">
+      <h2>Why Does Windows 11 Show "No Internet, Secured"?</h2>
+      <p>
+        When you connect your laptop or desktop PC to a Wi-Fi network, Windows establishes a multi-tier connection:
+      </p>
+      <ol>
+        <li><strong>Physical &amp; Link Layer:</strong> Your wireless adapter authenticates with the router (WPA2/WPA3 password handshake). The word <em>"Secured"</em> confirms this layer succeeded.</li>
+        <li><strong>Network Layer (DHCP &amp; IP):</strong> Your adapter requests a local private IP address, subnet mask, and default gateway from the router's DHCP server.</li>
+        <li><strong>Socket &amp; Transport Layer (Winsock &amp; TCP/IP):</strong> Applications open communication sockets through Layered Service Providers (LSPs).</li>
+        <li><strong>DNS &amp; Probing Layer (NCSI):</strong> Windows Network Connectivity Status Indicator (NCSI) pings Microsoft probe servers (<code>www.msftconnecttest.com</code>). If this probe fails or DNS lookups hang, Windows flags the connection as <strong>"No Internet, Secured"</strong>.</li>
+      </ol>
+      <p>
+        Common culprits include orphaned LSP socket filters left behind by uninstalled VPN software, corrupt TCP/IP registry values in <code>TCPIP.SYS</code>, outdated DHCP IP leases, or corrupted DNS client caches.
+      </p>
+
+      <!-- 1-Click Tool Spotlight Card -->
+      <div class="tool-spotlight-card">
+        <div class="tool-spotlight-left">
+          <h3>Pexoris NetworkReset</h3>
+          <p>1-Click complete reset of Winsock, TCP/IP stack, DNS cache, and DHCP leases. Zero install, 57 KB standalone.</p>
+        </div>
+        <a href="../../tools/network-reset/" class="btn-spotlight">Get Free NetworkReset &rarr;</a>
+      </div>
+
+      <h2>Method 1: Manual Fix via Elevated Command Prompt</h2>
+      <p>
+        If you prefer troubleshooting manually via command line, you can rebuild the Windows network stack in 4 sequential steps.
+      </p>
+
+      <h3>Step 1: Launch Elevated Command Prompt</h3>
+      <p>
+        Press <kbd>Win + X</kbd> and select <strong>Terminal (Admin)</strong> or search for <code>cmd.exe</code>, right-click, and choose <strong>Run as administrator</strong>.
+      </p>
+
+      <h3>Step 2: Reset the Winsock Catalog</h3>
+      <p>
+        Rebuilds the Windows Sockets API Layered Service Provider (LSP) catalog back to clean system defaults:
+      </p>
+      <div class="code-block">
+<span class="code-comment">:: Reset Winsock catalog to factory state</span>
+netsh winsock reset
+      </div>
+
+      <h3>Step 3: Reset TCP/IP Kernel Parameters</h3>
+      <p>
+        Re-writes the IPv4 and IPv6 registry configurations for the core network protocol driver:
+      </p>
+      <div class="code-block">
+<span class="code-comment">:: Reset TCP/IP stack and log actions</span>
+netsh int ip reset
+      </div>
+
+      <h3>Step 4: Release, Renew DHCP &amp; Flush DNS</h3>
+      <p>
+        Drop the dead IP lease, request fresh routing credentials from your router, and purge cached domain records:
+      </p>
+      <div class="code-block">
+<span class="code-comment">:: Release current IP configuration</span>
+ipconfig /release
+
+<span class="code-comment">:: Request fresh dynamic IP lease from router</span>
+ipconfig /renew
+
+<span class="code-comment">:: Flush local DNS resolver cache</span>
+ipconfig /flushdns
+
+<span class="code-comment">:: Purge hardware ARP routing tables</span>
+arp -d *
+      </div>
+
+      <h2>Method 2: 1-Click Automated Fix with Pexoris NetworkReset</h2>
+      <p>
+        Entering multiple CMD commands is error-prone, and native Windows 11 "Network Reset" in the Settings app forces a compulsory 5-minute countdown and erases all your saved Wi-Fi networks and passwords.
+      </p>
+      <p>
+        <strong><a href="../../tools/network-reset/">Pexoris NetworkReset</a></strong> provides a superior portable alternative:
+      </p>
+      <ul>
+        <li><strong>Preserves Saved Wi-Fi Passwords:</strong> Rebuilds protocol stacks and socket catalogs without wiping your saved wireless networks.</li>
+        <li><strong>Real-Time Adapter Health Table:</strong> Inspects connection speeds, IP allocations, Winsock LSP counts, and DNS cache states in real time.</li>
+        <li><strong>1-Click Comprehensive Restoration:</strong> Cleans Winsock, re-initializes TCP/IP, purges ARP tables, reloads NetBIOS, and bounces adapters in seconds.</li>
+        <li><strong>Zero Bloatware:</strong> Single standalone 57 KB executable with zero background resident processes.</li>
+      </ul>
+
+      <div style="text-align: center; margin: 2.5rem 0;">
+        <a href="../../tools/network-reset/" class="btn-spotlight" style="display: inline-block; padding: 1rem 2.5rem; font-size: 1rem;">
+          Download Pexoris NetworkReset Free (57 KB) &rarr;
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 24px; height: 24px; border-radius: 5px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span style="font-weight: 800; color: var(--text-hero);">Pexoris</span>
+      </div>
+
+      <div style="display: flex; gap: 1.25rem;">
+        <a href="../../" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Home</a>
+        <a href="../../tools/" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Tools</a>
+        <a href="../../blog/" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Blog</a>
+        <a href="../../sitemap.xml" style="color: var(--text-sub); text-decoration: none; font-size: 0.85rem;">Sitemap</a>
+      </div>
+    </div>
+    <div style="margin-top: 15px; font-size: 12px; color: #94A3B8;">
+      &copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.
+    </div>
+  </footer>
+
+</body>
+</html>
