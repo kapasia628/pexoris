@@ -240,6 +240,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Audio Stack & Services Repair Utility: Pexoris AudioFixer -->
+  <url>
+    <loc>https://pexoris.com/tools/audio-fixer/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -491,6 +499,14 @@
   <!-- Windows 11 Missing Bluetooth Toggle Troubleshooting Guide: How to Fix Missing Bluetooth Toggle -->
   <url>
     <loc>https://pexoris.com/blog/how-to-fix-bluetooth-toggle-missing-windows-11/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows 11 Audio Services Not Responding Troubleshooting Guide: How to Fix Audio Services Not Responding -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-fix-audio-services-not-responding-windows-11/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
