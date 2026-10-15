@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 27 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 28 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -36,6 +36,7 @@
 | **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | [Download](https://drive.google.com/uc?export=download&id=1HvVJzxtS3afaVRqJeUxJTkmOmBX5BiR_) | `http://localhost/tools/website/tools/battery-optimizer/` |
 | **26** | **Pexoris TelemetryBlocker** | `telemetry-blocker` | 56 KB | 37 KB | `426cec2ae87b2d3fcbcf34371a31539bf434cdf730a3cad360cdccc02bf14714` | [Download](https://drive.google.com/uc?export=download&id=1dVCRO6HkDjZps5_oUXeoLufjAO8sbYPh) | `http://localhost/tools/website/tools/telemetry-blocker/` |
 | **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | [Download](https://drive.google.com/uc?export=download&id=1C9u1j6moBnOe3nvzH92yRh7N4q2B3Fez) | `http://localhost/tools/website/tools/network-reset/` |
+| **28** | **Pexoris BluetoothFixer** | `bluetooth-fixer` | 60 KB | 39 KB | `c1e352dff704d4e3ee34b67d34699266d65412e45384bcb6f72f19028bd33cb3` | Pending Upload | `http://localhost/tools/website/tools/bluetooth-fixer/` |
 
 ---
 
@@ -118,4 +119,5 @@ Running `build.bat` in the project root:
 - [x] **#25 Pexoris BatteryOptimizer** (Maximize laptop battery runtime, audit degradation wear level & modern standby saver)
 - [x] **#26 Pexoris TelemetryBlocker** (Halt background diagnostic telemetry, DiagTrack & CEIP tracking)
 - [x] **#27 Pexoris NetworkReset** (1-Click complete reset of Winsock, TCP/IP stack, DNS cache & network adapters)
-- [ ] **#28 Pexoris BluetoothFixer** (Restart Bluetooth services, purge pairing locks & fix missing toggle)
+- [x] **#28 Pexoris BluetoothFixer** (Restart Bluetooth services, purge pairing locks & fix missing toggle)
+- [ ] **#29 Pexoris AudioFixer** (Restart Windows Audio, rebuild endpoint graph & fix stuttering)

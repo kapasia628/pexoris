@@ -576,8 +576,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [54/54] Packaging Pexoris NetworkReset Portable ZIP...
+echo [54/56] Packaging Pexoris NetworkReset Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisNetworkReset.exe' -DestinationPath 'build\PexorisNetworkReset-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisBluetoothFixer.exe 2>nul
+
+echo [55/56] Compiling Tool 28: Pexoris BluetoothFixer...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisBluetoothFixer\App.manifest ^
+    /win32icon:src\PexorisBluetoothFixer\Assets\app.ico ^
+    /out:build\PexorisBluetoothFixer.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.ServiceProcess.dll ^
+    src\PexorisBluetoothFixer\Program.cs ^
+    src\PexorisBluetoothFixer\Theme.cs ^
+    src\PexorisBluetoothFixer\BluetoothEngine.cs ^
+    src\PexorisBluetoothFixer\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris BluetoothFixer!
+    exit /b %ERRORLEVEL%
+)
+
+echo [56/56] Packaging Pexoris BluetoothFixer Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisBluetoothFixer.exe' -DestinationPath 'build\PexorisBluetoothFixer-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -607,6 +628,7 @@ copy /y "build\PexorisFontCacheRebuilder-v1.0-Portable.zip" "final softwere for 
 copy /y "build\PexorisBatteryOptimizer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisBatteryOptimizer.zip" >nul
 copy /y "build\PexorisTelemetryBlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisTelemetryBlocker.zip" >nul
 copy /y "build\PexorisNetworkReset-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisNetworkReset.zip" >nul
+copy /y "build\PexorisBluetoothFixer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisBluetoothFixer.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -634,10 +656,11 @@ copy /y "build\PexorisFontCacheRebuilder.exe" "final softwere for g drive uplod\
 copy /y "build\PexorisBatteryOptimizer.exe" "final softwere for g drive uplod\PexorisBatteryOptimizer.exe" >nul
 copy /y "build\PexorisTelemetryBlocker.exe" "final softwere for g drive uplod\PexorisTelemetryBlocker.exe" >nul
 copy /y "build\PexorisNetworkReset.exe" "final softwere for g drive uplod\PexorisNetworkReset.exe" >nul
+copy /y "build\PexorisBluetoothFixer.exe" "final softwere for g drive uplod\PexorisBluetoothFixer.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 27 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 28 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -665,6 +688,7 @@ echo  Tool 24: build\PexorisFontCacheRebuilder.exe  (52 KB)
 echo  Tool 25: build\PexorisBatteryOptimizer.exe    (52 KB)
 echo  Tool 26: build\PexorisTelemetryBlocker.exe    (56 KB)
 echo  Tool 27: build\PexorisNetworkReset.exe        (57 KB)
+echo  Tool 28: build\PexorisBluetoothFixer.exe      (60 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"

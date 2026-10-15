@@ -232,6 +232,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Bluetooth Stack & Radio Repair Utility: Pexoris BluetoothFixer -->
+  <url>
+    <loc>https://pexoris.com/tools/bluetooth-fixer/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -475,6 +483,14 @@
   <!-- Windows 11 No Internet Secured Troubleshooting Guide: How to Fix No Internet Secured -->
   <url>
     <loc>https://pexoris.com/blog/how-to-fix-no-internet-secured-windows-11/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows 11 Missing Bluetooth Toggle Troubleshooting Guide: How to Fix Missing Bluetooth Toggle -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-fix-bluetooth-toggle-missing-windows-11/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
