@@ -65,7 +65,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **26** | **Pexoris TelemetryBlocker** | `telemetry-blocker` | 56 KB | 37 KB | `426cec2ae87b2d3fcbcf34371a31539bf434cdf730a3cad360cdccc02bf14714` | `https://drive.google.com/uc?export=download&id=1dVCRO6HkDjZps5_oUXeoLufjAO8sbYPh` |
 | **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | `https://drive.google.com/uc?export=download&id=1C9u1j6moBnOe3nvzH92yRh7N4q2B3Fez` |
 | **28** | **Pexoris BluetoothFixer** | `bluetooth-fixer` | 60 KB | 39 KB | `c1e352dff704d4e3ee34b67d34699266d65412e45384bcb6f72f19028bd33cb3` | `https://drive.google.com/uc?export=download&id=1swgiAfhupOc09OLQK3VU9JtvLmXJL7h5` |
-| **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | Pending Upload |
+| **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | `https://drive.google.com/uc?export=download&id=1SzmgNT9AsTG-sFO2Pe0d_TRZXqlYmpUt` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
