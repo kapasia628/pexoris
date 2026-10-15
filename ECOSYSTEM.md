@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 29 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 30 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -26,18 +26,19 @@
 | **15** | **Pexoris ExifStripper** | `exif-stripper` | 53 KB | 34 KB | `dcab2739eb121b91b13ca163dfe13fafa0841efe9b7a40aa8ec6aea68ad4077d` | [Download](https://drive.google.com/uc?export=download&id=1um9SbbFSx5IJ2SuIzqXzyqPlxuK2SwDS) | `http://localhost/tools/website/tools/exif-stripper/` |
 | **16** | **Pexoris IconCacheRebuilder** | `icon-cache-rebuilder` | 44 KB | 28 KB | `dc2ac33a0ae80271c1824851480fce0435b732a934cbbce79dc15e69204ff3f4` | [Download](https://drive.google.com/uc?export=download&id=1BeSTVCd8Y-2HEB0yXx3c0vWsqr9Ej5Kq) | `http://localhost/tools/website/tools/icon-cache-rebuilder/` |
 | **17** | **Pexoris WinUpdateReset** | `winupdate-reset` | 51 KB | 31 KB | `ec99ef3fb73c7ad79756adcc8d3b3d19d589ccc70874217fb1d74196cef14289` | [Download](https://drive.google.com/uc?export=download&id=1_Nm5yAN3dTY2hBmDdOi1SQZWYV2_1UnR) | `http://localhost/tools/website/tools/winupdate-reset/` |
-| **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E) | `http://localhost/tools/website/tools/wifi-key-revealer/` |
-| **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | [Download](https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk) | `http://localhost/tools/website/tools/disk-cleaner/` |
+| **18** | **Pexoris WifiKeyRevealer** | `wifi-key-revealer` | 48 KB | 30 KB | `98da0ce232a31f2122ac83310407dfec6e5483fdaf2d109ea52799f8fcf42751` | [Download](https://drive.google.com/uc?export=download&id=1ItRU8XZ6CAR9NyY-DJtXQVngajRt8R1E` | `http://localhost/tools/website/tools/wifi-key-revealer/` |
+| **19** | **Pexoris DiskCleaner** | `disk-cleaner` | 50 KB | 33 KB | `3e8ae3ba56087c6fa4b84f760d1bec13cad5501375158b4eca4318ccb9c13c10` | [Download](https://drive.google.com/uc?export=download&id=1gqndT3bEwkcN9KghbetyfUj0oig77wjk` | `http://localhost/tools/website/tools/disk-cleaner/` |
 | **20** | **Pexoris AppUninstaller** | `app-uninstaller` | 51 KB | 32 KB | `d53e0a731cf94a5ebec2481b8d340fe8c3d95db41a9799090505b76466cf5b3f` | [Download](https://drive.google.com/uc?export=download&id=1lXUG0xfZfZS4CaLdmlDLNCwfwQO7KY_v` | `http://localhost/tools/website/tools/app-uninstaller/` |
-| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | [Download](https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF) | `http://localhost/tools/website/tools/duplicate-finder/` |
-| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | [Download](https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8) | `http://localhost/tools/website/tools/privacy-shield/` |
-| **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | [Download](https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0) | `http://localhost/tools/website/tools/process-tamer/` |
+| **21** | **Pexoris DuplicateFinder** | `duplicate-finder` | 56 KB | 34 KB | `c4bcb5798bdc53008ddaf9624b82099064f8c16cb4a72bae93bf209f9159fe15` | [Download](https://drive.google.com/uc?export=download&id=1oY4iSq1oYICy5EtriWtmpt5xmZ2pJFZF` | `http://localhost/tools/website/tools/duplicate-finder/` |
+| **22** | **Pexoris PrivacyShield** | `privacy-shield` | 65 KB | 37 KB | `9630b2589125cc47453292e69284867a43f07dcd467209fe2a7258c58c6a84ab` | [Download](https://drive.google.com/uc?export=download&id=1oAT8UmMNAyrobJmUBzoL5gxTbesN8gZ8` | `http://localhost/tools/website/tools/privacy-shield/` |
+| **23** | **Pexoris ProcessTamer** | `process-tamer` | 50 KB | 34 KB | `719a5fe88cd55a08c5002cb935950cd1b850e44995b67728d3bf123075479d6d` | [Download](https://drive.google.com/uc?export=download&id=12Z3ONrnpWoyBeQHmCkfZAUKPWXanAZo0` | `http://localhost/tools/website/tools/process-tamer/` |
 | **24** | **Pexoris FontCacheRebuilder** | `font-cache-rebuilder` | 52 KB | 36 KB | `afe722889f5bd05c055bc1ad5f3d94bf40cd6cada2e7b677a861bab7e9e9f991` | [Download](https://drive.google.com/uc?export=download&id=1PQp5eXXgiouH-fHGkAIoFnU7MaY9852K) | `http://localhost/tools/website/tools/font-cache-rebuilder/` |
 | **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | [Download](https://drive.google.com/uc?export=download&id=1HvVJzxtS3afaVRqJeUxJTkmOmBX5BiR_) | `http://localhost/tools/website/tools/battery-optimizer/` |
 | **26** | **Pexoris TelemetryBlocker** | `telemetry-blocker` | 56 KB | 37 KB | `426cec2ae87b2d3fcbcf34371a31539bf434cdf730a3cad360cdccc02bf14714` | [Download](https://drive.google.com/uc?export=download&id=1dVCRO6HkDjZps5_oUXeoLufjAO8sbYPh) | `http://localhost/tools/website/tools/telemetry-blocker/` |
 | **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | [Download](https://drive.google.com/uc?export=download&id=1C9u1j6moBnOe3nvzH92yRh7N4q2B3Fez) | `http://localhost/tools/website/tools/network-reset/` |
 | **28** | **Pexoris BluetoothFixer** | `bluetooth-fixer` | 60 KB | 39 KB | `c1e352dff704d4e3ee34b67d34699266d65412e45384bcb6f72f19028bd33cb3` | [Download](https://drive.google.com/uc?export=download&id=1swgiAfhupOc09OLQK3VU9JtvLmXJL7h5) | `http://localhost/tools/website/tools/bluetooth-fixer/` |
 | **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | [Download](https://drive.google.com/uc?export=download&id=1SzmgNT9AsTG-sFO2Pe0d_TRZXqlYmpUt) | `http://localhost/tools/website/tools/audio-fixer/` |
+| **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | Pending Upload | `http://localhost/tools/website/tools/safemode-launcher/` |
 
 ---
 
@@ -122,4 +123,5 @@ Running `build.bat` in the project root:
 - [x] **#27 Pexoris NetworkReset** (1-Click complete reset of Winsock, TCP/IP stack, DNS cache & network adapters)
 - [x] **#28 Pexoris BluetoothFixer** (Restart Bluetooth services, purge pairing locks & fix missing toggle)
 - [x] **#29 Pexoris AudioFixer** (Restart Windows Audio, rebuild endpoint graph & fix stuttering)
-- [ ] **#30 Pexoris SafeModeLauncher** (Reboot directly to Safe Mode, bypass recovery loops & restore BCD)
+- [x] **#30 Pexoris SafeModeLauncher** (Reboot directly to Safe Mode, bypass recovery loops & restore BCD)
+- [ ] **#31 Pexoris FirewallBlocker** (1-Click outbound/inbound Windows Defender Firewall rule toggle & telemetry block)

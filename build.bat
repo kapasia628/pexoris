@@ -618,8 +618,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [58/58] Packaging Pexoris AudioFixer Portable ZIP...
+echo [58/60] Packaging Pexoris AudioFixer Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisAudioFixer.exe' -DestinationPath 'build\PexorisAudioFixer-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisSafeModeLauncher.exe 2>nul
+
+echo [59/60] Compiling Tool 30: Pexoris SafeModeLauncher...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisSafeModeLauncher\App.manifest ^
+    /win32icon:src\PexorisSafeModeLauncher\Assets\app.ico ^
+    /out:build\PexorisSafeModeLauncher.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll ^
+    src\PexorisSafeModeLauncher\Program.cs ^
+    src\PexorisSafeModeLauncher\Theme.cs ^
+    src\PexorisSafeModeLauncher\BootEngine.cs ^
+    src\PexorisSafeModeLauncher\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris SafeModeLauncher!
+    exit /b %ERRORLEVEL%
+)
+
+echo [60/60] Packaging Pexoris SafeModeLauncher Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisSafeModeLauncher.exe' -DestinationPath 'build\PexorisSafeModeLauncher-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -651,6 +672,7 @@ copy /y "build\PexorisTelemetryBlocker-v1.0-Portable.zip" "final softwere for g 
 copy /y "build\PexorisNetworkReset-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisNetworkReset.zip" >nul
 copy /y "build\PexorisBluetoothFixer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisBluetoothFixer.zip" >nul
 copy /y "build\PexorisAudioFixer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisAudioFixer.zip" >nul
+copy /y "build\PexorisSafeModeLauncher-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisSafeModeLauncher.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -680,10 +702,11 @@ copy /y "build\PexorisTelemetryBlocker.exe" "final softwere for g drive uplod\Pe
 copy /y "build\PexorisNetworkReset.exe" "final softwere for g drive uplod\PexorisNetworkReset.exe" >nul
 copy /y "build\PexorisBluetoothFixer.exe" "final softwere for g drive uplod\PexorisBluetoothFixer.exe" >nul
 copy /y "build\PexorisAudioFixer.exe" "final softwere for g drive uplod\PexorisAudioFixer.exe" >nul
+copy /y "build\PexorisSafeModeLauncher.exe" "final softwere for g drive uplod\PexorisSafeModeLauncher.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 29 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 30 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -713,6 +736,7 @@ echo  Tool 26: build\PexorisTelemetryBlocker.exe    (56 KB)
 echo  Tool 27: build\PexorisNetworkReset.exe        (57 KB)
 echo  Tool 28: build\PexorisBluetoothFixer.exe      (60 KB)
 echo  Tool 29: build\PexorisAudioFixer.exe          (59 KB)
+echo  Tool 30: build\PexorisSafeModeLauncher.exe    (66 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
