@@ -35,7 +35,7 @@
 | **24** | **Pexoris FontCacheRebuilder** | `font-cache-rebuilder` | 52 KB | 36 KB | `afe722889f5bd05c055bc1ad5f3d94bf40cd6cada2e7b677a861bab7e9e9f991` | [Download](https://drive.google.com/uc?export=download&id=1PQp5eXXgiouH-fHGkAIoFnU7MaY9852K) | `http://localhost/tools/website/tools/font-cache-rebuilder/` |
 | **25** | **Pexoris BatteryOptimizer** | `battery-optimizer` | 52 KB | 34 KB | `1e4e10f04707cc705d60ec6704488216856d43582c30c30820bcfd4a8efa7db3` | [Download](https://drive.google.com/uc?export=download&id=1HvVJzxtS3afaVRqJeUxJTkmOmBX5BiR_) | `http://localhost/tools/website/tools/battery-optimizer/` |
 | **26** | **Pexoris TelemetryBlocker** | `telemetry-blocker` | 56 KB | 37 KB | `426cec2ae87b2d3fcbcf34371a31539bf434cdf730a3cad360cdccc02bf14714` | [Download](https://drive.google.com/uc?export=download&id=1dVCRO6HkDjZps5_oUXeoLufjAO8sbYPh) | `http://localhost/tools/website/tools/telemetry-blocker/` |
-| **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | Pending Upload | `http://localhost/tools/website/tools/network-reset/` |
+| **27** | **Pexoris NetworkReset** | `network-reset` | 57 KB | 37 KB | `53e07848628778ef83078e0c9761385f885dd3ff78d90756c15b90637a1883b8` | [Download](https://drive.google.com/uc?export=download&id=1C9u1j6moBnOe3nvzH92yRh7N4q2B3Fez) | `http://localhost/tools/website/tools/network-reset/` |
 
 ---
 
