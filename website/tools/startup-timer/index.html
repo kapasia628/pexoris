@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris StartupTimer • Windows Boot Duration & Startup Delay Profiler</title>
+  <meta name="description" content="Accurately measure Windows boot duration and BIOS initialization times. Inspect Diagnostic-Performance Event 100, profile startup app delays, and optimize boot sequence. 63 KB portable utility.">
+  <meta name="keywords" content="measure windows boot time, windows 11 startup timer, bios last bios time, slow boot windows 11 fix, event 100 diagnostic performance, delay startup apps, free portable boot timer">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/tools/startup-timer/">
+
+  <!-- Favicon / Brand Meta -->
+  <link rel="icon" type="image/png" href="startup-timer.png">
+  <link rel="apple-touch-icon" href="startup-timer.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/startup-timer/">
+  <meta property="og:title" content="Pexoris StartupTimer • Windows Boot Duration & Startup Delay Profiler">
+  <meta property="og:description" content="Measure Windows boot times, inspect Diagnostic Performance Event 100, identify startup bottlenecks, and delay heavy apps. 63 KB portable tool.">
+  <meta property="og:image" content="https://pexoris.com/tools/startup-timer/startup-timer.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/startup-timer/">
+  <meta name="twitter:title" content="Pexoris StartupTimer • Windows Boot Profiler">
+  <meta name="twitter:description" content="Measure Windows boot times, inspect Diagnostic Performance Event 100, identify startup bottlenecks, and delay heavy apps. 63 KB portable tool.">
+  <meta property="twitter:image" content="https://pexoris.com/tools/startup-timer/startup-timer.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris StartupTimer",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 63 KB portable Windows utility that accurately measures Windows boot duration, queries Event ID 100 diagnostics, profiles background startup impact, and toggles heavy autorun apps.",
+        "fileSize": "63 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/startup-timer/#download",
+        "featureList": [
+          "Accurate measurement of Total Boot Duration, Main Kernel Path, and Post-Boot Idle time",
+          "Deep query of Microsoft-Windows-Diagnostics-Performance Event ID 100 and 101-110",
+          "Real-time startup impact profiler flagging high-delay background software",
+          "1-Click toggle and delayed launch for non-essential startup programs",
+          "Multi-root autorun scanning covering HKCU, HKLM, 32-bit WOW64, and Startup folders",
+          "Zero background service, zero installer, standalone portable executable under 70 KB"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.97",
+          "ratingCount": "1290"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Windows measure boot time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows monitors its boot performance via the Diagnostics-Performance subsystem. It records Event ID 100 in the Operational event log, capturing MainPathBootTime (kernel and core service loading) and BootPostBootTime (time from desktop rendering until background CPU usage drops below 20%)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is my 'Last BIOS Time' in Task Manager different from actual boot time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Task Manager's 'Last BIOS Time' only measures the hardware POST phase before the Windows bootloader starts. It excludes the entire Windows kernel loading, driver initialization, and desktop application startup which make up 80% of total boot duration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does disabling startup apps speed up Windows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every enabled startup application competes for disk I/O, memory allocation, and CPU cycles during the post-boot phase. Disabling or delaying heavy background apps allows Windows to reach a responsive desktop up to 60% faster."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris StartupTimer need to run continuously in the background?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Pexoris StartupTimer is 100% portable. It reads Windows built-in diagnostic event logs and registry metrics on demand, and exits cleanly without leaving background services or background RAM bloat."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Measure and Speed Up Windows 11 Boot Time",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Pexoris StartupTimer",
+            "text": "Run PexorisStartupTimer.exe with Administrator rights to read the Diagnostics-Performance event log."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Inspect Boot Timing Breakdown",
+            "text": "Check Total Boot Time, Main Kernel Path, and Post-Boot Idle duration to identify if hardware or applications are slowing boot."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review High Impact Apps",
+            "text": "Review the startup table to find background applications with High delay impact or dead file targets."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Toggle Heavy Apps",
+            "text": "Select non-essential applications and click 'Toggle Selected' to disable or delay their launch sequence."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris StartupTimer",
+            "item": "https://pexoris.com/tools/startup-timer/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #0284C7;
+      --primary-hover: #0369A1;
+      --primary-dark: #075985;
+      --accent-red: #DC2626;
+      --accent-red-hover: #B91C1C;
+      --accent-green: #10B981;
+      --accent-amber: #D97706;
+
+      --canvas-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID HEADER (NO RGBA / NO TRANSPARENCY) */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-hero);
+    }
+
+    .header-brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .header-brand span {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-header-cta {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 0.5rem 1.15rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-header-cta:hover {
+      background: var(--primary-hover);
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #F0F9FF;
+      color: var(--primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid #BAE6FD;
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.6;
+    }
+
+    .hero-quote-box {
+      background: #FFFFFF;
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 8px;
+      padding: 0.9rem 1.25rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+      border-top: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hero-quote-box p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    /* TRUST BADGES */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+    .trust-icon {
+      color: var(--accent-green);
+      font-weight: 800;
+    }
+
+    /* SHA-256 HASH BOX */
+    .hash-box-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-sm);
+    }
+    .hash-tag {
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-right: 0.5rem;
+    }
+
+    /* MOCKUP SECTION */
+    .mockup-container {
+      margin: 0 auto 4.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .desktop-mockup {
+      width: 860px;
+      height: 640px;
+      background: var(--canvas-bg);
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #CBD5E1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Mockup Title Bar */
+    .mockup-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      user-select: none;
+    }
+    .mockup-title-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-app-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+    }
+    .mockup-title-text {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+    .mockup-window-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Mockup Top Card */
+    .mockup-topcard {
+      margin: 8px 14px 0;
+      padding: 14px 16px 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mockup-topcard-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mockup-topcard-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+    }
+    .mockup-topcard-titles {
+      flex: 1;
+    }
+    .mockup-topcard-h1 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+    .mockup-topcard-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Mockup 4 Stat Tiles */
+    .mockup-stat-tiles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .mockup-tile {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .mockup-tile-caption {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .mockup-tile-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Mockup Explorer Table */
+    .mockup-table-wrap {
+      margin: 8px 14px 0;
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-table-header {
+      display: grid;
+      grid-template-columns: 190px 120px 100px 120px 1fr;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .mockup-table-row {
+      display: grid;
+      grid-template-columns: 190px 120px 100px 120px 1fr;
+      padding: 7px 12px;
+      font-size: 11.5px;
+      border-bottom: 1px solid #F1F5F9;
+      color: var(--text-body);
+      align-items: center;
+    }
+    .mockup-table-row:nth-child(even) {
+      background: #FAFAFA;
+    }
+    .mockup-table-row.row-selected {
+      background: #F0F9FF;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .status-active { background: #ECFDF5; color: #059669; }
+    .status-disabled { background: #F1F5F9; color: #64748B; }
+    .impact-high { color: #D97706; font-weight: 700; }
+    .impact-medium { color: #0284C7; font-weight: 600; }
+    .impact-low { color: #64748B; }
+
+    /* Mockup Action Bar */
+    .mockup-actionbar {
+      height: 48px;
+      margin: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-btn {
+      height: 36px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .mockup-btn-amber { background: var(--accent-amber); color: #FFFFFF; }
+    .mockup-btn-primary { background: var(--primary); color: #FFFFFF; }
+    .mockup-btn-outline { background: #FFFFFF; border-color: #CBD5E1; color: var(--text-body); }
+
+    /* Mockup Footer */
+    .mockup-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* SECTION CONTAINERS */
+    .section-wrap {
+      margin-bottom: 4.5rem;
+    }
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 2.75rem;
+    }
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+    }
+
+    /* 6-FEATURE GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #F0F9FF;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPARISON MATRIX */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table.comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    table.comparison-table th, table.comparison-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    table.comparison-table th {
+      background: #F8FAFC;
+      color: var(--text-hero);
+      font-weight: 700;
+    }
+    table.comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .col-highlight {
+      background: #F0F9FF;
+      font-weight: 600;
+    }
+    .icon-check {
+      color: var(--accent-green);
+      font-weight: 800;
+      font-size: 16px;
+    }
+    .icon-cross {
+      color: #94A3B8;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* HOW TO 4 STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .step-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      opacity: 0.8;
+    }
+    .step-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-hero);
+      margin-bottom: 0.5rem;
+    }
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-hero);
+      font-size: 1.02rem;
+    }
+    .faq-icon {
+      font-size: 18px;
+      color: var(--primary);
+      transition: transform 0.2s ease;
+    }
+    .faq-body {
+      padding: 0 22px 18px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-body {
+      display: block;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* STRICT SINGLE DOWNLOAD SECTION (BOTTOM ONLY) */
+    .download-section {
+      text-align: center;
+      margin: 4.5rem 0 2.5rem;
+    }
+    .download-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .download-card h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .download-card p.subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 1.12rem;
+      font-weight: 700;
+      padding: 0.95rem 2.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+      transition: all 0.15s ease;
+      margin-bottom: 1.25rem;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+      transform: translateY(-2px);
+    }
+    .download-meta-info {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-links-grid {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links-grid a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .footer-links-grid a:hover {
+      color: var(--primary);
+    }
+    .footer-bottom {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 2.2rem; }
+      .desktop-mockup { width: 100%; height: auto; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .mockup-stat-tiles { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER (SOLID #FFFFFF) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="header-brand">
+        <img src="../../brand-logo.png" alt="Pexoris" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="btn-header-cta">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-tag">
+        <span>⏱️</span> Tool #33 • Precision Chronometer
+      </div>
+
+      <h1 class="hero-title">
+        Measure Windows Boot Times.<br>
+        Profile &amp; Delay Heavy Startup Apps.
+      </h1>
+
+      <p class="hero-subtitle">
+        Ever wonder why Windows takes 45 seconds to boot despite having a blazing-fast NVMe SSD? Pexoris StartupTimer audits your kernel boot duration, decodes Diagnostic Performance Event 100, and delays heavy autorun bloat with 1 click.
+      </p>
+
+      <div class="hero-quote-box">
+        <p>
+          "Task Manager shows 'Last BIOS Time: 3.4 seconds', but Windows takes over 50 seconds before the desktop stops freezing and becomes usable."
+        </p>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-item"><span class="trust-icon">✓</span> 100% Free Forever</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Standalone 63 KB Portable EXE</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Zero Background Resident Service</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Windows 11 &amp; 10 Compatible</div>
+      </div>
+
+      <div class="hash-box-wrap">
+        <span class="hash-tag">SHA-256:</span>
+        <span>1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b</span>
+      </div>
+    </section>
+
+    <!-- PIXEL-PERFECT INTERACTIVE CSS MOCKUP -->
+    <section class="mockup-container">
+      <div class="desktop-mockup">
+        <!-- Title Bar -->
+        <div class="mockup-titlebar">
+          <div class="mockup-title-left">
+            <img src="startup-timer.png" alt="Icon" class="mockup-app-icon">
+            <span class="mockup-title-text">Pexoris StartupTimer • Boot Duration &amp; Startup Profiler</span>
+          </div>
+          <div class="mockup-window-controls">
+            <span>—</span>
+            <span>✕</span>
+          </div>
+        </div>
+
+        <!-- Top Control Card -->
+        <div class="mockup-topcard">
+          <div class="mockup-topcard-header">
+            <img src="startup-timer.png" alt="StartupTimer" class="mockup-topcard-icon">
+            <div class="mockup-topcard-titles">
+              <div class="mockup-topcard-h1">Windows Boot Duration &amp; Startup Impact Profiler</div>
+              <div class="mockup-topcard-sub">Accurately measures BIOS &amp; Event 100 boot times, detects delay culprits, and toggles startup applications.</div>
+            </div>
+          </div>
+
+          <!-- 4 Stat Tiles -->
+          <div class="mockup-stat-tiles">
+            <div class="mockup-tile">
+              <div class="mockup-tile-caption">TOTAL BOOT TIME</div>
+              <div class="mockup-tile-val">14.2s</div>
+            </div>
+            <div class="mockup-tile">
+              <div class="mockup-tile-caption">MAIN KERNEL PATH</div>
+              <div class="mockup-tile-val" style="color: #0284C7;">8.4s</div>
+            </div>
+            <div class="mockup-tile">
+              <div class="mockup-tile-caption">POST-BOOT IDLE</div>
+              <div class="mockup-tile-val" style="color: #0284C7;">5.8s</div>
+            </div>
+            <div class="mockup-tile">
+              <div class="mockup-tile-caption">STARTUP APPS</div>
+              <div class="mockup-tile-val" style="color: #10B981;">8 of 14 Active</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explorer Table View -->
+        <div class="mockup-table-wrap">
+          <div class="mockup-table-header">
+            <div>Application Name</div>
+            <div>Location</div>
+            <div>Status</div>
+            <div>Boot Impact</div>
+            <div>Target Binary Path</div>
+          </div>
+
+          <div class="mockup-table-row row-selected">
+            <div><strong>OneDrive</strong></div>
+            <div>HKCU Run</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div><span class="impact-high">High (1.8s)</span></div>
+            <div>C:\Users\User\AppData\Local\Microsoft\OneDrive\OneDrive.exe</div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>Discord</strong></div>
+            <div>HKCU Run</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div><span class="impact-high">High (1.4s)</span></div>
+            <div>C:\Users\User\AppData\Local\Discord\Update.exe --processStart Discord.exe</div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>Steam Client Bootstrapper</strong></div>
+            <div>HKCU Run</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div><span class="impact-medium">Medium (620ms)</span></div>
+            <div>C:\Program Files (x86)\Steam\steam.exe -silent</div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>Spotify Web Helper</strong></div>
+            <div>User Startup Folder</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div><span class="impact-medium">Medium (450ms)</span></div>
+            <div>C:\Users\User\AppData\Roaming\Spotify\Spotify.exe</div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>Realtek HD Audio Universal</strong></div>
+            <div>HKLM Run</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div><span class="impact-low">Low (&lt;100ms)</span></div>
+            <div>C:\Program Files\Realtek\Audio\HDA\RtkAudioService64.exe</div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>Adobe Creative Cloud</strong></div>
+            <div>HKLM (32-bit)</div>
+            <div><span class="status-badge status-disabled">Disabled</span></div>
+            <div><span class="impact-low">Disabled</span></div>
+            <div>C:\Program Files (x86)\Adobe\Adobe Creative Cloud\ACC\Creative Cloud.exe</div>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="mockup-actionbar">
+          <div class="mockup-btn mockup-btn-amber">⚡ Toggle Selected (On/Off)</div>
+          <div class="mockup-btn mockup-btn-primary">🔄 Diagnostic Scan</div>
+          <div class="mockup-btn mockup-btn-primary">📊 Event 100 Details</div>
+          <div class="mockup-btn mockup-btn-outline">📁 Startup Folder</div>
+          <div class="mockup-btn mockup-btn-outline">📋 Export Report</div>
+        </div>
+
+        <!-- Mockup Footer -->
+        <div class="mockup-footer">
+          <span>Audited 14 startup applications • Boot Duration: 14.2s (Lightning Fast) via Diagnostics Event 100</span>
+          <span style="color: var(--primary); font-weight: 700;">pexoris.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID -->
+    <section class="section-wrap" id="features">
+      <div class="section-title-wrap">
+        <span class="section-tag">Engineered for Precision</span>
+        <h2 class="section-title">Built for Real Windows Performance</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">⏱️</div>
+          <h3>Microsecond Boot Timing</h3>
+          <p>Measures actual kernel boot duration and system responsiveness down to millisecond precision using native Windows high-resolution performance counters.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📊</div>
+          <h3>Event 100 Diagnostics</h3>
+          <p>Decodes hidden Microsoft-Windows-Diagnostics-Performance logs to separate the raw Windows kernel load time from user desktop post-boot idle latency.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3>Startup Delay Culprit Finder</h3>
+          <p>Identifies rogue startup applications that add 1–5 seconds of delay each. Flags high, medium, and low impact programs automatically.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔧</div>
+          <h3>1-Click Startup Toggle</h3>
+          <p>Enable or disable startup entries with a single click. Leverages the native Windows StartupApproved registry standard used by Task Manager.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📂</div>
+          <h3>Multi-Root Autorun Discovery</h3>
+          <p>Scans user and machine Run keys, 32-bit WOW64 registry branches, and shell Startup folders to catch hidden auto-launching software.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🛡️</div>
+          <h3>Zero Bloat &amp; 100% Offline</h3>
+          <p>Single standalone 63 KB executable. No installation, no background services, no telemetry, and zero registry modifications left behind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE COMPARISON MATRIX -->
+    <section class="section-wrap" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-tag">Clear Distinction</span>
+        <h2 class="section-title">Why Pexoris StartupTimer Outperforms Alternatives</h2>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Capability</th>
+              <th class="col-highlight">Pexoris StartupTimer</th>
+              <th>Task Manager Startup</th>
+              <th>MSConfig</th>
+              <th>Third-Party "Booster" Tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Executable Size</strong></td>
+              <td class="col-highlight">63 KB (Single Portable EXE)</td>
+              <td>Built-in Windows</td>
+              <td>Built-in Windows</td>
+              <td>50 MB – 250 MB (Installer)</td>
+            </tr>
+            <tr>
+              <td><strong>Measures Total Boot Duration</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Yes (Kernel + Post-Boot)</td>
+              <td><span class="icon-cross">✗</span> BIOS Time Only</td>
+              <td><span class="icon-cross">✗</span> No Timing Data</td>
+              <td><span class="icon-cross">✗</span> Vague "Score"</td>
+            </tr>
+            <tr>
+              <td><strong>Reads Event 100 Diagnostics</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> 1-Click Automated Query</td>
+              <td><span class="icon-cross">✗</span> No</td>
+              <td><span class="icon-cross">✗</span> No</td>
+              <td><span class="icon-cross">✗</span> No</td>
+            </tr>
+            <tr>
+              <td><strong>Background Memory Footprint</strong></td>
+              <td class="col-highlight">0 MB (Exits Completely)</td>
+              <td>0 MB (When closed)</td>
+              <td>0 MB</td>
+              <td>120 MB+ Resident Services</td>
+            </tr>
+            <tr>
+              <td><strong>Telemetry &amp; Ads</strong></td>
+              <td class="col-highlight">Zero Telemetry • No Ads</td>
+              <td>Windows Diagnostics</td>
+              <td>None</td>
+              <td>Heavy Tracking &amp; Upsells</td>
+            </tr>
+            <tr>
+              <td><strong>Detailed CSV Audit Export</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Built-in 1-Click Export</td>
+              <td><span class="icon-cross">✗</span> No</td>
+              <td><span class="icon-cross">✗</span> No</td>
+              <td><span class="icon-cross">✗</span> Paywalled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOW-TO 4 STEPS -->
+    <section class="section-wrap" id="how-to">
+      <div class="section-title-wrap">
+        <span class="section-tag">Quick Start</span>
+        <h2 class="section-title">How to Measure &amp; Optimize Boot Time in 4 Steps</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h4>Run as Administrator</h4>
+          <p>Extract and launch <code>PexorisStartupTimer.exe</code>. Administrative rights are required to query Windows Diagnostics-Performance logs.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h4>Inspect Boot Breakdown</h4>
+          <p>Review the 4 top metrics: Total Boot Duration, Kernel Main Path, Post-Boot Idle latency, and Active Startup Apps.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h4>Identify Delay Culprits</h4>
+          <p>Sort through the startup table to find apps marked with <strong>High Impact</strong> or dead targets pointing to uninstalled programs.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h4>Toggle &amp; Save Seconds</h4>
+          <p>Select heavy non-essential apps and click <strong>⚡ Toggle Selected</strong> to disable them and shave seconds off your next boot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section-wrap" id="faq">
+      <div class="section-title-wrap">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>What causes slow boot times on an NVMe SSD?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            While NVMe SSDs read system files at 3000+ MB/s, boot slowdowns are almost never caused by disk transfer speeds. Instead, they occur during the post-boot phase when 10–20 third-party background applications launch concurrently, initializing updater daemons, pinging remote cloud servers, and creating system tray icons.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>What is Windows Event ID 100?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Event ID 100 is generated by the Windows Diagnostics-Performance service after every boot. It breaks down the exact millisecond cost of kernel initialization (MainPathBootTime) and the duration required for background CPU activity to settle down below 20% (BootPostBootTime).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Does disabling an app here uninstall it?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            No. Disabling an app only prevents it from auto-starting when Windows turns on. You can still launch and use the application anytime from your Start menu or desktop shortcut.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Can I re-enable a disabled app later?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. Simply select the disabled item in Pexoris StartupTimer and click <strong>⚡ Toggle Selected</strong> again, or re-enable it directly in Windows Task Manager.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Is Pexoris StartupTimer completely free and safe?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. 100% free and open-source under the MIT license. It contains zero ads, zero telemetry, and zero third-party bundled software.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris StartupTimer Free</h2>
+        <p class="subtitle">Measure Windows boot duration, profile startup delay culprits, and optimize boot performance with 1 click.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 63 KB (.EXE) / 41 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

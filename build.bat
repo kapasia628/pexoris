@@ -681,8 +681,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [64/64] Packaging Pexoris ShortcutDoctor Portable ZIP...
+echo [64/66] Packaging Pexoris ShortcutDoctor Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisShortcutDoctor.exe' -DestinationPath 'build\PexorisShortcutDoctor-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisStartupTimer.exe 2>nul
+
+echo [65/66] Compiling Tool 33: Pexoris StartupTimer...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisStartupTimer\App.manifest ^
+    /win32icon:src\PexorisStartupTimer\Assets\app.ico ^
+    /out:build\PexorisStartupTimer.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Xml.dll,System.Core.dll ^
+    src\PexorisStartupTimer\Program.cs ^
+    src\PexorisStartupTimer\Theme.cs ^
+    src\PexorisStartupTimer\StartupEngine.cs ^
+    src\PexorisStartupTimer\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris StartupTimer!
+    exit /b %ERRORLEVEL%
+)
+
+echo [66/66] Packaging Pexoris StartupTimer Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisStartupTimer.exe' -DestinationPath 'build\PexorisStartupTimer-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -717,6 +738,7 @@ copy /y "build\PexorisAudioFixer-v1.0-Portable.zip" "final softwere for g drive 
 copy /y "build\PexorisSafeModeLauncher-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisSafeModeLauncher.zip" >nul
 copy /y "build\PexorisFirewallBlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFirewallBlocker.zip" >nul
 copy /y "build\PexorisShortcutDoctor-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisShortcutDoctor.zip" >nul
+copy /y "build\PexorisStartupTimer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisStartupTimer.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -749,10 +771,11 @@ copy /y "build\PexorisAudioFixer.exe" "final softwere for g drive uplod\PexorisA
 copy /y "build\PexorisSafeModeLauncher.exe" "final softwere for g drive uplod\PexorisSafeModeLauncher.exe" >nul
 copy /y "build\PexorisFirewallBlocker.exe" "final softwere for g drive uplod\PexorisFirewallBlocker.exe" >nul
 copy /y "build\PexorisShortcutDoctor.exe" "final softwere for g drive uplod\PexorisShortcutDoctor.exe" >nul
+copy /y "build\PexorisStartupTimer.exe" "final softwere for g drive uplod\PexorisStartupTimer.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 32 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 33 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -785,6 +808,7 @@ echo  Tool 29: build\PexorisAudioFixer.exe          (59 KB)
 echo  Tool 30: build\PexorisSafeModeLauncher.exe    (66 KB)
 echo  Tool 31: build\PexorisFirewallBlocker.exe     (82 KB)
 echo  Tool 32: build\PexorisShortcutDoctor.exe     (64 KB)
+echo  Tool 33: build\PexorisStartupTimer.exe        (63 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
