@@ -264,6 +264,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Shortcut & LNK Target Repair Utility: Pexoris ShortcutDoctor -->
+  <url>
+    <loc>https://pexoris.com/tools/shortcut-doctor/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -539,6 +547,14 @@
   <!-- Windows Firewall App Blocker Troubleshooting Guide: How to Block a Program in Windows Firewall via CMD -->
   <url>
     <loc>https://pexoris.com/blog/how-to-block-program-windows-firewall-cmd/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows 11 Broken Shortcuts & Blank Icons Troubleshooting Guide: How to Fix Broken Desktop Shortcuts & Blank Icons -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-fix-broken-shortcuts-blank-icons-windows-11/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

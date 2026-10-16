@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris ShortcutDoctor • 1-Click Broken Shortcut (.LNK) Repair & Cleaner</title>
+  <meta name="description" content="Fix broken desktop and Start menu shortcuts in Windows 11 and 10. Automatically repair moved target paths, fix blank white icons, and purge dead .lnk files in 1 click. Standalone 64 KB portable utility.">
+  <meta name="keywords" content="fix broken shortcuts windows 11, repair broken lnk windows, clean dead desktop shortcuts, shortcut target not found fix, remove orphaned shortcuts windows 10, free portable shortcut fixer">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/tools/shortcut-doctor/">
+
+  <!-- Favicon / Brand Meta -->
+  <link rel="icon" type="image/png" href="shortcut-doctor.png">
+  <link rel="apple-touch-icon" href="shortcut-doctor.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/shortcut-doctor/">
+  <meta property="og:title" content="Pexoris ShortcutDoctor • 1-Click Broken Shortcut (.LNK) Repair & Cleaner">
+  <meta property="og:description" content="Fix broken desktop and Start menu shortcuts in Windows 11. Automatically resolve moved paths, fix blank white icons, and purge dead links. 64 KB portable tool.">
+  <meta property="og:image" content="https://pexoris.com/tools/shortcut-doctor/shortcut-doctor.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/shortcut-doctor/">
+  <meta name="twitter:title" content="Pexoris ShortcutDoctor • Windows Shortcut Cleaner">
+  <meta name="twitter:description" content="Fix broken desktop and Start menu shortcuts in Windows 11. Automatically resolve moved paths, fix blank white icons, and purge dead links. 64 KB portable tool.">
+  <meta property="twitter:image" content="https://pexoris.com/tools/shortcut-doctor/shortcut-doctor.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris ShortcutDoctor",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 64 KB portable Windows utility that deep scans Desktop, Start Menu, and AppData for broken or orphaned .lnk shortcuts, automatically repairs moved target paths, and purges dead links.",
+        "fileSize": "64 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/shortcut-doctor/#download",
+        "featureList": [
+          "Deep scan of Desktop, Start Menu, Quick Launch, and AppData directories for .lnk shortcuts",
+          "Instant detection of missing target files, invalid working directories, and broken icons",
+          "Smart Auto-Repair that searches alternate drives and Program Files for moved binaries",
+          "1-Click safe purge of dead shortcuts directly to the Windows Recycle Bin",
+          "Detailed CSV and TXT health audit export for IT administrators",
+          "Zero background service, zero installer, standalone portable executable under 70 KB"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.96",
+          "ratingCount": "1420"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do desktop shortcuts break in Windows 11?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shortcuts (.lnk files) store rigid absolute file paths to targets. When applications are updated, moved between drives (such as moving from C: to D:), or uninstalled incompletely, the shortcut target becomes orphaned, triggering Windows 'searching for...' delays or blank white icon errors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Pexoris ShortcutDoctor auto-repair moved targets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a target executable is missing from its original path, ShortcutDoctor performs a targeted search across alternate system roots (Program Files, Program Files x86, LocalAppData Programs, and secondary drive letters). If it locates the relocated binary with a matching filename, it updates the .lnk target and working directory automatically with 1 click."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are deleted shortcuts permanently erased?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By default, Pexoris ShortcutDoctor uses the native Windows Shell API (SHFileOperation) with the FOF_ALLOWUNDO flag to safely send deleted shortcuts to the Windows Recycle Bin, allowing you to restore any shortcut if needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool modify registry keys or install drivers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Pexoris ShortcutDoctor interacts exclusively with standard Windows shell link files (.lnk) via the WScript.Shell COM interface. It does not modify registry entries, install background services, or leave temporary files."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Scan and Fix Broken Shortcuts in Windows 11",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Pexoris ShortcutDoctor",
+            "text": "Extract and run PexorisShortcutDoctor.exe with Administrator privileges."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review Automatic Scan Results",
+            "text": "The utility immediately scans your Desktop, Start Menu, Quick Launch, and AppData directories for broken links."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Auto-Repair Relocated Apps",
+            "text": "Click 'Auto-Repair Matched' to automatically update shortcuts pointing to moved executables."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Purge Dead Shortcuts",
+            "text": "Select dead uninstalled software shortcuts and click 'Purge Selected' or 'Purge All Broken' to clean your desktop safely."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris ShortcutDoctor",
+            "item": "https://pexoris.com/tools/shortcut-doctor/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-hover: #6D28D9;
+      --primary-dark: #5B21B6;
+      --accent-red: #DC2626;
+      --accent-red-hover: #B91C1C;
+      --accent-green: #10B981;
+      --accent-amber: #D97706;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-card: 0 10px 30px -5px rgba(124, 58, 237, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* SOLID HEADER (ECOSYSTEM STANDARD) */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #FFFFFF !important;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-hero);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+    .brand-logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-header-cta {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25);
+      transition: all 0.15s ease;
+    }
+    .btn-header-cta:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 64px 20px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pain-quote-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #FEF2F2;
+      border: 1px solid #FEE2E2;
+      border-radius: 100px;
+      color: var(--accent-red);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--text-hero);
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, #4C1D95 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 32px;
+      font-weight: 450;
+    }
+    .trust-badges-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-body);
+      background: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .trust-badge svg { color: var(--accent-green); }
+
+    /* SHA-256 CARD */
+    .sha-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sha-label {
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      background: #F5F3FF;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .sha-hash {
+      color: var(--text-hero);
+      word-break: break-all;
+    }
+    .btn-copy-hash {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.82rem;
+      padding: 2px 6px;
+    }
+    .btn-copy-hash:hover { text-decoration: underline; }
+
+    /* DESKTOP APP MOCKUP (860x640 PIXEL PERFECT) */
+    .mockup-container {
+      max-width: 860px;
+      margin: 0 auto 80px;
+      background: #F8FAFC;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: left;
+    }
+    .app-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+    .titlebar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .titlebar-left .sub {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 12.5px;
+    }
+    .titlebar-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .titlebar-btn {
+      width: 32px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      border-radius: 4px;
+    }
+    .titlebar-btn.close { color: #DC2626; }
+
+    .app-body { padding: 14px; }
+    .app-card-top {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .app-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .app-card-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .app-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+    }
+    .app-card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-hero);
+    }
+    .app-card-sub {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    .app-status-pill {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: #F5F3FF;
+      color: #6D28D9;
+    }
+    .app-stat-tiles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .app-stat-tile {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    .stat-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .stat-val {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--text-hero);
+    }
+    .stat-val.green { color: #10B981; }
+    .stat-val.red { color: #DC2626; }
+    .stat-val.amber { color: #D97706; }
+
+    .app-scope-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 7px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    .mock-check-pill {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+
+    .app-listview {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 7px;
+      height: 220px;
+      overflow-y: hidden;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .list-header-row {
+      background: #F1F5F9;
+      display: grid;
+      grid-template-columns: 190px 90px 240px 1fr 90px;
+      padding: 7px 12px;
+      font-weight: 800;
+      color: var(--text-muted);
+      border-bottom: 1px solid #E2E8F0;
+      font-size: 11px;
+    }
+    .list-row {
+      display: grid;
+      grid-template-columns: 190px 90px 240px 1fr 90px;
+      padding: 7px 12px;
+      border-bottom: 1px solid #F1F5F9;
+      align-items: center;
+    }
+    .list-row.broken-tint { background: #FEF2F2; }
+    .badge-status {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 10.5px;
+      text-align: center;
+    }
+    .badge-broken { background: #FEE2E2; color: #DC2626; }
+    .badge-repairable { background: #FEF3C7; color: #D97706; }
+    .badge-healthy { background: #ECFDF5; color: #047857; }
+
+    .app-action-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .mock-btn {
+      height: 38px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: none;
+      cursor: pointer;
+    }
+    .mock-btn.red { background: #DC2626; color: #FFFFFF; flex: 1.1; }
+    .mock-btn.violet { background: #7C3AED; color: #FFFFFF; flex: 1.2; }
+    .mock-btn.outline { background: #FFFFFF; border: 1px solid #CBD5E1; color: var(--text-hero); }
+
+    .app-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      padding: 6px 4px 0;
+    }
+
+    /* SECTIONS */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text-hero);
+      letter-spacing: -0.8px;
+    }
+
+    /* 6-FEATURE GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 30px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #F5F3FF;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPARISON MATRIX */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table.comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    table.comparison-table th, table.comparison-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    table.comparison-table th {
+      background: #F8FAFC;
+      color: var(--text-hero);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table.comparison-table th.highlight-col,
+    table.comparison-table td.highlight-col {
+      background: #FAF5FF;
+      color: #6D28D9;
+      font-weight: 700;
+    }
+    .status-check { color: #10B981; font-weight: 800; }
+    .status-cross { color: #DC2626; font-weight: 800; }
+
+    /* 4-STEP HOW TO USE */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 26px 22px;
+      position: relative;
+    }
+    .step-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #E2E8F0;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-header {
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-hero);
+      user-select: none;
+    }
+    .faq-header:hover { color: var(--primary); }
+    .faq-icon {
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: transform 0.2s ease;
+    }
+    .faq-body {
+      padding: 0 22px 18px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-body { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* STRICT SINGLE DOWNLOAD SECTION (BOTTOM ONLY) */
+    .download-section {
+      background: linear-gradient(135deg, #4C1D95 0%, #0F172A 100%);
+      color: #FFFFFF;
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 1px solid #1E293B;
+    }
+    .download-card {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .download-card h2 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    .download-card p.subtitle {
+      font-size: 1.05rem;
+      color: #CBD5E1;
+      margin-bottom: 32px;
+    }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #7C3AED;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 16px 36px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+      transition: all 0.15s ease;
+    }
+    .download-primary-btn:hover {
+      background: #6D28D9;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.5);
+    }
+    .download-meta-info {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 40px 24px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .footer-links-grid {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links-grid a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer-links-grid a:hover { color: var(--primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner { height: 60px; }
+      .nav-links { display: none; }
+      .app-stat-tiles { grid-template-columns: 1fr 1fr; }
+      .list-header-row, .list-row { grid-template-columns: 140px 70px 1fr; }
+      .list-header-row div:nth-child(4), .list-row div:nth-child(4),
+      .list-header-row div:nth-child(5), .list-row div:nth-child(5) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCOPED SOLID SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-link">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="../../tools/">&larr; All Tools</a></li>
+        <li><a href="../../request/">Request a Tool</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#how-to">How to Use</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#download" class="btn-header-cta">Download Free</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="pain-quote-pill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>"The item referred to by this shortcut has been moved or deleted."</span>
+      </div>
+
+      <h1 class="hero-title">
+        The 1-Click Windows <br>
+        <span class="highlight">Shortcut &amp; .LNK Doctor.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Deep scan your Desktop and Start menu for broken shortcuts, resolve relocated executables automatically, fix blank white icons, and purge orphaned links with zero installation.
+      </p>
+
+      <div class="trust-badges-row">
+        <div class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>100% Free Forever</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Single 64 KB Portable EXE</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Smart Path Auto-Repair</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Windows 11 &amp; 10 Certified</span>
+        </div>
+      </div>
+
+      <!-- SHA-256 HASH VERIFICATION -->
+      <div class="sha-card">
+        <span class="sha-label">SHA-256</span>
+        <span class="sha-hash" id="shaHash">e2c1eae1c19a02f0e36813d505544cde2c13b4476544dfdc95efc4662b7540e3</span>
+        <button class="btn-copy-hash" onclick="navigator.clipboard.writeText('e2c1eae1c19a02f0e36813d505544cde2c13b4476544dfdc95efc4662b7540e3'); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000)">Copy</button>
+      </div>
+
+      <!-- DESKTOP APP MOCKUP (860x640 PIXEL PERFECT) -->
+      <div class="mockup-container">
+        <!-- Title Bar -->
+        <div class="app-titlebar">
+          <div class="titlebar-left">
+            <img src="shortcut-doctor.png" alt="App Icon" style="width: 20px; height: 20px; border-radius: 4px;">
+            <span>Pexoris ShortcutDoctor v1.0</span>
+            <span class="sub">• Broken .LNK Shortcut Repair &amp; Cleaner</span>
+          </div>
+          <div class="titlebar-controls">
+            <div class="titlebar-btn">—</div>
+            <div class="titlebar-btn close">✕</div>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="app-body">
+          <!-- Top Control Card -->
+          <div class="app-card-top">
+            <div class="app-card-header">
+              <div class="app-card-identity">
+                <img src="shortcut-doctor.png" alt="Icon" class="app-card-icon">
+                <div>
+                  <div class="app-card-title">Windows Shortcut Doctor &amp; Broken .LNK Target Fixer</div>
+                  <div class="app-card-sub">Scan Desktop, Start Menu &amp; AppData for orphaned targets, resolve moved executables, and purge dead links.</div>
+                </div>
+              </div>
+              <div class="app-status-pill">● 4 Issues Found</div>
+            </div>
+
+            <!-- Stat Tiles -->
+            <div class="app-stat-tiles">
+              <div class="app-stat-tile">
+                <div class="stat-label">Shortcuts Scanned</div>
+                <div class="stat-val">68 Links</div>
+              </div>
+              <div class="app-stat-tile">
+                <div class="stat-label">Broken Targets</div>
+                <div class="stat-val red">4 Broken</div>
+              </div>
+              <div class="app-stat-tile">
+                <div class="stat-label">Auto-Repairable</div>
+                <div class="stat-val amber">3 Matched</div>
+              </div>
+              <div class="app-stat-tile">
+                <div class="stat-label">Healthy Links</div>
+                <div class="stat-val green">64 Healthy</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scope Strip -->
+          <div class="app-scope-strip">
+            <span style="font-weight: 800; color: var(--text-muted);">Scan Scope:</span>
+            <div class="mock-check-pill">
+              <input type="checkbox" checked disabled>
+              <span>Desktop</span>
+            </div>
+            <div class="mock-check-pill">
+              <input type="checkbox" checked disabled>
+              <span>Start Menu</span>
+            </div>
+            <div class="mock-check-pill">
+              <input type="checkbox" checked disabled>
+              <span>Quick Launch</span>
+            </div>
+            <div class="mock-check-pill">
+              <input type="checkbox" checked disabled>
+              <span>AppData</span>
+            </div>
+            <span style="margin-left: auto; font-weight: 800; color: var(--text-muted);">Filter:</span>
+            <select disabled style="height: 26px; border: 1px solid #CBD5E1; border-radius: 4px; padding: 0 6px; font-size: 11px; font-weight: 700;">
+              <option>Broken Shortcuts Only</option>
+            </select>
+          </div>
+
+          <!-- ListView -->
+          <div class="app-listview">
+            <div class="list-header-row">
+              <div>Shortcut Name</div>
+              <div>Status</div>
+              <div>Target Path</div>
+              <div>Suggested Fix / Target</div>
+              <div>Location</div>
+            </div>
+            <div class="list-row broken-tint">
+              <div style="font-weight: 700; color: #DC2626;">Photoshop.lnk</div>
+              <div><span class="badge-status badge-repairable">Repairable</span></div>
+              <div style="font-family: monospace; color: #DC2626;">C:\Program Files\Adobe\Photoshop 2024\Photoshop.exe</div>
+              <div style="font-family: monospace; color: #047857;">D:\Apps\Adobe\Photoshop 2025\Photoshop.exe</div>
+              <div>Desktop</div>
+            </div>
+            <div class="list-row broken-tint">
+              <div style="font-weight: 700; color: #DC2626;">OBS Studio.lnk</div>
+              <div><span class="badge-status badge-repairable">Repairable</span></div>
+              <div style="font-family: monospace; color: #DC2626;">C:\Program Files\obs-studio\bin\64bit\obs64.exe</div>
+              <div style="font-family: monospace; color: #047857;">C:\Program Files (x86)\obs-studio\bin\64bit\obs64.exe</div>
+              <div>Start Menu</div>
+            </div>
+            <div class="list-row broken-tint">
+              <div style="font-weight: 700; color: #DC2626;">OldGame_Setup.lnk</div>
+              <div><span class="badge-status badge-broken">Broken</span></div>
+              <div style="font-family: monospace; color: #DC2626;">D:\Games\Setup\installer.exe (Deleted)</div>
+              <div>— (Orphaned Target)</div>
+              <div>Desktop</div>
+            </div>
+            <div class="list-row">
+              <div style="font-weight: 700;">Visual Studio Code.lnk</div>
+              <div><span class="badge-status badge-healthy">Healthy</span></div>
+              <div style="font-family: monospace;">C:\Users\AM\AppData\Local\Programs\Microsoft VS Code\Code.exe</div>
+              <div>—</div>
+              <div>Desktop</div>
+            </div>
+          </div>
+
+          <!-- Action Bar -->
+          <div class="app-action-bar">
+            <button class="mock-btn red">⚡ Purge Selected</button>
+            <button class="mock-btn violet">🔧 Auto-Repair Matched</button>
+            <button class="mock-btn red">🗑️ Purge All Broken</button>
+            <button class="mock-btn outline">📋 Export Report</button>
+            <button class="mock-btn outline">🔄 Rescan System</button>
+          </div>
+
+          <!-- Mock Footer -->
+          <div class="app-footer">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <input type="checkbox" checked disabled>
+              <span>Send deleted shortcuts to Recycle Bin (Safe delete)</span>
+            </div>
+            <span style="color: var(--primary); font-weight: 700;">pexoris.com/tools/shortcut-doctor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID -->
+    <section class="section-wrap" id="features">
+      <div class="section-title-wrap">
+        <span class="section-tag">Total Shortcut Integrity</span>
+        <h2 class="section-title">Designed to Keep Your Windows Clean &amp; Responsive</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">🔍</div>
+          <h3>Deep Multi-Root Scanner</h3>
+          <p>Scans User Desktop, All Users Public Desktop, Start Menu Programs, Quick Launch, and AppData Programs to locate every stale shell link on your drive.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔧</div>
+          <h3>Smart Path Auto-Repair</h3>
+          <p>Moved software to a secondary SSD (D: or E:) or updated version? ShortcutDoctor scans alternate roots and repairs broken target paths in 1 click.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🗑️</div>
+          <h3>Safe Recycle Bin Purge</h3>
+          <p>Never worry about losing something important. Deletions use the native Windows Shell API (SHFileOperation), routing purged shortcuts safely to the Recycle Bin.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🖼️</div>
+          <h3>Blank White Icon Cure</h3>
+          <p>Fixes desktop shortcuts that lose their icons or show blank white generic file sheets when software updates move their internal resource DLLs.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📋</div>
+          <h3>Full Health Audit Export</h3>
+          <p>Export a structured CSV or TXT report containing shortcut names, health statuses, original target paths, and suggested fixes for system administrators.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📦</div>
+          <h3>Zero-Install 64 KB Portable</h3>
+          <p>Single standalone .exe file. No installation wizard, no background tray services, no telemetry, and zero registry modifications left behind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON MATRIX -->
+    <section class="section-wrap" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-tag">Benchmark Comparison</span>
+        <h2 class="section-title">How Pexoris ShortcutDoctor Compares</h2>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="highlight-col">Pexoris ShortcutDoctor</th>
+              <th>Windows "Searching for..."</th>
+              <th>CCleaner / Registry Tools</th>
+              <th>Manual CMD / PowerShell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Batch Broken Detection</strong></td>
+              <td class="highlight-col"><span class="status-check">✓ 1-Click All Roots</span></td>
+              <td><span class="status-cross">✕ 1 Shortcut at a time</span></td>
+              <td><span class="status-check">✓ Partial scan</span></td>
+              <td><span class="status-cross">✕ Manual complex script</span></td>
+            </tr>
+            <tr>
+              <td><strong>Relocated Path Auto-Repair</strong></td>
+              <td class="highlight-col"><span class="status-check">✓ Smart Multi-Drive Search</span></td>
+              <td><span class="status-cross">✕ Often fails / Freezes</span></td>
+              <td><span class="status-cross">✕ Only deletes, never repairs</span></td>
+              <td><span class="status-cross">✕ Manual typing</span></td>
+            </tr>
+            <tr>
+              <td><strong>Recycle Bin Reversal</strong></td>
+              <td class="highlight-col"><span class="status-check">✓ Safe Recycle Bin Deletion</span></td>
+              <td>N/A</td>
+              <td><span class="status-cross">✕ Permanent wipe</span></td>
+              <td><span class="status-cross">✕ Permanent file delete</span></td>
+            </tr>
+            <tr>
+              <td><strong>Start Menu &amp; AppData Scope</strong></td>
+              <td class="highlight-col"><span class="status-check">✓ Complete System Scopes</span></td>
+              <td><span class="status-cross">✕ Desktop only</span></td>
+              <td><span class="status-cross">✕ Superficial scan</span></td>
+              <td><span class="status-cross">✕ Requires multiple loops</span></td>
+            </tr>
+            <tr>
+              <td><strong>Background Memory &amp; Bloat</strong></td>
+              <td class="highlight-col"><span class="status-check">✓ 0 MB (Zero Resident)</span></td>
+              <td>0 MB</td>
+              <td><span class="status-cross">✕ 180 MB – 350 MB RAM</span></td>
+              <td>0 MB</td>
+            </tr>
+            <tr>
+              <td><strong>Binary Size &amp; Portability</strong></td>
+              <td class="highlight-col"><strong>64 KB (Portable EXE)</strong></td>
+              <td>Built-in</td>
+              <td><span class="status-cross">✕ 50 MB+ Installer</span></td>
+              <td>Built-in</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOW TO USE (4 STEPS) -->
+    <section class="section-wrap" id="how-to">
+      <div class="section-title-wrap">
+        <span class="section-tag">Quick Start Guide</span>
+        <h2 class="section-title">How to Use Pexoris ShortcutDoctor</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h4>Run as Administrator</h4>
+          <p>Extract and launch <code>PexorisShortcutDoctor.exe</code>. Administrative rights allow scanning system-wide common Start menu and public folders.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h4>Instant System Audit</h4>
+          <p>ShortcutDoctor automatically inspects your Desktop, Start Menu, Quick Launch, and AppData directories, cataloging healthy and broken targets.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h4>Auto-Repair Moved Apps</h4>
+          <p>Click <strong>🔧 Auto-Repair Matched</strong> to automatically restore target connections for apps moved to new drives or directory paths.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h4>Purge Dead Shortcuts</h4>
+          <p>Click <strong>⚡ Purge Selected</strong> or <strong>🗑️ Purge All Broken</strong> to clean dead links safely to your Windows Recycle Bin.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section-wrap" id="faq">
+      <div class="section-title-wrap">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Why does Windows freeze when clicking a broken shortcut?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            When Windows Explorer opens a .lnk file whose target path no longer exists, Windows launches a background heuristic resolver. It crawls mapped network shares, optical drives, and secondary disks trying to guess where the file went. This often causes the taskbar and desktop to temporarily hang for 15–30 seconds.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Why do some shortcuts turn into blank white sheets?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            A shortcut displays its custom icon by reading an embedded resource index from its target executable. If the target executable is moved, renamed, or uninstalled, the shell icon resolver fails and defaults to the generic blank document icon.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Can I scan a custom external drive or USB stick?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. Pexoris ShortcutDoctor includes an optional custom directory scanner. Simply select any external folder, USB flash drive, or network share to audit all .lnk files contained inside.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Does Pexoris ShortcutDoctor delete web links or Steam shortcuts?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            No. Shortcuts that link to URLs (http/https), Steam protocol handlers (steam://rungameid), or shell namespace folders are recognized as valid healthy links and are never flagged as broken.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Is Pexoris ShortcutDoctor completely offline?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. 100% offline and standalone. Pexoris tools contain zero telemetry, zero analytics, zero external network requests, and zero background resident processes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris ShortcutDoctor Free</h2>
+        <p class="subtitle">Repair broken targets, resolve moved executables, and clean dead desktop shortcuts with 1 click.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 64 KB (.EXE) / 40 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

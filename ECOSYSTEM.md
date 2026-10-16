@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 31 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 32 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -40,6 +40,7 @@
 | **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | [Download](https://drive.google.com/uc?export=download&id=1SzmgNT9AsTG-sFO2Pe0d_TRZXqlYmpUt) | `http://localhost/tools/website/tools/audio-fixer/` |
 | **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | [Download](https://drive.google.com/uc?export=download&id=1WyIkZkgbuZ5X9vPpL9Qr8uFIQohxdZaG) | `http://localhost/tools/website/tools/safemode-launcher/` |
 | **31** | **Pexoris FirewallBlocker** | `firewall-blocker` | 82 KB | 52 KB | `da7b6ee255e51ee89c3cb1181268d26f4e786c112fa686fd39f5c6e24b6b7b89` | [Download](https://drive.google.com/uc?export=download&id=1pGdZlMqTtUpAlKIurkNgUJyefd_RoQ-N) | `http://localhost/tools/website/tools/firewall-blocker/` |
+| **32** | **Pexoris ShortcutDoctor** | `shortcut-doctor` | 63 KB | 40 KB | `e2c1eae1c19a02f0e36813d505544cde2c13b4476544dfdc95efc4662b7540e3` | *Pending Upload* | `http://localhost/tools/website/tools/shortcut-doctor/` |
 
 ---
 
@@ -126,4 +127,5 @@ Running `build.bat` in the project root:
 - [x] **#29 Pexoris AudioFixer** (Restart Windows Audio, rebuild endpoint graph & fix stuttering)
 - [x] **#30 Pexoris SafeModeLauncher** (Reboot directly to Safe Mode, bypass recovery loops & restore BCD)
 - [x] **#31 Pexoris FirewallBlocker** (1-Click outbound/inbound Windows Defender Firewall rule toggle & telemetry block)
-- [ ] **#32 Pexoris ShortcutDoctor** (Scan, repair & clean broken desktop shortcuts, missing targets & blank icons)
+- [x] **#32 Pexoris ShortcutDoctor** (Scan, repair & clean broken desktop shortcuts, missing targets & blank icons)
+- [ ] **#33 Pexoris StartupTimer** (Measure BIOS boot time, profile slow startup apps & delay non-critical services)

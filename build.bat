@@ -660,8 +660,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [62/62] Packaging Pexoris FirewallBlocker Portable ZIP...
+echo [62/64] Packaging Pexoris FirewallBlocker Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisFirewallBlocker.exe' -DestinationPath 'build\PexorisFirewallBlocker-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisShortcutDoctor.exe 2>nul
+
+echo [63/64] Compiling Tool 32: Pexoris ShortcutDoctor...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisShortcutDoctor\App.manifest ^
+    /win32icon:src\PexorisShortcutDoctor\Assets\app.ico ^
+    /out:build\PexorisShortcutDoctor.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,Microsoft.CSharp.dll,System.Core.dll ^
+    src\PexorisShortcutDoctor\Program.cs ^
+    src\PexorisShortcutDoctor\Theme.cs ^
+    src\PexorisShortcutDoctor\ShortcutEngine.cs ^
+    src\PexorisShortcutDoctor\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris ShortcutDoctor!
+    exit /b %ERRORLEVEL%
+)
+
+echo [64/64] Packaging Pexoris ShortcutDoctor Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisShortcutDoctor.exe' -DestinationPath 'build\PexorisShortcutDoctor-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -695,6 +716,7 @@ copy /y "build\PexorisBluetoothFixer-v1.0-Portable.zip" "final softwere for g dr
 copy /y "build\PexorisAudioFixer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisAudioFixer.zip" >nul
 copy /y "build\PexorisSafeModeLauncher-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisSafeModeLauncher.zip" >nul
 copy /y "build\PexorisFirewallBlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFirewallBlocker.zip" >nul
+copy /y "build\PexorisShortcutDoctor-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisShortcutDoctor.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -726,10 +748,11 @@ copy /y "build\PexorisBluetoothFixer.exe" "final softwere for g drive uplod\Pexo
 copy /y "build\PexorisAudioFixer.exe" "final softwere for g drive uplod\PexorisAudioFixer.exe" >nul
 copy /y "build\PexorisSafeModeLauncher.exe" "final softwere for g drive uplod\PexorisSafeModeLauncher.exe" >nul
 copy /y "build\PexorisFirewallBlocker.exe" "final softwere for g drive uplod\PexorisFirewallBlocker.exe" >nul
+copy /y "build\PexorisShortcutDoctor.exe" "final softwere for g drive uplod\PexorisShortcutDoctor.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 31 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 32 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -761,6 +784,7 @@ echo  Tool 28: build\PexorisBluetoothFixer.exe      (60 KB)
 echo  Tool 29: build\PexorisAudioFixer.exe          (59 KB)
 echo  Tool 30: build\PexorisSafeModeLauncher.exe    (66 KB)
 echo  Tool 31: build\PexorisFirewallBlocker.exe     (82 KB)
+echo  Tool 32: build\PexorisShortcutDoctor.exe     (64 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
