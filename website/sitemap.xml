@@ -280,6 +280,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Disk Space Visualizer & Folder Analyzer: Pexoris DiskUsage -->
+  <url>
+    <loc>https://pexoris.com/tools/disk-usage/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -571,6 +579,14 @@
   <!-- Windows 11 Boot Time & Startup Delays Troubleshooting Guide: How to Measure Windows 11 Boot Time -->
   <url>
     <loc>https://pexoris.com/blog/how-to-measure-windows-boot-time-startup-delay/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows 11 Disk Space & Folder Size Troubleshooting Guide: How to Find What Is Taking Up Space -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-find-what-is-taking-up-space-windows-11/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
