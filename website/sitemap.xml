@@ -256,6 +256,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Windows Defender Firewall App Blocker Utility: Pexoris FirewallBlocker -->
+  <url>
+    <loc>https://pexoris.com/tools/firewall-blocker/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -524,6 +532,14 @@
   <url>
     <loc>https://pexoris.com/blog/how-to-boot-into-safe-mode-windows-11/</loc>
     <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows Firewall App Blocker Troubleshooting Guide: How to Block a Program in Windows Firewall via CMD -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-block-program-windows-firewall-cmd/</loc>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

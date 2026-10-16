@@ -34,7 +34,7 @@ All desktop tools and landing pages must adhere to the **Pexoris Ecosystem Stand
 
 Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:///c:/xampp/htdocs/tools/.agents/rules/pexoris-standard.md).
 
-## Official Live Tools Registry (30/100 Tools Completed)
+## Official Live Tools Registry (31/100 Tools Completed)
 | # | Tool Name | Slug | Binary Size | ZIP Size | SHA-256 Hash | Google Drive Download Link |
 |---|---|---|---|---|---|---|
 | **01** | **Pexoris FileUnlocker** | `file-unlocker` | 70 KB | 48 KB | `82df6a096cce9a71be84e0302b1f8cbb2c7bba4511516dd5ea5aa8612760f38b` | `https://drive.google.com/uc?export=download&id=1NHqChEV65pzdy_ZCo60NaK7uxU_wmkF-` |
@@ -67,6 +67,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **28** | **Pexoris BluetoothFixer** | `bluetooth-fixer` | 60 KB | 39 KB | `c1e352dff704d4e3ee34b67d34699266d65412e45384bcb6f72f19028bd33cb3` | `https://drive.google.com/uc?export=download&id=1swgiAfhupOc09OLQK3VU9JtvLmXJL7h5` |
 | **29** | **Pexoris AudioFixer** | `audio-fixer` | 59 KB | 39 KB | `4bd062a69de0a86298f81d194128311059535362a0e542e3034edc6c7f35d9a2` | `https://drive.google.com/uc?export=download&id=1SzmgNT9AsTG-sFO2Pe0d_TRZXqlYmpUt` |
 | **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | `https://drive.google.com/uc?export=download&id=1WyIkZkgbuZ5X9vPpL9Qr8uFIQohxdZaG` |
+| **31** | **Pexoris FirewallBlocker** | `firewall-blocker` | 82 KB | 52 KB | `da7b6ee255e51ee89c3cb1181268d26f4e786c112fa686fd39f5c6e24b6b7b89` | Pending Upload |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
