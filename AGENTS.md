@@ -69,7 +69,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **30** | **Pexoris SafeModeLauncher** | `safemode-launcher` | 66 KB | 47 KB | `f98a88848d1edbdb1d3ac85098bab1dd07ad5b9e19a9f28f4aac788db0dc9146` | `https://drive.google.com/uc?export=download&id=1WyIkZkgbuZ5X9vPpL9Qr8uFIQohxdZaG` |
 | **31** | **Pexoris FirewallBlocker** | `firewall-blocker` | 82 KB | 52 KB | `da7b6ee255e51ee89c3cb1181268d26f4e786c112fa686fd39f5c6e24b6b7b89` | `https://drive.google.com/uc?export=download&id=1pGdZlMqTtUpAlKIurkNgUJyefd_RoQ-N` |
 | **32** | **Pexoris ShortcutDoctor** | `shortcut-doctor` | 63 KB | 40 KB | `e2c1eae1c19a02f0e36813d505544cde2c13b4476544dfdc95efc4662b7540e3` | `https://drive.google.com/uc?export=download&id=1ZTtEVqRYkLSuaQPTkHsvl4Q6xDGu42Wz` |
-| **33** | **Pexoris StartupTimer** | `startup-timer` | 63 KB | 41 KB | `1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b` | *Pending Upload* |
+| **33** | **Pexoris StartupTimer** | `startup-timer` | 63 KB | 41 KB | `1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b` | `https://drive.google.com/uc?export=download&id=1PRdP2mb2bvfnT7eFD42N-fFl2x0mFCBZ` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
