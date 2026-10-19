@@ -42,7 +42,7 @@
 | **31** | **Pexoris FirewallBlocker** | `firewall-blocker` | 82 KB | 52 KB | `da7b6ee255e51ee89c3cb1181268d26f4e786c112fa686fd39f5c6e24b6b7b89` | [Download](https://drive.google.com/uc?export=download&id=1pGdZlMqTtUpAlKIurkNgUJyefd_RoQ-N) | `http://localhost/tools/website/tools/firewall-blocker/` |
 | **32** | **Pexoris ShortcutDoctor** | `shortcut-doctor` | 63 KB | 40 KB | `e2c1eae1c19a02f0e36813d505544cde2c13b4476544dfdc95efc4662b7540e3` | [Download](https://drive.google.com/uc?export=download&id=1ZTtEVqRYkLSuaQPTkHsvl4Q6xDGu42Wz) | `http://localhost/tools/website/tools/shortcut-doctor/` |
 | **33** | **Pexoris StartupTimer** | `startup-timer` | 63 KB | 41 KB | `1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b` | [Download](https://drive.google.com/uc?export=download&id=1PRdP2mb2bvfnT7eFD42N-fFl2x0mFCBZ) | `http://localhost/tools/website/tools/startup-timer/` |
-| **34** | **Pexoris DiskUsage** | `disk-usage` | 55 KB | 36 KB | `b743ea5b9cea41a2ae0e588e6349334c5bae0a22f35cf9ea88a31318821cb5fc` | *Pending Upload* | `http://localhost/tools/website/tools/disk-usage/` |
+| **34** | **Pexoris DiskUsage** | `disk-usage` | 55 KB | 36 KB | `b743ea5b9cea41a2ae0e588e6349334c5bae0a22f35cf9ea88a31318821cb5fc` | [Download](https://drive.google.com/uc?export=download&id=1CfrggaWiu05k-fjR97kTq2IGTGr7e5u2) | `http://localhost/tools/website/tools/disk-usage/` |
 
 ---
 
