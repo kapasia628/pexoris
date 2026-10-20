@@ -288,6 +288,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Real-Time Startup Modification Monitor: Pexoris StartupNotifier -->
+  <url>
+    <loc>https://pexoris.com/tools/startup-notifier/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Request a Tool Page -->
   <url>
     <loc>https://pexoris.com/request/</loc>
@@ -588,6 +596,14 @@
   <url>
     <loc>https://pexoris.com/blog/how-to-find-what-is-taking-up-space-windows-11/</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Windows 11 Unwanted Startup Programs Troubleshooting Guide: How to Detect & Stop Unwanted Startup Programs -->
+  <url>
+    <loc>https://pexoris.com/blog/how-to-detect-stop-unwanted-startup-programs-windows-11/</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

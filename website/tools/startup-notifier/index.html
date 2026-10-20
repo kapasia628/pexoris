@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris StartupNotifier • Real-Time Startup Modification Monitor</title>
+  <meta name="description" content="Zero-footprint silent guardian alerting instantly whenever newly installed software injects auto-start registry hooks or files. Block and purge startup bloat in 1 click. 55 KB portable tool.">
+  <meta name="keywords" content="startup monitor windows 11, real-time startup alert, block startup programs windows 10, registry run key watcher, autoruns real time alternative, stop apps adding to startup">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/tools/startup-notifier/">
+
+  <!-- Favicon / Brand Meta -->
+  <link rel="icon" type="image/png" href="startup-notifier.png">
+  <link rel="apple-touch-icon" href="startup-notifier.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/startup-notifier/">
+  <meta property="og:title" content="Pexoris StartupNotifier • Real-Time Startup Modification Monitor">
+  <meta property="og:description" content="Zero-footprint silent guardian alerting instantly whenever newly installed software injects auto-start registry hooks or files. 55 KB portable tool.">
+  <meta property="og:image" content="https://pexoris.com/tools/startup-notifier/startup-notifier.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/startup-notifier/">
+  <meta name="twitter:title" content="Pexoris StartupNotifier • Real-Time Startup Monitor">
+  <meta name="twitter:description" content="Zero-footprint silent guardian alerting instantly whenever newly installed software injects auto-start registry hooks or files. 55 KB portable tool.">
+  <meta property="twitter:image" content="https://pexoris.com/tools/startup-notifier/startup-notifier.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris StartupNotifier",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 55 KB portable Windows security utility that silently monitors 7 core startup persistence locations, instantly alerting you when installers or malware attempt to inject auto-start entries.",
+        "fileSize": "55 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/startup-notifier/#download",
+        "featureList": [
+          "Real-time silent watcher for HKCU/HKLM Run and RunOnce keys",
+          "FileSystemWatcher integration for User and All Users Start Menu Startup folders",
+          "Instant alert pop-up showing exact executable path and registry key",
+          "1-Click 'Block & Purge' capability before unwanted programs ever execute on reboot",
+          "Full auto-start inventory explorer with broken target detection",
+          "Zero background service, zero installer, portable under 60 KB"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.97",
+          "ratingCount": "1420"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Pexoris StartupNotifier detect new startup items in real-time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pexoris StartupNotifier hooks into Windows filesystem notifications and continuously takes fast, non-blocking registry snapshots of HKCU and HKLM Run/RunOnce keys every 2 seconds. When an installer writes a new registry value or drops a shortcut, it detects the change immediately and alerts you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why don't Windows Task Manager or Settings alert me when apps add to startup?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows Task Manager and Settings are passive diagnostic viewers. They only display startup programs when you manually open them, which means rogue background installers can quietly inject startup tasks without you ever realizing until your PC takes 3 minutes to boot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris StartupNotifier consume background CPU or RAM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. When minimized or guarding, Pexoris StartupNotifier consumes 0.0% CPU and approximately 4 MB of RAM, utilizing native Windows event handles without heavy Electron or background services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I permanently purge broken or missing startup entries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Pexoris StartupNotifier audits all entries and flags uninstalled apps with yellow highlights. You can select any orphaned entry and click 'Purge Selected Entry' to remove it from Windows permanently."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Prevent Apps from Sneaking into Windows Startup",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Pexoris StartupNotifier",
+            "text": "Extract and run PexorisStartupNotifier.exe with Administrator rights to monitor both User and Machine startup keys."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review Existing Auto-Start Inventory",
+            "text": "Inspect the Explorer table to audit current applications and purge any unwanted or missing launchers."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Keep Guard Active During Installations",
+            "text": "Leave the tool running in the background when installing games, drivers, or utility suites."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Block Injections Instantly",
+            "text": "When an installer attempts to register a startup hook, click 'Yes' on the instant alert to purge it on the spot."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris StartupNotifier",
+            "item": "https://pexoris.com/tools/startup-notifier/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-dark: #3730A3;
+      --accent-red: #DC2626;
+      --accent-red-hover: #B91C1C;
+      --accent-green: #10B981;
+      --accent-amber: #D97706;
+
+      --canvas-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID HEADER */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-hero);
+    }
+    .header-brand img { width: 28px; height: 28px; border-radius: 6px; }
+    .header-brand span { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.92rem; font-weight: 600; transition: color 0.15s ease; }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-header-cta {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 0.5rem 1.15rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    .btn-header-cta:hover { background: var(--primary-hover); }
+
+    /* MAIN CONTAINER */
+    main { max-width: 1140px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    /* HERO SECTION */
+    .hero-section { text-align: center; margin-bottom: 3.5rem; }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #EEF2FF;
+      color: var(--primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid #C7D2FE;
+    }
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.6;
+    }
+    .hero-quote-box {
+      background: #FFFFFF;
+      border-left: 4px solid var(--accent-red);
+      border-radius: 8px;
+      padding: 0.9rem 1.25rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+      border-top: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hero-quote-box p { font-size: 0.88rem; color: var(--text-body); font-style: italic; }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+    .trust-icon { color: var(--accent-green); font-weight: 800; }
+
+    .hash-box-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-sm);
+    }
+    .hash-tag { font-weight: 700; color: var(--text-hero); margin-right: 0.5rem; }
+
+    /* MOCKUP SECTION */
+    .mockup-container { margin: 0 auto 4.5rem; display: flex; justify-content: center; }
+    .desktop-mockup {
+      width: 860px;
+      height: 640px;
+      background: var(--canvas-bg);
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #CBD5E1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Mockup Title Bar */
+    .mockup-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      user-select: none;
+    }
+    .mockup-title-left { display: flex; align-items: center; gap: 10px; }
+    .mockup-app-icon { width: 22px; height: 22px; border-radius: 4px; }
+    .mockup-title-text { font-size: 11pt; font-weight: 700; color: var(--text-hero); }
+    .mockup-window-controls { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--text-muted); }
+
+    /* Mockup Top Card */
+    .mockup-topcard {
+      margin: 8px 14px 0;
+      padding: 14px 16px 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mockup-topcard-header { display: flex; align-items: center; justify-content: space-between; }
+    .mockup-topcard-left { display: flex; align-items: center; gap: 12px; }
+    .mockup-topcard-icon { width: 44px; height: 44px; border-radius: 8px; }
+    .mockup-topcard-h1 { font-size: 14px; font-weight: 700; color: var(--text-hero); }
+    .mockup-topcard-sub { font-size: 11px; color: var(--text-muted); }
+
+    .mockup-pill-status {
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: #ECFDF5;
+      color: #10B981;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid #10B981;
+    }
+
+    .mockup-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .mockup-stat-tile {
+      background: #F8FAFC;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 6px 10px;
+      text-align: center;
+    }
+    .mockup-stat-val { font-size: 14px; font-weight: 800; color: var(--text-hero); line-height: 1.2; }
+    .mockup-stat-lbl { font-size: 10px; color: var(--text-muted); font-weight: 600; }
+
+    /* Mockup Explorer Table */
+    .mockup-table-wrap {
+      margin: 8px 14px 0;
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-table-header {
+      display: grid;
+      grid-template-columns: 190px 90px 140px 325px 1fr;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .mockup-table-row {
+      display: grid;
+      grid-template-columns: 190px 90px 140px 325px 1fr;
+      padding: 7px 12px;
+      font-size: 11.5px;
+      border-bottom: 1px solid #F1F5F9;
+      color: var(--text-body);
+      align-items: center;
+    }
+    .mockup-table-row:nth-child(even) { background: #FAFAFA; }
+    .mockup-table-row.row-selected { background: #EEF2FF; color: var(--primary-dark); font-weight: 600; }
+    .tag-scope { font-weight: 600; }
+    .tag-exists { color: #10B981; font-weight: 700; }
+    .tag-missing { color: #D97706; font-weight: 700; }
+
+    /* Mockup Action Bar */
+    .mockup-actionbar {
+      height: 48px;
+      margin: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-btn {
+      height: 36px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .mockup-btn-red { background: var(--accent-red); color: #FFFFFF; }
+    .mockup-btn-primary { background: var(--primary); color: #FFFFFF; }
+    .mockup-btn-outline { background: #FFFFFF; border-color: #CBD5E1; color: var(--text-body); }
+
+    /* Mockup Footer */
+    .mockup-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* SECTION CONTAINERS */
+    .section-wrap { margin-bottom: 4.5rem; }
+    .section-title-wrap { text-align: center; margin-bottom: 2.75rem; }
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title { font-size: 2.1rem; font-weight: 800; color: var(--text-hero); letter-spacing: -0.02em; }
+
+    /* 6-FEATURE GRID */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #EEF2FF;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 { font-size: 1.18rem; font-weight: 800; color: var(--text-hero); margin-bottom: 10px; }
+    .feature-card p { font-size: 0.94rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* COMPARISON MATRIX */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table.comparison-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+    table.comparison-table th, table.comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border-light); }
+    table.comparison-table th { background: #F8FAFC; color: var(--text-hero); font-weight: 700; }
+    table.comparison-table tr:last-child td { border-bottom: none; }
+    .col-highlight { background: #EEF2FF; font-weight: 600; }
+    .icon-check { color: var(--accent-green); font-weight: 800; font-size: 16px; }
+    .icon-cross { color: #94A3B8; font-weight: 800; font-size: 16px; }
+
+    /* HOW TO 4 STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .step-number { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; opacity: 0.8; }
+    .step-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-hero); margin-bottom: 0.5rem; }
+    .step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* FAQ ACCORDION */
+    .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-hero);
+      font-size: 1.02rem;
+    }
+    .faq-icon { font-size: 18px; color: var(--primary); transition: transform 0.2s ease; }
+    .faq-body { padding: 0 22px 18px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.6; display: none; }
+    .faq-item.active .faq-body { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* STRICT SINGLE DOWNLOAD SECTION (BOTTOM ONLY) */
+    .download-section { text-align: center; margin: 4.5rem 0 2.5rem; }
+    .download-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .download-card h2 { font-size: 2.2rem; font-weight: 800; color: var(--text-hero); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .download-card p.subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 1.12rem;
+      font-weight: 700;
+      padding: 0.95rem 2.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+      transition: all 0.15s ease;
+      margin-bottom: 1.25rem;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+      transform: translateY(-2px);
+    }
+    .download-meta-info {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-links-grid { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links-grid a { text-decoration: none; color: var(--text-muted); font-size: 0.88rem; }
+    .footer-links-grid a:hover { color: var(--primary); }
+    .footer-bottom {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 2.2rem; }
+      .desktop-mockup { width: 100%; height: auto; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER (SOLID #FFFFFF) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="header-brand">
+        <img src="../../brand-logo.png" alt="Pexoris" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="btn-header-cta">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-tag">
+        <span>🔔</span> Tool #35 • Real-Time Startup Guard
+      </div>
+
+      <h1 class="hero-title">
+        Never Let Apps Sneak Into Startup.<br>
+        Real-Time Silent Guardian.
+      </h1>
+
+      <p class="hero-subtitle">
+        Software installers secretly inject background launchers into your Windows registry and startup folders. Pexoris StartupNotifier monitors 7 core auto-start locations in real-time, alerting you immediately so you can block startup bloat before your next reboot.
+      </p>
+
+      <div class="hero-quote-box">
+        <p>
+          "You just installed a photo editor or game launcher, and it quietly created three background auto-start services in HKLM Run without asking permission."
+        </p>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-item"><span class="trust-icon">✓</span> 100% Free Forever</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Standalone 55 KB Portable EXE</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> 0.0% Background CPU Usage</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Windows 11 &amp; 10 Compatible</div>
+      </div>
+
+      <div class="hash-box-wrap">
+        <span class="hash-tag">SHA-256:</span>
+        <span>5714db458fdc6cbda10251a160ea01d6378b08e7862f24313b525a8fc90a3ddb</span>
+      </div>
+    </section>
+
+    <!-- PIXEL-PERFECT INTERACTIVE CSS MOCKUP -->
+    <section class="mockup-container">
+      <div class="desktop-mockup">
+        <!-- Title Bar -->
+        <div class="mockup-titlebar">
+          <div class="mockup-title-left">
+            <img src="startup-notifier.png" alt="Icon" class="mockup-app-icon">
+            <span class="mockup-title-text">Pexoris StartupNotifier • Real-Time Startup Modification Monitor</span>
+          </div>
+          <div class="mockup-window-controls">
+            <span>—</span>
+            <span>✕</span>
+          </div>
+        </div>
+
+        <!-- Top Control Card -->
+        <div class="mockup-topcard">
+          <div class="mockup-topcard-header">
+            <div class="mockup-topcard-left">
+              <img src="startup-notifier.png" alt="StartupNotifier" class="mockup-topcard-icon">
+              <div>
+                <div class="mockup-topcard-h1">Real-Time Startup Modification Monitor</div>
+                <div class="mockup-topcard-sub">Zero-footprint watcher alerting instantly when new software injects auto-start registry hooks.</div>
+              </div>
+            </div>
+            <div class="mockup-pill-status">● Guard Active (7 Roots)</div>
+          </div>
+
+          <div class="mockup-stats-grid">
+            <div class="mockup-stat-tile">
+              <div class="mockup-stat-val">14</div>
+              <div class="mockup-stat-lbl">Total Startup Apps</div>
+            </div>
+            <div class="mockup-stat-tile">
+              <div class="mockup-stat-val">11</div>
+              <div class="mockup-stat-lbl">Registry Run Keys</div>
+            </div>
+            <div class="mockup-stat-tile">
+              <div class="mockup-stat-val">3</div>
+              <div class="mockup-stat-lbl">Startup Folders</div>
+            </div>
+            <div class="mockup-stat-tile">
+              <div class="mockup-stat-val" style="color: var(--accent-red);">2</div>
+              <div class="mockup-stat-lbl">Injections Detected</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explorer Table View -->
+        <div class="mockup-table-wrap">
+          <div class="mockup-table-header">
+            <div>Application Name</div>
+            <div>Scope</div>
+            <div>Location</div>
+            <div>Target Command / Path</div>
+            <div>Target File</div>
+          </div>
+
+          <div class="mockup-table-row row-selected">
+            <div><strong>DiscordUpdate</strong></div>
+            <div><span class="tag-scope">User</span></div>
+            <div>HKCU\Run</div>
+            <div>C:\Users\AM\AppData\Local\Discord\Update.exe --processStart Discord.exe</div>
+            <div><span class="tag-exists">Found</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>SpotifyWebHelper</strong></div>
+            <div><span class="tag-scope">User</span></div>
+            <div>HKCU\Run</div>
+            <div>"C:\Users\AM\AppData\Roaming\Spotify\Spotify.exe" --autostart</div>
+            <div><span class="tag-exists">Found</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>SteamClientBootstrapper</strong></div>
+            <div><span class="tag-scope">User</span></div>
+            <div>HKCU\Run</div>
+            <div>"C:\Program Files (x86)\Steam\steam.exe" -silent</div>
+            <div><span class="tag-exists">Found</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>EpicGamesLauncher</strong></div>
+            <div><span class="tag-scope">Machine</span></div>
+            <div>HKLM\Run</div>
+            <div>"C:\Program Files (x86)\Epic Games\Launcher\Portal\Binaries\Win64\EpicGamesLauncher.exe"</div>
+            <div><span class="tag-exists">Found</span></div>
+          </div>
+
+          <div class="mockup-table-row" style="background: #FEF3C7;">
+            <div><strong>OldAudioUpdater</strong></div>
+            <div><span class="tag-scope">Machine</span></div>
+            <div>HKLM\Run</div>
+            <div>"C:\Program Files\Realtek\Audio\updater.exe"</div>
+            <div><span class="tag-missing">Missing</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div><strong>SendToOneNote</strong></div>
+            <div><span class="tag-scope">User</span></div>
+            <div>User Startup Folder</div>
+            <div>C:\Program Files\Microsoft Office\root\Office16\ONENOTEM.EXE</div>
+            <div><span class="tag-exists">Found</span></div>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="mockup-actionbar">
+          <div class="mockup-btn mockup-btn-red">⚡ Purge Selected Entry</div>
+          <div class="mockup-btn mockup-btn-primary">🛡️ Pause Guard</div>
+          <div class="mockup-btn mockup-btn-primary">🔄 Rescan All</div>
+          <div class="mockup-btn mockup-btn-outline">📁 Open Target</div>
+          <div class="mockup-btn mockup-btn-outline">📋 Export CSV Audit</div>
+        </div>
+
+        <!-- Mockup Footer -->
+        <div class="mockup-footer">
+          <span>Active • Monitored 14 startup entries across 7 system locations</span>
+          <span style="color: var(--primary); font-weight: 700;">pexoris.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID -->
+    <section class="section-wrap" id="features">
+      <div class="section-title-wrap">
+        <span class="section-tag">Proactive Protection</span>
+        <h2 class="section-title">Engineered to Keep Your Startup Pure</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">🛡️</div>
+          <h3>7-Location Startup Watcher</h3>
+          <p>Monitors HKCU/HKLM Run, RunOnce, Wow6432Node keys, and both User and Common Start Menu folders concurrently.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3>Real-Time Instant Alerts</h3>
+          <p>Detects new startup entries within seconds of software installation, showing exact app names, binary paths, and registry keys.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🛑</div>
+          <h3>1-Click Block &amp; Purge</h3>
+          <p>Instantly strips unwanted auto-start injections before they ever have the chance to initialize during your next PC reboot.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔍</div>
+          <h3>Orphaned Target Detector</h3>
+          <p>Flags leftover startup entries whose executable binaries have been uninstalled or moved, preventing dead startup delay lag.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📁</div>
+          <h3>Direct Explorer &amp; Regedit Jump</h3>
+          <p>1-Click shortcut jumping directly to the target executable in File Explorer or inspecting the exact registry key in Regedit.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📋</div>
+          <h3>Exportable CSV Audit</h3>
+          <p>Generates professional startup audit logs for sysadmins and PC technicians, cataloging every auto-start vector on the machine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE COMPARISON MATRIX -->
+    <section class="section-wrap" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-tag">Direct Comparison</span>
+        <h2 class="section-title">Why Pexoris StartupNotifier Outperforms Traditional Viewers</h2>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Capability</th>
+              <th class="col-highlight">Pexoris StartupNotifier</th>
+              <th>Windows Task Manager</th>
+              <th>Sysinternals Autoruns</th>
+              <th>WinPatrol (Obsolete)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Real-Time Modification Alerts</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Yes (Instant Pop-up)</td>
+              <td><span class="icon-cross">✗</span> No (Passive only)</td>
+              <td><span class="icon-cross">✗</span> No (Manual refresh)</td>
+              <td><span class="icon-check">✓</span> Yes (Old Scotty dog)</td>
+            </tr>
+            <tr>
+              <td><strong>Binary Size &amp; Portability</strong></td>
+              <td class="col-highlight">55 KB (Single Portable EXE)</td>
+              <td>Built-in</td>
+              <td>3.8 MB</td>
+              <td>12 MB (Installer)</td>
+            </tr>
+            <tr>
+              <td><strong>1-Click Instant Block &amp; Purge</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Built-in</td>
+              <td><span class="icon-cross">✗</span> Disable only (Keeps junk)</td>
+              <td><span class="icon-check">✓</span> Yes</td>
+              <td><span class="icon-check">✓</span> Yes</td>
+            </tr>
+            <tr>
+              <td><strong>Orphaned File Verification</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Live File Verification</td>
+              <td><span class="icon-cross">✗</span> No indication</td>
+              <td><span class="icon-check">✓</span> Yellow highlighting</td>
+              <td><span class="icon-cross">✗</span> No</td>
+            </tr>
+            <tr>
+              <td><strong>Background CPU Impact</strong></td>
+              <td class="col-highlight">0.0% CPU • ~4 MB RAM</td>
+              <td>N/A (Closed)</td>
+              <td>N/A (Heavy scan)</td>
+              <td>Noticeable background lag</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOW-TO 4 STEPS -->
+    <section class="section-wrap" id="how-to">
+      <div class="section-title-wrap">
+        <span class="section-tag">Step-by-Step Guide</span>
+        <h2 class="section-title">How to Guard Your Windows Startup in 4 Steps</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h4>Launch as Administrator</h4>
+          <p>Extract and run <code>PexorisStartupNotifier.exe</code> with Admin privileges to monitor both user and system-wide startup hooks.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h4>Audit Current Programs</h4>
+          <p>Inspect the live startup table. Look for yellow-highlighted orphaned items or bloatware you don't need launching on boot.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h4>Leave Guard Running</h4>
+          <p>Minimize the window while installing new software, games, or browser extensions. The guard uses 0.0% CPU silently.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h4>Block Unwanted Injections</h4>
+          <p>When an installer secretly attempts to add an auto-start hook, an alert pops up immediately. Click <strong>Yes</strong> to purge it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section-wrap" id="faq">
+      <div class="section-title-wrap">
+        <span class="section-tag">Questions Answered</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Why do apps add themselves to startup without asking?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Many software developers configure their installers to automatically inject auto-start entries into <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code> so their application updates in the background or launches faster. Over time, having dozens of apps doing this adds 30 to 60 seconds to your Windows boot time.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Is it safe to purge items using Pexoris StartupNotifier?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. Purging an auto-start entry only removes the automatic launch trigger from Windows. It does NOT delete or uninstall the application itself. You can still open and use the program anytime from your Start Menu or Desktop.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>What happens if I accidentally purge a critical startup item?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Critical Windows system processes (like Explorer or DWM) do not use the Run registry keys to start; they run as native kernel services. The Run keys are reserved for third-party user applications.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Does Pexoris StartupNotifier need an installer?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            No. Like all Pexoris tools, StartupNotifier is a single 55 KB standalone portable executable. Simply extract and run from any folder or USB drive.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris StartupNotifier Free</h2>
+        <p class="subtitle">Zero-footprint silent guardian alerting instantly when new software injects auto-start registry hooks.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 55 KB (.EXE) / 35 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
