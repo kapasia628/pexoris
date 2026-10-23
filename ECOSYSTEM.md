@@ -1,7 +1,7 @@
 # Pexoris Ecosystem Master Registry & Roadmap
 > **Domain:** [pexoris.com](https://pexoris.com)  
 > **Inspiration:** Sordum.org & Sysinternals (modernized with Apple Light Aesthetics, C# .NET 4.0 Win32, 0 installer, under 100 KB)  
-> **Status:** 35 of 100 Tools Completed & Live in Ecosystem
+> **Status:** 36 of 100 Tools Completed & Live in Ecosystem
 
 ---
 
@@ -44,6 +44,7 @@
 | **33** | **Pexoris StartupTimer** | `startup-timer` | 63 KB | 41 KB | `1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b` | [Download](https://drive.google.com/uc?export=download&id=1PRdP2mb2bvfnT7eFD42N-fFl2x0mFCBZ) | `http://localhost/tools/website/tools/startup-timer/` |
 | **34** | **Pexoris DiskUsage** | `disk-usage` | 55 KB | 36 KB | `b743ea5b9cea41a2ae0e588e6349334c5bae0a22f35cf9ea88a31318821cb5fc` | [Download](https://drive.google.com/uc?export=download&id=1CfrggaWiu05k-fjR97kTq2IGTGr7e5u2) | `http://localhost/tools/website/tools/disk-usage/` |
 | **35** | **Pexoris StartupNotifier** | `startup-notifier` | 55 KB | 35 KB | `5714db458fdc6cbda10251a160ea01d6378b08e7862f24313b525a8fc90a3ddb` | *Pending Upload* | `http://localhost/tools/website/tools/startup-notifier/` |
+| **36** | **Pexoris ClipboardHistory** | `clipboard-history` | 58 KB | 38 KB | `d8642dcef6c35c0f3cec36a8544984290d9e7043835304b92771231a4a692bc4` | *Pending Upload* | `http://localhost/tools/website/tools/clipboard-history/` |
 
 ---
 
@@ -134,4 +135,5 @@ Running `build.bat` in the project root:
 - [x] **#33 Pexoris StartupTimer** (Measure BIOS boot time, profile slow startup apps & delay non-critical services)
 - [x] **#34 Pexoris DiskUsage** (Interactive disk treemap visualizer, high-speed MFT analyzer & space reclaim)
 - [x] **#35 Pexoris StartupNotifier** (Real-time background monitor alerting on new startup app registrations)
-- [ ] **#36 Pexoris ClipboardHistory** (Zero-footprint encrypted portable clipboard manager with regex search & auto-purge)
+- [x] **#36 Pexoris ClipboardHistory** (Zero-footprint encrypted portable clipboard manager with regex search & auto-purge)
+- [ ] **#37 Pexoris QuickHash** (High-speed multi-hash generator: MD5, SHA-1, SHA-256, SHA-512, CRC32 with clipboard comparison)

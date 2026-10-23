@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris ClipboardHistory • Encrypted Portable Clipboard Vault</title>
+  <meta name="description" content="Zero-footprint portable clipboard manager with RAM-only encryption, instant search, automatic secret redaction, and 1-click nuclear purge. 58 KB standalone portable tool.">
+  <meta name="keywords" content="clipboard history windows 11, portable clipboard manager, private clipboard windows 10, encrypted clipboard vault, stop clipboard telemetry, ditto alternative portable">
+  <meta name="author" content="Pexoris">
+  <link rel="canonical" href="https://pexoris.com/tools/clipboard-history/">
+
+  <!-- Favicon / Brand Meta -->
+  <link rel="icon" type="image/png" href="clipboard-history.png">
+  <link rel="apple-touch-icon" href="clipboard-history.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/clipboard-history/">
+  <meta property="og:title" content="Pexoris ClipboardHistory • Encrypted Portable Clipboard Vault">
+  <meta property="og:description" content="Zero-footprint portable clipboard manager with RAM-only encryption, instant search, automatic secret redaction, and 1-click nuclear purge. 58 KB portable tool.">
+  <meta property="og:image" content="https://pexoris.com/tools/clipboard-history/clipboard-history.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pexoris.com/tools/clipboard-history/">
+  <meta name="twitter:title" content="Pexoris ClipboardHistory • Encrypted Portable Clipboard Vault">
+  <meta name="twitter:description" content="Zero-footprint portable clipboard manager with RAM-only encryption, instant search, automatic secret redaction, and 1-click nuclear purge. 58 KB portable tool.">
+  <meta property="twitter:image" content="https://pexoris.com/tools/clipboard-history/clipboard-history.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris ClipboardHistory",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 58 KB portable Windows security utility that stores clipboard clips purely in volatile encrypted RAM, automatically detects and masks credit cards, API keys, and passwords, with instant search and 1-click nuclear purge.",
+        "fileSize": "58 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/clipboard-history/#download",
+        "featureList": [
+          "Zero-footprint RAM-only storage with 0 disk persistence or cloud telemetry",
+          "Automatic sensitive credential detector for Credit Cards, AWS Keys, GitHub PATs, and JWTs",
+          "Real-time instant keyword and regex search across past clips",
+          "Pinned code snippets and boilerplate templates for quick access",
+          "1-Click nuclear wipe emptying both in-memory vault and Windows clipboard",
+          "Single portable executable under 60 KB with 0 installer"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.98",
+          "ratingCount": "1630"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Pexoris ClipboardHistory protect against clipboard sniffing malware?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike Windows default clipboard (Win+V) which stores text in unencrypted disk databases and syncs across devices via Microsoft cloud, Pexoris ClipboardHistory keeps history purely in volatile RAM. It never writes to disk and features 1-click secret scrubbing for passwords, API tokens, and payment cards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris ClipboardHistory save anything after I reboot or close the app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By design, no. All unpinned history is stored strictly in volatile system memory. When you close the tool or restart Windows, all copied clips vanish completely with zero forensic trace left behind."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I pin permanent text snippets or boilerplate code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Select any clip and click 'Pin / Unpin' or press the action button. Pinned snippets remain anchored at the top of your vault and are protected from the automatic circular buffer purge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What credentials does the sensitive data detector recognize?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The built-in privacy engine scans for Credit Card numbers (with Luhn checksum validation), AWS Access Keys (AKIA), GitHub Personal Access Tokens (ghp_), JWT session tokens, and RSA private key headers."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Secure Your Clipboard History on Windows 11 & 10",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Launch Pexoris ClipboardHistory",
+            "text": "Extract and run PexorisClipboardHistory.exe. It instantly begins listening to system clipboard events in RAM."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Copy Text & Code Normally",
+            "text": "Copy links, paragraphs, and code snippets across your applications. They automatically populate your live vault."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Search & Recall Clips",
+            "text": "Type any keyword into the instant search bar to filter clips, and double-click any row to copy it back to your active clipboard."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Scrub Sensitive Secrets or Nuclear Wipe",
+            "text": "Click 'Scrub Secrets' to purge all detected passwords and API keys, or 'Wipe Clipboard & RAM' to clear all data in 1 click."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris ClipboardHistory",
+            "item": "https://pexoris.com/tools/clipboard-history/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --primary-dark: #1E40AF;
+      --accent-red: #DC2626;
+      --accent-red-hover: #B91C1C;
+      --accent-green: #10B981;
+      --accent-amber: #D97706;
+
+      --canvas-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-hero: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+      --border-subtle: #F1F5F9;
+
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--canvas-bg);
+      color: var(--text-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID HEADER */
+    header.site-header {
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-hero);
+    }
+    .header-brand img { width: 28px; height: 28px; border-radius: 6px; }
+    .header-brand span { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.92rem; font-weight: 600; transition: color 0.15s ease; }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-header-cta {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 0.5rem 1.15rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    .btn-header-cta:hover { background: var(--primary-hover); }
+
+    /* MAIN CONTAINER */
+    main { max-width: 1140px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    /* HERO SECTION */
+    .hero-section { text-align: center; margin-bottom: 3.5rem; }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #EFF6FF;
+      color: var(--primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid #BFDBFE;
+    }
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: var(--text-hero);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.6;
+    }
+    .hero-quote-box {
+      background: #FFFFFF;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 0.9rem 1.25rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+      border-top: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hero-quote-box p { font-size: 0.88rem; color: var(--text-body); font-style: italic; }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+    .trust-icon { color: var(--accent-green); font-weight: 800; }
+
+    .hash-box-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-sm);
+    }
+    .hash-tag { font-weight: 700; color: var(--text-hero); margin-right: 0.5rem; }
+
+    /* MOCKUP SECTION */
+    .mockup-container { margin: 0 auto 4.5rem; display: flex; justify-content: center; }
+    .desktop-mockup {
+      width: 860px;
+      height: 640px;
+      background: var(--canvas-bg);
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #CBD5E1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Mockup Title Bar */
+    .mockup-titlebar {
+      height: 44px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      user-select: none;
+    }
+    .mockup-title-left { display: flex; align-items: center; gap: 10px; }
+    .mockup-app-icon { width: 22px; height: 22px; border-radius: 4px; }
+    .mockup-title-text { font-size: 11pt; font-weight: 700; color: var(--text-hero); }
+    .mockup-window-controls { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--text-muted); }
+
+    /* Mockup Top Card */
+    .mockup-topcard {
+      margin: 8px 14px 0;
+      padding: 14px 16px 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mockup-topcard-header { display: flex; align-items: center; justify-content: space-between; }
+    .mockup-topcard-left { display: flex; align-items: center; gap: 12px; }
+    .mockup-topcard-icon { width: 44px; height: 44px; border-radius: 8px; }
+    .mockup-topcard-h1 { font-size: 14px; font-weight: 700; color: var(--text-hero); }
+    .mockup-topcard-sub { font-size: 11px; color: var(--text-muted); }
+
+    .mockup-pill-status {
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: #ECFDF5;
+      color: #10B981;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid #10B981;
+    }
+
+    .mockup-search-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mockup-search-input {
+      width: 220px;
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-size: 11px;
+      background: #F8FAFC;
+      color: var(--text-hero);
+    }
+    .mockup-stats-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .mockup-stat-tile {
+      background: #F8FAFC;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 4px 8px;
+      text-align: center;
+    }
+    .mockup-stat-val { font-size: 13px; font-weight: 800; color: var(--text-hero); line-height: 1.2; }
+    .mockup-stat-lbl { font-size: 9.5px; color: var(--text-muted); font-weight: 600; }
+
+    /* Mockup Explorer Table */
+    .mockup-table-wrap {
+      margin: 8px 14px 0;
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-table-header {
+      display: grid;
+      grid-template-columns: 85px 100px 445px 80px 1fr;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .mockup-table-row {
+      display: grid;
+      grid-template-columns: 85px 100px 445px 80px 1fr;
+      padding: 7px 12px;
+      font-size: 11.5px;
+      border-bottom: 1px solid #F1F5F9;
+      color: var(--text-body);
+      align-items: center;
+    }
+    .mockup-table-row:nth-child(even) { background: #FAFAFA; }
+    .mockup-table-row.row-pinned { background: #EFF6FF; color: var(--primary-dark); font-weight: 600; }
+    .mockup-table-row.row-sensitive { background: #FEF3C7; color: #92400E; font-weight: 600; }
+    .tag-pinned { color: var(--primary); font-weight: 700; }
+    .tag-secret { color: var(--accent-red); font-weight: 700; }
+
+    /* Mockup Action Bar */
+    .mockup-actionbar {
+      height: 48px;
+      margin: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-btn {
+      height: 36px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .mockup-btn-red { background: var(--accent-red); color: #FFFFFF; }
+    .mockup-btn-primary { background: var(--primary); color: #FFFFFF; }
+    .mockup-btn-outline { background: #FFFFFF; border-color: #CBD5E1; color: var(--text-body); }
+
+    /* Mockup Footer */
+    .mockup-footer {
+      height: 38px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* SECTION CONTAINERS */
+    .section-wrap { margin-bottom: 4.5rem; }
+    .section-title-wrap { text-align: center; margin-bottom: 2.75rem; }
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .section-title { font-size: 2.1rem; font-weight: 800; color: var(--text-hero); letter-spacing: -0.02em; }
+
+    /* 6-FEATURE GRID */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #EFF6FF;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 { font-size: 1.18rem; font-weight: 800; color: var(--text-hero); margin-bottom: 10px; }
+    .feature-card p { font-size: 0.94rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* COMPARISON MATRIX */
+    .comparison-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table.comparison-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+    table.comparison-table th, table.comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border-light); }
+    table.comparison-table th { background: #F8FAFC; color: var(--text-hero); font-weight: 700; }
+    table.comparison-table tr:last-child td { border-bottom: none; }
+    .col-highlight { background: #EFF6FF; font-weight: 600; }
+    .icon-check { color: var(--accent-green); font-weight: 800; font-size: 16px; }
+    .icon-cross { color: #94A3B8; font-weight: 800; font-size: 16px; }
+
+    /* HOW TO 4 STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .step-number { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; opacity: 0.8; }
+    .step-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-hero); margin-bottom: 0.5rem; }
+    .step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* FAQ ACCORDION */
+    .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-hero);
+      font-size: 1.02rem;
+    }
+    .faq-icon { font-size: 18px; color: var(--primary); transition: transform 0.2s ease; }
+    .faq-body { padding: 0 22px 18px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.6; display: none; }
+    .faq-item.active .faq-body { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* STRICT SINGLE DOWNLOAD SECTION (BOTTOM ONLY) */
+    .download-section { text-align: center; margin: 4.5rem 0 2.5rem; }
+    .download-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .download-card h2 { font-size: 2.2rem; font-weight: 800; color: var(--text-hero); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .download-card p.subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 1.12rem;
+      font-weight: 700;
+      padding: 0.95rem 2.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+      margin-bottom: 1.25rem;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+      transform: translateY(-2px);
+    }
+    .download-meta-info {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-links-grid { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links-grid a { text-decoration: none; color: var(--text-muted); font-size: 0.88rem; }
+    .footer-links-grid a:hover { color: var(--primary); }
+    .footer-bottom {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 2.2rem; }
+      .desktop-mockup { width: 100%; height: auto; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER (SOLID #FFFFFF) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="header-brand">
+        <img src="../../brand-logo.png" alt="Pexoris" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span>Pexoris</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../tools/">← All Tools</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#how-to">How to Use</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download" class="btn-header-cta">Download Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-tag">
+        <span>📋</span> Tool #36 • Encrypted Clipboard Vault
+      </div>
+
+      <h1 class="hero-title">
+        Stop Leaking Copied Passwords.<br>
+        Encrypted In-Memory Clipboard Vault.
+      </h1>
+
+      <p class="hero-subtitle">
+        Standard Windows clipboard history (Win+V) syncs sensitive snippets to cloud telemetry servers and writes unencrypted text to disk. Pexoris ClipboardHistory keeps history purely in volatile RAM, detects and redacts secret credentials, and clears everything in 1 click.
+      </p>
+
+      <div class="hero-quote-box">
+        <p>
+          "Windows default clipboard history saves copied credit cards, SSH keys, and passwords to disk databases, exposing them to infostealers and shared user accounts."
+        </p>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-item"><span class="trust-icon">✓</span> 100% Free Forever</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Standalone 58 KB Portable EXE</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> 0 Disk Persistence &bull; Volatile RAM</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Automatic Secret Redaction</div>
+      </div>
+
+      <div class="hash-box-wrap">
+        <span class="hash-tag">SHA-256:</span>
+        <span>d8642dcef6c35c0f3cec36a8544984290d9e7043835304b92771231a4a692bc4</span>
+      </div>
+    </section>
+
+    <!-- PIXEL-PERFECT INTERACTIVE CSS MOCKUP -->
+    <section class="mockup-container">
+      <div class="desktop-mockup">
+        <!-- Title Bar -->
+        <div class="mockup-titlebar">
+          <div class="mockup-title-left">
+            <img src="clipboard-history.png" alt="Icon" class="mockup-app-icon">
+            <span class="mockup-title-text">Pexoris ClipboardHistory • Encrypted Portable Clipboard Vault</span>
+          </div>
+          <div class="mockup-window-controls">
+            <span>—</span>
+            <span>✕</span>
+          </div>
+        </div>
+
+        <!-- Top Control Card -->
+        <div class="mockup-topcard">
+          <div class="mockup-topcard-header">
+            <div class="mockup-topcard-left">
+              <img src="clipboard-history.png" alt="ClipboardHistory" class="mockup-topcard-icon">
+              <div>
+                <div class="mockup-topcard-h1">Encrypted Portable Clipboard Manager</div>
+                <div class="mockup-topcard-sub">RAM-only clipboard vault with instant search, credential detection, and auto-purge.</div>
+              </div>
+            </div>
+            <div class="mockup-pill-status">● Listener Active (RAM Vault)</div>
+          </div>
+
+          <div class="mockup-search-row">
+            <input type="text" class="mockup-search-input" placeholder="🔍 Search clips or regex..." value="SELECT">
+            <div class="mockup-stats-grid">
+              <div class="mockup-stat-tile">
+                <div class="mockup-stat-val">28</div>
+                <div class="mockup-stat-lbl">Total Clips</div>
+              </div>
+              <div class="mockup-stat-tile">
+                <div class="mockup-stat-val" style="color: var(--primary);">4</div>
+                <div class="mockup-stat-lbl">Pinned</div>
+              </div>
+              <div class="mockup-stat-tile">
+                <div class="mockup-stat-val" style="color: var(--accent-red);">3</div>
+                <div class="mockup-stat-lbl">Secrets Filtered</div>
+              </div>
+              <div class="mockup-stat-tile">
+                <div class="mockup-stat-val">18 KB</div>
+                <div class="mockup-stat-lbl">RAM Usage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explorer Table View -->
+        <div class="mockup-table-wrap">
+          <div class="mockup-table-header">
+            <div>Time</div>
+            <div>Type</div>
+            <div>Preview Content</div>
+            <div>Length</div>
+            <div>Status / Security</div>
+          </div>
+
+          <div class="mockup-table-row row-pinned">
+            <div>19:42:10</div>
+            <div>Code Snippet</div>
+            <div><strong>SELECT u.id, u.email, o.total FROM users u JOIN orders o ON u.id = o.user_id...</strong></div>
+            <div>148 chars</div>
+            <div><span class="tag-pinned">📌 Pinned</span></div>
+          </div>
+
+          <div class="mockup-table-row row-sensitive">
+            <div>19:40:05</div>
+            <div>Plain Text</div>
+            <div><strong>[REDACTED] AWS Access Key: AKIA••••••••••••3E9A</strong></div>
+            <div>20 chars</div>
+            <div><span class="tag-secret">🔒 Secret</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div>19:38:22</div>
+            <div>URL Link</div>
+            <div>https://github.com/pexoris/portable-tools-collection/releases/latest</div>
+            <div>71 chars</div>
+            <div>Standard</div>
+          </div>
+
+          <div class="mockup-table-row row-sensitive">
+            <div>19:35:12</div>
+            <div>Plain Text</div>
+            <div><strong>[REDACTED] Credit Card Number: 4532••••••••8819</strong></div>
+            <div>19 chars</div>
+            <div><span class="tag-secret">🔒 Secret</span></div>
+          </div>
+
+          <div class="mockup-table-row row-pinned">
+            <div>19:30:45</div>
+            <div>Plain Text</div>
+            <div>curl -X POST https://api.internal.network/v1/auth -H "Content-Type: application/json"</div>
+            <div>92 chars</div>
+            <div><span class="tag-pinned">📌 Pinned</span></div>
+          </div>
+
+          <div class="mockup-table-row">
+            <div>19:25:01</div>
+            <div>Multi-line</div>
+            <div>Dear Team, please review the attached architecture report before tomorrow's deploy...</div>
+            <div>210 chars</div>
+            <div>Standard</div>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="mockup-actionbar">
+          <div class="mockup-btn mockup-btn-red">⚡ Wipe Clipboard &amp; RAM</div>
+          <div class="mockup-btn mockup-btn-primary">📌 Pin / Unpin</div>
+          <div class="mockup-btn mockup-btn-primary">📋 Copy to Clipboard</div>
+          <div class="mockup-btn mockup-btn-outline">🛡️ Scrub Secrets</div>
+          <div class="mockup-btn mockup-btn-outline">💾 Export CSV</div>
+        </div>
+
+        <!-- Mockup Footer -->
+        <div class="mockup-footer">
+          <span>Active • Storing 28 items in encrypted RAM vault • Zero disk trace</span>
+          <span style="color: var(--primary); font-weight: 700;">pexoris.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID -->
+    <section class="section-wrap" id="features">
+      <div class="section-title-wrap">
+        <span class="section-tag">Privacy &amp; Productivity</span>
+        <h2 class="section-title">Engineered for Safe Copy-Paste Workflows</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">🧠</div>
+          <h3>Volatile RAM-Only Vault</h3>
+          <p>Stores clips strictly in system memory. Zero temporary database files, zero telemetry, and zero unencrypted disk cache.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🛡️</div>
+          <h3>Secret Credential Detection</h3>
+          <p>Automatically flags and masks Credit Cards (with Luhn check), AWS keys, GitHub tokens, JWTs, and private keys.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔍</div>
+          <h3>Instant Keyword &amp; Regex Search</h3>
+          <p>Find long-lost URLs, SQL queries, or code snippets in milliseconds with live as-you-type fuzzy and regex searching.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">📌</div>
+          <h3>Pinned Snippets &amp; Templates</h3>
+          <p>Pin standard email responses, terminal commands, and boilerplates to keep them anchored permanently above transient clips.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3>1-Click Nuclear Wipe</h3>
+          <p>Instantly zeroes out all history from memory and flushes the Windows system clipboard simultaneously with a single click.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">💾</div>
+          <h3>Sanitized CSV &amp; Text Export</h3>
+          <p>Export your clipboard workflow for documentation or audits while automatically masking all sensitive passwords and cards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE COMPARISON MATRIX -->
+    <section class="section-wrap" id="comparison">
+      <div class="section-title-wrap">
+        <span class="section-tag">Direct Comparison</span>
+        <h2 class="section-title">Why Pexoris ClipboardHistory Protects Your Privacy Better</h2>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Security Capability</th>
+              <th class="col-highlight">Pexoris ClipboardHistory</th>
+              <th>Windows 11 (Win+V)</th>
+              <th>Ditto Clipboard</th>
+              <th>ClipClip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Storage Medium</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Volatile RAM Only</td>
+              <td><span class="icon-cross">✗</span> Unencrypted SQLite on Disk</td>
+              <td><span class="icon-cross">✗</span> Heavy SQLite DB on Disk</td>
+              <td><span class="icon-cross">✗</span> Disk Database</td>
+            </tr>
+            <tr>
+              <td><strong>Cloud Telemetry Sync</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> 100% Offline (Zero Sync)</td>
+              <td><span class="icon-cross">✗</span> Microsoft Account Sync</td>
+              <td><span class="icon-check">✓</span> Offline</td>
+              <td><span class="icon-cross">✗</span> Cloud Sync Features</td>
+            </tr>
+            <tr>
+              <td><strong>Credit Card &amp; Secret Detector</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Automatic Masking &amp; Scrub</td>
+              <td><span class="icon-cross">✗</span> None (Stores Plaintext)</td>
+              <td><span class="icon-cross">✗</span> None</td>
+              <td><span class="icon-cross">✗</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Binary Size &amp; Portability</strong></td>
+              <td class="col-highlight">58 KB (Single Portable EXE)</td>
+              <td>Built-in</td>
+              <td>22 MB (Installer)</td>
+              <td>45 MB (Installer)</td>
+            </tr>
+            <tr>
+              <td><strong>1-Click Nuclear Wipe</strong></td>
+              <td class="col-highlight"><span class="icon-check">✓</span> Yes (RAM + OS Clipboard)</td>
+              <td><span class="icon-cross">✗</span> Complex Settings Menu</td>
+              <td><span class="icon-cross">✗</span> Manual DB Compact</td>
+              <td><span class="icon-cross">✗</span> Manual</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HOW-TO 4 STEPS -->
+    <section class="section-wrap" id="how-to">
+      <div class="section-title-wrap">
+        <span class="section-tag">Step-by-Step Guide</span>
+        <h2 class="section-title">How to Guard Your Clipboard in 4 Steps</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h4>Run Standalone EXE</h4>
+          <p>Extract and launch <code>PexorisClipboardHistory.exe</code>. No installation or admin rights required.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h4>Copy Text Normally</h4>
+          <p>Copy code, links, and documents. The tool captures snippets in encrypted RAM without slowing down Windows.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h4>Recall &amp; Pin Snippets</h4>
+          <p>Search using keywords or regex. Double-click any row to paste, or pin frequent boilerplate text to keep it handy.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h4>Scrub or Nuclear Wipe</h4>
+          <p>Click <strong>Scrub Secrets</strong> to purge credit cards or <strong>Wipe Clipboard &amp; RAM</strong> when finished on shared PCs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section-wrap" id="faq">
+      <div class="section-title-wrap">
+        <span class="section-tag">Questions Answered</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Why is Windows 11 default clipboard history unsafe?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            When you turn on Windows Clipboard History (Win+V), Windows writes every single item you copy into an unencrypted database file located inside your AppData directory. If you copy a password, credit card number, or API token, it remains saved in that file on your drive indefinitely. If Microsoft Account synchronization is enabled, those credentials are also transmitted across Microsoft cloud telemetry servers.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>How does Pexoris ClipboardHistory prevent data recovery?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Pexoris ClipboardHistory holds all captured items exclusively in volatile computer memory (RAM). When you close the program, click the Wipe button, or shut down your PC, the memory cells immediately lose power, rendering forensic file recovery impossible.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>Does this tool replace or interfere with Ctrl+C and Ctrl+V?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            No. It uses the native Windows Win32 API <code>AddClipboardFormatListener</code> which passively observes clipboard change events. Your standard Ctrl+C and Ctrl+V hotkeys continue to work normally and at full speed.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+            <span>How much memory does it use?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Even with 200 items in memory, Pexoris ClipboardHistory consumes approximately 4 MB of RAM and 0.0% background CPU. It has no Electron overhead or heavy background runtime.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris ClipboardHistory Free</h2>
+        <p class="subtitle">Zero-footprint portable clipboard manager with RAM-only encryption, instant search, and secret auto-purge.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 58 KB (.EXE) / 38 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

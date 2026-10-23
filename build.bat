@@ -744,8 +744,29 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-echo [70/70] Packaging Pexoris StartupNotifier Portable ZIP...
+echo [70/72] Packaging Pexoris StartupNotifier Portable ZIP...
 powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisStartupNotifier.exe' -DestinationPath 'build\PexorisStartupNotifier-v1.0-Portable.zip' -Force"
+
+taskkill /F /IM PexorisClipboardHistory.exe 2>nul
+
+echo [71/72] Compiling Tool 36: Pexoris ClipboardHistory...
+"%CSC%" /nologo /target:winexe /optimize+ /platform:anycpu ^
+    /win32manifest:src\PexorisClipboardHistory\App.manifest ^
+    /win32icon:src\PexorisClipboardHistory\Assets\app.ico ^
+    /out:build\PexorisClipboardHistory.exe ^
+    /r:System.dll,System.Drawing.dll,System.Windows.Forms.dll,System.Core.dll ^
+    src\PexorisClipboardHistory\Program.cs ^
+    src\PexorisClipboardHistory\Theme.cs ^
+    src\PexorisClipboardHistory\ClipboardEngine.cs ^
+    src\PexorisClipboardHistory\MainForm.cs
+
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Failed to compile Pexoris ClipboardHistory!
+    exit /b %ERRORLEVEL%
+)
+
+echo [72/72] Packaging Pexoris ClipboardHistory Portable ZIP...
+powershell -Command "Start-Sleep -Milliseconds 500; Compress-Archive -Path 'build\PexorisClipboardHistory.exe' -DestinationPath 'build\PexorisClipboardHistory-v1.0-Portable.zip' -Force"
 
 if not exist "final softwere for g drive uplod" mkdir "final softwere for g drive uplod"
 copy /y "build\PexorisFileUnlocker-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisFileUnlocker.zip" >nul
@@ -783,6 +804,7 @@ copy /y "build\PexorisShortcutDoctor-v1.0-Portable.zip" "final softwere for g dr
 copy /y "build\PexorisStartupTimer-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisStartupTimer.zip" >nul
 copy /y "build\PexorisDiskUsage-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisDiskUsage.zip" >nul
 copy /y "build\PexorisStartupNotifier-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisStartupNotifier.zip" >nul
+copy /y "build\PexorisClipboardHistory-v1.0-Portable.zip" "final softwere for g drive uplod\PexorisClipboardHistory.zip" >nul
 copy /y "build\PexorisFileUnlocker.exe" "final softwere for g drive uplod\PexorisFileUnlocker.exe" >nul
 copy /y "build\PexorisPortKiller.exe" "final softwere for g drive uplod\PexorisPortKiller.exe" >nul
 copy /y "build\PexorisDoHSwitcher.exe" "final softwere for g drive uplod\PexorisDoHSwitcher.exe" >nul
@@ -818,10 +840,11 @@ copy /y "build\PexorisShortcutDoctor.exe" "final softwere for g drive uplod\Pexo
 copy /y "build\PexorisStartupTimer.exe" "final softwere for g drive uplod\PexorisStartupTimer.exe" >nul
 copy /y "build\PexorisDiskUsage.exe" "final softwere for g drive uplod\PexorisDiskUsage.exe" >nul
 copy /y "build\PexorisStartupNotifier.exe" "final softwere for g drive uplod\PexorisStartupNotifier.exe" >nul
+copy /y "build\PexorisClipboardHistory.exe" "final softwere for g drive uplod\PexorisClipboardHistory.exe" >nul
 
 echo.
 echo ========================================================
-echo  [SUCCESS] All 35 Pexoris Tools Compiled Successfully!
+echo  [SUCCESS] All 36 Pexoris Tools Compiled Successfully!
 echo  Tool 1:  build\PexorisFileUnlocker.exe        (70 KB)
 echo  Tool 2:  build\PexorisPortKiller.exe          (78 KB)
 echo  Tool 3:  build\PexorisDoHSwitcher.exe        (38 KB)
@@ -857,6 +880,7 @@ echo  Tool 32: build\PexorisShortcutDoctor.exe     (64 KB)
 echo  Tool 33: build\PexorisStartupTimer.exe        (63 KB)
 echo  Tool 34: build\PexorisDiskUsage.exe           (55 KB)
 echo  Tool 35: build\PexorisStartupNotifier.exe      (55 KB)
+echo  Tool 36: build\PexorisClipboardHistory.exe     (58 KB)
 echo  Output copied to 'final softwere for g drive uplod/'
 echo ========================================================
 dir build\*.exe | findstr /i "Pexoris"
