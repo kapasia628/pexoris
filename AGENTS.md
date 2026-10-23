@@ -72,7 +72,7 @@ Full specification is maintained in [`.agents/rules/pexoris-standard.md`](file:/
 | **33** | **Pexoris StartupTimer** | `startup-timer` | 63 KB | 41 KB | `1c98d99b642eba1521c951824c1730574d58ff5f37797dae48071eee14bf6a5b` | `https://drive.google.com/uc?export=download&id=1PRdP2mb2bvfnT7eFD42N-fFl2x0mFCBZ` |
 | **34** | **Pexoris DiskUsage** | `disk-usage` | 55 KB | 36 KB | `b743ea5b9cea41a2ae0e588e6349334c5bae0a22f35cf9ea88a31318821cb5fc` | `https://drive.google.com/uc?export=download&id=1CfrggaWiu05k-fjR97kTq2IGTGr7e5u2` |
 | **35** | **Pexoris StartupNotifier** | `startup-notifier` | 55 KB | 35 KB | `5714db458fdc6cbda10251a160ea01d6378b08e7862f24313b525a8fc90a3ddb` | *Pending Upload* |
-| **36** | **Pexoris ClipboardHistory** | `clipboard-history` | 58 KB | 38 KB | `d8642dcef6c35c0f3cec36a8544984290d9e7043835304b92771231a4a692bc4` | *Pending Upload* |
+| **36** | **Pexoris ClipboardHistory** | `clipboard-history` | 58 KB | 38 KB | `d8642dcef6c35c0f3cec36a8544984290d9e7043835304b92771231a4a692bc4` | `https://drive.google.com/uc?export=download&id=1ymstLOGgyFnQMUUHJXNx2-KmGHTbJHmo` |
 
 ## Strict Header & Footer Rules
 1. **Header**: Must always use solid background (`background: #FFFFFF; box-shadow: 0 2px 10px rgba(0,0,0,0.04);`), NEVER semi-transparent `rgba()`, so scrolled content never bleeds through.
