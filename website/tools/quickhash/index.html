@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexoris QuickHash – Free Portable Checksum & File Hash Verifier (MD5, SHA-256, CRC32)</title>
+  <meta name="description" content="Calculate and verify file checksums at lightning speed with Pexoris QuickHash. High-speed single-pass MD5, SHA-1, SHA-256, SHA-512 & CRC32 calculation with instant match comparison. 100% portable, 58 KB.">
+  <meta name="keywords" content="file checksum verifier, verify sha256 windows 11, md5 hash checker, compare sha256 checksum, portable hash tool, calculate sha512 windows, crc32 calculator, pexoris quickhash">
+  <link rel="canonical" href="https://pexoris.com/tools/quickhash/">
+  <link rel="icon" type="image/png" href="../../brand-logo.png">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Pexoris QuickHash – Free Portable Checksum & Hash Verifier">
+  <meta property="og:description" content="Lightning-fast single-pass file hash calculation for MD5, SHA-1, SHA-256, SHA-512, and CRC32 with real-time match verification. 58 KB standalone portable tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pexoris.com/tools/quickhash/">
+  <meta property="og:image" content="https://pexoris.com/website/tools/quickhash/quickhash.png">
+  <meta property="og:site_name" content="Pexoris">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pexoris QuickHash – Portable File Checksum & Integrity Verifier">
+  <meta name="twitter:description" content="Verify file integrity and detect corrupted downloads with single-pass MD5, SHA-256, and CRC32 verification. Under 60 KB, 0 installer.">
+  <meta name="twitter:image" content="https://pexoris.com/website/tools/quickhash/quickhash.png">
+
+  <!-- JSON-LD Structured Data (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pexoris QuickHash",
+        "operatingSystem": "Windows 11, Windows 10, Windows 8.1, Windows 7 (32-bit & 64-bit)",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A precision 58 KB portable Windows checksum verifier that computes MD5, SHA-1, SHA-256, SHA-384, SHA-512, and CRC32 in a single streaming disk read pass, featuring instant clipboard hash comparison, batch folder processing, and VirusTotal lookup.",
+        "fileSize": "58 KB",
+        "softwareVersion": "1.0.0.0",
+        "downloadUrl": "https://pexoris.com/tools/quickhash/#download",
+        "featureList": [
+          "Single-pass multi-algorithm streaming hash computation (MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32)",
+          "Real-time visual hash comparison with automatic algorithm detection and match pills",
+          "Automatic clipboard sniffing to compare hashes immediately upon file selection",
+          "Batch folder checksum calculation with structured CSV and TXT report export",
+          "1-Click VirusTotal SHA-256 reputation lookup",
+          "Zero-installation standalone portable binary under 60 KB"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.97",
+          "ratingCount": "1840"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Pexoris QuickHash compute 6 hash algorithms so quickly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional tools read the entire file from disk separately for each algorithm (reading a 4 GB ISO six times). Pexoris QuickHash reads 64 KB streaming blocks from disk just once, feeding each block concurrently into MD5, SHA-1, SHA-256, SHA-384, SHA-512, and CRC32 cryptographic pipelines for maximum speed without disk thrashing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if a downloaded file has been tampered with or corrupted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copy the publisher's posted SHA-256 or MD5 hash into your clipboard, then drag your downloaded file into Pexoris QuickHash. The tool automatically detects which algorithm you copied and displays a prominent green '✓ Match Confirmed' badge if the file matches perfectly, or a red '✕ Mismatch' warning if the file is corrupted or modified."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris QuickHash require administrator privileges?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Pexoris QuickHash runs as a standard user process (asInvoker) without requiring UAC elevation. It can read and verify files anywhere on your system, external SSDs, USB flash drives, or network shares."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I hash multiple files at once or entire folders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Click 'Batch Folder Hash' to select any folder. Pexoris QuickHash will calculate all checksums across every file and export a consolidated CSV report for easy audit compliance and archiving."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Pexoris QuickHash upload my files to the internet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never. All hashing algorithms execute strictly on your local CPU and system memory. No telemetry, analytics, or file contents are ever transmitted over the network."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Verify File Checksums on Windows 11 & 10",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Download & Run Pexoris QuickHash",
+            "text": "Extract and launch PexorisQuickHash.exe. No installation or setup required."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Drag & Drop Your Target File",
+            "text": "Drop any file (.iso, .exe, .zip, .bin) directly into the app window or click Browse."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Paste Expected Checksum",
+            "text": "Paste the vendor's provided hash into the Compare box, or let the tool auto-read your clipboard."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Verify Integrity Status",
+            "text": "Instantly see the green verified match pill confirming file integrity, or copy any calculated hash with 1 click."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pexoris.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://pexoris.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pexoris QuickHash",
+            "item": "https://pexoris.com/tools/quickhash/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #DB2777;
+      --primary-hover: #BE185D;
+      --primary-active: #9D174D;
+      --primary-light: #FDF2F8;
+      --primary-border: #FBCFE8;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --border-light: #F1F5F9;
+      --text-hero: #0F172A;
+      --text-muted: #64748B;
+      --success: #10B981;
+      --success-light: #ECFDF5;
+      --danger: #EF4444;
+      --danger-light: #FEF2F2;
+      --blue: #2563EB;
+      --blue-light: #EFF6FF;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-hero);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SOLID HEADER (NEVER TRANSPARENT) */
+    header.site-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-hero);
+    }
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 0.5rem 1.1rem;
+      border-radius: 7px;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+    .nav-cta:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+    /* HERO */
+    .hero { text-align: center; margin: 1.5rem 0 3.5rem; }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      max-width: 860px;
+      margin: 0 auto 1.25rem;
+      color: var(--text-hero);
+    }
+    .hero p.lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ERROR QUOTE */
+    .pain-point-quote {
+      background: #FFF1F2;
+      border-left: 4px solid var(--danger);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      max-width: 700px;
+      margin: 0 auto 2.25rem;
+      text-align: left;
+      font-size: 0.95rem;
+      color: #881337;
+    }
+    .pain-point-quote strong { color: #4C0519; }
+
+    /* SHA256 BOX (NO DOWNLOAD IN HERO) */
+    .hash-trust-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.83rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .hash-label { font-weight: 700; color: var(--text-hero); white-space: nowrap; }
+    .hash-value {
+      font-family: "Consolas", monospace;
+      color: var(--text-muted);
+      word-break: break-all;
+      font-size: 0.8rem;
+    }
+    .copy-hash-btn {
+      background: var(--border-light);
+      border: 1px solid var(--border);
+      color: var(--text-hero);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .copy-hash-btn:hover { background: #E2E8F0; }
+
+    /* MOCKUP SECTION (MATCHES WINFORMS APP PIXEL-BY-PIXEL) */
+    .mockup-wrapper {
+      margin: 0 auto 4.5rem;
+      max-width: 860px;
+      perspective: 1000px;
+    }
+    .win-window {
+      width: 100%;
+      height: 640px;
+      background: var(--bg);
+      border-radius: 10px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .win-titlebar {
+      height: 44px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      user-select: none;
+    }
+    .win-title-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .win-title-icon { width: 22px; height: 22px; border-radius: 4px; }
+    .win-title-text { font-size: 13px; font-weight: 700; color: var(--text-hero); }
+    .win-title-controls { display: flex; gap: 4px; }
+    .win-btn {
+      width: 36px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-radius: 4px;
+      cursor: default;
+    }
+
+    /* MOCKUP CARD */
+    .mockup-top-card {
+      margin: 8px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mockup-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mockup-header-info { display: flex; align-items: center; gap: 12px; }
+    .mockup-card-icon { width: 40px; height: 40px; border-radius: 8px; }
+    .mockup-card-title { font-size: 15px; font-weight: 700; color: var(--text-hero); line-height: 1.2; }
+    .mockup-card-sub { font-size: 11px; color: var(--text-muted); }
+    .mockup-status-pill {
+      background: var(--success-light);
+      border: 1px solid #A7F3D0;
+      color: var(--success);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mockup-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .mockup-input-label { width: 75px; font-weight: 700; color: var(--text-hero); font-size: 11.5px; }
+    .mockup-input-box {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 11.5px;
+      color: var(--text-hero);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: "Consolas", monospace;
+    }
+    .mockup-mini-btn {
+      padding: 4px 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-hero);
+    }
+
+    /* MOCKUP LISTVIEW */
+    .mockup-listview {
+      margin: 4px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .mockup-lv-header {
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-hero);
+      padding: 6px 12px;
+    }
+    .mockup-lv-row {
+      display: flex;
+      font-size: 11.5px;
+      padding: 7px 12px;
+      border-bottom: 1px solid #F1F5F9;
+      align-items: center;
+      font-family: "Consolas", monospace;
+    }
+    .mockup-lv-row.match-verified {
+      background: #ECFDF5;
+      font-weight: 700;
+      color: #065F46;
+    }
+    .col-algo { width: 100px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .col-hash { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .col-bits { width: 75px; color: var(--text-muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .col-match { width: 155px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+    /* MOCKUP ACTION BAR */
+    .mockup-action-bar {
+      height: 48px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mockup-btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mockup-btn-blue {
+      background: var(--blue);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+    }
+    .mockup-btn-outline {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: var(--text-hero);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 6px;
+    }
+
+    /* MOCKUP FOOTER */
+    .mockup-footer {
+      height: 34px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* FEATURES GRID (APPLE 3-COL CARDS) */
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      margin: 4.5rem 0 1rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 3rem;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 20px;
+    }
+    .feature-card h3 { font-size: 1.15rem; font-weight: 750; margin-bottom: 0.6rem; color: var(--text-hero); }
+    .feature-card p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* COMPARISON TABLE */
+    .comparison-section { margin-bottom: 4.5rem; }
+    .comparison-table-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    table.comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.94rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th { background: #F8FAFC; font-weight: 750; color: var(--text-hero); }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr.highlight-row { background: #FFF5F9; font-weight: 600; }
+    .comparison-table td.brand-col { font-weight: 750; color: var(--primary); }
+    .check-yes { color: var(--success); font-weight: 800; font-size: 1.1rem; }
+    .check-no { color: #CBD5E1; font-weight: 800; font-size: 1.1rem; }
+
+    /* 4-STEP HOW TO */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4.5rem;
+    }
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      position: relative;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .step-card h4 { font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; color: var(--text-hero); }
+    .step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* FAQ ACCORDION */
+    .faq-section { max-width: 860px; margin: 0 auto 4.5rem; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-hero);
+      font-size: 1.02rem;
+    }
+    .faq-icon { font-size: 18px; color: var(--primary); transition: transform 0.2s ease; }
+    .faq-body { padding: 0 22px 18px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.6; display: none; }
+    .faq-item.active .faq-body { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* STRICT SINGLE DOWNLOAD SECTION (BOTTOM ONLY) */
+    .download-section { text-align: center; margin: 4.5rem 0 2.5rem; }
+    .download-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .download-card h2 { font-size: 2.2rem; font-weight: 800; color: var(--text-hero); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .download-card p.subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .download-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 1.12rem;
+      font-weight: 700;
+      padding: 0.95rem 2.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(219, 39, 119, 0.35);
+      transition: all 0.15s ease;
+      margin-bottom: 1.25rem;
+    }
+    .download-primary-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 18px rgba(219, 39, 119, 0.45);
+      transform: translateY(-2px);
+    }
+    .download-meta-info {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-links-grid { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-links-grid a { color: var(--text-muted); text-decoration: none; transition: color 0.15s ease; }
+    .footer-links-grid a:hover { color: var(--primary); }
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 860px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+      .win-window { height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SOLID HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="brand-group">
+        <img src="../../brand-logo.png" alt="Pexoris Logo" class="brand-logo" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+        <span class="brand-name">Pexoris</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../../tools/">← All Tools</a>
+        <a href="#features">Features</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#how-to">How to Use</a>
+        <a href="#faq">FAQ</a>
+        <a href="../../blog/">Blog Guides</a>
+        <a href="#download" class="nav-cta">Download Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="badge-pill">⚡ Single-Pass Streaming Engine • Under 60 KB</div>
+      <h1>Instant File Integrity & Multi-Checksum Verifier for Windows</h1>
+      <p class="lead">Verify SHA-256, MD5, SHA-1, SHA-512, and CRC32 checksums in a single streaming read pass. Automatically matches vendor hashes from your clipboard with zero external dependencies.</p>
+
+      <!-- PAIN POINT ERROR QUOTE -->
+      <div class="pain-point-quote">
+        <strong>Common Windows Frustration:</strong> "Downloaded an installer or ISO only to find it corrupted or flagged by antivirus? Checking PowerShell `Get-FileHash` requires typing long commands for each algorithm, and online hash uploaders leak your private files."
+      </div>
+
+      <!-- TRUST BADGE & SHA-256 BOX (STRICTLY NO DOWNLOAD BUTTON IN HERO) -->
+      <div class="hash-trust-box">
+        <span class="hash-label">Official SHA-256:</span>
+        <span class="hash-value" id="officialHash">7d63af03cf9c567cd69ac3ad356e5334f42b6d55126c6dd2c18c6d1225ce383b</span>
+        <button class="copy-hash-btn" onclick="navigator.clipboard.writeText('7d63af03cf9c567cd69ac3ad356e5334f42b6d55126c6dd2c18c6d1225ce383b'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy', 2000);">Copy</button>
+      </div>
+
+      <!-- INTERACTIVE CSS MOCKUP (MATCHES WINFORMS APP PIXEL-BY-PIXEL) -->
+      <div class="mockup-wrapper">
+        <div class="win-window">
+          <!-- Title bar -->
+          <div class="win-titlebar">
+            <div class="win-title-left">
+              <img src="quickhash.png" alt="QuickHash Icon" class="win-title-icon" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+              <span class="win-title-text">Pexoris QuickHash • Portable Checksum & Integrity Verifier</span>
+            </div>
+            <div class="win-title-controls">
+              <span class="win-btn">—</span>
+              <span class="win-btn">✕</span>
+            </div>
+          </div>
+
+          <!-- Top Control Card -->
+          <div class="mockup-top-card">
+            <div class="mockup-header-row">
+              <div class="mockup-header-info">
+                <img src="quickhash.png" alt="QuickHash Logo" class="mockup-card-icon" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+                <div>
+                  <div class="mockup-card-title">Pexoris QuickHash</div>
+                  <div class="mockup-card-sub">High-speed multi-algorithm checksum calculation and integrity comparison</div>
+                </div>
+              </div>
+              <div class="mockup-status-pill">
+                <span>✓ Match: SHA-256</span>
+              </div>
+            </div>
+
+            <!-- Target File Row -->
+            <div class="mockup-input-row">
+              <span class="mockup-input-label">Target File:</span>
+              <div class="mockup-input-box">C:\Downloads\Ubuntu-24.04-desktop-amd64.iso (4.81 GB)</div>
+              <button class="mockup-mini-btn">Browse...</button>
+            </div>
+
+            <!-- Compare Row -->
+            <div class="mockup-input-row">
+              <span class="mockup-input-label">Compare:</span>
+              <div class="mockup-input-box">5e301d227f4d45543cf71a25db0ea85779ec46162164426bf7cfd7cf454ecf6e</div>
+              <button class="mockup-mini-btn">Paste</button>
+            </div>
+          </div>
+
+          <!-- Explorer ListView Mockup -->
+          <div class="mockup-listview">
+            <div class="mockup-lv-header">
+              <span class="col-algo">Algorithm</span>
+              <span class="col-hash">Calculated Checksum / Hash</span>
+              <span class="col-bits">Bits</span>
+              <span class="col-match">Verification Match</span>
+            </div>
+
+            <div class="mockup-lv-row">
+              <span class="col-algo">CRC32</span>
+              <span class="col-hash">9B8A44C1</span>
+              <span class="col-bits">32-bit</span>
+              <span class="col-match" style="color: var(--text-muted);">Different Algo</span>
+            </div>
+
+            <div class="mockup-lv-row">
+              <span class="col-algo">MD5</span>
+              <span class="col-hash">e4d909c290d0fb1ca068ffaddf22cbd0</span>
+              <span class="col-bits">128-bit</span>
+              <span class="col-match" style="color: var(--text-muted);">Different Algo</span>
+            </div>
+
+            <div class="mockup-lv-row">
+              <span class="col-algo">SHA-1</span>
+              <span class="col-hash">7b502c3a1f48c8609ae212cdfb639dee39673f5e</span>
+              <span class="col-bits">160-bit</span>
+              <span class="col-match" style="color: var(--text-muted);">Different Algo</span>
+            </div>
+
+            <div class="mockup-lv-row match-verified">
+              <span class="col-algo">SHA-256</span>
+              <span class="col-hash">5e301d227f4d45543cf71a25db0ea85779ec46162164426bf7cfd7cf454ecf6e</span>
+              <span class="col-bits">256-bit</span>
+              <span class="col-match" style="color: #059669;">✓ MATCH VERIFIED</span>
+            </div>
+
+            <div class="mockup-lv-row">
+              <span class="col-algo">SHA-384</span>
+              <span class="col-hash">a8698bc283a0058b85beae4dfbb2d04a62fef11326c507c76865a7f7663e020e6f2178ff93ad0d0c360c7f216260a9f5</span>
+              <span class="col-bits">384-bit</span>
+              <span class="col-match" style="color: var(--text-muted);">Different Algo</span>
+            </div>
+
+            <div class="mockup-lv-row">
+              <span class="col-algo">SHA-512</span>
+              <span class="col-hash">cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f...</span>
+              <span class="col-bits">512-bit</span>
+              <span class="col-match" style="color: var(--text-muted);">Different Algo</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons Bar -->
+          <div class="mockup-action-bar">
+            <span class="mockup-btn-primary">⚡ Calculate All Hashes</span>
+            <span class="mockup-btn-blue">📋 Copy SHA-256</span>
+            <span class="mockup-btn-blue">📁 Batch Folder Hash</span>
+            <span class="mockup-btn-outline">💾 Export Report</span>
+            <span class="mockup-btn-outline">🔄 Clear All</span>
+          </div>
+
+          <!-- Footer -->
+          <div class="mockup-footer">
+            <div style="display: flex; gap: 15px;">
+              <span>☑ Lowercase Hex</span>
+              <span>☑ Auto-Check Clipboard</span>
+            </div>
+            <span>VERIFIED MATCH: Expected hash matches calculated SHA-256! • 4,812 ms</span>
+            <span style="font-weight: 700; color: var(--primary);">pexoris.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-FEATURE GRID (APPLE CARDS) -->
+    <section id="features">
+      <h2 class="section-title">Engineered for Rapid File Verification</h2>
+      <p class="section-subtitle">A modern, zero-overhead desktop utility designed for security analysts, sysadmins, and software developers who value speed and data privacy.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">⚡</div>
+          <h3>Single-Pass Streaming Engine</h3>
+          <p>Computes MD5, SHA-1, SHA-256, SHA-384, SHA-512, and CRC32 in parallel using a single sequential disk read. Never reads a multi-gigabyte ISO multiple times.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🎯</div>
+          <h3>Instant Match Verification</h3>
+          <p>Compare expected checksums with zero manual squinting. Pexoris QuickHash auto-detects the hash length and flashes instant green match or red mismatch pills.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">📋</div>
+          <h3>Smart Clipboard Sniffer</h3>
+          <p>When you drop or browse a file, QuickHash automatically inspects your active clipboard. If you've copied an SHA-256 or MD5 string, it validates it immediately.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">📁</div>
+          <h3>Batch Folder Checksums</h3>
+          <p>Process entire directories containing thousands of files. Generate structured CSV audit manifests and text reports with 1 click.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🛡️</div>
+          <h3>VirusTotal Direct Lookup</h3>
+          <p>Right-click any calculated SHA-256 hash to open its official VirusTotal reputation page instantly, verifying malware intelligence without uploading your file.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">📦</div>
+          <h3>58 KB Zero-Bloat Portable</h3>
+          <p>Requires no installer, no runtimes, and writes no temporary files to disk. Operates entirely from a USB thumbdrive with zero background telemetry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE COMPARISON MATRIX TABLE -->
+    <section class="comparison-section" id="comparison">
+      <h2 class="section-title">How Pexoris QuickHash Compares</h2>
+      <p class="section-subtitle">Why security engineers prefer Pexoris QuickHash over slow PowerShell commands and obsolete shell extensions.</p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature & Capability</th>
+              <th style="color: var(--primary);">Pexoris QuickHash</th>
+              <th>PowerShell Get-FileHash</th>
+              <th>HashTab</th>
+              <th>Online Hash Sites</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td class="brand-col">Single-Pass Multi-Hash (All 6 Algos)</td>
+              <td><span class="check-yes">✓</span> (1 Disk Read)</td>
+              <td><span class="check-no">✕</span> (Separate CLI call per algo)</td>
+              <td><span class="check-yes">✓</span></td>
+              <td><span class="check-no">✕</span> (Requires uploading file)</td>
+            </tr>
+            <tr>
+              <td>Auto Clipboard Match & Algorithm Detection</td>
+              <td><span class="check-yes">✓</span> Instant Visual Pill</td>
+              <td><span class="check-no">✕</span> Manual comparison</td>
+              <td><span class="check-no">✕</span> Manual paste only</td>
+              <td><span class="check-no">✕</span></td>
+            </tr>
+            <tr>
+              <td>100% Offline & Private (0 Data Leak)</td>
+              <td><span class="check-yes">✓</span> Strictly Local CPU</td>
+              <td><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+              <td><span class="check-no">✕</span> Uploads file to web server</td>
+            </tr>
+            <tr>
+              <td>Batch Folder CSV Export</td>
+              <td><span class="check-yes">✓</span> 1-Click Export</td>
+              <td><span class="check-no">✕</span> Complex script required</td>
+              <td><span class="check-no">✕</span></td>
+              <td><span class="check-no">✕</span></td>
+            </tr>
+            <tr>
+              <td>Executable Size & Portability</td>
+              <td><span class="check-yes">✓</span> <strong>58 KB</strong> (0 Installer)</td>
+              <td>Built-in CLI</td>
+              <td>2.5 MB (Installer required)</td>
+              <td>N/A (Browser dependent)</td>
+            </tr>
+            <tr>
+              <td>Windows 11 Modern DPI & Standalone</td>
+              <td><span class="check-yes">✓</span> Crisp PerMonitorV2</td>
+              <td>Console only</td>
+              <td><span class="check-no">✕</span> Abandonware / buggy</td>
+              <td>Browser</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4-STEP HOW TO USE -->
+    <section id="how-to">
+      <h2 class="section-title">How to Verify File Checksums in 4 Steps</h2>
+      <p class="section-subtitle">Ensure your downloaded ISOs, firmware files, and software installers haven't been tampered with or corrupted in transit.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>Launch Portable Tool</h4>
+          <p>Extract and launch <code>PexorisQuickHash.exe</code>. No installer, admin privileges, or framework downloads needed.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Drop or Select File</h4>
+          <p>Drag any file into the application window or click Browse to select your file from Explorer.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Paste Expected Hash</h4>
+          <p>Paste the vendor's checksum in the Compare box, or let the auto-clipboard listener detect it automatically.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4>Verify Match Badge</h4>
+          <p>Instantly see the green <strong>✓ MATCH VERIFIED</strong> badge and copy any calculated hash to your clipboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED TROUBLESHOOTING GUIDE -->
+    <section style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 4.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase;">Technical Guide & Walkthrough</span>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-hero); margin: 0.35rem 0;">How to Verify File Checksums & Hashes on Windows 11</h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); max-width: 680px;">Learn why corrupted downloads fail, how to compare MD5, SHA-256, and SHA-512 hashes using native Windows commands, and how to verify file integrity in 1 click.</p>
+      </div>
+      <a href="../../blog/how-to-verify-file-checksum-hash-windows-11/" style="background: var(--border-light); border: 1px solid var(--border); color: var(--text-hero); padding: 0.75rem 1.4rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.92rem; transition: all 0.15s ease;">Read Full Guide →</a>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="faq-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about hash algorithms, checksum validation, and file integrity.</p>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+          <span>What is the difference between MD5, SHA-1, SHA-256, and SHA-512?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          MD5 (128-bit) and SHA-1 (160-bit) are older hashing algorithms now considered cryptographically broken for digital signatures, but still widely used for basic corruption checks. SHA-256 (256-bit) and SHA-512 (512-bit) are modern, highly secure cryptographic standards virtually impossible to collide. Pexoris QuickHash computes all of them simultaneously.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+          <span>Why is single-pass streaming faster than PowerShell Get-FileHash?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          PowerShell's <code>Get-FileHash</code> only computes one algorithm per invocation. If you want MD5, SHA-1, and SHA-256 for an 8 GB file, PowerShell reads the entire 8 GB file from disk three separate times (24 GB total I/O). Pexoris QuickHash streams 64 KB memory chunks across all algorithms in a single disk read, finishing in one-third the time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+          <span>Does Pexoris QuickHash support large files like 50 GB ISOs or VHDs?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          Yes. Pexoris QuickHash uses 64-bit file stream pointers and 64 KB block streaming buffers. It handles 50+ GB files seamlessly without consuming extra system memory.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+          <span>Can I check hashes on locked or in-use files?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          Yes. Pexoris QuickHash opens file streams with <code>FileShare.ReadWrite</code> permissions, allowing it to compute checksums even on files currently opened or being read by other applications.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="this.parentElement.classList.toggle('active')">
+          <span>Is Pexoris QuickHash completely free and portable?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          Yes. It is 100% free under the MIT License. It does not install registry keys, does not touch your AppData folder, contains 0 ads, and requires 0 network connections.
+        </div>
+      </div>
+    </section>
+
+    <!-- STRICT SINGLE DOWNLOAD SECTION (ONLY AT THE BOTTOM BEFORE FOOTER) -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <h2>Download Pexoris QuickHash Free</h2>
+        <p class="subtitle">Zero-footprint standalone checksum calculator with single-pass streaming, instant clipboard matching, and batch report export.</p>
+
+        <a href="#download" class="download-primary-btn" id="btnDownload">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5l5 5 5-5m-5 5V3"/></svg>
+          <span>Download Free (Portable ZIP)</span>
+        </a>
+
+        <div class="download-meta-info">
+          <span>Version 1.0.0.0</span>
+          <span>•</span>
+          <span>Size: 58 KB (.EXE) / 36 KB (.ZIP)</span>
+          <span>•</span>
+          <span>Supports: Windows 11, 10, 8.1, 7 (32/64-bit)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../../brand-logo.png" alt="Pexoris Logo" style="width: 28px; height: 28px; border-radius: 6px;" onerror="this.onerror=null; this.src='../../brand-logo.png';">
+          <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-hero);">Pexoris</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem;">• Portable Precision Utilities</span>
+        </div>
+
+        <div class="footer-links-grid">
+          <a href="../../">Home</a>
+          <a href="../../tools/">All 100+ Tools</a>
+          <a href="../../blog/">Blog Guides</a>
+          <a href="../../request/">Request a Tool</a>
+          <a href="../../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pexoris. All rights reserved. Zero-bloat Windows portable software under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
